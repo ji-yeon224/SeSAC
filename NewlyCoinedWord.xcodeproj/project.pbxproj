@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE16E7FD2A6E045A004449CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16E7FC2A6E045A004449CA /* ViewController.swift */; };
 		CE4C4ED52A6D036C00DCFD15 /* InstagramLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C4ED42A6D036C00DCFD15 /* InstagramLayoutViewController.swift */; };
 		CE5D92612A68DAD400D87497 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D92602A68DAD400D87497 /* AppDelegate.swift */; };
 		CE5D92632A68DAD400D87497 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D92622A68DAD400D87497 /* SceneDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE16E7FC2A6E045A004449CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CE4C4ED42A6D036C00DCFD15 /* InstagramLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramLayoutViewController.swift; sourceTree = "<group>"; };
 		CE5D925D2A68DAD400D87497 /* NewlyCoinedWord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewlyCoinedWord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5D92602A68DAD400D87497 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			children = (
 				CE5D92662A68DAD400D87497 /* Main.storyboard */,
 				CE5D92982A692BF900D87497 /* WordViewController.swift */,
+				CE16E7FC2A6E045A004449CA /* ViewController.swift */,
 				CE4C4ED42A6D036C00DCFD15 /* InstagramLayoutViewController.swift */,
 				CE5D92602A68DAD400D87497 /* AppDelegate.swift */,
 				CE5D92622A68DAD400D87497 /* SceneDelegate.swift */,
@@ -148,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE16E7FD2A6E045A004449CA /* ViewController.swift in Sources */,
 				CE5D92992A692BF900D87497 /* WordViewController.swift in Sources */,
 				CE4C4ED52A6D036C00DCFD15 /* InstagramLayoutViewController.swift in Sources */,
 				CE5D92612A68DAD400D87497 /* AppDelegate.swift in Sources */,

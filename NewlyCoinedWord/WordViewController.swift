@@ -49,16 +49,31 @@ class WordViewController: UIViewController {
         
         
         view.endEditing(true)
-        if searchTextField.text == "" {
+        
+        guard let text = searchTextField.text else {
             showAlert("검색어를 입력하세요.")
             resultLabel.text = ""
-        } else if newWord[searchTextField.text!] == nil {
-            showAlert("검색 결과가 없습니다.")
-            resultLabel.text = ""
-        } else {
-            resultLabel.text = newWord[searchTextField.text!]! + " 라는 뜻입니다."
+            return
         }
         
+        guard let word = newWord[searchTextField.text!] else {
+            showAlert("검색 결과가 없습니다.")
+            resultLabel.text = ""
+            return
+        }
+        resultLabel.text = newWord[searchTextField.text!]! + " 라는 뜻입니다."
+        
+//        
+//        if searchTextField.text == "" {
+//            showAlert("검색어를 입력하세요.")
+//            resultLabel.text = ""
+//        } else if newWord[searchTextField.text!] == nil {
+//            showAlert("검색 결과가 없습니다.")
+//            resultLabel.text = ""
+//        } else {
+//            resultLabel.text = newWord[searchTextField.text!]! + " 라는 뜻입니다."
+//        }
+//        
         
         
     }
