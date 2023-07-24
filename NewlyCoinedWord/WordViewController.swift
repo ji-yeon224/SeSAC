@@ -28,6 +28,8 @@ class WordViewController: UIViewController {
         super.viewDidLoad()
         
         designProperties()
+        
+        
 
         
     }
@@ -50,31 +52,24 @@ class WordViewController: UIViewController {
         
         view.endEditing(true)
         
-        guard let text = searchTextField.text else {
+        //입력된 텍스트의 값이 nil이거나 빈칸일 때
+        guard let _ = searchTextField.text, !searchTextField.state.isEmpty else {
             showAlert("검색어를 입력하세요.")
             resultLabel.text = ""
             return
         }
         
-        guard let word = newWord[searchTextField.text!] else {
+        guard let _ = newWord[searchTextField.text!] else {
             showAlert("검색 결과가 없습니다.")
             resultLabel.text = ""
             return
         }
+        
+        
         resultLabel.text = newWord[searchTextField.text!]! + " 라는 뜻입니다."
         
-//        
-//        if searchTextField.text == "" {
-//            showAlert("검색어를 입력하세요.")
-//            resultLabel.text = ""
-//        } else if newWord[searchTextField.text!] == nil {
-//            showAlert("검색 결과가 없습니다.")
-//            resultLabel.text = ""
-//        } else {
-//            resultLabel.text = newWord[searchTextField.text!]! + " 라는 뜻입니다."
-//        }
-//        
         
+
         
     }
     
@@ -103,12 +98,12 @@ class WordViewController: UIViewController {
         resultLabel.font = UIFont.boldSystemFont(ofSize: 18)
         resultLabel.text = ""
         
-        var idx = 0
+        let wordList = wordKeyList.shuffled()
         for btn in wordListButtons {
             var config = UIButton.Configuration.plain()
-            config.title = wordKeyList[idx]
-            idx += 1
+            config.title = wordList[btn.tag]
             config.cornerStyle = .capsule
+            
             
             btn.configuration = config
             btn.tintColor = .black
