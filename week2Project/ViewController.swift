@@ -13,6 +13,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         print("5678")
         print("안녕~")
+        print("커밋괃 동시에 푸시하기")
     }
 
 
