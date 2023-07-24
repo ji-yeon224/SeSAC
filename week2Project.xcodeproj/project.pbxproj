@@ -13,6 +13,7 @@
 		CE16E8122A6E04C6004449CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE16E8102A6E04C6004449CA /* Main.storyboard */; };
 		CE16E8142A6E04C7004449CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE16E8132A6E04C7004449CA /* Assets.xcassets */; };
 		CE16E8172A6E04C7004449CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE16E8152A6E04C7004449CA /* LaunchScreen.storyboard */; };
+		CE16E81F2A6E0693004449CA /* CommitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16E81E2A6E0693004449CA /* CommitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CE16E8132A6E04C7004449CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE16E8162A6E04C7004449CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE16E8182A6E04C7004449CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE16E81E2A6E0693004449CA /* CommitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				CE16E8132A6E04C7004449CA /* Assets.xcassets */,
 				CE16E8152A6E04C7004449CA /* LaunchScreen.storyboard */,
 				CE16E8182A6E04C7004449CA /* Info.plist */,
+				CE16E81E2A6E0693004449CA /* CommitViewController.swift */,
 			);
 			path = week2Project;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE16E80F2A6E04C6004449CA /* ViewController.swift in Sources */,
+				CE16E81F2A6E0693004449CA /* CommitViewController.swift in Sources */,
 				CE16E80B2A6E04C6004449CA /* AppDelegate.swift in Sources */,
 				CE16E80D2A6E04C6004449CA /* SceneDelegate.swift in Sources */,
 			);
