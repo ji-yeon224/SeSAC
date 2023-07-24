@@ -9,15 +9,23 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var firstImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("5678")
-        print("안녕~")
-        print("커밋괃 동시에 푸시하기")
-        print("리드미 작성")
+        
+        firstImageView.isUserInteractionEnabled = true
+        
+        print(firstImageView.isUserInteractionEnabled)
+        print(view.isUserInteractionEnabled)
         
     }
-
-
+    @IBAction func testTapGesture(_ sender: UITapGestureRecognizer) {
+        print("first")
+    }
+    
+    @IBAction func testSeconTapGesture(_ sender: UITapGestureRecognizer) {
+        print("second")
+    }
+    
 }
 
