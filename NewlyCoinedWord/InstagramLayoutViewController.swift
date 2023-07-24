@@ -10,8 +10,6 @@ import UIKit
 class InstagramLayoutViewController: UIViewController {
 
     
-    @IBOutlet var userIdLabel: UILabel!
-    
     @IBOutlet var profileImageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!
     
@@ -28,6 +26,7 @@ class InstagramLayoutViewController: UIViewController {
     
     @IBOutlet var postedImageViews: [UIImageView]!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,10 +35,6 @@ class InstagramLayoutViewController: UIViewController {
     }
     
     func designProperties() {
-        
-        userIdLabel.text = "ji_yeon"
-        userIdLabel.font = UIFont.boldSystemFont(ofSize: 30)
-        
         
         profileImageView.layer.cornerRadius = 20
         
