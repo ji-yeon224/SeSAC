@@ -13,6 +13,9 @@
 		CE16E86C2A6FADC7004449CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE16E86A2A6FADC7004449CA /* Main.storyboard */; };
 		CE16E86E2A6FADC8004449CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE16E86D2A6FADC8004449CA /* Assets.xcassets */; };
 		CE16E8712A6FADC8004449CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE16E86F2A6FADC8004449CA /* LaunchScreen.storyboard */; };
+		CE16E8792A6FB100004449CA /* EmotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16E8782A6FB100004449CA /* EmotionViewController.swift */; };
+		CE16E87B2A6FB244004449CA /* EmotionEnumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16E87A2A6FB244004449CA /* EmotionEnumeration.swift */; };
+		CE16E87D2A6FC1FA004449CA /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16E87C2A6FC1FA004449CA /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		CE16E86D2A6FADC8004449CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE16E8702A6FADC8004449CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE16E8722A6FADC8004449CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE16E8782A6FB100004449CA /* EmotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionViewController.swift; sourceTree = "<group>"; };
+		CE16E87A2A6FB244004449CA /* EmotionEnumeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionEnumeration.swift; sourceTree = "<group>"; };
+		CE16E87C2A6FC1FA004449CA /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +62,13 @@
 		CE16E8632A6FADC7004449CA /* week2Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				CE16E87C2A6FC1FA004449CA /* ResultViewController.swift */,
 				CE16E8642A6FADC7004449CA /* AppDelegate.swift */,
 				CE16E8662A6FADC7004449CA /* SceneDelegate.swift */,
 				CE16E8682A6FADC7004449CA /* ViewController.swift */,
 				CE16E86A2A6FADC7004449CA /* Main.storyboard */,
+				CE16E87A2A6FB244004449CA /* EmotionEnumeration.swift */,
+				CE16E8782A6FB100004449CA /* EmotionViewController.swift */,
 				CE16E86D2A6FADC8004449CA /* Assets.xcassets */,
 				CE16E86F2A6FADC8004449CA /* LaunchScreen.storyboard */,
 				CE16E8722A6FADC8004449CA /* Info.plist */,
@@ -138,9 +147,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE16E8792A6FB100004449CA /* EmotionViewController.swift in Sources */,
+				CE16E87B2A6FB244004449CA /* EmotionEnumeration.swift in Sources */,
 				CE16E8692A6FADC7004449CA /* ViewController.swift in Sources */,
 				CE16E8652A6FADC7004449CA /* AppDelegate.swift in Sources */,
 				CE16E8672A6FADC7004449CA /* SceneDelegate.swift in Sources */,
+				CE16E87D2A6FC1FA004449CA /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
