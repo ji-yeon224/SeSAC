@@ -27,10 +27,13 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bny-cn-H8W">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="133.33333333333334"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="&gt;_&lt;">
+                                        <color key="backgroundColor" red="0.94601738899999999" green="0.50297383959999997" blue="0.63367204050000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="50"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="&gt;_&lt;"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="&gt;_&lt;">
                                             <fontDescription key="titleFontDescription" name="Arial-BoldMT" family="Arial" pointSize="50"/>
-                                            <color key="baseBackgroundColor" red="0.94601738896316101" green="0.50297383958063169" blue="0.63367204048336745" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="EmotionButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vDa-OV-xjH"/>
@@ -38,10 +41,11 @@
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHv-bS-XSx">
                                         <rect key="frame" x="0.0" y="133.33333333333334" width="393" height="133.00000000000003"/>
+                                        <color key="backgroundColor" red="0.94601738899999999" green="0.6771083269" blue="0.42890388639999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="^_^">
+                                        <buttonConfiguration key="configuration" style="plain" title="^_^">
                                             <fontDescription key="titleFontDescription" name="Arial-BoldMT" family="Arial" pointSize="50"/>
-                                            <color key="baseBackgroundColor" red="0.94601738896316101" green="0.6771083269370094" blue="0.42890388637826315" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="EmotionButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sqE-EF-EH8"/>
@@ -49,10 +53,11 @@
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWS-Nq-wl2">
                                         <rect key="frame" x="0.0" y="266.33333333333331" width="393" height="133.33333333333331"/>
+                                        <color key="backgroundColor" red="0.84501993099999995" green="0.88225476270000003" blue="0.36468585889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="0_0">
+                                        <buttonConfiguration key="configuration" style="plain" title="0_0">
                                             <fontDescription key="titleFontDescription" name="Arial-BoldMT" family="Arial" pointSize="50"/>
-                                            <color key="baseBackgroundColor" red="0.8450199309833627" green="0.88225476270053482" blue="0.36468585888203719" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="EmotionButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cme-Rw-I8Q"/>
@@ -60,10 +65,11 @@
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZS-FH-VPC">
                                         <rect key="frame" x="0.0" y="399.66666666666669" width="393" height="133.00000000000006"/>
+                                        <color key="backgroundColor" red="0.50988738040000003" green="0.72970899089999997" blue="0.74364207329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="ㅜ_ㅜ">
+                                        <buttonConfiguration key="configuration" style="plain" title="ㅜ_ㅜ">
                                             <fontDescription key="titleFontDescription" name=".AppleSDGothicNeoI-Bold" family=".Apple SD Gothic NeoI" pointSize="50"/>
-                                            <color key="baseBackgroundColor" red="0.50988738040938186" green="0.72970899091450769" blue="0.74364207330659537" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="EmotionButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gCx-Zh-9X4"/>
@@ -71,10 +77,11 @@
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3K-By-V5R">
                                         <rect key="frame" x="0.0" y="532.66666666666663" width="393" height="133.33333333333337"/>
+                                        <color key="backgroundColor" red="0.39690386259999999" green="0.4831366849" blue="0.87286397989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="ㅠ_ㅠ">
+                                        <buttonConfiguration key="configuration" style="plain" title="ㅠ_ㅠ">
                                             <fontDescription key="titleFontDescription" name=".AppleSDGothicNeoI-Bold" family=".Apple SD Gothic NeoI" pointSize="50"/>
-                                            <color key="baseBackgroundColor" red="0.39690386260864396" green="0.48313668494230128" blue="0.87286397987225195" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="EmotionButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uH4-Vy-bVU"/>
