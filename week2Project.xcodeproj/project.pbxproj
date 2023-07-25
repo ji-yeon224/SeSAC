@@ -20,6 +20,9 @@
 		CE16E82C2A6F5B1E004449CA /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE16E82B2A6F5B1E004449CA /* IQKeyboardManagerSwift */; };
 		CE16E82F2A6F5BC5004449CA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CE16E82E2A6F5BC5004449CA /* Kingfisher */; };
 		CE16E8312A6F6E03004449CA /* 3.JPG in Resources */ = {isa = PBXBuildFile; fileRef = CE16E8302A6F6E03004449CA /* 3.JPG */; };
+		CE16E8332A6F936A004449CA /* Enumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16E8322A6F936A004449CA /* Enumeration.swift */; };
+		CE16E8352A6F98E0004449CA /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16E8342A6F98E0004449CA /* CalendarViewController.swift */; };
+		CE16E8372A6FA26B004449CA /* LifeCycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE16E8362A6FA26B004449CA /* LifeCycleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		CE16E81E2A6E0693004449CA /* CommitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitViewController.swift; sourceTree = "<group>"; };
 		CE16E8202A6E3E64004449CA /* TransitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionViewController.swift; sourceTree = "<group>"; };
 		CE16E8302A6F6E03004449CA /* 3.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.JPG; sourceTree = "<group>"; };
+		CE16E8322A6F936A004449CA /* Enumeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumeration.swift; sourceTree = "<group>"; };
+		CE16E8342A6F98E0004449CA /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		CE16E8362A6FA26B004449CA /* LifeCycleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeCycleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,9 @@
 				CE16E80C2A6E04C6004449CA /* SceneDelegate.swift */,
 				CE16E80E2A6E04C6004449CA /* ViewController.swift */,
 				CE16E8102A6E04C6004449CA /* Main.storyboard */,
+				CE16E8342A6F98E0004449CA /* CalendarViewController.swift */,
+				CE16E8362A6FA26B004449CA /* LifeCycleViewController.swift */,
+				CE16E8322A6F936A004449CA /* Enumeration.swift */,
 				CE16E8202A6E3E64004449CA /* TransitionViewController.swift */,
 				CE16E8132A6E04C7004449CA /* Assets.xcassets */,
 				CE16E8152A6E04C7004449CA /* LaunchScreen.storyboard */,
@@ -173,6 +182,9 @@
 				CE16E80B2A6E04C6004449CA /* AppDelegate.swift in Sources */,
 				CE16E8212A6E3E64004449CA /* TransitionViewController.swift in Sources */,
 				CE16E80D2A6E04C6004449CA /* SceneDelegate.swift in Sources */,
+				CE16E8352A6F98E0004449CA /* CalendarViewController.swift in Sources */,
+				CE16E8332A6F936A004449CA /* Enumeration.swift in Sources */,
+				CE16E8372A6FA26B004449CA /* LifeCycleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

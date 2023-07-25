@@ -26,12 +26,12 @@ class TransitionViewController: UIViewController {
     @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
         
         // 배열처럼 인덱스로 접근
-        if sender.selectedSegmentIndex == 0 {
+        if sender.selectedSegmentIndex == Actor.man.rawValue {
             let url = URL(string: "https://img.sbs.co.kr/newsnet/etv/upload/2023/06/13/30000854058_1280.jpg")
             actorImageView.kf.setImage(with: url)
             
-        } else if sender.selectedSegmentIndex == 1 {
-            let url = URL(string: "https://i.pinimg.com/474x/65/43/be/6543be87f87a07ebd8020689f38b081f.jpg")
+        } else if sender.selectedSegmentIndex == Actor.woman.rawValue {
+            let url = URL(string: "https://image.newsis.com/2023/05/04/NISI20230504_0001258444_web.jpg")
             actorImageView.kf.setImage(with: url)
         } else {
             

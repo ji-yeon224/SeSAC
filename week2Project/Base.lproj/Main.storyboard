@@ -292,16 +292,16 @@
             </objects>
             <point key="canvasLocation" x="6517" y="-7"/>
         </scene>
-        <!--Item-->
+        <!--Calendar View Controller-->
         <scene sceneID="CSU-ER-Lku">
             <objects>
-                <viewController id="mzy-te-u1T" sceneMemberID="viewController">
+                <viewController id="mzy-te-u1T" customClass="CalendarViewController" customModule="week2Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qcw-CC-BgT">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EOY-yF-jV3" customClass="FSCalendar">
-                                <rect key="frame" x="0.0" y="59" width="393" height="340.66666666666669"/>
+                                <rect key="frame" x="0.0" y="103.00000000000003" width="393" height="340.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="titleSelectionColor">
@@ -317,7 +317,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="날짜를 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dHl-1P-AXf" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="20" y="419.66666666666669" width="353" height="45"/>
+                                <rect key="frame" x="20" y="463.66666666666669" width="353" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="gWq-Kt-EPD"/>
                                 </constraints>
@@ -338,6 +338,45 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YjD-na-na4">
+                                <rect key="frame" x="20" y="557" width="65" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="show"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5O-5E-gjY">
+                                <rect key="frame" x="22" y="616" width="351" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="modal automatic(sheet)"/>
+                                <connections>
+                                    <segue destination="xhj-xM-P07" kind="presentation" modalPresentationStyle="pageSheet" id="3rq-AM-Ubx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgm-wW-aPn">
+                                <rect key="frame" x="22" y="671" width="355" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="modal fullscreen"/>
+                                <connections>
+                                    <segue destination="xhj-xM-P07" kind="presentation" modalPresentationStyle="fullScreen" id="vvO-MG-Xq3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s94-TX-7Aq">
+                                <rect key="frame" x="114" y="557" width="142" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="show detail"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMG-gH-JTJ">
+                                <rect key="frame" x="22" y="734" width="192" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="modal current context"/>
+                                <connections>
+                                    <segue destination="xhj-xM-P07" kind="presentation" modalPresentationStyle="currentContext" id="L7m-9V-3Ts"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ahH-qv-Tj1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -351,11 +390,39 @@
                             <constraint firstItem="EOY-yF-jV3" firstAttribute="height" secondItem="Qcw-CC-BgT" secondAttribute="height" multiplier="0.4" id="pgo-fj-NDu"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="2wo-OO-eMd"/>
+                    <navigationItem key="navigationItem" id="euG-HM-qcF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i5k-tn-Trr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5273" y="787"/>
+            <point key="canvasLocation" x="5846.5648854961828" y="700.70422535211276"/>
+        </scene>
+        <!--Life Cycle View Controller-->
+        <scene sceneID="hkQ-L3-AtY">
+            <objects>
+                <viewController id="xhj-xM-P07" customClass="LifeCycleViewController" customModule="week2Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gXc-D4-9b5">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDL-zc-p4C">
+                                <rect key="frame" x="46" y="98" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.072927512228488922" green="0.71187180280685425" blue="0.95754045248031616" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <segue destination="pS9-kS-BvX" kind="unwind" unwindAction="unwindToCalendar:" id="MZi-uf-U2k"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SA7-NK-oi7"/>
+                        <color key="backgroundColor" red="0.92269080877304077" green="0.82905572652816772" blue="0.21578159928321838" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AsV-M0-b4F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="pS9-kS-BvX" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="6810" y="701"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Uwp-ZL-hqf">
@@ -370,15 +437,35 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="feA-iJ-tOH"/>
                         <segue destination="OpC-e9-3Wb" kind="relationship" relationship="viewControllers" id="yOA-0Z-NTV"/>
-                        <segue destination="mzy-te-u1T" kind="relationship" relationship="viewControllers" id="4BF-HP-Vuf"/>
+                        <segue destination="69z-3j-uH9" kind="relationship" relationship="viewControllers" id="4BF-HP-Vuf"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OAl-J5-kYI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4113.740458015267" y="-7.042253521126761"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="Lee-bC-IgR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="69z-3j-uH9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="2wo-OO-eMd"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="apd-1C-NKv">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mzy-te-u1T" kind="relationship" relationship="rootViewController" id="JNH-By-d8s"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bbx-76-nOt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4919.8473282442746" y="700.70422535211276"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="vvO-MG-Xq3"/>
         <segue reference="DNX-jg-ltK"/>
     </inferredMetricsTieBreakers>
     <resources>
