@@ -8,11 +8,15 @@
 import Foundation
 
 enum Emotion: Int, CaseIterable {
-    case happy
+    case happy = 0
     case good
     case soso
     case notbad
     case sad
+    
+    var mood: String {
+            String(describing: self)
+        }
 }
 
 
