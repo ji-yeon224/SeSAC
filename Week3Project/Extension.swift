@@ -21,9 +21,9 @@ extension UITableViewController {
 
 extension UILabel {
     func configureTitleText() {
-        self.textColor = .blue
-        self.font = .boldSystemFont(ofSize: 20)
-        self.textAlignment = .center
+        self.textColor = .black
+        self.font = .boldSystemFont(ofSize: 14)
+        
         
     }
 }
