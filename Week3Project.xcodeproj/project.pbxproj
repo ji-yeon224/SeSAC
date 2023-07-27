@@ -13,6 +13,9 @@
 		CEAD00F92A72000E009D6C5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEAD00F72A72000E009D6C5A /* Main.storyboard */; };
 		CEAD00FB2A72000F009D6C5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEAD00FA2A72000F009D6C5A /* Assets.xcassets */; };
 		CEAD00FE2A72000F009D6C5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEAD00FC2A72000F009D6C5A /* LaunchScreen.storyboard */; };
+		CEAD01062A721007009D6C5A /* ToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD01052A721007009D6C5A /* ToDoTableViewController.swift */; };
+		CEAD01082A7232DA009D6C5A /* StudyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD01072A7232DA009D6C5A /* StudyTableViewController.swift */; };
+		CEAD010A2A72496C009D6C5A /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD01092A72496C009D6C5A /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		CEAD00FA2A72000F009D6C5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEAD00FD2A72000F009D6C5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEAD00FF2A72000F009D6C5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEAD01052A721007009D6C5A /* ToDoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		CEAD01072A7232DA009D6C5A /* StudyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		CEAD01092A72496C009D6C5A /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,8 @@
 		CEAD00F02A72000E009D6C5A /* Week3Project */ = {
 			isa = PBXGroup;
 			children = (
+				CEAD01072A7232DA009D6C5A /* StudyTableViewController.swift */,
+				CEAD01052A721007009D6C5A /* ToDoTableViewController.swift */,
 				CEAD00F12A72000E009D6C5A /* AppDelegate.swift */,
 				CEAD00F32A72000E009D6C5A /* SceneDelegate.swift */,
 				CEAD00F52A72000E009D6C5A /* ViewController.swift */,
@@ -63,6 +71,7 @@
 				CEAD00FA2A72000F009D6C5A /* Assets.xcassets */,
 				CEAD00FC2A72000F009D6C5A /* LaunchScreen.storyboard */,
 				CEAD00FF2A72000F009D6C5A /* Info.plist */,
+				CEAD01092A72496C009D6C5A /* Extension.swift */,
 			);
 			path = Week3Project;
 			sourceTree = "<group>";
@@ -139,6 +148,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEAD00F62A72000E009D6C5A /* ViewController.swift in Sources */,
+				CEAD01062A721007009D6C5A /* ToDoTableViewController.swift in Sources */,
+				CEAD01082A7232DA009D6C5A /* StudyTableViewController.swift in Sources */,
+				CEAD010A2A72496C009D6C5A /* Extension.swift in Sources */,
 				CEAD00F22A72000E009D6C5A /* AppDelegate.swift in Sources */,
 				CEAD00F42A72000E009D6C5A /* SceneDelegate.swift in Sources */,
 			);
