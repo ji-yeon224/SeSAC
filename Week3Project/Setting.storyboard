@@ -184,6 +184,7 @@
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="무엇을 구매하실 건가요?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sLe-Mg-3Mf">
                                     <rect key="frame" x="8" y="8" width="377" height="56"/>
+                                    <color key="backgroundColor" red="0.5715710209" green="0.81798555709999998" blue="0.83360419450000001" alpha="0.309343957" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="sLe-Mg-3Mf" secondAttribute="height" multiplier="185:17" id="f6p-jc-tWw"/>
                                     </constraints>

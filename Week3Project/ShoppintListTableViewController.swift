@@ -17,6 +17,7 @@ class ShoppintListTableViewController: UITableViewController {
         super.viewDidLoad()
 
         tableView?.rowHeight = 60
+        
     }
     
     @IBAction func returnKeyTapped(_ sender: UITextField) {
@@ -24,14 +25,19 @@ class ShoppintListTableViewController: UITableViewController {
     }
     
     @IBAction func addButtonClicked(_ sender: UIButton) {
-        
-        
+        let word = shoppingTextField.text!
+        if word.trimmingCharacters(in: .whitespaces).count == 0 {
+            textFieldAlert()
+            return
+        }
         
         shoppingList.append(shoppingTextField.text!)
         shoppingTextField.text = ""
         tableView.reloadData()
         
     }
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return shoppingList.count
     }
