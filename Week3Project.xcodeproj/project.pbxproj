@@ -18,6 +18,7 @@
 		CEAD010A2A72496C009D6C5A /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD01092A72496C009D6C5A /* Extension.swift */; };
 		CEAD010C2A7252BF009D6C5A /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEAD010B2A7252BF009D6C5A /* Setting.storyboard */; };
 		CEAD010E2A725A1A009D6C5A /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD010D2A725A1A009D6C5A /* SettingTableViewController.swift */; };
+		CEAD01102A72643E009D6C5A /* ShoppintListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD010F2A72643E009D6C5A /* ShoppintListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		CEAD01092A72496C009D6C5A /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		CEAD010B2A7252BF009D6C5A /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		CEAD010D2A725A1A009D6C5A /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		CEAD010F2A72643E009D6C5A /* ShoppintListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppintListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				CEAD00FF2A72000F009D6C5A /* Info.plist */,
 				CEAD01092A72496C009D6C5A /* Extension.swift */,
 				CEAD010B2A7252BF009D6C5A /* Setting.storyboard */,
+				CEAD010F2A72643E009D6C5A /* ShoppintListTableViewController.swift */,
 			);
 			path = Week3Project;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEAD01102A72643E009D6C5A /* ShoppintListTableViewController.swift in Sources */,
 				CEAD010E2A725A1A009D6C5A /* SettingTableViewController.swift in Sources */,
 				CEAD00F62A72000E009D6C5A /* ViewController.swift in Sources */,
 				CEAD01062A721007009D6C5A /* ToDoTableViewController.swift in Sources */,
