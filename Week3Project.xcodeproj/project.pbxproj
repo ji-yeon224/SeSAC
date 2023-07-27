@@ -16,6 +16,8 @@
 		CEAD01062A721007009D6C5A /* ToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD01052A721007009D6C5A /* ToDoTableViewController.swift */; };
 		CEAD01082A7232DA009D6C5A /* StudyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD01072A7232DA009D6C5A /* StudyTableViewController.swift */; };
 		CEAD010A2A72496C009D6C5A /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD01092A72496C009D6C5A /* Extension.swift */; };
+		CEAD010C2A7252BF009D6C5A /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEAD010B2A7252BF009D6C5A /* Setting.storyboard */; };
+		CEAD010E2A725A1A009D6C5A /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD010D2A725A1A009D6C5A /* SettingTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		CEAD01052A721007009D6C5A /* ToDoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		CEAD01072A7232DA009D6C5A /* StudyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		CEAD01092A72496C009D6C5A /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		CEAD010B2A7252BF009D6C5A /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		CEAD010D2A725A1A009D6C5A /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 		CEAD00F02A72000E009D6C5A /* Week3Project */ = {
 			isa = PBXGroup;
 			children = (
+				CEAD010D2A725A1A009D6C5A /* SettingTableViewController.swift */,
 				CEAD01072A7232DA009D6C5A /* StudyTableViewController.swift */,
 				CEAD01052A721007009D6C5A /* ToDoTableViewController.swift */,
 				CEAD00F12A72000E009D6C5A /* AppDelegate.swift */,
@@ -72,6 +77,7 @@
 				CEAD00FC2A72000F009D6C5A /* LaunchScreen.storyboard */,
 				CEAD00FF2A72000F009D6C5A /* Info.plist */,
 				CEAD01092A72496C009D6C5A /* Extension.swift */,
+				CEAD010B2A7252BF009D6C5A /* Setting.storyboard */,
 			);
 			path = Week3Project;
 			sourceTree = "<group>";
@@ -137,6 +143,7 @@
 				CEAD00FE2A72000F009D6C5A /* LaunchScreen.storyboard in Resources */,
 				CEAD00FB2A72000F009D6C5A /* Assets.xcassets in Resources */,
 				CEAD00F92A72000E009D6C5A /* Main.storyboard in Resources */,
+				CEAD010C2A7252BF009D6C5A /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEAD010E2A725A1A009D6C5A /* SettingTableViewController.swift in Sources */,
 				CEAD00F62A72000E009D6C5A /* ViewController.swift in Sources */,
 				CEAD01062A721007009D6C5A /* ToDoTableViewController.swift in Sources */,
 				CEAD01082A7232DA009D6C5A /* StudyTableViewController.swift in Sources */,
