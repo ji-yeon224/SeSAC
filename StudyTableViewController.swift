@@ -29,6 +29,9 @@ class StudyTableViewController: UITableViewController {
     //섹션의 헤더에 있는 타이틀
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return section == 0 ? "첫번째 섹션" : "두번째 섹션"
+        
+        
+        
     }
 
     //1. 셀의 개수 (필수)

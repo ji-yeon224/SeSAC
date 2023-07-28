@@ -19,6 +19,10 @@
 		CEAD010C2A7252BF009D6C5A /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEAD010B2A7252BF009D6C5A /* Setting.storyboard */; };
 		CEAD010E2A725A1A009D6C5A /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD010D2A725A1A009D6C5A /* SettingTableViewController.swift */; };
 		CEAD01102A72643E009D6C5A /* ShoppintListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD010F2A72643E009D6C5A /* ShoppintListTableViewController.swift */; };
+		CEAD01122A73503F009D6C5A /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD01112A73503F009D6C5A /* CustomTableViewController.swift */; };
+		CEAD01142A7352A3009D6C5A /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD01132A7352A3009D6C5A /* CustomTableViewCell.swift */; };
+		CEAD01182A7389DD009D6C5A /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD01172A7389DD009D6C5A /* ToDo.swift */; };
+		CEAD011A2A738A07009D6C5A /* ToDoInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD01192A738A07009D6C5A /* ToDoInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		CEAD010B2A7252BF009D6C5A /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		CEAD010D2A725A1A009D6C5A /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		CEAD010F2A72643E009D6C5A /* ShoppintListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppintListTableViewController.swift; sourceTree = "<group>"; };
+		CEAD01112A73503F009D6C5A /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
+		CEAD01132A7352A3009D6C5A /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		CEAD01172A7389DD009D6C5A /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = SOURCE_ROOT; };
+		CEAD01192A738A07009D6C5A /* ToDoInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +76,8 @@
 		CEAD00F02A72000E009D6C5A /* Week3Project */ = {
 			isa = PBXGroup;
 			children = (
+				CEAD01172A7389DD009D6C5A /* ToDo.swift */,
+				CEAD01192A738A07009D6C5A /* ToDoInformation.swift */,
 				CEAD010D2A725A1A009D6C5A /* SettingTableViewController.swift */,
 				CEAD01072A7232DA009D6C5A /* StudyTableViewController.swift */,
 				CEAD01052A721007009D6C5A /* ToDoTableViewController.swift */,
@@ -75,6 +85,8 @@
 				CEAD00F32A72000E009D6C5A /* SceneDelegate.swift */,
 				CEAD00F52A72000E009D6C5A /* ViewController.swift */,
 				CEAD00F72A72000E009D6C5A /* Main.storyboard */,
+				CEAD01132A7352A3009D6C5A /* CustomTableViewCell.swift */,
+				CEAD01112A73503F009D6C5A /* CustomTableViewController.swift */,
 				CEAD00FA2A72000F009D6C5A /* Assets.xcassets */,
 				CEAD00FC2A72000F009D6C5A /* LaunchScreen.storyboard */,
 				CEAD00FF2A72000F009D6C5A /* Info.plist */,
@@ -160,10 +172,14 @@
 				CEAD01102A72643E009D6C5A /* ShoppintListTableViewController.swift in Sources */,
 				CEAD010E2A725A1A009D6C5A /* SettingTableViewController.swift in Sources */,
 				CEAD00F62A72000E009D6C5A /* ViewController.swift in Sources */,
+				CEAD01182A7389DD009D6C5A /* ToDo.swift in Sources */,
+				CEAD011A2A738A07009D6C5A /* ToDoInformation.swift in Sources */,
 				CEAD01062A721007009D6C5A /* ToDoTableViewController.swift in Sources */,
 				CEAD01082A7232DA009D6C5A /* StudyTableViewController.swift in Sources */,
 				CEAD010A2A72496C009D6C5A /* Extension.swift in Sources */,
+				CEAD01142A7352A3009D6C5A /* CustomTableViewCell.swift in Sources */,
 				CEAD00F22A72000E009D6C5A /* AppDelegate.swift in Sources */,
+				CEAD01122A73503F009D6C5A /* CustomTableViewController.swift in Sources */,
 				CEAD00F42A72000E009D6C5A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
