@@ -44,7 +44,7 @@ class ShoppintListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingCell")!
-        
+        cell.accessoryView = UIImageView(image: UIImage(systemName: "star"))
         cell.textLabel?.text = shoppingList[indexPath.row]
         return cell
         

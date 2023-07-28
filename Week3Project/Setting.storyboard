@@ -201,7 +201,7 @@
                                     </constraints>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="추가"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="star" title="추가"/>
                                     <connections>
                                         <action selector="addButtonClicked:" destination="Su3-mh-D6f" eventType="touchUpInside" id="SAt-Jt-agl"/>
                                     </connections>
@@ -219,15 +219,15 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="shoppingCell" textLabel="PZ1-Mv-TfN" imageView="VXE-5K-VZg" style="IBUITableViewCellStyleDefault" id="En9-NI-Ylc">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="shoppingCell" textLabel="PZ1-Mv-TfN" imageView="VXE-5K-VZg" style="IBUITableViewCellStyleDefault" id="En9-NI-Ylc">
                                 <rect key="frame" x="20" y="127.33333206176758" width="353" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="En9-NI-Ylc" id="okO-8N-B8A">
-                                    <rect key="frame" x="0.0" y="0.0" width="353" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="309" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PZ1-Mv-TfN">
-                                            <rect key="frame" x="59" y="0.0" width="274" height="43.666667938232422"/>
+                                            <rect key="frame" x="59" y="0.0" width="242" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                             <nil key="textColor"/>
@@ -348,6 +348,7 @@
         <image name="iphone" catalog="system" width="112" height="128"/>
         <image name="moon.fill" catalog="system" width="128" height="123"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="star" width="128" height="128"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
