@@ -31,7 +31,7 @@ class CustomShoppingListTableViewController: UITableViewController {
             textFieldAlert()
             return
         }
-        shoppingList.list.append(ListInfo(shopping: word, checked: true, like: false))
+        shoppingList.list.append(ListInfo(shopping: word, checked: false, like: false))
         shoppingListTextField.text = ""
        
         tableView.reloadData()
