@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qyN-ST-Yos">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1ql-Kc-ErX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
@@ -261,8 +261,8 @@
         <!--쇼핑-->
         <scene sceneID="5Ny-h8-A6b">
             <objects>
-                <tableViewController id="wSE-18-IVY" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="LyL-Nt-JJA">
+                <tableViewController id="wSE-18-IVY" customClass="CustomShoppingListTableViewController" customModule="Week3Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="LyL-Nt-JJA">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -274,11 +274,17 @@
                                     <rect key="frame" x="16" y="16" width="361" height="59"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <action selector="returnKeyClicked:" destination="wSE-18-IVY" eventType="editingDidEndOnExit" id="RmN-iq-3va"/>
+                                    </connections>
                                 </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvg-gu-Fs8">
                                     <rect key="frame" x="312.33333333333331" y="28" width="53.666666666666686" height="35"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="추가"/>
+                                    <connections>
+                                        <action selector="addButtonClicked:" destination="wSE-18-IVY" eventType="touchUpInside" id="rTC-mo-OEN"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -294,7 +300,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="86" id="Tpq-Ic-g05">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ListCell" rowHeight="86" id="Tpq-Ic-g05" customClass="CustomShoppingTableViewCell" customModule="Week3Project" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="141" width="393" height="86"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tpq-Ic-g05" id="PDC-uS-5no">
@@ -302,26 +308,32 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybb-6z-Tlc">
-                                            <rect key="frame" x="20" y="10" width="353" height="66"/>
+                                            <rect key="frame" x="14" y="10" width="365" height="66"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="325-S8-lhx">
-                                                    <rect key="frame" x="20" y="12.666666666666671" width="41" height="41"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="325-S8-lhx">
+                                                    <rect key="frame" x="20" y="14.333333333333329" width="41" height="37.999999999999986"/>
+                                                    <color key="tintColor" red="0.94601738899999999" green="0.50297383959999997" blue="0.63367204050000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="41" id="VCZ-sh-7Fl"/>
                                                         <constraint firstAttribute="width" constant="41" id="e3I-cn-Rpo"/>
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uH-bb-hf4">
-                                                    <rect key="frame" x="292" y="12.666666666666671" width="41" height="41"/>
+                                                    <rect key="frame" x="304" y="12.666666666666671" width="41" height="41"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="41" id="0Bv-Ou-8av"/>
                                                         <constraint firstAttribute="width" constant="41" id="RMj-hl-XAu"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="star" catalog="system">
+                                                        <color key="baseForegroundColor" red="0.94601738899999999" green="0.74267653469999995" blue="0.3077661605" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="likeButtonClicked:" destination="Tpq-Ic-g05" eventType="touchUpInside" id="wR0-9N-YnK"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWc-Oe-keJ">
-                                                    <rect key="frame" x="81" y="21" width="203" height="24"/>
+                                                    <rect key="frame" x="81" y="21" width="215" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -341,12 +353,18 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="ybb-6z-Tlc" firstAttribute="centerY" secondItem="PDC-uS-5no" secondAttribute="centerY" id="1H1-0v-yr4"/>
-                                        <constraint firstAttribute="trailing" secondItem="ybb-6z-Tlc" secondAttribute="trailing" constant="20" id="CPu-cI-LyT"/>
+                                        <constraint firstAttribute="trailing" secondItem="ybb-6z-Tlc" secondAttribute="trailing" constant="14" id="CPu-cI-LyT"/>
                                         <constraint firstItem="ybb-6z-Tlc" firstAttribute="top" secondItem="PDC-uS-5no" secondAttribute="top" constant="10" id="RL5-Gu-0vO"/>
-                                        <constraint firstItem="ybb-6z-Tlc" firstAttribute="leading" secondItem="PDC-uS-5no" secondAttribute="leading" constant="20" id="WLM-RU-xvD"/>
+                                        <constraint firstItem="ybb-6z-Tlc" firstAttribute="leading" secondItem="PDC-uS-5no" secondAttribute="leading" constant="14" id="WLM-RU-xvD"/>
                                         <constraint firstAttribute="bottom" secondItem="ybb-6z-Tlc" secondAttribute="bottom" constant="10" id="vmf-aa-bC8"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="backView" destination="ybb-6z-Tlc" id="NKr-BD-uYq"/>
+                                    <outlet property="checkboxImageView" destination="325-S8-lhx" id="dbD-O6-1X1"/>
+                                    <outlet property="likeButton" destination="9uH-bb-hf4" id="6PR-eR-vf0"/>
+                                    <outlet property="shoppingListLabel" destination="MWc-Oe-keJ" id="9rj-nk-LNx"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -355,10 +373,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="쇼핑" id="Q2E-hf-voO"/>
+                    <connections>
+                        <outlet property="addButton" destination="Tvg-gu-Fs8" id="1tw-uF-Gx0"/>
+                        <outlet property="shoppingListTextField" destination="8K6-7o-xv9" id="wbc-fE-AGb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nx2-pZ-fho" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7008" y="656"/>
+            <point key="canvasLocation" x="7002" y="580"/>
         </scene>
         <!--설정-->
         <scene sceneID="fjP-Xv-5Ic">
@@ -465,9 +487,11 @@
     <resources>
         <image name="bed.double.fill" catalog="system" width="128" height="82"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>
+        <image name="checkmark.square" catalog="system" width="128" height="114"/>
         <image name="iphone" catalog="system" width="112" height="128"/>
         <image name="moon.fill" catalog="system" width="128" height="123"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <image name="star" width="128" height="128"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

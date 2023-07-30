@@ -23,8 +23,10 @@
 		CEAD01142A7352A3009D6C5A /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD01132A7352A3009D6C5A /* CustomTableViewCell.swift */; };
 		CEAD01182A7389DD009D6C5A /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD01172A7389DD009D6C5A /* ToDo.swift */; };
 		CEAD011A2A738A07009D6C5A /* ToDoInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD01192A738A07009D6C5A /* ToDoInformation.swift */; };
-		CEAD011C2A73E951009D6C5A /* ShoppingListCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD011B2A73E951009D6C5A /* ShoppingListCustomTableViewCell.swift */; };
 		CEAD011E2A73E986009D6C5A /* CustomShoppingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD011D2A73E986009D6C5A /* CustomShoppingListTableViewController.swift */; };
+		CEAD01222A740FDF009D6C5A /* CustomShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD01212A740FDF009D6C5A /* CustomShoppingTableViewCell.swift */; };
+		CEAD01242A741C0B009D6C5A /* ListInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD01232A741C0B009D6C5A /* ListInfo.swift */; };
+		CEAD01262A742281009D6C5A /* ShoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD01252A742281009D6C5A /* ShoppingList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,8 +48,10 @@
 		CEAD01132A7352A3009D6C5A /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		CEAD01172A7389DD009D6C5A /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ToDo.swift; path = Week3Project/Study/ToDo.swift; sourceTree = SOURCE_ROOT; };
 		CEAD01192A738A07009D6C5A /* ToDoInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoInformation.swift; sourceTree = "<group>"; };
-		CEAD011B2A73E951009D6C5A /* ShoppingListCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListCustomTableViewCell.swift; sourceTree = "<group>"; };
 		CEAD011D2A73E986009D6C5A /* CustomShoppingListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShoppingListTableViewController.swift; sourceTree = "<group>"; };
+		CEAD01212A740FDF009D6C5A /* CustomShoppingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShoppingTableViewCell.swift; sourceTree = "<group>"; };
+		CEAD01232A741C0B009D6C5A /* ListInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInfo.swift; sourceTree = "<group>"; };
+		CEAD01252A742281009D6C5A /* ShoppingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 				CEAD01202A73EB5C009D6C5A /* Assignment */,
 				CEAD011F2A73EAF5009D6C5A /* Study */,
 				CEAD010D2A725A1A009D6C5A /* SettingTableViewController.swift */,
+				CEAD01092A72496C009D6C5A /* Extension.swift */,
 				CEAD00F12A72000E009D6C5A /* AppDelegate.swift */,
 				CEAD00F32A72000E009D6C5A /* SceneDelegate.swift */,
 				CEAD00F52A72000E009D6C5A /* ViewController.swift */,
@@ -102,7 +107,6 @@
 				CEAD01052A721007009D6C5A /* ToDoTableViewController.swift */,
 				CEAD01132A7352A3009D6C5A /* CustomTableViewCell.swift */,
 				CEAD01112A73503F009D6C5A /* CustomTableViewController.swift */,
-				CEAD01092A72496C009D6C5A /* Extension.swift */,
 				CEAD00F72A72000E009D6C5A /* Main.storyboard */,
 			);
 			path = Study;
@@ -113,8 +117,10 @@
 			children = (
 				CEAD010F2A72643E009D6C5A /* ShoppintListTableViewController.swift */,
 				CEAD011D2A73E986009D6C5A /* CustomShoppingListTableViewController.swift */,
-				CEAD011B2A73E951009D6C5A /* ShoppingListCustomTableViewCell.swift */,
 				CEAD010B2A7252BF009D6C5A /* Setting.storyboard */,
+				CEAD01212A740FDF009D6C5A /* CustomShoppingTableViewCell.swift */,
+				CEAD01232A741C0B009D6C5A /* ListInfo.swift */,
+				CEAD01252A742281009D6C5A /* ShoppingList.swift */,
 			);
 			path = Assignment;
 			sourceTree = "<group>";
@@ -192,14 +198,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEAD01102A72643E009D6C5A /* ShoppintListTableViewController.swift in Sources */,
-				CEAD011C2A73E951009D6C5A /* ShoppingListCustomTableViewCell.swift in Sources */,
 				CEAD010E2A725A1A009D6C5A /* SettingTableViewController.swift in Sources */,
 				CEAD00F62A72000E009D6C5A /* ViewController.swift in Sources */,
 				CEAD011E2A73E986009D6C5A /* CustomShoppingListTableViewController.swift in Sources */,
 				CEAD01182A7389DD009D6C5A /* ToDo.swift in Sources */,
+				CEAD01262A742281009D6C5A /* ShoppingList.swift in Sources */,
 				CEAD011A2A738A07009D6C5A /* ToDoInformation.swift in Sources */,
 				CEAD01062A721007009D6C5A /* ToDoTableViewController.swift in Sources */,
+				CEAD01242A741C0B009D6C5A /* ListInfo.swift in Sources */,
 				CEAD01082A7232DA009D6C5A /* StudyTableViewController.swift in Sources */,
+				CEAD01222A740FDF009D6C5A /* CustomShoppingTableViewCell.swift in Sources */,
 				CEAD010A2A72496C009D6C5A /* Extension.swift in Sources */,
 				CEAD01142A7352A3009D6C5A /* CustomTableViewCell.swift in Sources */,
 				CEAD00F22A72000E009D6C5A /* AppDelegate.swift in Sources */,
