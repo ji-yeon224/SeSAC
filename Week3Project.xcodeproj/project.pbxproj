@@ -27,6 +27,11 @@
 		CEAD01222A740FDF009D6C5A /* CustomShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD01212A740FDF009D6C5A /* CustomShoppingTableViewCell.swift */; };
 		CEAD01242A741C0B009D6C5A /* ListInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD01232A741C0B009D6C5A /* ListInfo.swift */; };
 		CEAD01262A742281009D6C5A /* ShoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD01252A742281009D6C5A /* ShoppingList.swift */; };
+		CEAD01282A764374009D6C5A /* Movie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEAD01272A764374009D6C5A /* Movie.storyboard */; };
+		CEAD012C2A7659C3009D6C5A /* MovieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD012B2A7659C3009D6C5A /* MovieTableViewController.swift */; };
+		CEAD012E2A765B78009D6C5A /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD012D2A765B78009D6C5A /* MovieInfo.swift */; };
+		CEAD01302A765B97009D6C5A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD012F2A765B97009D6C5A /* Movie.swift */; };
+		CEAD01322A765C7A009D6C5A /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD01312A765C7A009D6C5A /* MovieTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +57,11 @@
 		CEAD01212A740FDF009D6C5A /* CustomShoppingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShoppingTableViewCell.swift; sourceTree = "<group>"; };
 		CEAD01232A741C0B009D6C5A /* ListInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInfo.swift; sourceTree = "<group>"; };
 		CEAD01252A742281009D6C5A /* ShoppingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingList.swift; sourceTree = "<group>"; };
+		CEAD01272A764374009D6C5A /* Movie.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Movie.storyboard; sourceTree = "<group>"; };
+		CEAD012B2A7659C3009D6C5A /* MovieTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewController.swift; sourceTree = "<group>"; };
+		CEAD012D2A765B78009D6C5A /* MovieInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
+		CEAD012F2A765B97009D6C5A /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		CEAD01312A765C7A009D6C5A /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,12 +125,17 @@
 		CEAD01202A73EB5C009D6C5A /* Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				CEAD012D2A765B78009D6C5A /* MovieInfo.swift */,
 				CEAD010F2A72643E009D6C5A /* ShoppintListTableViewController.swift */,
 				CEAD011D2A73E986009D6C5A /* CustomShoppingListTableViewController.swift */,
 				CEAD010B2A7252BF009D6C5A /* Setting.storyboard */,
 				CEAD01212A740FDF009D6C5A /* CustomShoppingTableViewCell.swift */,
 				CEAD01232A741C0B009D6C5A /* ListInfo.swift */,
 				CEAD01252A742281009D6C5A /* ShoppingList.swift */,
+				CEAD01272A764374009D6C5A /* Movie.storyboard */,
+				CEAD012B2A7659C3009D6C5A /* MovieTableViewController.swift */,
+				CEAD01312A765C7A009D6C5A /* MovieTableViewCell.swift */,
+				CEAD012F2A765B97009D6C5A /* Movie.swift */,
 			);
 			path = Assignment;
 			sourceTree = "<group>";
@@ -183,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEAD01282A764374009D6C5A /* Movie.storyboard in Resources */,
 				CEAD00FE2A72000F009D6C5A /* LaunchScreen.storyboard in Resources */,
 				CEAD00FB2A72000F009D6C5A /* Assets.xcassets in Resources */,
 				CEAD00F92A72000E009D6C5A /* Main.storyboard in Resources */,
@@ -197,15 +213,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEAD01302A765B97009D6C5A /* Movie.swift in Sources */,
 				CEAD01102A72643E009D6C5A /* ShoppintListTableViewController.swift in Sources */,
 				CEAD010E2A725A1A009D6C5A /* SettingTableViewController.swift in Sources */,
 				CEAD00F62A72000E009D6C5A /* ViewController.swift in Sources */,
 				CEAD011E2A73E986009D6C5A /* CustomShoppingListTableViewController.swift in Sources */,
 				CEAD01182A7389DD009D6C5A /* ToDo.swift in Sources */,
+				CEAD012C2A7659C3009D6C5A /* MovieTableViewController.swift in Sources */,
 				CEAD01262A742281009D6C5A /* ShoppingList.swift in Sources */,
 				CEAD011A2A738A07009D6C5A /* ToDoInformation.swift in Sources */,
 				CEAD01062A721007009D6C5A /* ToDoTableViewController.swift in Sources */,
+				CEAD01322A765C7A009D6C5A /* MovieTableViewCell.swift in Sources */,
 				CEAD01242A741C0B009D6C5A /* ListInfo.swift in Sources */,
+				CEAD012E2A765B78009D6C5A /* MovieInfo.swift in Sources */,
 				CEAD01082A7232DA009D6C5A /* StudyTableViewController.swift in Sources */,
 				CEAD01222A740FDF009D6C5A /* CustomShoppingTableViewCell.swift in Sources */,
 				CEAD010A2A72496C009D6C5A /* Extension.swift in Sources */,
