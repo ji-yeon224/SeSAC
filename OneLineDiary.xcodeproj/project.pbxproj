@@ -13,6 +13,9 @@
 		CEAD659E2A773A65003E968C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEAD659C2A773A65003E968C /* Main.storyboard */; };
 		CEAD65A02A773A66003E968C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEAD659F2A773A66003E968C /* Assets.xcassets */; };
 		CEAD65A32A773A66003E968C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEAD65A12A773A66003E968C /* LaunchScreen.storyboard */; };
+		CEAD65AB2A773ACB003E968C /* DiaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD65AA2A773ACB003E968C /* DiaryTableViewController.swift */; };
+		CEAD65AE2A773BC4003E968C /* DiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD65AC2A773BC4003E968C /* DiaryTableViewCell.swift */; };
+		CEAD65AF2A773BC4003E968C /* DiaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEAD65AD2A773BC4003E968C /* DiaryTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		CEAD659F2A773A66003E968C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEAD65A22A773A66003E968C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEAD65A42A773A66003E968C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEAD65AA2A773ACB003E968C /* DiaryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewController.swift; sourceTree = "<group>"; };
+		CEAD65AC2A773BC4003E968C /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
+		CEAD65AD2A773BC4003E968C /* DiaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,9 @@
 				CEAD65982A773A65003E968C /* SceneDelegate.swift */,
 				CEAD659A2A773A65003E968C /* ViewController.swift */,
 				CEAD659C2A773A65003E968C /* Main.storyboard */,
+				CEAD65AC2A773BC4003E968C /* DiaryTableViewCell.swift */,
+				CEAD65AD2A773BC4003E968C /* DiaryTableViewCell.xib */,
+				CEAD65AA2A773ACB003E968C /* DiaryTableViewController.swift */,
 				CEAD659F2A773A66003E968C /* Assets.xcassets */,
 				CEAD65A12A773A66003E968C /* LaunchScreen.storyboard */,
 				CEAD65A42A773A66003E968C /* Info.plist */,
@@ -128,6 +137,7 @@
 				CEAD65A32A773A66003E968C /* LaunchScreen.storyboard in Resources */,
 				CEAD65A02A773A66003E968C /* Assets.xcassets in Resources */,
 				CEAD659E2A773A65003E968C /* Main.storyboard in Resources */,
+				CEAD65AF2A773BC4003E968C /* DiaryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +149,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEAD659B2A773A65003E968C /* ViewController.swift in Sources */,
+				CEAD65AE2A773BC4003E968C /* DiaryTableViewCell.swift in Sources */,
+				CEAD65AB2A773ACB003E968C /* DiaryTableViewController.swift in Sources */,
 				CEAD65972A773A65003E968C /* AppDelegate.swift in Sources */,
 				CEAD65992A773A65003E968C /* SceneDelegate.swift in Sources */,
 			);
@@ -287,6 +299,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DJP8DYB9HG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OneLineDiary/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -314,6 +327,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DJP8DYB9HG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OneLineDiary/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
