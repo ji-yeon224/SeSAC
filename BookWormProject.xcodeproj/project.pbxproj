@@ -13,6 +13,13 @@
 		CEC5EE7C2A77C9EE00EF23DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC5EE7A2A77C9EE00EF23DA /* Main.storyboard */; };
 		CEC5EE7E2A77C9EE00EF23DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC5EE7D2A77C9EE00EF23DA /* Assets.xcassets */; };
 		CEC5EE812A77C9EE00EF23DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC5EE7F2A77C9EE00EF23DA /* LaunchScreen.storyboard */; };
+		CEC5EE912A77D61800EF23DA /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5EE902A77D61800EF23DA /* Movie.swift */; };
+		CEC5EE932A77D8B000EF23DA /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5EE922A77D8B000EF23DA /* MovieInfo.swift */; };
+		CEC5EE952A77DEE800EF23DA /* BookCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5EE942A77DEE800EF23DA /* BookCollectionViewController.swift */; };
+		CEC5EE982A77DF0A00EF23DA /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5EE962A77DF0A00EF23DA /* BookCollectionViewCell.swift */; };
+		CEC5EE992A77DF0A00EF23DA /* BookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC5EE972A77DF0A00EF23DA /* BookCollectionViewCell.xib */; };
+		CEC5EE9B2A77EA7700EF23DA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5EE9A2A77EA7700EF23DA /* SearchViewController.swift */; };
+		CEC5EE9D2A77ED9700EF23DA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5EE9C2A77ED9700EF23DA /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,13 @@
 		CEC5EE7D2A77C9EE00EF23DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEC5EE802A77C9EE00EF23DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEC5EE822A77C9EE00EF23DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEC5EE902A77D61800EF23DA /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		CEC5EE922A77D8B000EF23DA /* MovieInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
+		CEC5EE942A77DEE800EF23DA /* BookCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewController.swift; sourceTree = "<group>"; };
+		CEC5EE962A77DF0A00EF23DA /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
+		CEC5EE972A77DF0A00EF23DA /* BookCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCollectionViewCell.xib; sourceTree = "<group>"; };
+		CEC5EE9A2A77EA7700EF23DA /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		CEC5EE9C2A77ED9700EF23DA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +74,16 @@
 				CEC5EE762A77C9EE00EF23DA /* SceneDelegate.swift */,
 				CEC5EE782A77C9EE00EF23DA /* ViewController.swift */,
 				CEC5EE7A2A77C9EE00EF23DA /* Main.storyboard */,
+				CEC5EE9C2A77ED9700EF23DA /* DetailViewController.swift */,
+				CEC5EE9A2A77EA7700EF23DA /* SearchViewController.swift */,
+				CEC5EE962A77DF0A00EF23DA /* BookCollectionViewCell.swift */,
+				CEC5EE972A77DF0A00EF23DA /* BookCollectionViewCell.xib */,
+				CEC5EE942A77DEE800EF23DA /* BookCollectionViewController.swift */,
+				CEC5EE922A77D8B000EF23DA /* MovieInfo.swift */,
 				CEC5EE7D2A77C9EE00EF23DA /* Assets.xcassets */,
 				CEC5EE7F2A77C9EE00EF23DA /* LaunchScreen.storyboard */,
 				CEC5EE822A77C9EE00EF23DA /* Info.plist */,
+				CEC5EE902A77D61800EF23DA /* Movie.swift */,
 			);
 			path = BookWormProject;
 			sourceTree = "<group>";
@@ -126,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEC5EE812A77C9EE00EF23DA /* LaunchScreen.storyboard in Resources */,
+				CEC5EE992A77DF0A00EF23DA /* BookCollectionViewCell.xib in Resources */,
 				CEC5EE7E2A77C9EE00EF23DA /* Assets.xcassets in Resources */,
 				CEC5EE7C2A77C9EE00EF23DA /* Main.storyboard in Resources */,
 			);
@@ -138,9 +160,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEC5EE9D2A77ED9700EF23DA /* DetailViewController.swift in Sources */,
+				CEC5EE932A77D8B000EF23DA /* MovieInfo.swift in Sources */,
+				CEC5EE912A77D61800EF23DA /* Movie.swift in Sources */,
+				CEC5EE9B2A77EA7700EF23DA /* SearchViewController.swift in Sources */,
 				CEC5EE792A77C9EE00EF23DA /* ViewController.swift in Sources */,
 				CEC5EE752A77C9EE00EF23DA /* AppDelegate.swift in Sources */,
+				CEC5EE982A77DF0A00EF23DA /* BookCollectionViewCell.swift in Sources */,
 				CEC5EE772A77C9EE00EF23DA /* SceneDelegate.swift in Sources */,
+				CEC5EE952A77DEE800EF23DA /* BookCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +315,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DJP8DYB9HG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookWormProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -314,6 +343,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DJP8DYB9HG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BookWormProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
