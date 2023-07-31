@@ -101,6 +101,11 @@ class DiaryTableViewController: UITableViewController {
         let vc = sb.instantiateViewController(identifier: "DetailViewController") as! DetailViewController
         // let vc = DetailViewController()
         
+        //Pass Data 2. vc가 가지고 있는 프로퍼티에 데이터 추가
+        //vc.contents = "Diary 뷰컨트롤러에서 데이터 전달하면서 화면 전환하기!"
+        vc.contents = list[indexPath.row]
+        
+        
         //인터페이스 빌더에 네비게이션 컨트롤러가 임베드 되어 있어야함 push가 동작한다.
         navigationController?.pushViewController(vc, animated: true)
         

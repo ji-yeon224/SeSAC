@@ -8,11 +8,22 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    //Pass Data 1. 데이터를 받을 공간(프로퍼티 생성)
+    var contents: String = "빈 공간"
+    
+    @IBOutlet var contentsLabel: UILabel!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackgroundColor()
-        // Do any additional setup after loading the view.
+        contentsLabel.numberOfLines = 0
+        
+        //Pass Data 3. 전달 받은 값을 뷰에 표현
+        contentsLabel.text = contents
+        
     }
     
     @IBAction func deleteButtonClicked(_ sender: UIBarButtonItem) {

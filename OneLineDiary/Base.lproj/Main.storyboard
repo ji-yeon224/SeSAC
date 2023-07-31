@@ -91,7 +91,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lqm-mP-fVp">
-                                <rect key="frame" x="0.0" y="769" width="393" height="49"/>
+                                <rect key="frame" x="0.0" y="774" width="393" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="eYg-xD-uAS"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem title="삭제" id="fdr-qO-6LI">
                                         <connections>
@@ -102,15 +105,28 @@
                                     <barButtonItem title="Item" id="gOm-l5-Q0b"/>
                                 </items>
                             </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxm-j2-7GI">
+                                <rect key="frame" x="30" y="89" width="333" height="655"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8aI-nc-g7U"/>
                         <color key="backgroundColor" systemColor="systemCyanColor"/>
                         <constraints>
+                            <constraint firstItem="lqm-mP-fVp" firstAttribute="top" secondItem="sxm-j2-7GI" secondAttribute="bottom" constant="30" id="JDg-C7-9RG"/>
                             <constraint firstItem="lqm-mP-fVp" firstAttribute="trailing" secondItem="8aI-nc-g7U" secondAttribute="trailing" id="VCr-bj-DFg"/>
+                            <constraint firstItem="8aI-nc-g7U" firstAttribute="trailing" secondItem="sxm-j2-7GI" secondAttribute="trailing" constant="30" id="VGM-3A-2cc"/>
+                            <constraint firstItem="sxm-j2-7GI" firstAttribute="top" secondItem="8aI-nc-g7U" secondAttribute="top" constant="30" id="Z1v-au-nAZ"/>
+                            <constraint firstItem="sxm-j2-7GI" firstAttribute="leading" secondItem="8aI-nc-g7U" secondAttribute="leading" constant="30" id="fgX-b6-Sdz"/>
                             <constraint firstItem="lqm-mP-fVp" firstAttribute="bottom" secondItem="8aI-nc-g7U" secondAttribute="bottom" id="s2s-WK-wp4"/>
                             <constraint firstItem="lqm-mP-fVp" firstAttribute="leading" secondItem="8aI-nc-g7U" secondAttribute="leading" id="xRZ-ZH-ER5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contentsLabel" destination="sxm-j2-7GI" id="sUd-bd-XYm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TJf-gz-mFQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
