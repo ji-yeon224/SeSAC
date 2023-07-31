@@ -24,6 +24,19 @@ class DiaryTableViewController: UITableViewController {
         tableView.rowHeight = UITableView.automaticDimension
     }
     
+    
+    @IBAction func searchBarButtonItemClicked(_ sender: UIBarButtonItem) {
+        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "SearchCollectionViewController") as! SearchCollectionViewController
+        
+        
+        navigationController?.pushViewController(vc, animated: true)
+        
+        
+    }
+    
+    
     @IBAction func addBarButtonClicked(_ sender: UIBarButtonItem) {
         
         //1. 스토리보드 파일 찾기

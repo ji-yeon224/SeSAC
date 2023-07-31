@@ -18,6 +18,9 @@
 		CEAD65AF2A773BC4003E968C /* DiaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEAD65AD2A773BC4003E968C /* DiaryTableViewCell.xib */; };
 		CEAD65B12A7752B8003E968C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD65B02A7752B8003E968C /* DetailViewController.swift */; };
 		CEAD65B32A776259003E968C /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD65B22A776259003E968C /* Extension+UIViewController.swift */; };
+		CEAD65B52A77795E003E968C /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD65B42A77795E003E968C /* SearchCollectionViewController.swift */; };
+		CEAD65B82A777AE1003E968C /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD65B62A777AE1003E968C /* SearchCollectionViewCell.swift */; };
+		CEAD65B92A777AE1003E968C /* SearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEAD65B72A777AE1003E968C /* SearchCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		CEAD65AD2A773BC4003E968C /* DiaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryTableViewCell.xib; sourceTree = "<group>"; };
 		CEAD65B02A7752B8003E968C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		CEAD65B22A776259003E968C /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = SOURCE_ROOT; };
+		CEAD65B42A77795E003E968C /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = "<group>"; };
+		CEAD65B62A777AE1003E968C /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		CEAD65B72A777AE1003E968C /* SearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,9 @@
 				CEAD65982A773A65003E968C /* SceneDelegate.swift */,
 				CEAD659A2A773A65003E968C /* AddViewController.swift */,
 				CEAD659C2A773A65003E968C /* Main.storyboard */,
+				CEAD65B62A777AE1003E968C /* SearchCollectionViewCell.swift */,
+				CEAD65B72A777AE1003E968C /* SearchCollectionViewCell.xib */,
+				CEAD65B42A77795E003E968C /* SearchCollectionViewController.swift */,
 				CEAD65AC2A773BC4003E968C /* DiaryTableViewCell.swift */,
 				CEAD65AD2A773BC4003E968C /* DiaryTableViewCell.xib */,
 				CEAD65AA2A773ACB003E968C /* DiaryTableViewController.swift */,
@@ -142,6 +151,7 @@
 			files = (
 				CEAD65A32A773A66003E968C /* LaunchScreen.storyboard in Resources */,
 				CEAD65A02A773A66003E968C /* Assets.xcassets in Resources */,
+				CEAD65B92A777AE1003E968C /* SearchCollectionViewCell.xib in Resources */,
 				CEAD659E2A773A65003E968C /* Main.storyboard in Resources */,
 				CEAD65AF2A773BC4003E968C /* DiaryTableViewCell.xib in Resources */,
 			);
@@ -154,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEAD65B52A77795E003E968C /* SearchCollectionViewController.swift in Sources */,
 				CEAD659B2A773A65003E968C /* AddViewController.swift in Sources */,
 				CEAD65B32A776259003E968C /* Extension+UIViewController.swift in Sources */,
 				CEAD65AE2A773BC4003E968C /* DiaryTableViewCell.swift in Sources */,
@@ -161,6 +172,7 @@
 				CEAD65B12A7752B8003E968C /* DetailViewController.swift in Sources */,
 				CEAD65972A773A65003E968C /* AppDelegate.swift in Sources */,
 				CEAD65992A773A65003E968C /* SceneDelegate.swift in Sources */,
+				CEAD65B82A777AE1003E968C /* SearchCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
