@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE67F5522A789B690007EE5C /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67F5512A789B690007EE5C /* SettingTableViewController.swift */; };
 		CEAD65972A773A65003E968C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD65962A773A65003E968C /* AppDelegate.swift */; };
 		CEAD65992A773A65003E968C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD65982A773A65003E968C /* SceneDelegate.swift */; };
 		CEAD659B2A773A65003E968C /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD659A2A773A65003E968C /* AddViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE67F5512A789B690007EE5C /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		CEAD65932A773A65003E968C /* OneLineDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneLineDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEAD65962A773A65003E968C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEAD65982A773A65003E968C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				CEAD65982A773A65003E968C /* SceneDelegate.swift */,
 				CEAD659A2A773A65003E968C /* AddViewController.swift */,
 				CEAD659C2A773A65003E968C /* Main.storyboard */,
+				CE67F5512A789B690007EE5C /* SettingTableViewController.swift */,
 				CEAD65B62A777AE1003E968C /* SearchCollectionViewCell.swift */,
 				CEAD65B72A777AE1003E968C /* SearchCollectionViewCell.xib */,
 				CEAD65B42A77795E003E968C /* SearchCollectionViewController.swift */,
@@ -168,6 +171,7 @@
 				CEAD659B2A773A65003E968C /* AddViewController.swift in Sources */,
 				CEAD65B32A776259003E968C /* Extension+UIViewController.swift in Sources */,
 				CEAD65AE2A773BC4003E968C /* DiaryTableViewCell.swift in Sources */,
+				CE67F5522A789B690007EE5C /* SettingTableViewController.swift in Sources */,
 				CEAD65AB2A773ACB003E968C /* DiaryTableViewController.swift in Sources */,
 				CEAD65B12A7752B8003E968C /* DetailViewController.swift in Sources */,
 				CEAD65972A773A65003E968C /* AppDelegate.swift in Sources */,

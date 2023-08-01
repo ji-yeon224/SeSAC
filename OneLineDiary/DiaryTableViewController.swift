@@ -17,8 +17,8 @@ class DiaryTableViewController: UITableViewController {
         setBackgroundColor()
         
         //XIB로 테이블 뷰셀을 생성할 경우, 테이블 뷰에 사용할 셀을 등록해주는 과정 필요
-        let nib = UINib(nibName: "DiaryTableViewCell", bundle: nil) //nil로 설정하면 메인 번들로 설정됨
-        tableView.register(nib, forCellReuseIdentifier: "DiaryTableViewCell")
+        let nib = UINib(nibName: DiaryTableViewCell.identifier, bundle: nil) //nil로 설정하면 메인 번들로 설정됨
+        tableView.register(nib, forCellReuseIdentifier: DiaryTableViewCell.identifier)
 
         //Dynamic Height: 1. automaticDimension 2. label numberOfLines 3. AutoLayout(여백)
         tableView.rowHeight = UITableView.automaticDimension
@@ -27,8 +27,8 @@ class DiaryTableViewController: UITableViewController {
     
     @IBAction func searchBarButtonItemClicked(_ sender: UIBarButtonItem) {
         
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "SearchCollectionViewController") as! SearchCollectionViewController
+//        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard?.instantiateViewController(withIdentifier: "SearchCollectionViewController") as! SearchCollectionViewController
         
         
         navigationController?.pushViewController(vc, animated: true)
@@ -68,7 +68,7 @@ class DiaryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "DiaryTableViewCell") as? DiaryTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: DiaryTableViewCell.identifier) as? DiaryTableViewCell else {
             return UITableViewCell()
         } //nil값 발생하면 빈 테이블 뷰 셀 리턴하도록
         
