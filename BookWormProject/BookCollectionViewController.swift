@@ -11,25 +11,32 @@ private let reuseIdentifier = "Cell"
 
 class BookCollectionViewController: UICollectionViewController {
     
-    let movieInfo = MovieInfo()
-    let color: [UIColor] = [.purple, .systemBrown, .orange, .darkGray, .blue, .systemRed, .systemIndigo, .systemTeal, .systemMint]
+    var movieInfo = MovieInfo() {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    var color: [UIColor] = [.purple, .systemBrown, .orange, .darkGray, .blue, .systemRed, .systemIndigo, .systemTeal, .systemMint]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "책장"
         
-        let nib = UINib(nibName: "BookCollectionViewCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: "BookCollectionViewCell")
+        let nib = UINib(nibName: BookCollectionViewCell.identifier, bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: BookCollectionViewCell.identifier)
         setCollectionViewLayout()
+        color.shuffle()
+        
         
     }
+    
     
     
     @IBAction func searchBarButtonClicked(_ sender: UIBarButtonItem) {
         
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+        let vc = sb.instantiateViewController(withIdentifier: SearchViewController.identifier) as! SearchViewController
         
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
@@ -65,16 +72,24 @@ class BookCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell", for: indexPath) as? BookCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.identifier, for: indexPath) as? BookCollectionViewCell else {
             return BookCollectionViewCell()
         }
         
         let movie = movieInfo.movie[indexPath.row]
         cell.configCell(movie: movie)
-        cell.backgroundColor = color.randomElement()
+        cell.backgroundColor = color[indexPath.row]
         cell.layer.cornerRadius = 20
+        cell.likeButton.tag = indexPath.row
+        cell.likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
         
         return cell
+        
+    }
+    
+    @objc func likeButtonClicked(_ sender: UIButton) {
+        
+        movieInfo.movie[sender.tag].like.toggle()
         
     }
     
@@ -82,9 +97,10 @@ class BookCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(identifier: "DetailViewController") as! DetailViewController
+        let vc = sb.instantiateViewController(identifier: DetailViewController.identifier) as! DetailViewController
         
-        vc.contents = movieInfo.movie[indexPath.row].title
+        
+        vc.movieInfo = movieInfo.movie[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
         
         
