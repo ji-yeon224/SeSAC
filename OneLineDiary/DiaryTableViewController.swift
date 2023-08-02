@@ -28,7 +28,7 @@ class DiaryTableViewController: UITableViewController {
     @IBAction func searchBarButtonItemClicked(_ sender: UIBarButtonItem) {
         
 //        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard?.instantiateViewController(withIdentifier: "SearchCollectionViewController") as! SearchCollectionViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: SearchCollectionViewController.identifier) as! SearchCollectionViewController
         
         
         navigationController?.pushViewController(vc, animated: true)
@@ -43,7 +43,7 @@ class DiaryTableViewController: UITableViewController {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         
         //2. 스토리 보드 파일 내 뷰컨트롤러 찾기
-        let vc = sb.instantiateViewController(withIdentifier: "AddViewController") as! AddViewController
+        let vc = sb.instantiateViewController(withIdentifier: AddViewController.identifier) as! AddViewController
         
         //2-1(옵션). 네비게이션 컨트롤러가 있는 형태(제목바)로 Present 하고 싶은 경우
         //네비게이션 컨트롤러에 뷰 컨트롤러를 담아서 present 시키기
@@ -98,7 +98,7 @@ class DiaryTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(identifier: "DetailViewController") as! DetailViewController
+        let vc = sb.instantiateViewController(identifier: DetailViewController.identifier) as! DetailViewController
         // let vc = DetailViewController()
         
         //Pass Data 2. vc가 가지고 있는 프로퍼티에 데이터 추가

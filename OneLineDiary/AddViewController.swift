@@ -8,6 +8,8 @@
 import UIKit
 
 class AddViewController: UIViewController {
+    
+    static let identifier = "AddViewController"
 
     override func viewDidLoad() {
         super.viewDidLoad()

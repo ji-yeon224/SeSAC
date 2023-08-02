@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE67F5522A789B690007EE5C /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67F5512A789B690007EE5C /* SettingTableViewController.swift */; };
+		CEA154962A79F23000B847D3 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA154952A79F23000B847D3 /* TimelineViewController.swift */; };
 		CEAD65972A773A65003E968C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD65962A773A65003E968C /* AppDelegate.swift */; };
 		CEAD65992A773A65003E968C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD65982A773A65003E968C /* SceneDelegate.swift */; };
 		CEAD659B2A773A65003E968C /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD659A2A773A65003E968C /* AddViewController.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		CE67F5512A789B690007EE5C /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		CEA154952A79F23000B847D3 /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = SOURCE_ROOT; };
 		CEAD65932A773A65003E968C /* OneLineDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneLineDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEAD65962A773A65003E968C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEAD65982A773A65003E968C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 		CEAD65952A773A65003E968C /* OneLineDiary */ = {
 			isa = PBXGroup;
 			children = (
+				CEA154952A79F23000B847D3 /* TimelineViewController.swift */,
 				CEAD65B22A776259003E968C /* Extension+UIViewController.swift */,
 				CEAD65B02A7752B8003E968C /* DetailViewController.swift */,
 				CEAD65962A773A65003E968C /* AppDelegate.swift */,
@@ -168,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEAD65B52A77795E003E968C /* SearchCollectionViewController.swift in Sources */,
+				CEA154962A79F23000B847D3 /* TimelineViewController.swift in Sources */,
 				CEAD659B2A773A65003E968C /* AddViewController.swift in Sources */,
 				CEAD65B32A776259003E968C /* Extension+UIViewController.swift in Sources */,
 				CEAD65AE2A773BC4003E968C /* DiaryTableViewCell.swift in Sources */,

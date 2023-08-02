@@ -10,6 +10,8 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class SearchCollectionViewController: UICollectionViewController {
+    
+    static let identifier = "SearchCollectionViewController"
 
     override func viewDidLoad() {
         super.viewDidLoad()
