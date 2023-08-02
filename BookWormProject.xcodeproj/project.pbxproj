@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CEA154982A7A2C9200B847D3 /* AroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA154972A7A2C9200B847D3 /* AroundViewController.swift */; };
+		CEA1549D2A7A2F8200B847D3 /* MovieInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA1549B2A7A2F8200B847D3 /* MovieInfoTableViewCell.swift */; };
+		CEA1549E2A7A2F8200B847D3 /* MovieInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA1549C2A7A2F8200B847D3 /* MovieInfoTableViewCell.xib */; };
+		CEA154A12A7A32F300B847D3 /* PosterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA1549F2A7A32F300B847D3 /* PosterCollectionViewCell.swift */; };
+		CEA154A22A7A32F300B847D3 /* PosterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA154A02A7A32F300B847D3 /* PosterCollectionViewCell.xib */; };
 		CEC5EE752A77C9EE00EF23DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5EE742A77C9EE00EF23DA /* AppDelegate.swift */; };
 		CEC5EE772A77C9EE00EF23DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5EE762A77C9EE00EF23DA /* SceneDelegate.swift */; };
 		CEC5EE792A77C9EE00EF23DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5EE782A77C9EE00EF23DA /* ViewController.swift */; };
@@ -23,6 +28,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CEA154972A7A2C9200B847D3 /* AroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundViewController.swift; sourceTree = "<group>"; };
+		CEA1549B2A7A2F8200B847D3 /* MovieInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoTableViewCell.swift; sourceTree = "<group>"; };
+		CEA1549C2A7A2F8200B847D3 /* MovieInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieInfoTableViewCell.xib; sourceTree = "<group>"; };
+		CEA1549F2A7A32F300B847D3 /* PosterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCollectionViewCell.swift; sourceTree = "<group>"; };
+		CEA154A02A7A32F300B847D3 /* PosterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PosterCollectionViewCell.xib; sourceTree = "<group>"; };
 		CEC5EE712A77C9EE00EF23DA /* BookWormProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookWormProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC5EE742A77C9EE00EF23DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEC5EE762A77C9EE00EF23DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,9 +61,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CEA154A32A7A34E900B847D3 /* Assignment */ = {
+			isa = PBXGroup;
+			children = (
+				CEA1549B2A7A2F8200B847D3 /* MovieInfoTableViewCell.swift */,
+				CEA1549C2A7A2F8200B847D3 /* MovieInfoTableViewCell.xib */,
+				CEA154972A7A2C9200B847D3 /* AroundViewController.swift */,
+				CEA1549F2A7A32F300B847D3 /* PosterCollectionViewCell.swift */,
+				CEA154A02A7A32F300B847D3 /* PosterCollectionViewCell.xib */,
+			);
+			path = Assignment;
+			sourceTree = "<group>";
+		};
 		CEC5EE682A77C9ED00EF23DA = {
 			isa = PBXGroup;
 			children = (
+				CEA154A32A7A34E900B847D3 /* Assignment */,
 				CEC5EE732A77C9EE00EF23DA /* BookWormProject */,
 				CEC5EE722A77C9EE00EF23DA /* Products */,
 			);
@@ -72,11 +95,11 @@
 			children = (
 				CEC5EE742A77C9EE00EF23DA /* AppDelegate.swift */,
 				CEC5EE762A77C9EE00EF23DA /* SceneDelegate.swift */,
-				CEC5EE782A77C9EE00EF23DA /* ViewController.swift */,
 				CEC5EE7A2A77C9EE00EF23DA /* Main.storyboard */,
 				CEC5EE9C2A77ED9700EF23DA /* DetailViewController.swift */,
 				CEC5EE9A2A77EA7700EF23DA /* SearchViewController.swift */,
 				CEC5EE962A77DF0A00EF23DA /* BookCollectionViewCell.swift */,
+				CEC5EE782A77C9EE00EF23DA /* ViewController.swift */,
 				CEC5EE972A77DF0A00EF23DA /* BookCollectionViewCell.xib */,
 				CEC5EE942A77DEE800EF23DA /* BookCollectionViewController.swift */,
 				CEC5EE922A77D8B000EF23DA /* MovieInfo.swift */,
@@ -146,6 +169,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA1549E2A7A2F8200B847D3 /* MovieInfoTableViewCell.xib in Resources */,
+				CEA154A22A7A32F300B847D3 /* PosterCollectionViewCell.xib in Resources */,
 				CEC5EE812A77C9EE00EF23DA /* LaunchScreen.storyboard in Resources */,
 				CEC5EE992A77DF0A00EF23DA /* BookCollectionViewCell.xib in Resources */,
 				CEC5EE7E2A77C9EE00EF23DA /* Assets.xcassets in Resources */,
@@ -161,12 +186,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEC5EE9D2A77ED9700EF23DA /* DetailViewController.swift in Sources */,
+				CEA154982A7A2C9200B847D3 /* AroundViewController.swift in Sources */,
 				CEC5EE932A77D8B000EF23DA /* MovieInfo.swift in Sources */,
 				CEC5EE912A77D61800EF23DA /* Movie.swift in Sources */,
+				CEA1549D2A7A2F8200B847D3 /* MovieInfoTableViewCell.swift in Sources */,
 				CEC5EE9B2A77EA7700EF23DA /* SearchViewController.swift in Sources */,
 				CEC5EE792A77C9EE00EF23DA /* ViewController.swift in Sources */,
 				CEC5EE752A77C9EE00EF23DA /* AppDelegate.swift in Sources */,
 				CEC5EE982A77DF0A00EF23DA /* BookCollectionViewCell.swift in Sources */,
+				CEA154A12A7A32F300B847D3 /* PosterCollectionViewCell.swift in Sources */,
 				CEC5EE772A77C9EE00EF23DA /* SceneDelegate.swift in Sources */,
 				CEC5EE952A77DEE800EF23DA /* BookCollectionViewController.swift in Sources */,
 			);
