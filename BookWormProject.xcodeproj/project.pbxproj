@@ -12,6 +12,7 @@
 		CEA1549E2A7A2F8200B847D3 /* MovieInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA1549C2A7A2F8200B847D3 /* MovieInfoTableViewCell.xib */; };
 		CEA154A12A7A32F300B847D3 /* PosterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA1549F2A7A32F300B847D3 /* PosterCollectionViewCell.swift */; };
 		CEA154A22A7A32F300B847D3 /* PosterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA154A02A7A32F300B847D3 /* PosterCollectionViewCell.xib */; };
+		CEA154A92A7A564B00B847D3 /* TransitionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA154A82A7A564B00B847D3 /* TransitionEnum.swift */; };
 		CEC5EE752A77C9EE00EF23DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5EE742A77C9EE00EF23DA /* AppDelegate.swift */; };
 		CEC5EE772A77C9EE00EF23DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5EE762A77C9EE00EF23DA /* SceneDelegate.swift */; };
 		CEC5EE792A77C9EE00EF23DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5EE782A77C9EE00EF23DA /* ViewController.swift */; };
@@ -33,6 +34,7 @@
 		CEA1549C2A7A2F8200B847D3 /* MovieInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieInfoTableViewCell.xib; sourceTree = "<group>"; };
 		CEA1549F2A7A32F300B847D3 /* PosterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCollectionViewCell.swift; sourceTree = "<group>"; };
 		CEA154A02A7A32F300B847D3 /* PosterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PosterCollectionViewCell.xib; sourceTree = "<group>"; };
+		CEA154A82A7A564B00B847D3 /* TransitionEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransitionEnum.swift; path = Assignment/TransitionEnum.swift; sourceTree = SOURCE_ROOT; };
 		CEC5EE712A77C9EE00EF23DA /* BookWormProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookWormProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC5EE742A77C9EE00EF23DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEC5EE762A77C9EE00EF23DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 		CEA154A32A7A34E900B847D3 /* Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				CEA154A82A7A564B00B847D3 /* TransitionEnum.swift */,
 				CEA1549B2A7A2F8200B847D3 /* MovieInfoTableViewCell.swift */,
 				CEA1549C2A7A2F8200B847D3 /* MovieInfoTableViewCell.xib */,
 				CEA154972A7A2C9200B847D3 /* AroundViewController.swift */,
@@ -189,6 +192,7 @@
 				CEA154982A7A2C9200B847D3 /* AroundViewController.swift in Sources */,
 				CEC5EE932A77D8B000EF23DA /* MovieInfo.swift in Sources */,
 				CEC5EE912A77D61800EF23DA /* Movie.swift in Sources */,
+				CEA154A92A7A564B00B847D3 /* TransitionEnum.swift in Sources */,
 				CEA1549D2A7A2F8200B847D3 /* MovieInfoTableViewCell.swift in Sources */,
 				CEC5EE9B2A77EA7700EF23DA /* SearchViewController.swift in Sources */,
 				CEC5EE792A77C9EE00EF23DA /* ViewController.swift in Sources */,
