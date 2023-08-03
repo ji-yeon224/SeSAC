@@ -99,7 +99,7 @@ class BookCollectionViewController: UICollectionViewController {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(identifier: DetailViewController.identifier) as! DetailViewController
         
-        vc.transitionState = "push"
+        vc.transition = .push
         vc.movieInfo = movieInfo.movie[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
         

@@ -12,6 +12,7 @@ class DetailViewController: UIViewController {
     static let identifier = "DetailViewController"
 
     var movieInfo: Movie!
+    var transition: Transition = .present
     
     @IBOutlet var backView: UIView!
     @IBOutlet var titleLabel: UILabel!
@@ -45,7 +46,7 @@ class DetailViewController: UIViewController {
         changeLikeButton(like: movieInfo.like)
        
         //present로 넘어 온 경우에만 바 버튼 생성하여 dismiss
-        if transitionState == "present" {
+        if transition == .present {
             addNavBarButton()
         }
     }
