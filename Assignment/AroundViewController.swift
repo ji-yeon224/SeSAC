@@ -60,7 +60,7 @@ class AroundViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let movie = movieInfo.movie[indexPath.row]
         vc.movieInfo = movie
-        vc.transitionState = "present"
+        vc.transition = .present
         
         nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true)
@@ -96,7 +96,7 @@ class AroundViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let movie = movieInfo.movie[indexPath.row]
         vc.movieInfo = movie
-        vc.transitionState = "present"
+        vc.transition = .present
         nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true)
         
