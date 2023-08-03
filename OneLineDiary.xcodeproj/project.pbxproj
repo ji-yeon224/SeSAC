@@ -23,6 +23,7 @@
 		CEAD65B52A77795E003E968C /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD65B42A77795E003E968C /* SearchCollectionViewController.swift */; };
 		CEAD65B82A777AE1003E968C /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD65B62A777AE1003E968C /* SearchCollectionViewCell.swift */; };
 		CEAD65B92A777AE1003E968C /* SearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEAD65B72A777AE1003E968C /* SearchCollectionViewCell.xib */; };
+		CEC161322A7B7300002BB3C5 /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC161312A7B7300002BB3C5 /* LottoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		CEAD65B42A77795E003E968C /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = "<group>"; };
 		CEAD65B62A777AE1003E968C /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		CEAD65B72A777AE1003E968C /* SearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCollectionViewCell.xib; sourceTree = "<group>"; };
+		CEC161312A7B7300002BB3C5 /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				CEAD65982A773A65003E968C /* SceneDelegate.swift */,
 				CEAD659A2A773A65003E968C /* AddViewController.swift */,
 				CEAD659C2A773A65003E968C /* Main.storyboard */,
+				CEC161312A7B7300002BB3C5 /* LottoViewController.swift */,
 				CE67F5512A789B690007EE5C /* SettingTableViewController.swift */,
 				CEAD65B62A777AE1003E968C /* SearchCollectionViewCell.swift */,
 				CEAD65B72A777AE1003E968C /* SearchCollectionViewCell.xib */,
@@ -179,6 +182,7 @@
 				CEAD65AB2A773ACB003E968C /* DiaryTableViewController.swift in Sources */,
 				CEAD65B12A7752B8003E968C /* DetailViewController.swift in Sources */,
 				CEAD65972A773A65003E968C /* AppDelegate.swift in Sources */,
+				CEC161322A7B7300002BB3C5 /* LottoViewController.swift in Sources */,
 				CEAD65992A773A65003E968C /* SceneDelegate.swift in Sources */,
 				CEAD65B82A777AE1003E968C /* SearchCollectionViewCell.swift in Sources */,
 			);

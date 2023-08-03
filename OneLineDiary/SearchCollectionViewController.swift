@@ -9,12 +9,28 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
+
+
 class SearchCollectionViewController: UICollectionViewController {
     
+    
     static let identifier = "SearchCollectionViewController"
+    
+    let searchBar = UISearchBar()
+    
+    let list = ["iOS", "iPad", "Android", "Apple", "Watch", "사자", "사과", "호랑이"]
+    var searchList: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        searchBar.delegate = self
+        
+        searchBar.placeholder = "검색어를 입력해주세요"
+        searchBar.showsCancelButton = true
+        navigationItem.titleView = searchBar
+        
         
         //XIB 연결
         let nib = UINib(nibName: "SearchCollectionViewCell", bundle: nil)
@@ -44,7 +60,7 @@ class SearchCollectionViewController: UICollectionViewController {
     
     //1. 셀 개수
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return searchList.count
     }
     
     //2.
@@ -55,13 +71,52 @@ class SearchCollectionViewController: UICollectionViewController {
         }
         
         cell.backgroundColor = .brown
-        cell.contentsLabel.text = "\(indexPath)"
+        cell.contentsLabel.text = searchList[indexPath.row]
         
         return cell
         
     }
+    
+    
+}
 
-
-
+extension SearchCollectionViewController: UISearchBarDelegate {
+    
+    
+    
+    
+    //리턴키
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchList.removeAll()
+        for item in list {
+            if item.contains(searchBar.text!) {
+                searchList.append(item)
+            }
+        }
+        searchBar.text = ""
+        collectionView.reloadData()
+        
+    }
+    
+    //취소버튼 액션 구현
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchList.removeAll()
+        collectionView.reloadData()
+    }
+    
+    //글자가 바뀔 때 마다 호출 -> 실시간 검색 기능의 핵심 부분
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchList.removeAll()
+        for item in list {
+            if item.contains(searchBar.text!) {
+                searchList.append(item)
+            }
+        }
+        collectionView.reloadData()
+        
+    }
+    
+    
 }
     
