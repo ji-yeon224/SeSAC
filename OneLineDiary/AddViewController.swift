@@ -12,7 +12,7 @@ enum TransitionType: String {
     case edit = "수정화면"
 }
 
-class AddViewController: UIViewController {
+class AddViewController: UIViewController, UITextViewDelegate {
     
     static let identifier = "AddViewController"
     
@@ -23,6 +23,8 @@ class AddViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        textView.delegate = self
         
         setBackgroundColor()
         textView.isEditable = true
@@ -45,10 +47,16 @@ class AddViewController: UIViewController {
             
         }
         
-        
-        
+    }
+    
+    
+    //텍스트가 변경될 때 마다 -> 글자 수 체크 등
+    func textViewDidChange(_ textView: UITextView) {
+        print(textView.text.count)
+        title = "\(textView.text.count)글자"
         
     }
+    
     
     @objc
     func closeButtonClicked() {
