@@ -23,7 +23,7 @@ class DetailViewController: UIViewController {
         setBackgroundColor()
         contentsLabel.numberOfLines = 0
         
-        print(contents)
+        //print(contents)
         //Pass Data 3. 전달 받은 값을 뷰에 표현
         contentsLabel.text = contents
         

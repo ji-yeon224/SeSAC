@@ -44,6 +44,7 @@ class DiaryTableViewController: UITableViewController {
         
         //2. 스토리 보드 파일 내 뷰컨트롤러 찾기
         let vc = sb.instantiateViewController(withIdentifier: AddViewController.identifier) as! AddViewController
+        vc.type = .add
         
         //2-1(옵션). 네비게이션 컨트롤러가 있는 형태(제목바)로 Present 하고 싶은 경우
         //네비게이션 컨트롤러에 뷰 컨트롤러를 담아서 present 시키기
@@ -97,17 +98,25 @@ class DiaryTableViewController: UITableViewController {
     //상세정보 페이지
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(identifier: DetailViewController.identifier) as! DetailViewController
-        // let vc = DetailViewController()
-        
-        //Pass Data 2. vc가 가지고 있는 프로퍼티에 데이터 추가
-        //vc.contents = "Diary 뷰컨트롤러에서 데이터 전달하면서 화면 전환하기!"
+        let vc = sb.instantiateViewController(identifier: AddViewController.identifier) as! AddViewController
+        vc.type = .edit
         vc.contents = list[indexPath.row]
-        
-        
-        //인터페이스 빌더에 네비게이션 컨트롤러가 임베드 되어 있어야함 push가 동작한다.
         navigationController?.pushViewController(vc, animated: true)
+        
+//        let sb = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = sb.instantiateViewController(identifier: DetailViewController.identifier) as! DetailViewController
+//
+//        //Pass Data 2. vc가 가지고 있는 프로퍼티에 데이터 추가
+//        //vc.contents = "Diary 뷰컨트롤러에서 데이터 전달하면서 화면 전환하기!"
+//        vc.contents = list[indexPath.row]
+//
+//
+//        //인터페이스 빌더에 네비게이션 컨트롤러가 임베드 되어 있어야함 push가 동작한다.
+//        navigationController?.pushViewController(vc, animated: true)
+        
+        
         
     }
     

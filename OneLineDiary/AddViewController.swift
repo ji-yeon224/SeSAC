@@ -7,23 +7,45 @@
 
 import UIKit
 
+enum TransitionType: String {
+    case add = "추가화면"
+    case edit = "수정화면"
+}
+
 class AddViewController: UIViewController {
     
     static let identifier = "AddViewController"
-
+    
+    @IBOutlet var textView: UITextView!
+    
+    var type: TransitionType = .add
+    var contents: String = ""
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setBackgroundColor()
+        textView.isEditable = true
+        textView.text = contents
+        title = type.rawValue
         
-        title = "추가화면"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(
-            image: UIImage(systemName: "xmark"),
-            style: .plain,
-            target: self,
-            action: #selector(closeButtonClicked)
-        )
-        navigationItem.leftBarButtonItem?.tintColor = .yellow
+        switch type {
+        case .add:
+            
+            navigationItem.leftBarButtonItem = UIBarButtonItem(
+                image: UIImage(systemName: "xmark"),
+                style: .plain,
+                target: self,
+                action: #selector(closeButtonClicked)
+            )
+            navigationItem.leftBarButtonItem?.tintColor = .yellow
+            
+            
+        case .edit: print("")
+            
+        }
+        
+        
         
         
     }
