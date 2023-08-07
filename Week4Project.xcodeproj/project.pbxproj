@@ -17,6 +17,8 @@
 		CE9C35F42A8096B700C64B40 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = CE9C35F32A8096B700C64B40 /* SwiftyJSON */; };
 		CE9C35F72A8096C300C64B40 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CE9C35F62A8096C300C64B40 /* Kingfisher */; };
 		CE9C35F92A809B9D00C64B40 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CE9C35F82A809B9D00C64B40 /* .gitignore */; };
+		CE9C35FB2A809C3200C64B40 /* TranslationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C35FA2A809C3200C64B40 /* TranslationViewController.swift */; };
+		CE9C35FD2A809C5800C64B40 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C35FC2A809C5800C64B40 /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		CE9C35E72A80968A00C64B40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE9C35E92A80968A00C64B40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE9C35F82A809B9D00C64B40 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		CE9C35FA2A809C3200C64B40 /* TranslationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationViewController.swift; sourceTree = "<group>"; };
+		CE9C35FC2A809C5800C64B40 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 				CE9C35E62A80968A00C64B40 /* LaunchScreen.storyboard */,
 				CE9C35E92A80968A00C64B40 /* Info.plist */,
 				CE9C35F82A809B9D00C64B40 /* .gitignore */,
+				CE9C35FC2A809C5800C64B40 /* APIKey.swift */,
+				CE9C35FA2A809C3200C64B40 /* TranslationViewController.swift */,
 			);
 			path = Week4Project;
 			sourceTree = "<group>";
@@ -158,9 +164,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE9C35FB2A809C3200C64B40 /* TranslationViewController.swift in Sources */,
 				CE9C35E02A80968900C64B40 /* ViewController.swift in Sources */,
 				CE9C35DC2A80968900C64B40 /* AppDelegate.swift in Sources */,
 				CE9C35DE2A80968900C64B40 /* SceneDelegate.swift in Sources */,
+				CE9C35FD2A809C5800C64B40 /* APIKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
