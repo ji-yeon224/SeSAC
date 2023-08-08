@@ -21,15 +21,18 @@ class BeerRecViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "맥주 랜덤 추천"
+        
         nameLabel.font = .boldSystemFont(ofSize: 20)
         
         descriptionLabel.numberOfLines = 0
         descriptionLabel.font = .systemFont(ofSize: 17)
         
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         callRequest()
-        
-        
-        
     }
     
     
@@ -46,7 +49,6 @@ class BeerRecViewController: UIViewController {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                print(json)
                 let imgUrl = "\(json[0]["image_url"].stringValue)"
                
                 self.imageView.kf.setImage(with: URL(string: imgUrl))
@@ -54,6 +56,7 @@ class BeerRecViewController: UIViewController {
                 self.nameLabel.text = json[0]["name"].stringValue
                 self.descriptionLabel.text = json[0]["description"].stringValue
                 
+                //print("\(json["description"].stringValue)")
             case .failure(let error):
                 print(error)
             }
