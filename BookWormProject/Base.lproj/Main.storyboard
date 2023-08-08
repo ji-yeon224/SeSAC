@@ -64,7 +64,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="66a-h9-YmN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2168.7022900763359" y="-32.394366197183103"/>
+            <point key="canvasLocation" x="2190" y="-86"/>
         </scene>
         <!--둘러보기-->
         <scene sceneID="HuC-S9-dxc">

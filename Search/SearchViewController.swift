@@ -30,6 +30,8 @@ class SearchViewController: UIViewController {
         
         navigationItem.titleView = searchBar
         searchBar.placeholder = "도서를 검색하세요."
+        searchBar.delegate = self
+        searchBar.showsCancelButton = true
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             image: UIImage(systemName: "xmark"),
             style: .plain,
@@ -41,7 +43,7 @@ class SearchViewController: UIViewController {
         
         let nib = UINib(nibName: "SearchTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: SearchTableViewCell.identifier)
-        callRequest()
+        //callRequest()
         
     }
     
@@ -50,9 +52,9 @@ class SearchViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    func callRequest(){
+    func callRequest(keyword: String){
         
-        let query = "우주".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let query = keyword.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         let url = "https://dapi.kakao.com/v3/search/book?query=\(query)"
         let header: HTTPHeaders = ["Authorization": "KakaoAK \(APIKey.kakaoKey)"]
@@ -100,15 +102,35 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension SearchViewController: UISearchBarDelegate {
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text!.count == 0 {
+            bookList.removeAll()
+            tableView.reloadData()
+        }
+    }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print(searchBar.text)
+        
+        guard let keyword = searchBar.text?.trimmingCharacters(in: .whitespaces) else {
+            return
+        }
+        
+        bookList.removeAll()
+        callRequest(keyword: keyword)
+        tableView.reloadData()
+        view.endEditing(true)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        
         searchBar.text = ""
+        bookList.removeAll()
+        tableView.reloadData()
+        view.endEditing(true)
         
     }
+    
     
     
 }
