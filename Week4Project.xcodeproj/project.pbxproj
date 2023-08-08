@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE914CE22A81C4C200703B2E /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE914CE12A81C4C200703B2E /* WeatherViewController.swift */; };
 		CE9C35DC2A80968900C64B40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C35DB2A80968900C64B40 /* AppDelegate.swift */; };
 		CE9C35DE2A80968900C64B40 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C35DD2A80968900C64B40 /* SceneDelegate.swift */; };
 		CE9C35E02A80968900C64B40 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C35DF2A80968900C64B40 /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE914CE12A81C4C200703B2E /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		CE9C35D82A80968900C64B40 /* Week4Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Week4Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9C35DB2A80968900C64B40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE9C35DD2A80968900C64B40 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				CE9C35DD2A80968900C64B40 /* SceneDelegate.swift */,
 				CE9C35DF2A80968900C64B40 /* ViewController.swift */,
 				CE9C35E12A80968900C64B40 /* Main.storyboard */,
+				CE914CE12A81C4C200703B2E /* WeatherViewController.swift */,
 				CE9C36002A813EEC00C64B40 /* BeerRecViewController.swift */,
 				CE9C35FE2A8121EA00C64B40 /* LottoViewController.swift */,
 				CE9C35E42A80968A00C64B40 /* Assets.xcassets */,
@@ -175,6 +178,7 @@
 				CE9C35DC2A80968900C64B40 /* AppDelegate.swift in Sources */,
 				CE9C35FF2A8121EA00C64B40 /* LottoViewController.swift in Sources */,
 				CE9C35DE2A80968900C64B40 /* SceneDelegate.swift in Sources */,
+				CE914CE22A81C4C200703B2E /* WeatherViewController.swift in Sources */,
 				CE9C36012A813EEC00C64B40 /* BeerRecViewController.swift in Sources */,
 				CE9C35FD2A809C5800C64B40 /* APIKey.swift in Sources */,
 			);
