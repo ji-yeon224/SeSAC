@@ -20,12 +20,15 @@ class SearchViewController: UIViewController {
     let searchBar = UISearchBar()
     
     var bookList: [Book] = []
+    var page = 1
+    var isEnd = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.prefetchDataSource = self
         tableView.rowHeight = 200
         
         navigationItem.titleView = searchBar
@@ -52,16 +55,21 @@ class SearchViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    func callRequest(keyword: String){
+    func callRequest(keyword: String, page: Int){
         
         let query = keyword.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
-        let url = "https://dapi.kakao.com/v3/search/book?query=\(query)"
+        let url = "https://dapi.kakao.com/v3/search/book?query=\(query)&size=15&page=\(page)"
         let header: HTTPHeaders = ["Authorization": "KakaoAK \(APIKey.kakaoKey)"]
+        
+        
         AF.request(url, method: .get, headers: header).validate().responseJSON { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
+                
+                self.isEnd = json["Meta"]["is_end"].boolValue
+                
                 let searchList = json["documents"]
                 for book in searchList.arrayValue {
                     var authorList = ""
@@ -81,7 +89,7 @@ class SearchViewController: UIViewController {
   
 }
 
-extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
+extension SearchViewController: UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bookList.count
@@ -98,6 +106,15 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            if bookList.count - 1 == indexPath.row && page <= 50 && !isEnd{
+                page += 1
+                callRequest(keyword: searchBar.text!, page: page)
+            }
+        }
+    }
+    
 }
 
 extension SearchViewController: UISearchBarDelegate {
@@ -110,14 +127,15 @@ extension SearchViewController: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print(searchBar.text)
+        //print(searchBar.text)
         
         guard let keyword = searchBar.text?.trimmingCharacters(in: .whitespaces) else {
             return
         }
         
         bookList.removeAll()
-        callRequest(keyword: keyword)
+        page = 1
+        callRequest(keyword: keyword, page: page)
         tableView.reloadData()
         view.endEditing(true)
     }
