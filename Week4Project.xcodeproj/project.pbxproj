@@ -28,15 +28,16 @@
 		CE9C35FD2A809C5800C64B40 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C35FC2A809C5800C64B40 /* APIKey.swift */; };
 		CE9C35FF2A8121EA00C64B40 /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C35FE2A8121EA00C64B40 /* LottoViewController.swift */; };
 		CE9C36012A813EEC00C64B40 /* BeerRecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C36002A813EEC00C64B40 /* BeerRecViewController.swift */; };
+		CED30B062A83230A00722229 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED30B052A83230A00722229 /* VideoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE914CE12A81C4C200703B2E /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		CE914CE32A81E78900703B2E /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = SOURCE_ROOT; };
-		CE914CE52A820A8200703B2E /* BeerCollecionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCollecionViewController.swift; sourceTree = SOURCE_ROOT; };
+		CE914CE52A820A8200703B2E /* BeerCollecionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BeerCollecionViewController.swift; path = Beer/BeerCollecionViewController.swift; sourceTree = SOURCE_ROOT; };
 		CE914CE72A820B2E00703B2E /* BeerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE914CE82A820B2E00703B2E /* BeerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeerCollectionViewCell.xib; sourceTree = "<group>"; };
-		CE914CEB2A82146300703B2E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = SOURCE_ROOT; };
+		CE914CEB2A82146300703B2E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = Beer/DetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		CE914CED2A82152700703B2E /* BeerStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerStruct.swift; sourceTree = "<group>"; };
 		CE9C35D82A80968900C64B40 /* Week4Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Week4Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9C35DB2A80968900C64B40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		CE9C35FC2A809C5800C64B40 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		CE9C35FE2A8121EA00C64B40 /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
 		CE9C36002A813EEC00C64B40 /* BeerRecViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerRecViewController.swift; sourceTree = "<group>"; };
+		CED30B052A83230A00722229 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		CE9C35CF2A80968800C64B40 = {
 			isa = PBXGroup;
 			children = (
+				CED30B042A83135F00722229 /* Beer */,
 				CE9C35DA2A80968900C64B40 /* Week4Project */,
 				CE9C35D92A80968900C64B40 /* Products */,
 			);
@@ -86,18 +89,13 @@
 		CE9C35DA2A80968900C64B40 /* Week4Project */ = {
 			isa = PBXGroup;
 			children = (
-				CE914CEB2A82146300703B2E /* DetailViewController.swift */,
-				CE914CE52A820A8200703B2E /* BeerCollecionViewController.swift */,
-				CE914CED2A82152700703B2E /* BeerStruct.swift */,
+				CED30B052A83230A00722229 /* VideoTableViewCell.swift */,
 				CE914CE32A81E78900703B2E /* VideoViewController.swift */,
 				CE9C35DB2A80968900C64B40 /* AppDelegate.swift */,
 				CE9C35DD2A80968900C64B40 /* SceneDelegate.swift */,
 				CE9C35DF2A80968900C64B40 /* ViewController.swift */,
 				CE9C35E12A80968900C64B40 /* Main.storyboard */,
-				CE914CE72A820B2E00703B2E /* BeerCollectionViewCell.swift */,
-				CE914CE82A820B2E00703B2E /* BeerCollectionViewCell.xib */,
 				CE914CE12A81C4C200703B2E /* WeatherViewController.swift */,
-				CE9C36002A813EEC00C64B40 /* BeerRecViewController.swift */,
 				CE9C35FE2A8121EA00C64B40 /* LottoViewController.swift */,
 				CE9C35E42A80968A00C64B40 /* Assets.xcassets */,
 				CE9C35E62A80968A00C64B40 /* LaunchScreen.storyboard */,
@@ -107,6 +105,19 @@
 				CE9C35FA2A809C3200C64B40 /* TranslationViewController.swift */,
 			);
 			path = Week4Project;
+			sourceTree = "<group>";
+		};
+		CED30B042A83135F00722229 /* Beer */ = {
+			isa = PBXGroup;
+			children = (
+				CE9C36002A813EEC00C64B40 /* BeerRecViewController.swift */,
+				CE914CE72A820B2E00703B2E /* BeerCollectionViewCell.swift */,
+				CE914CE82A820B2E00703B2E /* BeerCollectionViewCell.xib */,
+				CE914CED2A82152700703B2E /* BeerStruct.swift */,
+				CE914CEB2A82146300703B2E /* DetailViewController.swift */,
+				CE914CE52A820A8200703B2E /* BeerCollecionViewController.swift */,
+			);
+			path = Beer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +212,7 @@
 				CE9C35DC2A80968900C64B40 /* AppDelegate.swift in Sources */,
 				CE9C35FF2A8121EA00C64B40 /* LottoViewController.swift in Sources */,
 				CE9C35DE2A80968900C64B40 /* SceneDelegate.swift in Sources */,
+				CED30B062A83230A00722229 /* VideoTableViewCell.swift in Sources */,
 				CE914CE22A81C4C200703B2E /* WeatherViewController.swift in Sources */,
 				CE9C36012A813EEC00C64B40 /* BeerRecViewController.swift in Sources */,
 				CE914CEE2A82152700703B2E /* BeerStruct.swift in Sources */,

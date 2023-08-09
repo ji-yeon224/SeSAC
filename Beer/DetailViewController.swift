@@ -28,6 +28,7 @@ class DetailViewController: UIViewController {
         beerDetailImageView.kf.setImage(with: URL(string: beer!.img))
         beerDetailDescriptionLabel.text = beer!.description
         beerNameLabel.text = beer!.name
+        beerNameLabel.numberOfLines = 0
         beerNameLabel.font = .boldSystemFont(ofSize: 20)
         beerNameLabel.textAlignment = .center
     }
