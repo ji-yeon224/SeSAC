@@ -9,6 +9,8 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+
+
 class TranslationViewController: UIViewController {
     
     let placeholder = "번역할 내용을 입력하세요."
@@ -17,13 +19,16 @@ class TranslationViewController: UIViewController {
     @IBOutlet var requestButton: UIButton!
     @IBOutlet var translateTextView: UITextView!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        originalTextView.text = ""
+        //originalTextView.text = ""
         translateTextView.text = ""
         translateTextView.isEditable = false
         originalTextView.delegate = self
+        
         
         originalTextView.layer.borderWidth = 1
         originalTextView.layer.borderColor = UIColor.lightGray.cgColor
@@ -34,6 +39,8 @@ class TranslationViewController: UIViewController {
         
         originalTextView.text = placeholder
         originalTextView.textColor = .lightGray
+        
+        
         
         requestButton.setTitle("Translate", for: .normal)
     }
@@ -48,6 +55,14 @@ class TranslationViewController: UIViewController {
         
     }
     
+    
+    
+    
+    
+}
+
+
+extension TranslationViewController {
     func translateLang(source: String, text: String) {
         let url = "https://openapi.naver.com/v1/papago/n2mt"
         let header: HTTPHeaders = [
@@ -58,7 +73,7 @@ class TranslationViewController: UIViewController {
         let parameters: Parameters = [
             "source": source,
             "target": "en",
-            "text": text ?? ""
+            "text": text
         ]
         
         AF.request(url, method: .post, parameters: parameters, headers: header).validate().responseJSON { response in
@@ -98,9 +113,6 @@ class TranslationViewController: UIViewController {
         
         
     }
-    
-    
-    
 }
 
 extension TranslationViewController: UITextViewDelegate {

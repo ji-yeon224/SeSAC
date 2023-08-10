@@ -29,6 +29,7 @@
 		CE9C35FF2A8121EA00C64B40 /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C35FE2A8121EA00C64B40 /* LottoViewController.swift */; };
 		CE9C36012A813EEC00C64B40 /* BeerRecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C36002A813EEC00C64B40 /* BeerRecViewController.swift */; };
 		CED30B062A83230A00722229 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED30B052A83230A00722229 /* VideoTableViewCell.swift */; };
+		CED30B0A2A84FB1B00722229 /* SelectTranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED30B092A84FB1B00722229 /* SelectTranslateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		CE9C35FE2A8121EA00C64B40 /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
 		CE9C36002A813EEC00C64B40 /* BeerRecViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerRecViewController.swift; sourceTree = "<group>"; };
 		CED30B052A83230A00722229 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		CED30B092A84FB1B00722229 /* SelectTranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTranslateViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		CE9C35DA2A80968900C64B40 /* Week4Project */ = {
 			isa = PBXGroup;
 			children = (
+				CED30B092A84FB1B00722229 /* SelectTranslateViewController.swift */,
 				CED30B052A83230A00722229 /* VideoTableViewCell.swift */,
 				CE914CE32A81E78900703B2E /* VideoViewController.swift */,
 				CE9C35DB2A80968900C64B40 /* AppDelegate.swift */,
@@ -211,6 +214,7 @@
 				CE914CE42A81E78900703B2E /* VideoViewController.swift in Sources */,
 				CE9C35DC2A80968900C64B40 /* AppDelegate.swift in Sources */,
 				CE9C35FF2A8121EA00C64B40 /* LottoViewController.swift in Sources */,
+				CED30B0A2A84FB1B00722229 /* SelectTranslateViewController.swift in Sources */,
 				CE9C35DE2A80968900C64B40 /* SceneDelegate.swift in Sources */,
 				CED30B062A83230A00722229 /* VideoTableViewCell.swift in Sources */,
 				CE914CE22A81C4C200703B2E /* WeatherViewController.swift in Sources */,
