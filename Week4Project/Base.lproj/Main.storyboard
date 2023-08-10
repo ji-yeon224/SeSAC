@@ -264,13 +264,60 @@
                     <view key="view" contentMode="scaleToFill" id="Csf-WP-Mty">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="B4o-Xn-wV1">
+                                <rect key="frame" x="20" y="79" width="353" height="324"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9h-tw-5Ks">
+                                <rect key="frame" x="20" y="423" width="353" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="sx7-hQ-pPa"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="requestButtonClicked:" destination="3Nd-ZR-pbl" eventType="touchUpInside" id="wwg-Ue-yyO"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Aj9-5Z-c4J">
+                                <rect key="frame" x="20" y="493" width="353" height="305"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="75k-zs-95d"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="r9h-tw-5Ks" firstAttribute="leading" secondItem="75k-zs-95d" secondAttribute="leading" constant="20" id="9Jh-rl-YhX"/>
+                            <constraint firstItem="75k-zs-95d" firstAttribute="trailing" secondItem="B4o-Xn-wV1" secondAttribute="trailing" constant="20" id="BcG-Nd-b09"/>
+                            <constraint firstItem="Aj9-5Z-c4J" firstAttribute="top" secondItem="r9h-tw-5Ks" secondAttribute="bottom" constant="20" id="P78-SL-9kv"/>
+                            <constraint firstItem="75k-zs-95d" firstAttribute="bottom" secondItem="Aj9-5Z-c4J" secondAttribute="bottom" constant="20" id="RNS-BI-CBS"/>
+                            <constraint firstItem="75k-zs-95d" firstAttribute="trailing" secondItem="Aj9-5Z-c4J" secondAttribute="trailing" constant="20" id="aCJ-VT-bPp"/>
+                            <constraint firstItem="Aj9-5Z-c4J" firstAttribute="leading" secondItem="75k-zs-95d" secondAttribute="leading" constant="20" id="f39-sL-t6S"/>
+                            <constraint firstItem="75k-zs-95d" firstAttribute="trailing" secondItem="r9h-tw-5Ks" secondAttribute="trailing" constant="20" id="fvu-eg-Kgo"/>
+                            <constraint firstItem="B4o-Xn-wV1" firstAttribute="height" secondItem="Aj9-5Z-c4J" secondAttribute="height" multiplier="1.06145" id="hCx-DC-cBQ"/>
+                            <constraint firstItem="B4o-Xn-wV1" firstAttribute="top" secondItem="75k-zs-95d" secondAttribute="top" constant="20" id="hFU-9K-5Fe"/>
+                            <constraint firstItem="B4o-Xn-wV1" firstAttribute="leading" secondItem="75k-zs-95d" secondAttribute="leading" constant="20" id="pmZ-hy-t1K"/>
+                            <constraint firstItem="r9h-tw-5Ks" firstAttribute="top" secondItem="B4o-Xn-wV1" secondAttribute="bottom" constant="20" id="tpd-Mc-v14"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="originalTextView" destination="B4o-Xn-wV1" id="o5p-Pc-O9G"/>
+                        <outlet property="requestButton" destination="r9h-tw-5Ks" id="Lr2-Rx-Lfa"/>
+                        <outlet property="translateTextView" destination="Aj9-5Z-c4J" id="v3z-c8-uAh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETM-84-a2e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1898" y="771"/>
+            <point key="canvasLocation" x="1416" y="585"/>
         </scene>
         <!--Lotto View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -579,6 +626,9 @@
     </scenes>
     <resources>
         <image name="list.bullet" catalog="system" width="128" height="87"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
