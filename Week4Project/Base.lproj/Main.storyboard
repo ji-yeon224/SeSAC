@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kVZ-GF-6PM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Nd-ZR-pbl">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
@@ -135,21 +135,28 @@
                                     <outlet property="delegate" destination="wAe-mz-v4P" id="Oo9-Co-9qT"/>
                                 </connections>
                             </searchBar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="gay-q2-8ai">
+                                <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JUZ-DQ-aEy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="gay-q2-8ai" firstAttribute="centerY" secondItem="fJr-n9-Etg" secondAttribute="centerY" id="Jme-K2-uyw"/>
                             <constraint firstItem="JUZ-DQ-aEy" firstAttribute="trailing" secondItem="tU6-s4-HxC" secondAttribute="trailing" id="MsE-RP-zge"/>
                             <constraint firstItem="tU6-s4-HxC" firstAttribute="leading" secondItem="JUZ-DQ-aEy" secondAttribute="leading" id="Q1m-CT-xiL"/>
                             <constraint firstItem="pH5-Qy-dyh" firstAttribute="leading" secondItem="JUZ-DQ-aEy" secondAttribute="leading" id="WcP-qa-cma"/>
                             <constraint firstItem="tU6-s4-HxC" firstAttribute="top" secondItem="pH5-Qy-dyh" secondAttribute="bottom" id="brO-Fd-Yd5"/>
+                            <constraint firstItem="gay-q2-8ai" firstAttribute="centerX" secondItem="fJr-n9-Etg" secondAttribute="centerX" id="dq6-et-WAa"/>
                             <constraint firstItem="pH5-Qy-dyh" firstAttribute="top" secondItem="JUZ-DQ-aEy" secondAttribute="top" id="fSg-HD-lE2"/>
                             <constraint firstItem="pH5-Qy-dyh" firstAttribute="trailing" secondItem="JUZ-DQ-aEy" secondAttribute="trailing" id="hHg-aQ-5ci"/>
                             <constraint firstItem="JUZ-DQ-aEy" firstAttribute="bottom" secondItem="tU6-s4-HxC" secondAttribute="bottom" id="p2w-C2-qZa"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="indicatorView" destination="gay-q2-8ai" id="suj-6a-lBj"/>
                         <outlet property="movieTableView" destination="tU6-s4-HxC" id="bAt-uQ-lUr"/>
+                        <outlet property="searchBar" destination="pH5-Qy-dyh" id="hiG-fR-Dt6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="52J-Fc-7pq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -249,6 +256,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8uj-ZE-miP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="449.61832061068702" y="597.18309859154931"/>
+        </scene>
+        <!--Translation View Controller-->
+        <scene sceneID="V7g-88-bwB">
+            <objects>
+                <viewController storyboardIdentifier="TranslationViewController" id="3Nd-ZR-pbl" customClass="TranslationViewController" customModule="Week4Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Csf-WP-Mty">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="75k-zs-95d"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ETM-84-a2e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1898" y="771"/>
         </scene>
         <!--Lotto View Controller-->
         <scene sceneID="tne-QT-ifu">
