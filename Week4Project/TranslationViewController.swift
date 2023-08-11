@@ -24,12 +24,29 @@ class TranslationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //originalTextView.text = ""
+        
+        
+        UserDefaultsHelper.standard.nickname = "칙촉"
+        //-> UserDefaults.standard.set("고래밥", forKey: "nickname")
+        
+        
+        originalTextView.text = UserDefaultsHelper.standard.nickname
+        //-> originalTextView.text = UserDefaults.standard.string(forKey: "nickname")
+        
+        originalTextView.delegate = self
+        settingProperties()
+        
+        
+        
+        
+        
+        
+        
+    }
+    
+    func settingProperties() {
         translateTextView.text = ""
         translateTextView.isEditable = false
-        originalTextView.delegate = self
-        
-        
         originalTextView.layer.borderWidth = 1
         originalTextView.layer.borderColor = UIColor.lightGray.cgColor
         originalTextView.layer.cornerRadius = 10
@@ -39,8 +56,6 @@ class TranslationViewController: UIViewController {
         
         originalTextView.text = placeholder
         originalTextView.textColor = .lightGray
-        
-        
         
         requestButton.setTitle("Translate", for: .normal)
     }

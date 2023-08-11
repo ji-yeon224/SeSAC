@@ -10,7 +10,7 @@ import Kingfisher
 
 class DetailViewController: UIViewController {
     
-    static let identifier = "DetailViewController"
+    //static let identifier = "DetailViewController"
     
     var beer: Beer? = nil
     

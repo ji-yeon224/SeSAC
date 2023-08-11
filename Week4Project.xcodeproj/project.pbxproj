@@ -28,6 +28,8 @@
 		CE9C35FD2A809C5800C64B40 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C35FC2A809C5800C64B40 /* APIKey.swift */; };
 		CE9C35FF2A8121EA00C64B40 /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C35FE2A8121EA00C64B40 /* LottoViewController.swift */; };
 		CE9C36012A813EEC00C64B40 /* BeerRecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9C36002A813EEC00C64B40 /* BeerRecViewController.swift */; };
+		CEBF1A3B2A85BA98000E099C /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF1A3A2A85BA98000E099C /* ReusableViewProtocol.swift */; };
+		CEBF1A3D2A85BCFC000E099C /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF1A3C2A85BCFC000E099C /* UserDefaultsHelper.swift */; };
 		CED30B062A83230A00722229 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED30B052A83230A00722229 /* VideoTableViewCell.swift */; };
 		CED30B0A2A84FB1B00722229 /* SelectTranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED30B092A84FB1B00722229 /* SelectTranslateViewController.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +55,8 @@
 		CE9C35FC2A809C5800C64B40 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		CE9C35FE2A8121EA00C64B40 /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
 		CE9C36002A813EEC00C64B40 /* BeerRecViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerRecViewController.swift; sourceTree = "<group>"; };
+		CEBF1A3A2A85BA98000E099C /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
+		CEBF1A3C2A85BCFC000E099C /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = SOURCE_ROOT; };
 		CED30B052A83230A00722229 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		CED30B092A84FB1B00722229 /* SelectTranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTranslateViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -91,9 +95,11 @@
 		CE9C35DA2A80968900C64B40 /* Week4Project */ = {
 			isa = PBXGroup;
 			children = (
+				CEBF1A3C2A85BCFC000E099C /* UserDefaultsHelper.swift */,
 				CED30B092A84FB1B00722229 /* SelectTranslateViewController.swift */,
 				CED30B052A83230A00722229 /* VideoTableViewCell.swift */,
 				CE914CE32A81E78900703B2E /* VideoViewController.swift */,
+				CEBF1A3A2A85BA98000E099C /* ReusableViewProtocol.swift */,
 				CE9C35DB2A80968900C64B40 /* AppDelegate.swift */,
 				CE9C35DD2A80968900C64B40 /* SceneDelegate.swift */,
 				CE9C35DF2A80968900C64B40 /* ViewController.swift */,
@@ -211,12 +217,14 @@
 				CE914CE62A820A8200703B2E /* BeerCollecionViewController.swift in Sources */,
 				CE914CEC2A82146300703B2E /* DetailViewController.swift in Sources */,
 				CE9C35E02A80968900C64B40 /* ViewController.swift in Sources */,
+				CEBF1A3B2A85BA98000E099C /* ReusableViewProtocol.swift in Sources */,
 				CE914CE42A81E78900703B2E /* VideoViewController.swift in Sources */,
 				CE9C35DC2A80968900C64B40 /* AppDelegate.swift in Sources */,
 				CE9C35FF2A8121EA00C64B40 /* LottoViewController.swift in Sources */,
 				CED30B0A2A84FB1B00722229 /* SelectTranslateViewController.swift in Sources */,
 				CE9C35DE2A80968900C64B40 /* SceneDelegate.swift in Sources */,
 				CED30B062A83230A00722229 /* VideoTableViewCell.swift in Sources */,
+				CEBF1A3D2A85BCFC000E099C /* UserDefaultsHelper.swift in Sources */,
 				CE914CE22A81C4C200703B2E /* WeatherViewController.swift in Sources */,
 				CE9C36012A813EEC00C64B40 /* BeerRecViewController.swift in Sources */,
 				CE914CEE2A82152700703B2E /* BeerStruct.swift in Sources */,
