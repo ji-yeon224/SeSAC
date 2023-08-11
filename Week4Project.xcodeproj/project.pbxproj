@@ -34,6 +34,7 @@
 		CEBF1A422A85C5D1000E099C /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF1A412A85C5D1000E099C /* URL+Extension.swift */; };
 		CEBF1A442A85C785000E099C /* KakaoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF1A432A85C785000E099C /* KakaoAPIManager.swift */; };
 		CEBF1A462A85E364000E099C /* TranslateAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF1A452A85E364000E099C /* TranslateAPIManager.swift */; };
+		CEBF1A482A85F9F2000E099C /* AsyncViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF1A472A85F9F2000E099C /* AsyncViewController.swift */; };
 		CED30B062A83230A00722229 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED30B052A83230A00722229 /* VideoTableViewCell.swift */; };
 		CED30B0A2A84FB1B00722229 /* SelectTranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED30B092A84FB1B00722229 /* SelectTranslateViewController.swift */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,7 @@
 		CEBF1A412A85C5D1000E099C /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		CEBF1A432A85C785000E099C /* KakaoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAPIManager.swift; sourceTree = "<group>"; };
 		CEBF1A452A85E364000E099C /* TranslateAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateAPIManager.swift; sourceTree = "<group>"; };
+		CEBF1A472A85F9F2000E099C /* AsyncViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncViewController.swift; sourceTree = SOURCE_ROOT; };
 		CED30B052A83230A00722229 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		CED30B092A84FB1B00722229 /* SelectTranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectTranslateViewController.swift; path = Translate/SelectTranslateViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -104,6 +106,7 @@
 		CE9C35DA2A80968900C64B40 /* Week4Project */ = {
 			isa = PBXGroup;
 			children = (
+				CEBF1A472A85F9F2000E099C /* AsyncViewController.swift */,
 				CEBF1A3C2A85BCFC000E099C /* UserDefaultsHelper.swift */,
 				CED30B052A83230A00722229 /* VideoTableViewCell.swift */,
 				CE914CE32A81E78900703B2E /* VideoViewController.swift */,
@@ -243,6 +246,7 @@
 				CEBF1A442A85C785000E099C /* KakaoAPIManager.swift in Sources */,
 				CE9C35FF2A8121EA00C64B40 /* LottoViewController.swift in Sources */,
 				CED30B0A2A84FB1B00722229 /* SelectTranslateViewController.swift in Sources */,
+				CEBF1A482A85F9F2000E099C /* AsyncViewController.swift in Sources */,
 				CEBF1A3F2A85C51C000E099C /* Endpoint.swift in Sources */,
 				CEBF1A462A85E364000E099C /* TranslateAPIManager.swift in Sources */,
 				CEBF1A422A85C5D1000E099C /* URL+Extension.swift in Sources */,

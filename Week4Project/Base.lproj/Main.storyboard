@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Nd-ZR-pbl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SMX-P1-RVf">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
@@ -409,6 +409,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kf3-La-vdW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2696.9465648854962" y="548.59154929577471"/>
+        </scene>
+        <!--Async View Controller-->
+        <scene sceneID="bmD-Ng-Rnn">
+            <objects>
+                <viewController id="SMX-P1-RVf" customClass="AsyncViewController" customModule="Week4Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Kr-Tj-MJ4">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gNd-8B-rcu">
+                                <rect key="frame" x="118" y="79.000000000000014" width="157" height="157.33333333333337"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gNd-8B-rcu" secondAttribute="height" multiplier="1:1" id="Qr1-0N-qlb"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yno-In-jwz">
+                                <rect key="frame" x="76" y="263" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tld-7D-kf2">
+                                <rect key="frame" x="76" y="407" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sY4-ng-5kb">
+                                <rect key="frame" x="202" y="556" width="96" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="SMX-P1-RVf" eventType="touchUpInside" id="Uy9-x7-oZv"/>
+                                </connections>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nVQ-yb-e33">
+                                <rect key="frame" x="103" y="563" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PdM-OF-edz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gNd-8B-rcu" firstAttribute="centerX" secondItem="9Kr-Tj-MJ4" secondAttribute="centerX" id="M1X-j9-8uc"/>
+                            <constraint firstItem="gNd-8B-rcu" firstAttribute="width" secondItem="9Kr-Tj-MJ4" secondAttribute="width" multiplier="0.4" id="N0p-g4-SdJ"/>
+                            <constraint firstItem="gNd-8B-rcu" firstAttribute="top" secondItem="PdM-OF-edz" secondAttribute="top" constant="20" id="e32-gw-hwE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="first" destination="gNd-8B-rcu" id="DJD-Pk-Id4"/>
+                        <outlet property="second" destination="Yno-In-jwz" id="BxS-a5-Esi"/>
+                        <outlet property="third" destination="Tld-7D-kf2" id="Box-Cp-ib6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O0E-Dd-S3h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3660" y="1020"/>
         </scene>
         <!--Lotto View Controller-->
         <scene sceneID="tne-QT-ifu">
