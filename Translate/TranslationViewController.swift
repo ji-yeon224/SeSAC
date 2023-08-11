@@ -64,8 +64,8 @@ class TranslationViewController: UIViewController {
 
     @IBAction func requestButtonClicked(_ sender: UIButton) {
         
-        detectLangs(text: originalTextView.text)
-        
+        //detectLangs(text: originalTextView.text)
+        apimanager()
         
         
     }
@@ -105,6 +105,16 @@ extension TranslationViewController {
             }
         }
     }
+    
+    
+    
+    func apimanager () {
+        TranslateAPIManager.shared.callRequest(text: originalTextView.text ?? "") { result in
+            self.translateTextView.text = result
+        }
+    }
+    
+    
     
     func detectLangs(text: String){
         let url = "https://openapi.naver.com/v1/papago/detectLangs"

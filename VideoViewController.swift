@@ -54,52 +54,51 @@ class VideoViewController: UIViewController {
     
     func callRequest(query: String, page: Int) {
         
-        let text = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        let url = "https://dapi.kakao.com/v2/search/vclip?query=\(text)&size=10&page=\(page)"
-        let header: HTTPHeaders =  ["Authorization": "KakaoAK \(APIKey.kakaoKey)"]
-        
-        print(url)
-        
-        AF.request(url, method: .get, headers: header).validate(statusCode: 200...500).responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                
-                let statusCode = response.response?.statusCode ?? 500
-                
-                if statusCode == 200 {
-                    
-                    self.isEnd = json["meta"]["is_end"].boolValue
-                    print(self.isEnd)
-                    
-                    for item in json["documents"].arrayValue {
-                        
-                        let author = item["author"].stringValue
-                        let date = item["datetime"].stringValue
-                        let time = item["play_time"].intValue
-                        let thumbnail = item["thumbnail"].stringValue
-                        let title = item["title"].stringValue
-                        let link = item["url"].stringValue
-                        
-                        let data = Video(author: author, date: date, time: time, thumbnail: thumbnail, title: title, link: link)
-                        
-                        self.videoList.append(data)
-                    }
-                    
-                    self.videoTableView.reloadData()
-                    //print(self.videoList)
-                } else {
-                    print("문제가 발생했어요. 잠시 후 다시 시도해주세요!!")
-                }
-                
-                
-                
-                
-                
-            case .failure(let error):
-                print(error)
-            }
+        KakaoAPIManager.shared.callRequest(type: .video, query: query) { json in
+            print("=================\(json)")
         }
+        
+        
+//        AF.request(url, method: .get, headers: header).validate(statusCode: 200...500).responseJSON { response in
+//            switch response.result {
+//            case .success(let value):
+//                let json = JSON(value)
+//
+//                let statusCode = response.response?.statusCode ?? 500
+//
+//                if statusCode == 200 {
+//
+//                    self.isEnd = json["meta"]["is_end"].boolValue
+//                    print(self.isEnd)
+//
+//                    for item in json["documents"].arrayValue {
+//
+//                        let author = item["author"].stringValue
+//                        let date = item["datetime"].stringValue
+//                        let time = item["play_time"].intValue
+//                        let thumbnail = item["thumbnail"].stringValue
+//                        let title = item["title"].stringValue
+//                        let link = item["url"].stringValue
+//
+//                        let data = Video(author: author, date: date, time: time, thumbnail: thumbnail, title: title, link: link)
+//
+//                        self.videoList.append(data)
+//                    }
+//
+//                    self.videoTableView.reloadData()
+//                    //print(self.videoList)
+//                } else {
+//                    print("문제가 발생했어요. 잠시 후 다시 시도해주세요!!")
+//                }
+//
+//
+//
+//
+//
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
         
     }
 
