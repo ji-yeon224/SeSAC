@@ -13,6 +13,7 @@
 		CEBF1A5D2A8622EB000E099C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEBF1A5B2A8622EB000E099C /* Main.storyboard */; };
 		CEBF1A5F2A8622ED000E099C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEBF1A5E2A8622ED000E099C /* Assets.xcassets */; };
 		CEBF1A622A8622ED000E099C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEBF1A602A8622ED000E099C /* LaunchScreen.storyboard */; };
+		CEBF1A6A2A86251A000E099C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CEBF1A692A86251A000E099C /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CEBF1A5E2A8622ED000E099C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEBF1A612A8622ED000E099C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEBF1A632A8622ED000E099C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEBF1A692A86251A000E099C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		CEBF1A542A8622EB000E099C /* MediaProject */ = {
 			isa = PBXGroup;
 			children = (
+				CEBF1A692A86251A000E099C /* .gitignore */,
 				CEBF1A552A8622EB000E099C /* AppDelegate.swift */,
 				CEBF1A572A8622EB000E099C /* SceneDelegate.swift */,
 				CEBF1A592A8622EB000E099C /* ViewController.swift */,
@@ -125,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEBF1A6A2A86251A000E099C /* .gitignore in Resources */,
 				CEBF1A622A8622ED000E099C /* LaunchScreen.storyboard in Resources */,
 				CEBF1A5F2A8622ED000E099C /* Assets.xcassets in Resources */,
 				CEBF1A5D2A8622EB000E099C /* Main.storyboard in Resources */,
