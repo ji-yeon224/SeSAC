@@ -30,12 +30,9 @@ class TrendViewController: UIViewController {
     }
     
     func getTrendData () {
-//        let movieList = TMDBApi.shared.getTrendAPI(time: "week", genre: "movie")
-//        print(movieList)
-        let list = TMDBApi.shared.callRequest(type: .trend, genre: "movie", time: "week") { json in
+        TMDBApi.shared.trendCallRequest(type: .trend, genre: "movie", time: "week") { json in
             let data = json["results"].arrayValue
             for item in data {
-                //print(item)
                 self.contentsList.append(Contents.init(
                     id: item["id"].intValue,
                     title: item["title"].stringValue,
@@ -44,11 +41,10 @@ class TrendViewController: UIViewController {
                     release: item["release_date"].stringValue))
                 
             }
-            //print(self.movieList)
             self.collectionView.reloadData()
         }
         
-        print(list)
+        
         
         
     }
@@ -78,7 +74,7 @@ extension TrendViewController: UICollectionViewDelegate, UICollectionViewDataSou
         }
         cell.titleLabel.text = contentsList[indexPath.row].title
         
-
+        
         
         
         return cell

@@ -21,7 +21,7 @@ extension URL {
     }
     
     static func creditEndPointString(_ genre: String) -> String {
-        return baseURL + "\(genre)/"
+        return baseURL + "\(genre)"
     }
     
    // static func getCreditURL(
