@@ -85,11 +85,12 @@ class TrendViewController: UIViewController {
 
 extension TrendViewController {
     func getTrendData (genre: String, time: Time) {
+        
+        
         contentsList.removeAll()
         TMDBApi.shared.trendCallRequest(type: .trend, genre: genre, time: time.rawValue) { json in
             let data = json["results"].arrayValue
             for item in data {
-                print(item)
                 let id = item["id"].intValue
                 let overview = item["overview"].stringValue
                 let poster = item["poster_path"].stringValue
