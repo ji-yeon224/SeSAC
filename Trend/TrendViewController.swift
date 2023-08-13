@@ -20,6 +20,8 @@ class TrendViewController: UIViewController {
     @IBOutlet var timeButton: UIButton!
     
     var time: Time = .week
+    var genre: Genre = .all
+    var genreList = Genre.allCases
     
     var contentsList: [Contents] = []
 
@@ -33,9 +35,33 @@ class TrendViewController: UIViewController {
         let nib = UINib(nibName: TrendCollectionViewCell.identifier, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: TrendCollectionViewCell.identifier)
         setCell()
-        getTrendData(time: time)
+        getTrendData(genre: genre.genreString, time: time)
         title = "THIS WEEK TREND"
         timeButton.setTitle("DAY", for: .normal)
+        setMenuButton()
+        print(Genre(rawValue: "All"))
+        
+        
+    }
+    
+    func setMenuButton() {
+        var menuItems: [UIAction] = []
+        for gen in genreList {
+            let action = UIAction(title: gen.rawValue, image: UIImage(systemName: "trash")) { (action) in
+                self.getTrendData(genre: Genre(rawValue: action.title)!.genreString, time: self.time)}
+            menuItems.append(action)
+            genre = Genre(rawValue: action.title)!
+        }
+        
+
+        var menu: UIMenu {
+            return UIMenu(title: "", image: nil, identifier: nil, options: [], children: menuItems)
+        }
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", image: UIImage(systemName: "ellipsis.circle"), primaryAction: nil, menu: menu)
+    }
+    
+    func changeGenreButton() {
         
     }
     
@@ -50,15 +76,19 @@ class TrendViewController: UIViewController {
             title = "THIS WEEK TREND"
             timeButton.setTitle("WEEK", for: .normal)
         }
-        getTrendData(time: time)
+        getTrendData(genre: genre.genreString, time: time)
         
         
     }
     
+  
     
-    func getTrendData (time: Time) {
+}
+
+extension TrendViewController {
+    func getTrendData (genre: String, time: Time) {
         contentsList.removeAll()
-        TMDBApi.shared.trendCallRequest(type: .trend, genre: "movie", time: time.rawValue) { json in
+        TMDBApi.shared.trendCallRequest(type: .trend, genre: genre, time: time.rawValue) { json in
             let data = json["results"].arrayValue
             for item in data {
                 self.contentsList.append(Contents.init(
@@ -76,8 +106,6 @@ class TrendViewController: UIViewController {
         
         
     }
-    
-  
 }
 
 //collectionView
@@ -91,14 +119,26 @@ extension TrendViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendCollectionViewCell.identifier, for: indexPath) as! TrendCollectionViewCell
         
-        let url = URL(string: "https://image.tmdb.org/t/p/original"+contentsList[indexPath.row].poster)!
-        DispatchQueue.global().async {
-            let data = try! Data(contentsOf: url)
-            DispatchQueue.main.async {
-                cell.posterImage.image = UIImage(data: data)
-                
+        
+        if contentsList[indexPath.row].poster.count == 0 {
+            cell.posterImage.image = UIImage(systemName: "xmark")!
+            cell.posterImage.tintColor = .lightGray
+        } else {
+            let imageURL = TMDBApi.imgURL + contentsList[indexPath.row].poster
+            let url = URL(string: imageURL)!
+            DispatchQueue.global().async {
+                let data = try! Data(contentsOf: url)
+                DispatchQueue.main.async {
+                    cell.posterImage.image = UIImage(data: data)
+                    
+                }
             }
         }
+        
+       
+        
+        
+        
         cell.titleLabel.text = contentsList[indexPath.row].title
         
         return cell
@@ -120,7 +160,6 @@ extension TrendViewController: UICollectionViewDelegate, UICollectionViewDataSou
         let layout = UICollectionViewFlowLayout()
         let spacing: CGFloat = 22
         let width = UIScreen.main.bounds.width - (spacing * 2)
-        print(width, UIScreen.main.bounds.width)
 
 
         layout.itemSize = CGSize(width: width - spacing, height: width * 1.5)

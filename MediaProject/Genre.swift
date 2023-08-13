@@ -6,16 +6,14 @@
 //
 
 import Foundation
-enum Genre: String {
-    case all
-    case movie
-    case tv
-    case person
+enum Genre: String, CaseIterable {
+    case all = "All"
+    case movie = "Movie"
+    case tv = "TV"
+    case person = "Person"
     
-    
-}
-
-enum TimeWindow: String {
-    case day
-    case week
+    var genreString: String {
+        String(describing: self)
+    }
+     
 }
