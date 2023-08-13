@@ -10,7 +10,7 @@ enum Genre: String, CaseIterable {
     case all = "All"
     case movie = "Movie"
     case tv = "TV"
-    case person = "Person"
+    //case person = "Person"
     
     var genreString: String {
         String(describing: self)

@@ -14,6 +14,7 @@ struct Contents {
     var overview: String
     var poster: String
     var release: String
+    var media_type: String
     
     
 }

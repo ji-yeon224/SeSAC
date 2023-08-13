@@ -27,7 +27,6 @@ class TrendViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(#function)
         collectionView.dataSource = self
         collectionView.delegate = self
         
@@ -36,10 +35,9 @@ class TrendViewController: UIViewController {
         collectionView.register(nib, forCellWithReuseIdentifier: TrendCollectionViewCell.identifier)
         setCell()
         getTrendData(genre: genre.genreString, time: time)
-        title = "THIS WEEK TREND"
+        title = "THIS WEEK ALL TREND"
         timeButton.setTitle("DAY", for: .normal)
         setMenuButton()
-        print(Genre(rawValue: "All"))
         
         
     }
@@ -47,7 +45,7 @@ class TrendViewController: UIViewController {
     func setMenuButton() {
         var menuItems: [UIAction] = []
         for gen in genreList {
-            let action = UIAction(title: gen.rawValue, image: UIImage(systemName: "trash")) { (action) in
+            let action = UIAction(title: gen.rawValue, image: UIImage(systemName: "folder")) { (action) in
                 self.getTrendData(genre: Genre(rawValue: action.title)!.genreString, time: self.time)}
             menuItems.append(action)
             genre = Genre(rawValue: action.title)!
@@ -69,11 +67,11 @@ class TrendViewController: UIViewController {
         switch time {
         case .week:
             time = .day
-            title = "TODAY TREND"
+            title = "TODAY \(genre.rawValue) TREND"
             timeButton.setTitle("DAY", for: .normal)
         case .day:
             time = .week
-            title = "THIS WEEK TREND"
+            title = "THIS WEEK \(genre.rawValue) TREND"
             timeButton.setTitle("WEEK", for: .normal)
         }
         getTrendData(genre: genre.genreString, time: time)
@@ -91,15 +89,31 @@ extension TrendViewController {
         TMDBApi.shared.trendCallRequest(type: .trend, genre: genre, time: time.rawValue) { json in
             let data = json["results"].arrayValue
             for item in data {
-                self.contentsList.append(Contents.init(
-                    id: item["id"].intValue,
-                    title: item["title"].stringValue,
-                    overview: item["overview"].stringValue,
-                    poster: item["poster_path"].stringValue,
-                    release: item["release_date"].stringValue))
+                print(item)
+                let id = item["id"].intValue
+                let overview = item["overview"].stringValue
+                let poster = item["poster_path"].stringValue
+                let media_type = item["media_type"].stringValue
+                
+                var title = ""
+                var release = ""
+                
+                switch media_type {
+                case "tv":
+                    title = item["name"].stringValue
+                    release = ""
+                case "movie":
+                    title = item["title"].stringValue
+                    release = item["release_date"].stringValue
+                default: return
+                }
+                
+                
+                self.contentsList.append(Contents(id: id, title: title, overview: overview, poster: poster, release: release, media_type: media_type))
                 
             }
             self.collectionView.reloadData()
+            self.collectionView.setContentOffset(.zero, animated: true)
         }
         
         
@@ -135,11 +149,8 @@ extension TrendViewController: UICollectionViewDelegate, UICollectionViewDataSou
             }
         }
         
-       
         
-        
-        
-        cell.titleLabel.text = contentsList[indexPath.row].title
+        cell.titleLabel.text = "\(indexPath.row + 1). " + contentsList[indexPath.row].title
         
         return cell
     }
