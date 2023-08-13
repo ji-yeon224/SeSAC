@@ -22,12 +22,14 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setHeaderInfo()
-        //print(contents)
         getCreditData()
         
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.rowHeight = 100
+        tableView.allowsSelection = false
         
         let nib = UINib(nibName: DetailTableViewCell.identifier, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: DetailTableViewCell.identifier)
@@ -36,7 +38,11 @@ class DetailViewController: UIViewController {
     }
     
     func getCreditData() {
-        TMDBApi.shared.creditCallRequest(genre: "movie", id: contents!.id) { json in
+        guard let contents else {
+            dismiss(animated: true)
+            return
+        }
+        TMDBApi.shared.creditCallRequest(genre: "movie", id: contents.id) { json in
             let data = json["cast"].arrayValue
             for i in 0...5 {
                 self.creditList.append(Credit.init(name: data[i]["name"].stringValue,
@@ -51,18 +57,46 @@ class DetailViewController: UIViewController {
     }
     
     func setHeaderInfo() {
-        let url = URL(string: "https://image.tmdb.org/t/p/original" + contents!.poster)!
-        DispatchQueue.global().async {
-            let data = try! Data(contentsOf: url)
-            DispatchQueue.main.async {
-                self.posterImageView.image = UIImage(data: data)
-                
-            }
+        guard let contents else {
+            dismiss(animated: true)
+            return
         }
-        titleLabel.text = contents!.title
-        releaseLabel.text = contents!.release
-        overviewText.text = contents!.overview
+        let imageURL = TMDBApi.imgURL + contents.poster
+        if let url = URL(string: imageURL){
+            DispatchQueue.global().async {
+                let data = try! Data(contentsOf: url)
+                DispatchQueue.main.async {
+                    self.posterImageView.image = UIImage(data: data)
+                    
+                }
+            }
+        } else {
+            posterImageView.image = UIImage(systemName: "xmark")
+            posterImageView.tintColor = .lightGray
+        }
+       
+        infoView.layer.opacity = 80
+        infoView.layer.backgroundColor = UIColor.systemGray6.cgColor
         
+        title = contents.title
+        overviewText.isEditable = false
+        titleLabel.text = contents.title
+        titleLabel.numberOfLines = 0
+        titleLabel.font = .boldSystemFont(ofSize: 17)
+        
+        releaseLabel.text = contents.release
+        releaseLabel.font = .systemFont(ofSize: 13)
+        overviewText.text = contents.overview
+        overviewText.font = .systemFont(ofSize: 15)
+        overviewText.layer.backgroundColor = UIColor.clear.cgColor
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButtonClicked))
+        navigationItem.leftBarButtonItem?.tintColor = .darkGray
+        
+    }
+    
+    @objc func closeButtonClicked() {
+        dismiss(animated: true)
     }
 
     
@@ -81,15 +115,20 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         cell.characterLabel.text = creditList[indexPath.row].character
         cell.nameLabel.text = creditList[indexPath.row].name
         
-        
-        let url = URL(string: "https://image.tmdb.org/t/p/original"+creditList[indexPath.row].profile)!
-        DispatchQueue.global().async {
-            let data = try! Data(contentsOf: url)
-            DispatchQueue.main.async {
-                cell.profileImageView.image = UIImage(data: data)
-                
+        let imageURL = TMDBApi.imgURL + creditList[indexPath.row].profile
+        if let url = URL(string: imageURL) {
+            DispatchQueue.global().async {
+                let data = try! Data(contentsOf: url)
+                DispatchQueue.main.async {
+                    cell.profileImageView.image = UIImage(data: data)
+                    
+                }
             }
+        } else {
+            cell.profileImageView.image = UIImage(systemName: "person")
+            cell.profileImageView.tintColor = .lightGray
         }
+        
         
         return cell
     }

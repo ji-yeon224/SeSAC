@@ -12,13 +12,14 @@ class TrendCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var posterImage: UIImageView!
     @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var releaseLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         posterImage.backgroundColor = .black
         posterImage.contentMode = .scaleAspectFill
         
+        titleLabel.font = .boldSystemFont(ofSize: 22)
+        titleLabel.numberOfLines = 0
         
     }
 

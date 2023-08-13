@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aag-Io-wkg">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
@@ -37,37 +37,40 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Jtc-JV-uid">
-                                <rect key="frame" x="20" y="59" width="353" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="Foa-AO-pGV"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jtc-JV-uid" secondAttribute="trailing" constant="20" id="BOI-ED-Vbf"/>
-                            <constraint firstItem="Jtc-JV-uid" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="JAI-wV-YVt"/>
                             <constraint firstItem="v68-BP-Zvi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="LtE-Di-gW7"/>
+                            <constraint firstItem="v68-BP-Zvi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="QYW-By-py8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="v68-BP-Zvi" secondAttribute="bottom" constant="22" id="UqQ-Es-b79"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v68-BP-Zvi" secondAttribute="trailing" constant="22" id="fT0-zL-nHL"/>
-                            <constraint firstItem="v68-BP-Zvi" firstAttribute="top" secondItem="Jtc-JV-uid" secondAttribute="bottom" constant="22" id="gHQ-Rt-U3D"/>
-                            <constraint firstItem="Jtc-JV-uid" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hWr-qc-heo"/>
-                            <constraint firstItem="Jtc-JV-uid" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="o7D-IW-X1C"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="eFj-L5-40b">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="6D7-I8-8Ix">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Y9q-ry-a3n">
+                                <rect key="frame" x="302" y="4.6666666666666679" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="uyW-Hf-cfI"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="timeChageButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BEc-9w-wNh"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="v68-BP-Zvi" id="QQL-Tv-btO"/>
+                        <outlet property="timeButton" destination="Y9q-ry-a3n" id="jqa-Uf-e75"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="59" y="6"/>
+            <point key="canvasLocation" x="985.49618320610682" y="5.6338028169014089"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="uZR-Ys-H5m">
@@ -149,7 +152,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ItH-I7-HLO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="828.24427480916029" y="8.4507042253521139"/>
+            <point key="canvasLocation" x="1754.9618320610687" y="8.4507042253521139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uog-8j-oSc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aag-Io-wkg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KzW-S2-Q6n">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hdN-Tf-E0g"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fGi-Dj-MEa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="58.778625954198468" y="5.6338028169014089"/>
         </scene>
     </scenes>
     <resources>

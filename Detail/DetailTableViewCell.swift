@@ -16,12 +16,12 @@ class DetailTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        nameLabel.font = .boldSystemFont(ofSize: 17)
+        characterLabel.font = .systemFont(ofSize: 13)
+        characterLabel.numberOfLines = 0
+        
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        
-    }
-    
+  
 }

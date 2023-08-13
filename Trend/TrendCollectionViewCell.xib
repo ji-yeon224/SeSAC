@@ -17,10 +17,10 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b9v-hr-iQw">
-                        <rect key="frame" x="0.0" y="0.0" width="196" height="222"/>
+                        <rect key="frame" x="0.0" y="0.0" width="196" height="253.66666666666666"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bb0-b5-FCh">
-                        <rect key="frame" x="12" y="222" width="184" height="47.333333333333314"/>
+                        <rect key="frame" x="5" y="258.66666666666669" width="191" height="47.333333333333314"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -29,14 +29,14 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="bb0-b5-FCh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="5sp-WQ-yHV"/>
+                <constraint firstItem="bb0-b5-FCh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="5sp-WQ-yHV"/>
                 <constraint firstItem="b9v-hr-iQw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="AuR-no-ezE"/>
-                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="bb0-b5-FCh" secondAttribute="bottom" constant="10" id="B8S-hH-Pzn"/>
                 <constraint firstAttribute="trailing" secondItem="b9v-hr-iQw" secondAttribute="trailing" id="I47-ff-d7O"/>
                 <constraint firstAttribute="trailing" secondItem="bb0-b5-FCh" secondAttribute="trailing" id="Lge-Wc-jiX"/>
-                <constraint firstItem="b9v-hr-iQw" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.7" id="RMa-mn-twx"/>
+                <constraint firstItem="b9v-hr-iQw" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.8" id="RMa-mn-twx"/>
                 <constraint firstItem="b9v-hr-iQw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bcB-X4-kqz"/>
-                <constraint firstItem="bb0-b5-FCh" firstAttribute="top" secondItem="b9v-hr-iQw" secondAttribute="bottom" id="sYw-Cg-sXV"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="bb0-b5-FCh" secondAttribute="bottom" constant="5" id="sC6-Py-u6Z"/>
+                <constraint firstItem="bb0-b5-FCh" firstAttribute="top" secondItem="b9v-hr-iQw" secondAttribute="bottom" constant="5" id="sYw-Cg-sXV"/>
                 <constraint firstItem="bb0-b5-FCh" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.15" id="ty2-sg-slb"/>
             </constraints>
             <size key="customSize" width="196" height="317"/>

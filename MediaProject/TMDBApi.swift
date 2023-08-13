@@ -13,7 +13,7 @@ class TMDBApi {
     
     static let shared = TMDBApi()
     private init() { }
- 
+    static let imgURL = "https://image.tmdb.org/t/p/original"
 
     func trendCallRequest(type: Endpoint, genre: String, time: String? = nil, completionHandler: @escaping (JSON) -> () ) {
         

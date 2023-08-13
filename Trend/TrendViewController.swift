@@ -9,15 +9,23 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+enum Time: String {
+    case week
+    case day
+}
+
 class TrendViewController: UIViewController {
     
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var timeButton: UIButton!
+    
+    var time: Time = .week
     
     var contentsList: [Contents] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(#function)
         collectionView.dataSource = self
         collectionView.delegate = self
         
@@ -25,12 +33,32 @@ class TrendViewController: UIViewController {
         let nib = UINib(nibName: TrendCollectionViewCell.identifier, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: TrendCollectionViewCell.identifier)
         setCell()
-        getTrendData()
+        getTrendData(time: time)
+        title = "THIS WEEK TREND"
+        timeButton.setTitle("DAY", for: .normal)
         
     }
     
-    func getTrendData () {
-        TMDBApi.shared.trendCallRequest(type: .trend, genre: "movie", time: "week") { json in
+    @IBAction func timeChageButtonClicked(_ sender: Any) {
+        switch time {
+        case .week:
+            time = .day
+            title = "TODAY TREND"
+            timeButton.setTitle("DAY", for: .normal)
+        case .day:
+            time = .week
+            title = "THIS WEEK TREND"
+            timeButton.setTitle("WEEK", for: .normal)
+        }
+        getTrendData(time: time)
+        
+        
+    }
+    
+    
+    func getTrendData (time: Time) {
+        contentsList.removeAll()
+        TMDBApi.shared.trendCallRequest(type: .trend, genre: "movie", time: time.rawValue) { json in
             let data = json["results"].arrayValue
             for item in data {
                 self.contentsList.append(Contents.init(
@@ -63,7 +91,6 @@ extension TrendViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendCollectionViewCell.identifier, for: indexPath) as! TrendCollectionViewCell
         
-        print(contentsList[indexPath.row].poster)
         let url = URL(string: "https://image.tmdb.org/t/p/original"+contentsList[indexPath.row].poster)!
         DispatchQueue.global().async {
             let data = try! Data(contentsOf: url)
@@ -74,9 +101,6 @@ extension TrendViewController: UICollectionViewDelegate, UICollectionViewDataSou
         }
         cell.titleLabel.text = contentsList[indexPath.row].title
         
-        
-        
-        
         return cell
     }
     
@@ -85,7 +109,10 @@ extension TrendViewController: UICollectionViewDelegate, UICollectionViewDataSou
         let vc = sb.instantiateViewController(identifier: DetailViewController.identifier) as! DetailViewController
         
         vc.contents = contentsList[indexPath.row]
-        present(vc, animated: true)
+        
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+        present(nav, animated: true)
     }
     
     func setCell() {
@@ -96,7 +123,7 @@ extension TrendViewController: UICollectionViewDelegate, UICollectionViewDataSou
         print(width, UIScreen.main.bounds.width)
 
 
-        layout.itemSize = CGSize(width: width - 10, height: width * 1.5)
+        layout.itemSize = CGSize(width: width - spacing, height: width * 1.5)
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = spacing
         
