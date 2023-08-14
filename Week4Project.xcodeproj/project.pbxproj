@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE5C9E9A2A8A022C0011664D /* BoxOfficeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C9E992A8A022C0011664D /* BoxOfficeData.swift */; };
 		CE914CE22A81C4C200703B2E /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE914CE12A81C4C200703B2E /* WeatherViewController.swift */; };
 		CE914CE42A81E78900703B2E /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE914CE32A81E78900703B2E /* VideoViewController.swift */; };
 		CE914CE62A820A8200703B2E /* BeerCollecionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE914CE52A820A8200703B2E /* BeerCollecionViewController.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE5C9E992A8A022C0011664D /* BoxOfficeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeData.swift; sourceTree = "<group>"; };
 		CE914CE12A81C4C200703B2E /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		CE914CE32A81E78900703B2E /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = SOURCE_ROOT; };
 		CE914CE52A820A8200703B2E /* BeerCollecionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BeerCollecionViewController.swift; path = Beer/BeerCollecionViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -114,6 +116,7 @@
 				CE9C35DB2A80968900C64B40 /* AppDelegate.swift */,
 				CE9C35DD2A80968900C64B40 /* SceneDelegate.swift */,
 				CE9C35DF2A80968900C64B40 /* ViewController.swift */,
+				CE5C9E992A8A022C0011664D /* BoxOfficeData.swift */,
 				CE9C35E12A80968900C64B40 /* Main.storyboard */,
 				CE914CE12A81C4C200703B2E /* WeatherViewController.swift */,
 				CE9C35FE2A8121EA00C64B40 /* LottoViewController.swift */,
@@ -239,6 +242,7 @@
 				CE9C35FB2A809C3200C64B40 /* TranslationViewController.swift in Sources */,
 				CE914CE62A820A8200703B2E /* BeerCollecionViewController.swift in Sources */,
 				CE914CEC2A82146300703B2E /* DetailViewController.swift in Sources */,
+				CE5C9E9A2A8A022C0011664D /* BoxOfficeData.swift in Sources */,
 				CE9C35E02A80968900C64B40 /* ViewController.swift in Sources */,
 				CEBF1A3B2A85BA98000E099C /* ReusableViewProtocol.swift in Sources */,
 				CE914CE42A81E78900703B2E /* VideoViewController.swift in Sources */,

@@ -48,15 +48,40 @@ class VideoViewController: UIViewController {
         
         searchBar.delegate = self
         
-        
+        callRequest(query: "아이유", page: 1)
     }
     
     
     func callRequest(query: String, page: Int) {
         
+       
         KakaoAPIManager.shared.callRequest(type: .video, query: query) { json in
-            print("=================\(json)")
+            //print("=================\(json)")
+            //print(json)
+            for item in json["documents"].arrayValue {
+                //print(item)
+                let author = item["author"].stringValue
+                let date = item["datetime"].stringValue
+                let time = item["play_time"].intValue
+                let thumbnail = item["thumbnail"].stringValue
+                let title = item["title"].stringValue
+                let link = item["url"].stringValue
+                let data = Video(author: author, date: date, time: time, thumbnail: thumbnail, title: title, link: link)
+                self.videoList.append(data)
+                print("==1==")
+                //print(item)
+                self.videoTableView.reloadData()
+            }
+            
+                
+            
+            
+            print("==2==")
+            print(self.videoList)
         }
+       
+        
+       
         
         
 //        AF.request(url, method: .get, headers: header).validate(statusCode: 200...500).responseJSON { response in
