@@ -30,48 +30,7 @@ class TMDBApi {
         }
         
     }
-    
-    
-    func trendCallRequest(endPoint: Endpoint, type: String, time: String? = nil, completionHandler: @escaping (JSON) -> () ) {
-        
-        var url = endPoint.requestURL(type: type)
-       
-        if time != nil {
-            url += "\(String(describing: time!))"
-        }
-        url += "?api_key=\(APIKey.tmdbKey)"
-        print(url)
-        AF.request(url, method: .get).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                completionHandler(json)
-            case .failure(let error):
-                print(error)
-            }
-        }
-        
-    }
-    
-    func creditCallRequest(type: String, id: Int, completionHandler: @escaping (JSON) -> () ) {
-        
-        var url = Endpoint.credit.requestURL(type: type) + "/\(id)/credits"
-        url += "?api_key=\(APIKey.tmdbKey)"
-        AF.request(url, method: .get).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                completionHandler(json)
-                //print("JSON: \(json)")
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-
-    
-    
+  
     
     
     
