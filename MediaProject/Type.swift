@@ -6,13 +6,13 @@
 //
 
 import Foundation
-enum Genre: String, CaseIterable {
+enum Type: String, CaseIterable {
     case all = "All"
     case movie = "Movie"
     case tv = "TV"
     //case person = "Person"
     
-    var genreString: String {
+    var typeString: String {
         String(describing: self)
     }
      

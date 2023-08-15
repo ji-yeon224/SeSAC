@@ -11,7 +11,6 @@ class DetailViewController: UIViewController {
     
     var contents: Contents?
     var creditList: [Credit] = []
-    //var genre: Genre = .movie
     
     @IBOutlet var infoView: UIView!
     @IBOutlet var tableView: UITableView!
@@ -43,7 +42,7 @@ class DetailViewController: UIViewController {
             dismiss(animated: true)
             return
         }
-        TMDBApi.shared.creditCallRequest(genre: contents.media_type, id: contents.id) { json in
+        TMDBApi.shared.creditCallRequest(type: contents.media_type, id: contents.id) { json in
             let data = json["cast"].arrayValue
             for i in 0...5 {
                 self.creditList.append(Credit.init(name: data[i]["name"].stringValue,

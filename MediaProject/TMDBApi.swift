@@ -15,9 +15,9 @@ class TMDBApi {
     private init() { }
     static let imgURL = "https://image.tmdb.org/t/p/original"
 
-    func trendCallRequest(type: Endpoint, genre: String, time: String? = nil, completionHandler: @escaping (JSON) -> () ) {
+    func trendCallRequest(endPoint: Endpoint, type: String, time: String? = nil, completionHandler: @escaping (JSON) -> () ) {
         
-        var url = type.requestURL(genre: genre)
+        var url = endPoint.requestURL(type: type)
         if time != nil {
             url += "\(String(describing: time!))"
         }
@@ -35,9 +35,9 @@ class TMDBApi {
         
     }
     
-    func creditCallRequest(genre: String, id: Int, completionHandler: @escaping (JSON) -> () ) {
+    func creditCallRequest(type: String, id: Int, completionHandler: @escaping (JSON) -> () ) {
         
-        var url = Endpoint.credit.requestURL(genre: genre) + "/\(id)/credits"
+        var url = Endpoint.credit.requestURL(type: type) + "/\(id)/credits"
         url += "?api_key=\(APIKey.tmdbKey)"
         AF.request(url, method: .get).validate().responseJSON { response in
             switch response.result {

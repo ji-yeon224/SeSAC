@@ -10,12 +10,13 @@ import Foundation
 enum Endpoint {
     case trend
     case credit
+    //case genre
     
     
-    func requestURL(genre: String) -> String {
+    func requestURL(type: String) -> String {
         switch self {
-        case .trend: return URL.trendEndPointString(genre)
-        case .credit: return URL.creditEndPointString(genre)
+        case .trend: return URL.trendEndPointString(type)
+        case .credit: return URL.creditEndPointString(type)
         }
     }
     

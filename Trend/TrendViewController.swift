@@ -20,8 +20,8 @@ class TrendViewController: UIViewController {
     @IBOutlet var timeButton: UIButton!
     
     var time: Time = .week
-    var genre: Genre = .all
-    var genreList = Genre.allCases
+    var type: Type = .all
+    var typeList = Type.allCases
     
     var contentsList: [Contents] = []
 
@@ -34,7 +34,7 @@ class TrendViewController: UIViewController {
         let nib = UINib(nibName: TrendCollectionViewCell.identifier, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: TrendCollectionViewCell.identifier)
         setCell()
-        getTrendData(genre: genre.genreString, time: time)
+        getTrendData(type: type.typeString, time: time)
         title = "THIS WEEK ALL TREND"
         timeButton.setTitle("DAY", for: .normal)
         setMenuButton()
@@ -44,11 +44,11 @@ class TrendViewController: UIViewController {
     
     func setMenuButton() {
         var menuItems: [UIAction] = []
-        for gen in genreList {
+        for gen in typeList {
             let action = UIAction(title: gen.rawValue, image: UIImage(systemName: "folder")) { (action) in
-                self.getTrendData(genre: Genre(rawValue: action.title)!.genreString, time: self.time)}
+                self.getTrendData(type: Type(rawValue: action.title)!.typeString, time: self.time)}
             menuItems.append(action)
-            genre = Genre(rawValue: action.title)!
+            type = Type(rawValue: action.title)!
         }
         
 
@@ -58,23 +58,20 @@ class TrendViewController: UIViewController {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", image: UIImage(systemName: "ellipsis.circle"), primaryAction: nil, menu: menu)
     }
-    
-    func changeGenreButton() {
-        
-    }
+  
     
     @IBAction func timeChageButtonClicked(_ sender: Any) {
         switch time {
         case .week:
             time = .day
-            title = "TODAY \(genre.rawValue) TREND"
+            title = "TODAY \(type.rawValue) TREND"
             timeButton.setTitle("DAY", for: .normal)
         case .day:
             time = .week
-            title = "THIS WEEK \(genre.rawValue) TREND"
+            title = "THIS WEEK \(type.rawValue) TREND"
             timeButton.setTitle("WEEK", for: .normal)
         }
-        getTrendData(genre: genre.genreString, time: time)
+        getTrendData(type: type.typeString, time: time)
         
         
     }
@@ -84,11 +81,11 @@ class TrendViewController: UIViewController {
 }
 
 extension TrendViewController {
-    func getTrendData (genre: String, time: Time) {
+    func getTrendData (type: String, time: Time) {
         
         
         contentsList.removeAll()
-        TMDBApi.shared.trendCallRequest(type: .trend, genre: genre, time: time.rawValue) { json in
+        TMDBApi.shared.trendCallRequest(endPoint: .trend, type: type, time: time.rawValue) { json in
             let data = json["results"].arrayValue
             for item in data {
                 let id = item["id"].intValue
@@ -170,13 +167,13 @@ extension TrendViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func setCell() {
         
         let layout = UICollectionViewFlowLayout()
-        let spacing: CGFloat = 22
+        let spacing: CGFloat = 10
         let width = UIScreen.main.bounds.width - (spacing * 2)
 
 
-        layout.itemSize = CGSize(width: width - spacing, height: width * 1.5)
+        layout.itemSize = CGSize(width: width, height: width * 1.5)
         layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = spacing
+        layout.minimumLineSpacing = spacing * 3
         
 
         collectionView.collectionViewLayout = layout //레이아웃 교체하려는 것으로 바꾸기

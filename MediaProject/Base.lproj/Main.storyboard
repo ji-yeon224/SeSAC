@@ -156,6 +156,31 @@
             <point key="canvasLocation" x="1754.9618320610687" y="8.4507042253521139"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="9su-xB-J78">
+            <objects>
+                <viewController id="GGO-Lh-NuT" customClass="ViewController" customModule="MediaProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wob-PC-JYV">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="izT-D6-yMm">
+                                <rect key="frame" x="51" y="194" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RWM-K2-dLe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="backView" destination="izT-D6-yMm" id="roK-53-9eu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xsp-Lm-36j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2462" y="-5"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="vWg-i1-win">
             <objects>
                 <viewController id="GWh-K5-sS6" sceneMemberID="viewController">

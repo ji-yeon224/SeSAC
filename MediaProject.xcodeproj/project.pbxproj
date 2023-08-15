@@ -29,7 +29,7 @@
 		CEBF1A872A88759C000E099C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF1A862A88759C000E099C /* DetailViewController.swift */; };
 		CEBF1A8E2A887B4E000E099C /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF1A8C2A887B4E000E099C /* DetailTableViewCell.swift */; };
 		CEBF1A8F2A887B4E000E099C /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBF1A8D2A887B4E000E099C /* DetailTableViewCell.xib */; };
-		CEBF1A932A8881CD000E099C /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF1A922A8881CD000E099C /* Genre.swift */; };
+		CEBF1A932A8881CD000E099C /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF1A922A8881CD000E099C /* Type.swift */; };
 		CEBF1A992A88B45F000E099C /* CreditStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF1A982A88B45F000E099C /* CreditStruct.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +55,7 @@
 		CEBF1A862A88759C000E099C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CEBF1A8C2A887B4E000E099C /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		CEBF1A8D2A887B4E000E099C /* DetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
-		CEBF1A922A8881CD000E099C /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		CEBF1A922A8881CD000E099C /* Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
 		CEBF1A982A88B45F000E099C /* CreditStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,7 +109,7 @@
 				CEBF1A7E2A87CBB6000E099C /* TMDBApi.swift */,
 				CEBF1A802A87CC15000E099C /* URLExtension.swift */,
 				CEBF1A822A87CCDA000E099C /* Endpoint.swift */,
-				CEBF1A922A8881CD000E099C /* Genre.swift */,
+				CEBF1A922A8881CD000E099C /* Type.swift */,
 			);
 			path = MediaProject;
 			sourceTree = "<group>";
@@ -232,7 +232,7 @@
 				CEBF1A6C2A862783000E099C /* APIKey.swift in Sources */,
 				CEBF1A852A87DD6F000E099C /* MediaStruct.swift in Sources */,
 				CEBF1A582A8622EB000E099C /* SceneDelegate.swift in Sources */,
-				CEBF1A932A8881CD000E099C /* Genre.swift in Sources */,
+				CEBF1A932A8881CD000E099C /* Type.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
