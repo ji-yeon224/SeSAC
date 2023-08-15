@@ -37,26 +37,7 @@ class DetailViewController: UIViewController {
         
     }
     
-    func getCreditData() {
-        guard let contents else {
-            dismiss(animated: true)
-            return
-        }
-        let parameter = "\(contents.media_type)/\(contents.id)/credits"
-        TMDBApi.shared.callRequest(endPoint: .credit, parameter: parameter) { json in
-            let data = json["cast"].arrayValue
-            for i in 0...5 {
-                self.creditList.append(Credit.init(name: data[i]["name"].stringValue,
-                                                   profile: data[i]["profile_path"].stringValue,
-                                                   character: data[i]["character"].stringValue))
-                
-            }
-            
-            self.tableView.reloadData()
-        }
-        
-        
-    }
+    
     
     func setHeaderInfo() {
         guard let contents else {
@@ -104,6 +85,32 @@ class DetailViewController: UIViewController {
     
 
 }
+
+extension DetailViewController {
+    func getCreditData() {
+        guard let contents else {
+            dismiss(animated: true)
+            return
+        }
+        let parameter = "\(contents.media_type)/\(contents.id)/credits"
+        TMDBApi.shared.callRequest(endPoint: .credit, parameter: parameter) { json in
+            let data = json["cast"].arrayValue
+            for i in 0...5 {
+                self.creditList.append(Credit.init(name: data[i]["name"].stringValue,
+                                                   profile: data[i]["profile_path"].stringValue,
+                                                   character: data[i]["character"].stringValue))
+                
+            }
+            
+            self.tableView.reloadData()
+        }
+        
+        
+    }
+    
+    
+}
+
 
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
 

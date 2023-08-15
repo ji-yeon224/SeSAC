@@ -39,7 +39,7 @@ class TrendViewController: UIViewController {
         title = "THIS WEEK ALL TREND"
         timeButton.setTitle("DAY", for: .normal)
         setMenuButton()
-        
+        getGenreData()
         
     }
     
@@ -83,8 +83,9 @@ class TrendViewController: UIViewController {
 
 extension TrendViewController {
     func getTrendData (type: String, time: Time) {
+        
+        
         contentsList.removeAll()
-        print(type)
         let parameter = "\(type)/\(time.rawValue)"
         TMDBApi.shared.callRequest(endPoint: .trend, parameter: parameter) { json in
             let data = json["results"].arrayValue
@@ -93,9 +94,14 @@ extension TrendViewController {
                 let overview = item["overview"].stringValue
                 let poster = item["poster_path"].stringValue
                 let media_type = item["media_type"].stringValue
+                var genre: [Int] = []
+                for g in item["genre_ids"].arrayValue {
+                    genre.append(g.intValue)
+                }
                 
                 var title = ""
                 var release = ""
+                
                 
                 switch media_type {
                 case "tv":
@@ -108,15 +114,23 @@ extension TrendViewController {
                 }
                 
                 
-                self.contentsList.append(Contents(id: id, title: title, overview: overview, poster: poster, release: release, media_type: media_type))
+                self.contentsList.append(Contents(id: id, title: title, overview: overview, poster: poster, release: release, media_type: media_type, genre: genre))
         }
 
             self.collectionView.reloadData()
             self.collectionView.setContentOffset(.zero, animated: true)
         }
         
-        
-        
+    }
+    
+    func getGenreData() {
+        TMDBApi.shared.callRequest(endPoint: .genre, parameter: type.typeString) { json in
+            let data = json["genres"].arrayValue
+            for item in data {
+                self.genreDictoinary[item["id"].intValue] = item["name"].stringValue
+            }
+            self.collectionView.reloadData()
+        }
         
     }
 }
@@ -148,7 +162,14 @@ extension TrendViewController: UICollectionViewDelegate, UICollectionViewDataSou
             }
         }
         
-        
+        //print(genreDictoinary)
+        var genreString = ""
+        for i in contentsList[indexPath.row].genre {
+            print(i, genreDictoinary[i])
+            genreString += "#\(genreDictoinary[i] ?? "") "
+            
+        }
+        cell.genreLabel.text = genreDictoinary[contentsList[indexPath.row].genre[0]]
         cell.titleLabel.text = "\(indexPath.row + 1). " + contentsList[indexPath.row].title
         
         return cell

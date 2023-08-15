@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		CEBF1A562A8622EB000E099C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF1A552A8622EB000E099C /* AppDelegate.swift */; };
 		CEBF1A582A8622EB000E099C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF1A572A8622EB000E099C /* SceneDelegate.swift */; };
-		CEBF1A5A2A8622EB000E099C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF1A592A8622EB000E099C /* ViewController.swift */; };
 		CEBF1A5D2A8622EB000E099C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEBF1A5B2A8622EB000E099C /* Main.storyboard */; };
 		CEBF1A5F2A8622ED000E099C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEBF1A5E2A8622ED000E099C /* Assets.xcassets */; };
 		CEBF1A622A8622ED000E099C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEBF1A602A8622ED000E099C /* LaunchScreen.storyboard */; };
@@ -37,7 +36,6 @@
 		CEBF1A522A8622EB000E099C /* MediaProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEBF1A552A8622EB000E099C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEBF1A572A8622EB000E099C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CEBF1A592A8622EB000E099C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CEBF1A5C2A8622EB000E099C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEBF1A5E2A8622ED000E099C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEBF1A612A8622ED000E099C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 				CEBF1A6B2A862783000E099C /* APIKey.swift */,
 				CEBF1A552A8622EB000E099C /* AppDelegate.swift */,
 				CEBF1A572A8622EB000E099C /* SceneDelegate.swift */,
-				CEBF1A592A8622EB000E099C /* ViewController.swift */,
 				CEBF1A5B2A8622EB000E099C /* Main.storyboard */,
 				CEBF1A7C2A8716FD000E099C /* ReusableViewProtocol.swift */,
 				CEBF1A842A87DD6F000E099C /* MediaStruct.swift */,
@@ -218,7 +215,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEBF1A5A2A8622EB000E099C /* ViewController.swift in Sources */,
 				CEBF1A7F2A87CBB6000E099C /* TMDBApi.swift in Sources */,
 				CEBF1A562A8622EB000E099C /* AppDelegate.swift in Sources */,
 				CEBF1A8E2A887B4E000E099C /* DetailTableViewCell.swift in Sources */,
