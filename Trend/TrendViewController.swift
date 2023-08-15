@@ -24,6 +24,7 @@ class TrendViewController: UIViewController {
     var typeList = Type.allCases
     
     var contentsList: [Contents] = []
+    var genreDictoinary: [Int : String] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,10 +83,10 @@ class TrendViewController: UIViewController {
 
 extension TrendViewController {
     func getTrendData (type: String, time: Time) {
-        
-        
         contentsList.removeAll()
-        TMDBApi.shared.trendCallRequest(endPoint: .trend, type: type, time: time.rawValue) { json in
+        print(type)
+        let parameter = "\(type)/\(time.rawValue)"
+        TMDBApi.shared.callRequest(endPoint: .trend, parameter: parameter) { json in
             let data = json["results"].arrayValue
             for item in data {
                 let id = item["id"].intValue
@@ -108,8 +109,8 @@ extension TrendViewController {
                 
                 
                 self.contentsList.append(Contents(id: id, title: title, overview: overview, poster: poster, release: release, media_type: media_type))
-                
-            }
+        }
+
             self.collectionView.reloadData()
             self.collectionView.setContentOffset(.zero, animated: true)
         }
@@ -171,7 +172,8 @@ extension TrendViewController: UICollectionViewDelegate, UICollectionViewDataSou
         let width = UIScreen.main.bounds.width - (spacing * 2)
 
 
-        layout.itemSize = CGSize(width: width, height: width * 1.5)
+        layout.itemSize = CGSize(width: width - 10, height: width * 1.5)
+        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = spacing * 3
         

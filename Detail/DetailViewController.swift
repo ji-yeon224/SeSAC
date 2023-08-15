@@ -42,7 +42,8 @@ class DetailViewController: UIViewController {
             dismiss(animated: true)
             return
         }
-        TMDBApi.shared.creditCallRequest(type: contents.media_type, id: contents.id) { json in
+        let parameter = "\(contents.media_type)/\(contents.id)/credits"
+        TMDBApi.shared.callRequest(endPoint: .credit, parameter: parameter) { json in
             let data = json["cast"].arrayValue
             for i in 0...5 {
                 self.creditList.append(Credit.init(name: data[i]["name"].stringValue,
@@ -53,6 +54,7 @@ class DetailViewController: UIViewController {
             
             self.tableView.reloadData()
         }
+        
         
     }
     
