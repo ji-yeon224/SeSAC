@@ -9,11 +9,21 @@ import UIKit
 import Alamofire
 
 class CodableViewController: UIViewController {
+    
+    
+    @IBOutlet var dateTextField: UITextField!
+    @IBOutlet var checkButton: UIButton!
+    
+    
+    
+    var resultText = "Apple"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         //fetchLottoData()
         fetchTranslateData(source: "ko", target: "en", text: "안녕하세요")
+        
+        fetchTranslateData(source: "en", target: "ko", text: resultText)
     }
 
     func fetchTranslateData(source: String, target: String, text: String) {
@@ -36,10 +46,47 @@ class CodableViewController: UIViewController {
             .responseDecodable(of: Translation.self) { response in
                 
                 guard let value = response.value else { return }
-                print(value)
+                print(value.message.result.translatedText)
+                
+                self.resultText = value.message.result.translatedText
+                print("확인", self.resultText)
+                self.fetchTranslate(source: "en", target: "ko", text: self.resultText)
+                
             }
 
     }
+    
+    func fetchTranslate(source: String, target: String, text: String) {
+        
+        print("fetchTranslateData", source, target, text)
+        
+        let url = "https://openapi.naver.com/v1/papago/n2mt"
+        let header: HTTPHeaders = [
+            "X-Naver-Client-Id": Key.clientID,
+            "X-Naver-Client-Secret": Key.clientSecret
+        ]
+        let parameters: Parameters = [
+            "source": source,
+            "target": target,
+            "text": text
+        ]
+        
+        AF.request(url, method: .post, parameters: parameters, headers: header)
+            .validate(statusCode: 200...500)
+            .responseDecodable(of: Translation.self) { response in
+                
+                guard let value = response.value else { return }
+                print(value.message.result.translatedText)
+                
+                self.resultText = value.message.result.translatedText
+                print("최종 확인", self.resultText)
+                
+            }
+
+    }
+    
+    
+    
     
 
 //    func fetchLottoData() {

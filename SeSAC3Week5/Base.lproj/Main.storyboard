@@ -119,9 +119,39 @@
                     <view key="view" contentMode="scaleToFill" id="D6L-0T-agr">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3a3-zx-RLn">
+                                <rect key="frame" x="20" y="79" width="353" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Opt-mk-hKJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1n-21-Ndr">
+                                <rect key="frame" x="20" y="149" width="353" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="BnA-pt-EO2"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="uVE-Od-lXX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uVE-Od-lXX" firstAttribute="trailing" secondItem="3a3-zx-RLn" secondAttribute="trailing" constant="20" id="8qn-tx-eE3"/>
+                            <constraint firstItem="3a3-zx-RLn" firstAttribute="top" secondItem="uVE-Od-lXX" secondAttribute="top" constant="20" id="CnU-XY-Men"/>
+                            <constraint firstItem="b1n-21-Ndr" firstAttribute="leading" secondItem="uVE-Od-lXX" secondAttribute="leading" constant="20" id="iNr-i1-ysu"/>
+                            <constraint firstItem="uVE-Od-lXX" firstAttribute="trailing" secondItem="b1n-21-Ndr" secondAttribute="trailing" constant="20" id="jz2-Zv-5rq"/>
+                            <constraint firstItem="3a3-zx-RLn" firstAttribute="leading" secondItem="uVE-Od-lXX" secondAttribute="leading" constant="20" id="ovI-8R-v4u"/>
+                            <constraint firstItem="b1n-21-Ndr" firstAttribute="top" secondItem="3a3-zx-RLn" secondAttribute="bottom" constant="20" id="sIH-HG-gAU"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="checkButton" destination="b1n-21-Ndr" id="eoP-8z-M8H"/>
+                        <outlet property="dateTextField" destination="3a3-zx-RLn" id="Hnt-Pa-D9I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HWq-GF-la5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
