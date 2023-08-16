@@ -8,6 +8,12 @@
 import UIKit
 import Alamofire
 
+enum ValidationError: Error {
+    case emptyString
+    case isNotInt
+    case isNotDate
+}
+
 class CodableViewController: UIViewController {
     
     
@@ -20,72 +26,153 @@ class CodableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //fetchLottoData()
-        fetchTranslateData(source: "ko", target: "en", text: "안녕하세요")
         
-        fetchTranslateData(source: "en", target: "ko", text: resultText)
-    }
-
-    func fetchTranslateData(source: String, target: String, text: String) {
         
-        print("fetchTranslateData", source, target, text)
-        
-        let url = "https://openapi.naver.com/v1/papago/n2mt"
-        let header: HTTPHeaders = [
-            "X-Naver-Client-Id": Key.clientID,
-            "X-Naver-Client-Secret": Key.clientSecret
-        ]
-        let parameters: Parameters = [
-            "source": source,
-            "target": target,
-            "text": text
-        ]
-        
-        AF.request(url, method: .post, parameters: parameters, headers: header)
-            .validate(statusCode: 200...500)
-            .responseDecodable(of: Translation.self) { response in
-                
-                guard let value = response.value else { return }
-                print(value.message.result.translatedText)
-                
-                self.resultText = value.message.result.translatedText
-                print("확인", self.resultText)
-                self.fetchTranslate(source: "en", target: "ko", text: self.resultText)
-                
-            }
-
     }
     
-    func fetchTranslate(source: String, target: String, text: String) {
+    func validateUserInputError(text: String) throws -> Bool {
         
-        print("fetchTranslateData", source, target, text)
+        //빈 칸일 경우 유효성 검사
         
-        let url = "https://openapi.naver.com/v1/papago/n2mt"
-        let header: HTTPHeaders = [
-            "X-Naver-Client-Id": Key.clientID,
-            "X-Naver-Client-Secret": Key.clientSecret
-        ]
-        let parameters: Parameters = [
-            "source": source,
-            "target": target,
-            "text": text
-        ]
+        guard !(text.isEmpty) else {
+            print("빈 값")
+            throw ValidationError.emptyString
+        }
         
-        AF.request(url, method: .post, parameters: parameters, headers: header)
-            .validate(statusCode: 200...500)
-            .responseDecodable(of: Translation.self) { response in
-                
-                guard let value = response.value else { return }
-                print(value.message.result.translatedText)
-                
-                self.resultText = value.message.result.translatedText
-                print("최종 확인", self.resultText)
-                
-            }
-
+        //입력한 값이 숫자인지 아닌지
+        guard Int(text) != nil else {
+            print("숫자 아님")
+            throw ValidationError.isNotInt
+        }
+        
+        //날짜 형식으로 변환이 되는지
+        guard checkDateFormat(text: text) else {
+            print("잘못된 날짜 형식")
+            throw ValidationError.isNotDate
+        }
+        
+        return true
     }
     
     
+    @IBAction func checkButtonClicked(_ sender: UIButton) {
+        
+        guard let text = dateTextField.text else { return }
+        
+        do {
+            let result = try validateUserInputError(text: text)
+        } catch {
+            print("ERROR")
+        }
+        
+        
+        
+//        if validateUserInput(text: text) {
+//            print("검색 가능. 네트워크 요청 가능")
+//        } else {
+//            print("검색 불가")
+//        }
+        
+        
+    }
+    
+    func validateUserInput(text: String) -> Bool {
+        
+        //빈 칸일 경우 유효성 검사
+        
+        guard !(text.isEmpty) else {
+            print("빈 값")
+            return false
+        }
+        
+        //입력한 값이 숫자인지 아닌지
+        guard Int(text) != nil else {
+            print("숫자 아님")
+            return false
+        }
+        
+        //날짜 형식으로 변환이 되는지
+        guard checkDateFormat(text: text) else {
+            print("잘못된 날짜 형식")
+            return false
+        }
+        
+        return true
+    }
+    
+    
+    func checkDateFormat(text: String) -> Bool {
+        
+        let format = DateFormatter()
+        format.dateFormat = "yyyyMMdd"
+        
+        let result = format.date(from: text)
+        
+        return result == nil ? false : true
+        
+    }
+    
+
+//    func fetchTranslateData(source: String, target: String, text: String) {
+//
+//        print("fetchTranslateData", source, target, text)
+//
+//        let url = "https://openapi.naver.com/v1/papago/n2mt"
+//        let header: HTTPHeaders = [
+//            "X-Naver-Client-Id": Key.clientID,
+//            "X-Naver-Client-Secret": Key.clientSecret
+//        ]
+//        let parameters: Parameters = [
+//            "source": source,
+//            "target": target,
+//            "text": text
+//        ]
+//
+//        AF.request(url, method: .post, parameters: parameters, headers: header)
+//            .validate(statusCode: 200...500)
+//            .responseDecodable(of: Translation.self) { response in
+//
+//                guard let value = response.value else { return }
+//                print(value.message.result.translatedText)
+//
+//                self.resultText = value.message.result.translatedText
+//                print("확인", self.resultText)
+//                self.fetchTranslate(source: "en", target: "ko", text: self.resultText)
+//
+//            }
+//
+//    }
+//
+//    func fetchTranslate(source: String, target: String, text: String) {
+//
+//        print("fetchTranslateData", source, target, text)
+//
+//        let url = "https://openapi.naver.com/v1/papago/n2mt"
+//        let header: HTTPHeaders = [
+//            "X-Naver-Client-Id": Key.clientID,
+//            "X-Naver-Client-Secret": Key.clientSecret
+//        ]
+//        let parameters: Parameters = [
+//            "source": source,
+//            "target": target,
+//            "text": text
+//        ]
+//
+//        AF.request(url, method: .post, parameters: parameters, headers: header)
+//            .validate(statusCode: 200...500)
+//            .responseDecodable(of: Translation.self) { response in
+//
+//                guard let value = response.value else { return }
+//                print(value.message.result.translatedText)
+//
+//                self.resultText = value.message.result.translatedText
+//                print("최종 확인", self.resultText)
+//
+//            }
+//
+//    }
+//
+//
     
     
 
