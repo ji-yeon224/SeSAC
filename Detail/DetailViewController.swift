@@ -12,13 +12,12 @@ class DetailViewController: UIViewController {
     var contents: Contents?
     var creditList: [Credit] = []
     
-    @IBOutlet var infoView: UIView!
     @IBOutlet var tableView: UITableView!
     
+    @IBOutlet var backDropImageView: UIImageView!
     @IBOutlet var posterImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var releaseLabel: UILabel!
-    @IBOutlet var overviewText: UITextView!
+    //@IBOutlet var overviewText: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +33,9 @@ class DetailViewController: UIViewController {
         let nib = UINib(nibName: DetailTableViewCell.identifier, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: DetailTableViewCell.identifier)
         
+        let overviewNib = UINib(nibName: OverviewTableViewCell.identifier, bundle: nil)
+        tableView.register(overviewNib, forCellReuseIdentifier: OverviewTableViewCell.identifier)
+        
         
     }
     
@@ -44,7 +46,36 @@ class DetailViewController: UIViewController {
             dismiss(animated: true)
             return
         }
-        let imageURL = TMDBApi.imgURL + contents.poster
+        
+        
+        
+        setImage()
+        
+       
+        
+        title = contents.title
+        //overviewText.isEditable = false
+        titleLabel.text = contents.title
+        titleLabel.numberOfLines = 0
+        titleLabel.font = .boldSystemFont(ofSize: 17)
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButtonClicked))
+        navigationItem.leftBarButtonItem?.tintColor = .darkGray
+        
+    }
+    
+    @objc func closeButtonClicked() {
+        dismiss(animated: true)
+    }
+    
+    func setImage() {
+        
+        backDropImageView.contentMode = .scaleAspectFill
+        backDropImageView.layer.backgroundColor = UIColor.black.cgColor
+        backDropImageView.alpha = 0.8
+        
+        //poster
+        let imageURL = TMDBApi.imgURL + contents!.poster
         if let url = URL(string: imageURL){
             DispatchQueue.global().async {
                 let data = try! Data(contentsOf: url)
@@ -54,32 +85,26 @@ class DetailViewController: UIViewController {
                 }
             }
         } else {
-            posterImageView.image = UIImage(systemName: "xmark")
-            posterImageView.tintColor = .lightGray
+            posterImageView.backgroundColor = .lightGray
         }
-       
-        infoView.layer.opacity = 80
-        infoView.layer.backgroundColor = UIColor.systemGray6.cgColor
         
-        title = contents.title
-        overviewText.isEditable = false
-        titleLabel.text = contents.title
-        titleLabel.numberOfLines = 0
-        titleLabel.font = .boldSystemFont(ofSize: 17)
+        //backdrop
+        let backdrop = TMDBApi.imgURL + contents!.backdrop_path
+        if let url = URL(string: backdrop){
+            DispatchQueue.global().async {
+                let data = try! Data(contentsOf: url)
+                DispatchQueue.main.async {
+                    self.backDropImageView.image = UIImage(data: data)
+                    
+                    
+                }
+            }
+        } else {
+            backDropImageView.backgroundColor = .lightGray
+        }
         
-        releaseLabel.text = contents.release
-        releaseLabel.font = .systemFont(ofSize: 13)
-        overviewText.text = contents.overview
-        overviewText.font = .systemFont(ofSize: 15)
-        overviewText.layer.backgroundColor = UIColor.clear.cgColor
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButtonClicked))
-        navigationItem.leftBarButtonItem?.tintColor = .darkGray
         
-    }
-    
-    @objc func closeButtonClicked() {
-        dismiss(animated: true)
     }
 
     
@@ -113,33 +138,76 @@ extension DetailViewController {
 
 
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return creditList.count
+        
+        
+        
+        return section == 0 ? 1 : creditList.count
+        
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return section == 0 ? "Overview" : "Cast"
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier) as! DetailTableViewCell
         
-        cell.characterLabel.text = creditList[indexPath.row].character
-        cell.nameLabel.text = creditList[indexPath.row].name
         
-        let imageURL = TMDBApi.imgURL + creditList[indexPath.row].profile
-        if let url = URL(string: imageURL) {
-            DispatchQueue.global().async {
-                let data = try! Data(contentsOf: url)
-                DispatchQueue.main.async {
-                    cell.profileImageView.image = UIImage(data: data)
-                    
+        
+        //overview
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.identifier) as! OverviewTableViewCell
+            cell.setOverviewCell()
+            cell.overviewLabel.text = contents?.overview
+            
+
+            return cell
+            
+        } else { //cast
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier) as! DetailTableViewCell
+            cell.characterLabel.text = creditList[indexPath.row].character
+            cell.nameLabel.text = creditList[indexPath.row].name
+            
+            let imageURL = TMDBApi.imgURL + creditList[indexPath.row].profile
+            if let url = URL(string: imageURL) {
+                DispatchQueue.global().async {
+                    let data = try! Data(contentsOf: url)
+                    DispatchQueue.main.async {
+                        cell.profileImageView.image = UIImage(data: data)
+                        
+                    }
                 }
+            } else {
+                cell.profileImageView.image = UIImage(systemName: "person")
+                cell.profileImageView.tintColor = .lightGray
             }
-        } else {
-            cell.profileImageView.image = UIImage(systemName: "person")
-            cell.profileImageView.tintColor = .lightGray
+            
+            
+            return cell
         }
         
         
-        return cell
+        
+    }
+    
+    
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.identifier) as! OverviewTableViewCell
+            //tableView.rowHeight = UITableView.automaticDimension
+            //cell.setChangeOverviewCell()
+            cell.buttonClicked(cell.moreButton)
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+            
+        }
     }
 
 

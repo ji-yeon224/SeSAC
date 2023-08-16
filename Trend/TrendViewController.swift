@@ -61,7 +61,7 @@ class TrendViewController: UIViewController {
     }
   
     
-    @IBAction func timeChageButtonClicked(_ sender: Any) {
+    @IBAction func timeChangeButtonClicked(_ sender: Any) {
         switch time {
         case .week:
             time = .day
@@ -72,7 +72,7 @@ class TrendViewController: UIViewController {
             title = "THIS WEEK \(type.rawValue) TREND"
             timeButton.setTitle("WEEK", for: .normal)
         }
-        getTrendData(type: type.typeString, time: time)
+        
         
         
     }
@@ -94,6 +94,7 @@ extension TrendViewController {
                 let overview = item["overview"].stringValue
                 let poster = item["poster_path"].stringValue
                 let media_type = item["media_type"].stringValue
+                let backdrop = item["backdrop_path"].stringValue
                 var genre: [Int] = []
                 for g in item["genre_ids"].arrayValue {
                     genre.append(g.intValue)
@@ -114,7 +115,7 @@ extension TrendViewController {
                 }
                 
                 
-                self.contentsList.append(Contents(id: id, title: title, overview: overview, poster: poster, release: release, media_type: media_type, genre: genre))
+                self.contentsList.append(Contents(id: id, title: title, overview: overview, poster: poster, backdrop_path: backdrop, release: release, media_type: media_type, genre: genre))
         }
 
             self.collectionView.reloadData()
@@ -129,6 +130,7 @@ extension TrendViewController {
             for item in data {
                 self.genreDictoinary[item["id"].intValue] = item["name"].stringValue
             }
+            print(#function)
             self.collectionView.reloadData()
         }
         
@@ -146,7 +148,7 @@ extension TrendViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendCollectionViewCell.identifier, for: indexPath) as! TrendCollectionViewCell
         
-        
+        cell.releaseLabel.text = contentsList[indexPath.row].release
         if contentsList[indexPath.row].poster.count == 0 {
             cell.posterImage.image = UIImage(systemName: "xmark")!
             cell.posterImage.tintColor = .lightGray
@@ -162,14 +164,12 @@ extension TrendViewController: UICollectionViewDelegate, UICollectionViewDataSou
             }
         }
         
-        //print(genreDictoinary)
         var genreString = ""
         for i in contentsList[indexPath.row].genre {
-            print(i, genreDictoinary[i])
             genreString += "#\(genreDictoinary[i] ?? "") "
             
         }
-        cell.genreLabel.text = genreDictoinary[contentsList[indexPath.row].genre[0]]
+        cell.genreLabel.text = genreString
         cell.titleLabel.text = "\(indexPath.row + 1). " + contentsList[indexPath.row].title
         
         return cell
@@ -193,7 +193,7 @@ extension TrendViewController: UICollectionViewDelegate, UICollectionViewDataSou
         let width = UIScreen.main.bounds.width - (spacing * 2)
 
 
-        layout.itemSize = CGSize(width: width - 10, height: width * 1.5)
+        layout.itemSize = CGSize(width: width, height: width * 1.5)
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = spacing * 3

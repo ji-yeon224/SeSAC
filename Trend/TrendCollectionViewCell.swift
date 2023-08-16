@@ -27,6 +27,13 @@ class TrendCollectionViewCell: UICollectionViewCell {
         
         titleLabel.font = .boldSystemFont(ofSize: 22)
         titleLabel.numberOfLines = 0
+        
+        releaseLabel.font = .systemFont(ofSize: 15)
+        releaseLabel.textColor = .darkGray
+        
+        genreLabel.font = .boldSystemFont(ofSize: 17)
+        
+        
         configure()
     }
     

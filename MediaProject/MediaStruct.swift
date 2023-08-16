@@ -13,6 +13,7 @@ struct Contents {
     var title: String
     var overview: String
     var poster: String
+    var backdrop_path: String
     var release: String
     var media_type: String
     var genre: [Int]

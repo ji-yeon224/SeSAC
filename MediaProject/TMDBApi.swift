@@ -18,7 +18,7 @@ class TMDBApi {
     func callRequest(endPoint: Endpoint, parameter: String, completionHandler: @escaping (JSON) -> ()) {
         
         let url = endPoint.requestURL(type: parameter) + "?api_key=\(APIKey.tmdbKey)"
-        
+        //print(url)
         AF.request(url, method: .get).validate().responseJSON { response in
             switch response.result {
             case .success(let value):
