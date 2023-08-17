@@ -18,13 +18,14 @@ class TrendViewController: UIViewController {
     
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var timeButton: UIButton!
+   
     
     var time: Time = .week
     var type: Type = .all
     var typeList = Type.allCases
     
     var contentsList: [Contents] = []
-    var genreDictoinary: [Int : String] = [:]
+    var genreDictionary: [Int : String] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +40,8 @@ class TrendViewController: UIViewController {
         title = "THIS WEEK ALL TREND"
         timeButton.setTitle("DAY", for: .normal)
         setMenuButton()
-        getGenreData()
+        getGenreData(type: Type.movie.typeString)
+        getGenreData(type: Type.tv.typeString)
         
     }
     
@@ -83,8 +85,6 @@ class TrendViewController: UIViewController {
 
 extension TrendViewController {
     func getTrendData (type: String, time: Time) {
-        
-        
         contentsList.removeAll()
         let parameter = "\(type)/\(time.rawValue)"
         TMDBApi.shared.callRequest(endPoint: .trend, parameter: parameter) { json in
@@ -102,8 +102,8 @@ extension TrendViewController {
                 
                 var title = ""
                 var release = ""
-                
-                
+
+
                 switch media_type {
                 case "tv":
                     title = item["name"].stringValue
@@ -113,24 +113,24 @@ extension TrendViewController {
                     release = item["release_date"].stringValue
                 default: return
                 }
-                
+
                 
                 self.contentsList.append(Contents(id: id, title: title, overview: overview, poster: poster, backdrop_path: backdrop, release: release, media_type: media_type, genre: genre))
         }
-
             self.collectionView.reloadData()
             self.collectionView.setContentOffset(.zero, animated: true)
         }
-        
+
     }
     
-    func getGenreData() {
-        TMDBApi.shared.callRequest(endPoint: .genre, parameter: type.typeString) { json in
+    func getGenreData(type: String) {
+        
+        
+        TMDBApi.shared.callRequest(endPoint: .genre, parameter: type) { json in
             let data = json["genres"].arrayValue
             for item in data {
-                self.genreDictoinary[item["id"].intValue] = item["name"].stringValue
+                self.genreDictionary[item["id"].intValue] = item["name"].stringValue
             }
-            print(#function)
             self.collectionView.reloadData()
         }
         
@@ -159,19 +159,19 @@ extension TrendViewController: UICollectionViewDelegate, UICollectionViewDataSou
                 let data = try! Data(contentsOf: url)
                 DispatchQueue.main.async {
                     cell.posterImage.image = UIImage(data: data)
-                    
+
                 }
             }
         }
         
         var genreString = ""
         for i in contentsList[indexPath.row].genre {
-            genreString += "#\(genreDictoinary[i] ?? "") "
-            
+            genreString += "#\(genreDictionary[i] ?? "") "
+
         }
         cell.genreLabel.text = genreString
         cell.titleLabel.text = "\(indexPath.row + 1). " + contentsList[indexPath.row].title
-        
+
         return cell
     }
     

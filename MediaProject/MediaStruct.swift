@@ -8,7 +8,7 @@
 import Foundation
 
 struct Contents {
-    
+
     var id: Int
     var title: String
     var overview: String
@@ -17,6 +17,7 @@ struct Contents {
     var release: String
     var media_type: String
     var genre: [Int]
-    
-    
+
+
 }
+

@@ -16,22 +16,20 @@ class TMDBApi {
     static let imgURL = "https://image.tmdb.org/t/p/original"
 
     func callRequest(endPoint: Endpoint, parameter: String, completionHandler: @escaping (JSON) -> ()) {
-        
-        let url = endPoint.requestURL(type: parameter) + "?api_key=\(APIKey.tmdbKey)"
-        //print(url)
-        AF.request(url, method: .get).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                completionHandler(json)
-            case .failure(let error):
-                print(error)
+            
+            let url = endPoint.requestURL(type: parameter) + "?api_key=\(APIKey.tmdbKey)"
+            
+            AF.request(url, method: .get).validate().responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    completionHandler(json)
+                case .failure(let error):
+                    print(error)
+                }
             }
+            
         }
-        
-    }
-  
-    
     
     
 }
