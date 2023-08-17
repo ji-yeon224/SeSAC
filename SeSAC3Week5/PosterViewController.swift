@@ -24,6 +24,9 @@ class PosterViewController: UIViewController {
     var list: Recommendation = Recommendation(page: 0, results: [], totalResults: 0, totalPages: 0)
     var secondList: Recommendation = Recommendation(page: 0, results: [], totalResults: 0, totalPages: 0)
     
+    var recList: [Recommendation] = [Recommendation(page: 0, results: [], totalResults: 0, totalPages: 0), Recommendation(page: 0, results: [], totalResults: 0, totalPages: 0), Recommendation(page: 0, results: [], totalResults: 0, totalPages: 0), Recommendation(page: 0, results: [], totalResults: 0, totalPages: 0)]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,16 +38,16 @@ class PosterViewController: UIViewController {
         configureCollectionViewLayout()
         
         callRecommendation(id: 671) { data in
-            self.list = data
+            self.recList[0] = data
             
             self.callRecommendation(id: 976573) { data in
-                self.secondList = data
+                self.recList[1] = data
                 
                 self.callRecommendation(id: 569094) { data in
-                    self.secondList = data
+                    self.recList[2] = data
                     
                     self.callRecommendation(id: 567646) { data in
-                        self.secondList = data
+                        self.recList[3] = data
                         self.posterCollectionView.reloadData()
                     }
                 }
@@ -96,31 +99,21 @@ class PosterViewController: UIViewController {
 extension PosterViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 4
+        return recList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            return list.results.count
-        } else if section == 1 {
-            return secondList.results.count
-        } else {return 9}
+        return recList[section].results.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PosterCollectionViewCell.identifier, for: indexPath) as? PosterCollectionViewCell else {
             return UICollectionViewCell()
         }
+        let url = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2\(recList[indexPath.section].results[indexPath.item].posterPath ?? "")"
         
-        if indexPath.section == 0 {
-            
-            let url = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2\(list.results[indexPath.item].posterPath ?? "")"
-            cell.posterImageView.kf.setImage(with: URL(string: url))
-        } else if indexPath.section == 1 {
-            let url = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2\(secondList.results[indexPath.item].posterPath ?? "")"
-            cell.posterImageView.kf.setImage(with: URL(string: url))
-        }
-        
+        cell.posterImageView.kf.setImage(with: URL(string: url))
+
         cell.posterImageView.backgroundColor = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: 1)
         return cell
     }
