@@ -140,6 +140,20 @@
                                     <action selector="checkButtonClicked:" destination="knj-m0-HLs" eventType="touchUpInside" id="IPp-WQ-NM5"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3iX-5V-fOf">
+                                <rect key="frame" x="33" y="263" width="275" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgL-by-PQW">
+                                <rect key="frame" x="33" y="331" width="275" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uVE-Od-lXX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -155,11 +169,13 @@
                     <connections>
                         <outlet property="checkButton" destination="b1n-21-Ndr" id="eoP-8z-M8H"/>
                         <outlet property="dateTextField" destination="3a3-zx-RLn" id="Hnt-Pa-D9I"/>
+                        <outlet property="humidityLabel" destination="pgL-by-PQW" id="gkx-T2-gXf"/>
+                        <outlet property="tempLabel" destination="3iX-5V-fOf" id="vNq-jf-ekz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HWq-GF-la5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2144" y="-8"/>
+            <point key="canvasLocation" x="2141.2213740458014" y="-8.4507042253521139"/>
         </scene>
         <!--Poster View Controller-->
         <scene sceneID="jI2-K8-SuL">

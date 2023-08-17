@@ -20,13 +20,34 @@ class CodableViewController: UIViewController {
     @IBOutlet var dateTextField: UITextField!
     @IBOutlet var checkButton: UIButton!
     
-    
+    @IBOutlet var tempLabel: UILabel!
+    @IBOutlet var humidityLabel: UILabel!
     
     var resultText = "Apple"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        WeatherManager.shared.callRequestCodable { data in
+            self.tempLabel.text = "\(data.main.temp)"
+        } failure: {
+            print("show Alert")
+        }
+
+        
+        WeatherManager.shared.callRequestString { temp, humidity in
+            self.tempLabel.text = temp
+            self.humidityLabel.text = humidity
+        }
+        
+        WeatherManager.shared.callRequestJSON { json in
+            let temp = json["main"]["temp"].doubleValue - 273.15
+            let humidity = json["main"]["humidity"].intValue
+            
+            self.humidityLabel.text = "\(humidity)"
+            self.tempLabel.text = "\(temp)"
+            
+        }
         
     }
     

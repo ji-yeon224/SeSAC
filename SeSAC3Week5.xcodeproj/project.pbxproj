@@ -27,6 +27,12 @@
 		CE5C9EAD2A8C77950011664D /* PosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C9EAC2A8C77950011664D /* PosterViewController.swift */; };
 		CE5C9EB82A8DA37F0011664D /* Extension+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C9EB72A8DA37F0011664D /* Extension+Alert.swift */; };
 		CE5C9EBB2A8DAB920011664D /* LottoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C9EBA2A8DAB920011664D /* LottoManager.swift */; };
+		CE5C9EBD2A8DB24F0011664D /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C9EBC2A8DB24F0011664D /* ReusableViewProtocol.swift */; };
+		CE5C9EBF2A8DBDC50011664D /* Lotto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C9EBE2A8DBDC50011664D /* Lotto.swift */; };
+		CE5C9EC22A8DC97D0011664D /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C9EC12A8DC97D0011664D /* WeatherManager.swift */; };
+		CE5C9EC52A8DC9D50011664D /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = CE5C9EC42A8DC9D50011664D /* SwiftyJSON */; };
+		CE5C9EC72A8DE3AE0011664D /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C9EC62A8DE3AE0011664D /* Weather.swift */; };
+		CE5C9EC92A8DEC4A0011664D /* Recommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C9EC82A8DEC4A0011664D /* Recommendation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +56,11 @@
 		CE5C9EAC2A8C77950011664D /* PosterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterViewController.swift; sourceTree = "<group>"; };
 		CE5C9EB72A8DA37F0011664D /* Extension+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Alert.swift"; sourceTree = "<group>"; };
 		CE5C9EBA2A8DAB920011664D /* LottoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoManager.swift; sourceTree = "<group>"; };
+		CE5C9EBC2A8DB24F0011664D /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
+		CE5C9EBE2A8DBDC50011664D /* Lotto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lotto.swift; sourceTree = "<group>"; };
+		CE5C9EC12A8DC97D0011664D /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		CE5C9EC62A8DE3AE0011664D /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		CE5C9EC82A8DEC4A0011664D /* Recommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommendation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE5C9EC52A8DC9D50011664D /* SwiftyJSON in Frameworks */,
 				CE5C9EA02A8C4AF10011664D /* Kingfisher in Frameworks */,
 				CE5C9E9D2A8C4AE10011664D /* Alamofire in Frameworks */,
 			);
@@ -68,8 +80,8 @@
 		041AE3C02A899B28007724AE = {
 			isa = PBXGroup;
 			children = (
-				CE5C9EB92A8DAB700011664D /* Lotto */,
 				041AE3E12A899D1C007724AE /* .gitignore */,
+				041AE3E32A899D2C007724AE /* APIKey.swift */,
 				041AE3CB2A899B28007724AE /* SeSAC3Week5 */,
 				041AE3CA2A899B28007724AE /* Products */,
 			);
@@ -86,6 +98,8 @@
 		041AE3CB2A899B28007724AE /* SeSAC3Week5 */ = {
 			isa = PBXGroup;
 			children = (
+				CE5C9EC02A8DC9320011664D /* Weather */,
+				CE5C9EB92A8DAB700011664D /* Lotto */,
 				CE5C9EA32A8C74C90011664D /* View */,
 				041AE3E02A899B9F007724AE /* Network */,
 				041AE3CC2A899B28007724AE /* AppDelegate.swift */,
@@ -93,11 +107,13 @@
 				041AE3D02A899B28007724AE /* ViewController.swift */,
 				041AE3D22A899B28007724AE /* Main.storyboard */,
 				CE5C9EAC2A8C77950011664D /* PosterViewController.swift */,
+				CE5C9EC82A8DEC4A0011664D /* Recommendation.swift */,
 				CE5C9EA12A8C4B0A0011664D /* CodableViewController.swift */,
 				CE5C9EB72A8DA37F0011664D /* Extension+Alert.swift */,
 				041AE3D52A899B29007724AE /* Assets.xcassets */,
 				041AE3D72A899B29007724AE /* LaunchScreen.storyboard */,
 				041AE3DA2A899B29007724AE /* Info.plist */,
+				CE5C9EBC2A8DB24F0011664D /* ReusableViewProtocol.swift */,
 			);
 			path = SeSAC3Week5;
 			sourceTree = "<group>";
@@ -105,7 +121,6 @@
 		041AE3E02A899B9F007724AE /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				041AE3E32A899D2C007724AE /* APIKey.swift */,
 				041AE3E62A899D84007724AE /* Endpoint.swift */,
 				041AE3E82A89A265007724AE /* GCDBasicViewController.swift */,
 			);
@@ -127,8 +142,18 @@
 			isa = PBXGroup;
 			children = (
 				CE5C9EBA2A8DAB920011664D /* LottoManager.swift */,
+				CE5C9EBE2A8DBDC50011664D /* Lotto.swift */,
 			);
 			path = Lotto;
+			sourceTree = "<group>";
+		};
+		CE5C9EC02A8DC9320011664D /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				CE5C9EC12A8DC97D0011664D /* WeatherManager.swift */,
+				CE5C9EC62A8DE3AE0011664D /* Weather.swift */,
+			);
+			path = Weather;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +175,7 @@
 			packageProductDependencies = (
 				CE5C9E9C2A8C4AE10011664D /* Alamofire */,
 				CE5C9E9F2A8C4AF10011664D /* Kingfisher */,
+				CE5C9EC42A8DC9D50011664D /* SwiftyJSON */,
 			);
 			productName = SeSAC3Week5;
 			productReference = 041AE3C92A899B28007724AE /* SeSAC3Week5.app */;
@@ -182,6 +208,7 @@
 			packageReferences = (
 				CE5C9E9B2A8C4AE10011664D /* XCRemoteSwiftPackageReference "Alamofire" */,
 				CE5C9E9E2A8C4AF10011664D /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				CE5C9EC32A8DC9D50011664D /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 041AE3CA2A899B28007724AE /* Products */;
 			projectDirPath = "";
@@ -216,15 +243,20 @@
 				041AE3D12A899B28007724AE /* ViewController.swift in Sources */,
 				041AE3CD2A899B28007724AE /* AppDelegate.swift in Sources */,
 				CE5C9EBB2A8DAB920011664D /* LottoManager.swift in Sources */,
+				CE5C9EC92A8DEC4A0011664D /* Recommendation.swift in Sources */,
 				CE5C9EAA2A8C75280011664D /* HeaderPosterCollectionReusableView.swift in Sources */,
+				CE5C9EBF2A8DBDC50011664D /* Lotto.swift in Sources */,
 				041AE3E92A89A265007724AE /* GCDBasicViewController.swift in Sources */,
 				CE5C9EB82A8DA37F0011664D /* Extension+Alert.swift in Sources */,
 				CE5C9EA22A8C4B0A0011664D /* CodableViewController.swift in Sources */,
+				CE5C9EC72A8DE3AE0011664D /* Weather.swift in Sources */,
 				CE5C9EAD2A8C77950011664D /* PosterViewController.swift in Sources */,
 				041AE3E42A899D2C007724AE /* APIKey.swift in Sources */,
 				CE5C9EA62A8C75070011664D /* PosterCollectionViewCell.swift in Sources */,
 				041AE3CF2A899B28007724AE /* SceneDelegate.swift in Sources */,
+				CE5C9EC22A8DC97D0011664D /* WeatherManager.swift in Sources */,
 				041AE3E72A899D84007724AE /* Endpoint.swift in Sources */,
+				CE5C9EBD2A8DB24F0011664D /* ReusableViewProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +496,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		CE5C9EC32A8DC9D50011664D /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -476,6 +516,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE5C9E9E2A8C4AF10011664D /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		CE5C9EC42A8DC9D50011664D /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE5C9EC32A8DC9D50011664D /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
