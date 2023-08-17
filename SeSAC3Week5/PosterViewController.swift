@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class PosterViewController: UIViewController {
 
@@ -13,6 +14,10 @@ class PosterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        LottoManager.shared.callLotto { bonus, number in
+            print("클로저로 꺼내온 값: \(bonus), \(number)")
+        }
         
         posterCollectionView.delegate = self
         posterCollectionView.dataSource = self
@@ -35,6 +40,18 @@ class PosterViewController: UIViewController {
         posterCollectionView.collectionViewLayout = layout
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        showAlert(title: "테스트 얼럿", message: "메세지 입니다", button: "배경색 변경") {
+            print("저장 버튼을 클릭했습니다.")
+            self.posterCollectionView.backgroundColor = .lightGray
+        }
+        print("AAA")
+        
+    }
+    
     
     
 
@@ -77,4 +94,12 @@ extension PosterViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     
+}
+
+struct Lotto: Codable {
+    let totSellamnt: Int
+    let returnValue, drwNoDate: String
+    let firstWinamnt, drwtNo6, drwtNo4, firstPrzwnerCo: Int
+    let drwtNo5, bnusNo, firstAccumamnt, drwNo: Int
+    let drwtNo2, drwtNo3, drwtNo1: Int
 }
