@@ -20,7 +20,7 @@ class VideoViewController: UIViewController {
     @IBOutlet var videoTableView: UITableView!
     
     //var videoList: [Video] = []
-    var videoList: Video = Video(documents: [])
+    var videoList: [Document] = []
     var page = 1
     var isEnd = false //현재 페이지가 마지막 페이지인지 점검하는 프로퍼티
     
@@ -30,7 +30,7 @@ class VideoViewController: UIViewController {
         videoTableView.dataSource = self
         videoTableView.delegate = self
         videoTableView.rowHeight = 130
-        //videoTableView.prefetchDataSource = self
+        videoTableView.prefetchDataSource = self
         
         searchBar.delegate = self
         
@@ -40,10 +40,9 @@ class VideoViewController: UIViewController {
     
     func callRequest(query: String, page: Int) {
         
-        KakaoAPIManager.shared.callRequest(type: .video, query: query) { data in
+        KakaoAPIManager.shared.callRequest(type: .video, query: query, page: page) { data in
             
-            self.videoList = data
-            print(self.videoList)
+            self.videoList.append(contentsOf: data.documents)
             self.videoTableView.reloadData()
         }
         
@@ -58,7 +57,7 @@ extension VideoViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let query = searchBar.text else {return}
-        //videoList.removeAll()
+        videoList.removeAll()
         page = 1 //새로운 검색어이기 때문에 page를 1로 변경
         callRequest(query: query, page: page)
     }
@@ -66,16 +65,16 @@ extension VideoViewController: UISearchBarDelegate {
 }
 
 
-extension VideoViewController: UITableViewDelegate, UITableViewDataSource{
+extension VideoViewController: UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        videoList.documents.count
+        videoList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: VideoTableViewCell.identifier) as? VideoTableViewCell else { return UITableViewCell()}
         
-        let video = videoList.documents[indexPath.row]
+        let video = videoList[indexPath.row]
         
         cell.titleLabel.text = video.title
         cell.contentLabel.text = video.contents
@@ -89,20 +88,20 @@ extension VideoViewController: UITableViewDelegate, UITableViewDataSource{
     
     //셀이 화면에 보이기 직전에 필요한 리소스를 미리 다운 받는 기능
     //videoList개수와 indexPath.row의 위치를 비교해 마지막 스크롤 시점을 확인 -> 네트워크 요청 시도
-//    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-//
-//        for indexPath in indexPaths {
-//            if videoList.count - 1 == indexPath.row && page < 15 && !isEnd { //현 위치랑 리스트의 개수를 비교
-//                page += 1
-//                callRequest(query: searchBar.text!, page: page)
-//            }
-//        }
-//
-//
-//    }
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+
+        for indexPath in indexPaths {
+            if videoList.count - 1 == indexPath.row && page < 15 && !isEnd { //현 위치랑 리스트의 개수를 비교
+                page += 1
+                callRequest(query: searchBar.text!, page: page)
+            }
+        }
+
+
+    }
     //취소기능: 직접 취소하는 기능을 구현해줘야 함
-//    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
-//        print("===취소: \(indexPaths)")
-//    }
+    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
+        //print("===취소: \(indexPaths)")
+    }
     
 }

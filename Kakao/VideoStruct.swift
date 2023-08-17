@@ -8,7 +8,7 @@
 import Foundation
 
 struct Video: Codable {
-    let documents: [Document]
+    var documents: [Document]
 }
 
 //// MARK: - Document
