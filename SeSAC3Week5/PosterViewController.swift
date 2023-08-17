@@ -21,8 +21,6 @@ class PosterViewController: UIViewController {
 
     @IBOutlet var posterCollectionView: UICollectionView!
     
-    var list: Recommendation = Recommendation(page: 0, results: [], totalResults: 0, totalPages: 0)
-    var secondList: Recommendation = Recommendation(page: 0, results: [], totalResults: 0, totalPages: 0)
     
     var recList: [Recommendation] = [Recommendation(page: 0, results: [], totalResults: 0, totalPages: 0), Recommendation(page: 0, results: [], totalResults: 0, totalPages: 0), Recommendation(page: 0, results: [], totalResults: 0, totalPages: 0), Recommendation(page: 0, results: [], totalResults: 0, totalPages: 0)]
     
