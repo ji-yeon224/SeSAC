@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE5C9E9A2A8A022C0011664D /* BoxOfficeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C9E992A8A022C0011664D /* BoxOfficeData.swift */; };
+		CE5C9EB42A8CBFB50011664D /* VideoStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C9EB32A8CBFB50011664D /* VideoStruct.swift */; };
 		CE914CE22A81C4C200703B2E /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE914CE12A81C4C200703B2E /* WeatherViewController.swift */; };
 		CE914CE42A81E78900703B2E /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE914CE32A81E78900703B2E /* VideoViewController.swift */; };
 		CE914CE62A820A8200703B2E /* BeerCollecionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE914CE52A820A8200703B2E /* BeerCollecionViewController.swift */; };
@@ -42,8 +43,9 @@
 
 /* Begin PBXFileReference section */
 		CE5C9E992A8A022C0011664D /* BoxOfficeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeData.swift; sourceTree = "<group>"; };
+		CE5C9EB32A8CBFB50011664D /* VideoStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoStruct.swift; sourceTree = "<group>"; };
 		CE914CE12A81C4C200703B2E /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
-		CE914CE32A81E78900703B2E /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = SOURCE_ROOT; };
+		CE914CE32A81E78900703B2E /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VideoViewController.swift; path = Kakao/VideoViewController.swift; sourceTree = SOURCE_ROOT; };
 		CE914CE52A820A8200703B2E /* BeerCollecionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BeerCollecionViewController.swift; path = Beer/BeerCollecionViewController.swift; sourceTree = SOURCE_ROOT; };
 		CE914CE72A820B2E00703B2E /* BeerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE914CE82A820B2E00703B2E /* BeerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeerCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -69,7 +71,7 @@
 		CEBF1A432A85C785000E099C /* KakaoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAPIManager.swift; sourceTree = "<group>"; };
 		CEBF1A452A85E364000E099C /* TranslateAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateAPIManager.swift; sourceTree = "<group>"; };
 		CEBF1A472A85F9F2000E099C /* AsyncViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncViewController.swift; sourceTree = SOURCE_ROOT; };
-		CED30B052A83230A00722229 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		CED30B052A83230A00722229 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VideoTableViewCell.swift; path = Kakao/VideoTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		CED30B092A84FB1B00722229 /* SelectTranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectTranslateViewController.swift; path = Translate/SelectTranslateViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -87,9 +89,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE5C9EB22A8CBF380011664D /* Kakao */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF1A432A85C785000E099C /* KakaoAPIManager.swift */,
+				CED30B052A83230A00722229 /* VideoTableViewCell.swift */,
+				CE914CE32A81E78900703B2E /* VideoViewController.swift */,
+				CE5C9EB32A8CBFB50011664D /* VideoStruct.swift */,
+			);
+			path = Kakao;
+			sourceTree = "<group>";
+		};
 		CE9C35CF2A80968800C64B40 = {
 			isa = PBXGroup;
 			children = (
+				CE5C9EB22A8CBF380011664D /* Kakao */,
 				CEBF1A402A85C597000E099C /* Translate */,
 				CED30B042A83135F00722229 /* Beer */,
 				CE9C35DA2A80968900C64B40 /* Week4Project */,
@@ -110,8 +124,6 @@
 			children = (
 				CEBF1A472A85F9F2000E099C /* AsyncViewController.swift */,
 				CEBF1A3C2A85BCFC000E099C /* UserDefaultsHelper.swift */,
-				CED30B052A83230A00722229 /* VideoTableViewCell.swift */,
-				CE914CE32A81E78900703B2E /* VideoViewController.swift */,
 				CEBF1A3A2A85BA98000E099C /* ReusableViewProtocol.swift */,
 				CE9C35DB2A80968900C64B40 /* AppDelegate.swift */,
 				CE9C35DD2A80968900C64B40 /* SceneDelegate.swift */,
@@ -126,7 +138,6 @@
 				CE9C35F82A809B9D00C64B40 /* .gitignore */,
 				CE9C35FC2A809C5800C64B40 /* APIKey.swift */,
 				CEBF1A3E2A85C51C000E099C /* Endpoint.swift */,
-				CEBF1A432A85C785000E099C /* KakaoAPIManager.swift */,
 				CEBF1A412A85C5D1000E099C /* URL+Extension.swift */,
 			);
 			path = Week4Project;
@@ -246,6 +257,7 @@
 				CE9C35E02A80968900C64B40 /* ViewController.swift in Sources */,
 				CEBF1A3B2A85BA98000E099C /* ReusableViewProtocol.swift in Sources */,
 				CE914CE42A81E78900703B2E /* VideoViewController.swift in Sources */,
+				CE5C9EB42A8CBFB50011664D /* VideoStruct.swift in Sources */,
 				CE9C35DC2A80968900C64B40 /* AppDelegate.swift in Sources */,
 				CEBF1A442A85C785000E099C /* KakaoAPIManager.swift in Sources */,
 				CE9C35FF2A8121EA00C64B40 /* LottoViewController.swift in Sources */,
