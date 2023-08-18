@@ -31,7 +31,49 @@ class PosterViewController: UIViewController {
         configureCollectionView()
         configureCollectionViewLayout()
         
+        let id = [673, 674, 675, 675]
+        let group = DispatchGroup()
         
+        for item in id {
+            group.enter()
+            callRecommendation(id: item) { data in
+                if item == 673 {
+                    self.recList[0] = data
+                }
+                group.leave()
+            }
+        }
+        
+        group.notify(queue: .main){
+            self.posterCollectionView.reloadData()
+        }
+        
+    }
+    
+    @IBAction func sendNotification(_ sender: UIButton) {
+        
+        //포그라운드에서 알림이 안뜨는 것이 디폴트
+        
+        
+        //1. 컨텐츠 2. 언제 -> 알림보내
+        let content = UNMutableNotificationContent()
+        content.title = "다마고치에게 물을 주세요"
+        content.body = "아직 레벨 3이에요. 물을 주세요"
+        content.badge = 100
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        
+        //content와 trigger를 패키지에 담기
+        let request = UNNotificationRequest(identifier: "\(Date())", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) { error in
+            print(error)
+        }
+        
+        
+    }
+    
+    
+    func dispatchGroupEnterLeave() {
         let group = DispatchGroup()
         
         group.enter() // 작업량 +1
@@ -66,7 +108,6 @@ class PosterViewController: UIViewController {
             print("====END")
             self.posterCollectionView.reloadData()
         }
-        
     }
     
     func dispatchGroupNotify() {
