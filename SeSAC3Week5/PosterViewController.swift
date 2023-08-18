@@ -31,29 +31,41 @@ class PosterViewController: UIViewController {
         configureCollectionView()
         configureCollectionViewLayout()
         
-        let id = [673, 674, 675, 675]
-        let group = DispatchGroup()
+        dispatchGroupNotify()
         
-        for item in id {
-            group.enter()
-            callRecommendation(id: item) { data in
-                if item == 673 {
-                    self.recList[0] = data
-                }
-                group.leave()
+        for family in UIFont.familyNames {
+            print(family)
+            
+            for names in UIFont.fontNames(forFamilyName: family){
+                print("==\(names)")
             }
+                    
         }
         
-        group.notify(queue: .main){
-            self.posterCollectionView.reloadData()
-        }
+        
+        
+//        let id = [673, 674, 675, 675]
+//        let group = DispatchGroup()
+//
+//        for item in id {
+//            group.enter()
+//            callRecommendation(id: item) { data in
+//                if item == 673 {
+//                    self.recList[0] = data
+//                }
+//                group.leave()
+//            }
+//        }
+//
+//        group.notify(queue: .main){
+//            self.posterCollectionView.reloadData()
+//        }
         
     }
     
     @IBAction func sendNotification(_ sender: UIButton) {
         
         //포그라운드에서 알림이 안뜨는 것이 디폴트
-        
         
         //1. 컨텐츠 2. 언제 -> 알림보내
         let content = UNMutableNotificationContent()
@@ -121,20 +133,20 @@ class PosterViewController: UIViewController {
         }
         
         DispatchQueue.global().async(group: group) {
-            self.callRecommendation(id: 976573) { data in
+            self.callRecommendation(id: 567646) { data in
                 self.recList[1] = data
                 print("==2")
             }
         }
         DispatchQueue.global().async(group: group) {
-            self.callRecommendation(id: 569094) { data in
+            self.callRecommendation(id: 672) { data in
                 self.recList[2] = data
                 print("==3")
             }
         
         }
         DispatchQueue.global().async(group: group) {
-            self.callRecommendation(id: 567646) { data in
+            self.callRecommendation(id: 673) { data in
                 self.recList[3] = data
                 print("==4")
             }
@@ -217,6 +229,7 @@ extension PosterViewController: UICollectionViewDelegate, UICollectionViewDataSo
             }
             
             view.titleLabel.text = "테스트 섹션"
+            view.titleLabel.font = UIFont(name: "omyu_pretty", size: 15)
             return view
             
         } else {
