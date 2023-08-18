@@ -33,6 +33,7 @@
 		CE5C9EC52A8DC9D50011664D /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = CE5C9EC42A8DC9D50011664D /* SwiftyJSON */; };
 		CE5C9EC72A8DE3AE0011664D /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C9EC62A8DE3AE0011664D /* Weather.swift */; };
 		CE5C9EC92A8DEC4A0011664D /* Recommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C9EC82A8DEC4A0011664D /* Recommendation.swift */; };
+		CE5C9ED12A8EF34E0011664D /* 오뮤_다예쁨체.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE5C9ED02A8EF34E0011664D /* 오뮤_다예쁨체.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		CE5C9EC12A8DC97D0011664D /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		CE5C9EC62A8DE3AE0011664D /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		CE5C9EC82A8DEC4A0011664D /* Recommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommendation.swift; sourceTree = "<group>"; };
+		CE5C9ED02A8EF34E0011664D /* 오뮤_다예쁨체.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "오뮤_다예쁨체.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		041AE3CB2A899B28007724AE /* SeSAC3Week5 */ = {
 			isa = PBXGroup;
 			children = (
+				CE5C9ECF2A8EF3260011664D /* Font */,
 				CE5C9EC02A8DC9320011664D /* Weather */,
 				CE5C9EB92A8DAB700011664D /* Lotto */,
 				CE5C9EA32A8C74C90011664D /* View */,
@@ -154,6 +157,14 @@
 				CE5C9EC62A8DE3AE0011664D /* Weather.swift */,
 			);
 			path = Weather;
+			sourceTree = "<group>";
+		};
+		CE5C9ECF2A8EF3260011664D /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				CE5C9ED02A8EF34E0011664D /* 오뮤_다예쁨체.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE5C9ED12A8EF34E0011664D /* 오뮤_다예쁨체.ttf in Resources */,
 				041AE3E22A899D1C007724AE /* .gitignore in Resources */,
 				CE5C9EAB2A8C75280011664D /* HeaderPosterCollectionReusableView.xib in Resources */,
 				041AE3D92A899B29007724AE /* LaunchScreen.storyboard in Resources */,

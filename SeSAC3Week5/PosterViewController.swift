@@ -28,35 +28,84 @@ class PosterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        LottoManager.shared.callLotto { bonus, number in
-//            print("클로저로 꺼내온 값: \(bonus), \(number)")
-//        }
-        
         configureCollectionView()
         configureCollectionViewLayout()
         
+        
+        let group = DispatchGroup()
+        
+        group.enter() // 작업량 +1
         callRecommendation(id: 671) { data in
             self.recList[0] = data
-            
+            print("==1")
+            group.leave() // -1
+        }
+        
+        group.enter()
+        callRecommendation(id: 567646) { data in
+            self.recList[1] = data
+            print("==2")
+            group.leave()
+        }
+        
+        group.enter()
+        callRecommendation(id: 672) { data in
+            self.recList[2] = data
+            print("==3")
+            group.leave()
+        }
+        
+        group.enter()
+        callRecommendation(id: 673) { data in
+            self.recList[3] = data
+            print("==4")
+            group.leave()
+        }
+        
+        group.notify(queue: .main) {
+            print("====END")
+            self.posterCollectionView.reloadData()
+        }
+        
+    }
+    
+    func dispatchGroupNotify() {
+        let group = DispatchGroup()
+        
+        DispatchQueue.global().async(group: group) {
+            self.callRecommendation(id: 671) { data in
+                self.recList[0] = data
+                print("==1")
+            }
+        }
+        
+        DispatchQueue.global().async(group: group) {
             self.callRecommendation(id: 976573) { data in
                 self.recList[1] = data
-                
-                self.callRecommendation(id: 569094) { data in
-                    self.recList[2] = data
-                    
-                    self.callRecommendation(id: 567646) { data in
-                        self.recList[3] = data
-                        self.posterCollectionView.reloadData()
-                    }
-                }
+                print("==2")
+            }
+        }
+        DispatchQueue.global().async(group: group) {
+            self.callRecommendation(id: 569094) { data in
+                self.recList[2] = data
+                print("==3")
+            }
+        
+        }
+        DispatchQueue.global().async(group: group) {
+            self.callRecommendation(id: 567646) { data in
+                self.recList[3] = data
+                print("==4")
             }
         }
         
         
-        
-        
-        
+        group.notify(queue: .main) {
+            print("END")
+            self.posterCollectionView.reloadData()
+        }
     }
+    
     //976573 569094 567646 671
     func callRecommendation(id: Int, completionHandler: @escaping (Recommendation) -> Void ) {
         let url = "https://api.themoviedb.org/3/movie/\(id)/recommendations?api_key=59023ea9c13f6c04dd3c6170da84bb3d&language=ko-KR"
@@ -96,14 +145,17 @@ class PosterViewController: UIViewController {
 
 extension PosterViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
+    //섹션 개수
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return recList.count
     }
     
+    //각 섹션의 셀 개수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return recList[section].results.count
     }
     
+    //셀 데이터
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PosterCollectionViewCell.identifier, for: indexPath) as? PosterCollectionViewCell else {
             return UICollectionViewCell()
