@@ -17,12 +17,14 @@ class TMDBApi {
 
     func callRequest(endPoint: Endpoint, parameter: String, completionHandler: @escaping (JSON) -> ()) {
             
+        //let data = "\(endPoint.rawValue)"
             let url = endPoint.requestURL(type: parameter) + "?api_key=\(APIKey.tmdbKey)"
-            
+            print(url)
             AF.request(url, method: .get).validate().responseJSON { response in
                 switch response.result {
                 case .success(let value):
                     let json = JSON(value)
+                    //print(json)
                     completionHandler(json)
                 case .failure(let error):
                     print(error)
@@ -31,5 +33,22 @@ class TMDBApi {
             
         }
     
+    
+    func callVideoRequest(endPoint: Endpoint, parameter: String, completionHandler: @escaping (Videos) -> ()) {
+        
+        let url = endPoint.requestURL(type: parameter) + "?api_key=\(APIKey.tmdbKey)"
+        AF.request(url).validate()
+            .responseDecodable(of: Videos.self) { response in
+                switch response.result {
+                case .success(let value):
+                    completionHandler(value)
+                case .failure(let error):
+                    print(error)
+                }
+                
+            }
+        
+        
+    }
     
 }

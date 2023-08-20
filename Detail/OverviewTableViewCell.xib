@@ -21,7 +21,7 @@
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain"/>
                         <connections>
-                            <action selector="buttonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="S8H-L0-IZk"/>
+                            <action selector="buttonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="lCv-Oq-pb7"/>
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hF2-Eg-cyf">
@@ -33,6 +33,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="LYM-Bv-3hF" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.25" id="3hs-h8-7OF"/>
+                    <constraint firstItem="LYM-Bv-3hF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="hF2-Eg-cyf" secondAttribute="bottom" constant="12" id="Om5-X2-gcD"/>
                     <constraint firstAttribute="trailing" secondItem="hF2-Eg-cyf" secondAttribute="trailing" constant="22" id="bED-2E-QcZ"/>
                     <constraint firstAttribute="bottom" secondItem="LYM-Bv-3hF" secondAttribute="bottom" id="f6s-gL-WJm"/>
                     <constraint firstAttribute="trailing" secondItem="LYM-Bv-3hF" secondAttribute="trailing" id="fl8-NH-Gfo"/>

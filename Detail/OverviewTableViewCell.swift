@@ -23,6 +23,8 @@ class OverviewTableViewCell: UITableViewCell {
         moreButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
         overviewLabel.numberOfLines = 2
     }
+    
+    
 
     @IBAction func buttonClicked(_ sender: UIButton) {
         print(buttonClicked)
@@ -30,13 +32,13 @@ class OverviewTableViewCell: UITableViewCell {
         if buttonClicked {
             moreButton.setImage(UIImage(systemName: "chevron.up"), for: .normal)
             overviewLabel.numberOfLines = 0
-            
+
         } else {
             moreButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
             overviewLabel.numberOfLines = 2
         }
-        
-        
+
+
     }
     
     func setChangeOverviewCell() {

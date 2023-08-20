@@ -116,7 +116,7 @@ extension TrendViewController {
 
                 
                 self.contentsList.append(Contents(id: id, title: title, overview: overview, poster: poster, backdrop_path: backdrop, release: release, media_type: media_type, genre: genre))
-        }
+            }
             self.collectionView.reloadData()
             self.collectionView.setContentOffset(.zero, animated: true)
         }
@@ -189,15 +189,15 @@ extension TrendViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func setCell() {
         
         let layout = UICollectionViewFlowLayout()
-        let spacing: CGFloat = 10
+        let spacing: CGFloat = 20
         let width = UIScreen.main.bounds.width - (spacing * 2)
 
 
         layout.itemSize = CGSize(width: width, height: width * 1.5)
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
-        layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = spacing * 3
-        
+        layout.minimumLineSpacing = spacing
+        layout.minimumInteritemSpacing = spacing
+
 
         collectionView.collectionViewLayout = layout //레이아웃 교체하려는 것으로 바꾸기
     }

@@ -17,12 +17,14 @@ class DetailViewController: UIViewController {
     @IBOutlet var backDropImageView: UIImageView!
     @IBOutlet var posterImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
-    //@IBOutlet var overviewText: UITextView!
+    
+    @IBOutlet var uiview: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setHeaderInfo()
+        setHeaderAttribute()
         getCreditData()
         
         tableView.dataSource = self
@@ -41,26 +43,29 @@ class DetailViewController: UIViewController {
     
     
     
-    func setHeaderInfo() {
+    func setHeaderAttribute() {
         guard let contents else {
             dismiss(animated: true)
             return
         }
         
-        
-        
         setImage()
         
-       
+        title = "Detail Info"
         
-        title = contents.title
-        //overviewText.isEditable = false
+        uiview.backgroundColor = .black
+        uiview.layer.opacity = 0.5
+        
         titleLabel.text = contents.title
         titleLabel.numberOfLines = 0
-        titleLabel.font = .boldSystemFont(ofSize: 17)
+        titleLabel.textColor = .white
+        titleLabel.font = .boldSystemFont(ofSize: 15)
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButtonClicked))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(closeButtonClicked))
         navigationItem.leftBarButtonItem?.tintColor = .darkGray
+        
+        
+        
         
     }
     
@@ -102,8 +107,6 @@ class DetailViewController: UIViewController {
         } else {
             backDropImageView.backgroundColor = .lightGray
         }
-        
-        
         
     }
 
@@ -164,7 +167,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.identifier) as! OverviewTableViewCell
             cell.setOverviewCell()
             cell.overviewLabel.text = contents?.overview
-            
+            tableView.rowHeight = UITableView.automaticDimension
 
             return cell
             
@@ -200,10 +203,10 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
+        if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.identifier) as! OverviewTableViewCell
             //tableView.rowHeight = UITableView.automaticDimension
-            //cell.setChangeOverviewCell()
+            cell.setChangeOverviewCell()
             cell.buttonClicked(cell.moreButton)
             tableView.reloadRows(at: [indexPath], with: .automatic)
             
