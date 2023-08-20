@@ -38,7 +38,22 @@ class DetailViewController: UIViewController {
         let overviewNib = UINib(nibName: OverviewTableViewCell.identifier, bundle: nil)
         tableView.register(overviewNib, forCellReuseIdentifier: OverviewTableViewCell.identifier)
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "info.circle"), style: .plain, target: self, action: #selector(moveToRelatedView))
+    }
+    
+    @objc func moveToRelatedView() {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: RelatedViewController.identifier) as! RelatedViewController
         
+        guard let contents else {
+            return
+        }
+        
+        vc.contentId = contents.id
+        vc.mediaType = contents.media_type
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+        present(nav, animated: true)
     }
     
     

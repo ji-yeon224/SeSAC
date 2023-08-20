@@ -11,16 +11,24 @@ class RelatedViewController: UIViewController {
     
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var segmentedControl: UISegmentedControl!
+    
+    
     var contentList: [Contents] = []
     let group = DispatchGroup()
     var videosList: Videos = Videos(id: 0, results: [])
     var selectedSegmentIdx = 0
+    var contentId = 0
+    var mediaType = "movie"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "More Informations"
+        
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        //print(contentId, mediaType)
         
         let nib = UINib(nibName: RelatedCollectionViewCell.identifier, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: RelatedCollectionViewCell.identifier)
@@ -31,6 +39,14 @@ class RelatedViewController: UIViewController {
         segmentedControl.setTitle("similiar", forSegmentAt: 0)
         segmentedControl.setTitle("videos", forSegmentAt: 1)
 
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(backButtonClicked))
+        navigationItem.leftBarButtonItem?.tintColor = .darkGray
+        
+    }
+    
+    @objc func backButtonClicked() {
+        dismiss(animated: true)
     }
     
     @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
@@ -38,18 +54,18 @@ class RelatedViewController: UIViewController {
         case 0:
             selectedSegmentIdx = 0
             if contentList.isEmpty {
-                callSimilarData()
+                callSimilarData(id: contentId, mediaType: mediaType)
             }
         case 1:
             selectedSegmentIdx = 1
             if videosList.results.isEmpty{
-                callVideoData()
+                callVideoData(id: contentId, mediaType: mediaType)
             }
             
             
             
         default:
-            print("default")
+            print("segmentControl Index error")
         }
         group.notify(queue: .main){
             self.collectionView.reloadData()
@@ -61,14 +77,13 @@ class RelatedViewController: UIViewController {
 
 extension RelatedViewController {
     
-    func callSimilarData() {
+    func callSimilarData(id: Int, mediaType: String) {
         
         group.enter()
-        TMDBApi.shared.callRequest(endPoint: .similar, parameter: "movie/671") { json in
+        TMDBApi.shared.callRequest(endPoint: .similar, parameter: "\(mediaType)/\(id)") { json in
 
             let data = json["results"].arrayValue
             for item in data {
-                //print(item)
                 let id = item["id"].intValue
                 let overview = item["overview"].stringValue
                 let poster = item["poster_path"].stringValue
@@ -79,8 +94,19 @@ extension RelatedViewController {
                     genre.append(g.intValue)
                 }
 
-                let title = item["title"].stringValue
-                let release = item["release_date"].stringValue
+                var title = ""
+                var release = ""
+
+                switch mediaType {
+                case "tv":
+                    title = item["name"].stringValue
+                    release = ""
+                case "movie":
+                    title = item["title"].stringValue
+                    release = item["release_date"].stringValue
+                    print(title)
+                default: return
+                }
 
                 self.contentList.append(Contents(id: id, title: title, overview: overview, poster: poster, backdrop_path: backdrop, release: release, media_type: media_type, genre: genre))
                 
@@ -88,17 +114,17 @@ extension RelatedViewController {
             self.group.leave()
 
         }
+       
         
     }
         
-        func callVideoData() {
+        func callVideoData(id: Int, mediaType: String) {
             group.enter()
-            TMDBApi.shared.callVideoRequest(endPoint: .videos, parameter: "movie/671") { data in
+            TMDBApi.shared.callVideoRequest(endPoint: .videos, parameter: "\(mediaType)/\(id)") { data in
                 self.videosList = data
                 self.group.leave()
             }
-            
-            
+           
         }
         
     
@@ -148,6 +174,7 @@ extension RelatedViewController: UICollectionViewDelegate, UICollectionViewDataS
             
         
         } else {
+            
             let video = videosList.results[indexPath.row]
             if video.site == "YouTube" {
                 let thumbnailURL = "https://img.youtube.com/vi/\(video.key)/0.jpg"
@@ -170,7 +197,13 @@ extension RelatedViewController: UICollectionViewDelegate, UICollectionViewDataS
                 cell.imageView.backgroundColor = .lightGray
             }
             cell.titleLabel.text = video.name
-        }
+            if video.publishedAt.count == 0 {
+                cell.releaseLabel.text = ""
+            }else {
+                cell.releaseLabel.text = video.publishedAt
+            }
+            }
+            
         
 
         return cell
