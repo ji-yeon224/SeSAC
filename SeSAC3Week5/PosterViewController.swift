@@ -72,7 +72,13 @@ class PosterViewController: UIViewController {
         content.title = "다마고치에게 물을 주세요"
         content.body = "아직 레벨 3이에요. 물을 주세요"
         content.badge = 100
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        
+        var component = DateComponents()
+        component.minute = 5
+        component.hour = 10
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching:component, repeats: false)
+        //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         
         //content와 trigger를 패키지에 담기
         let request = UNNotificationRequest(identifier: "\(Date())", content: content, trigger: trigger)

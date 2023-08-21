@@ -45,6 +45,8 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
     //앱이 포그라운드에서도 알림이 나타나게
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        //특정 화면, 특정 조건에서만 포그라운드 알림 받기, 특정 화면에서는 알림 안받기 설정 가능함
         completionHandler([.badge, .sound, .banner, .list])
     }
     
