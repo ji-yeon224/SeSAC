@@ -12,6 +12,9 @@ class DetailViewController: UIViewController {
     var contents: Contents?
     var creditList: [Credit] = []
     
+    var id = 0
+    var mediaType = ""
+    
     @IBOutlet var tableView: UITableView!
     
     @IBOutlet var backDropImageView: UIImageView!

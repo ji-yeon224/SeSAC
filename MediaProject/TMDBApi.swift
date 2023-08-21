@@ -33,6 +33,17 @@ class TMDBApi {
             
         }
     
+    func callTrendingRequest(endPoint: Endpoint, parameter: String, completionHandler: @escaping (Trend) -> ()) {
+        let url = endPoint.requestURL(type: parameter) + "?api_key=\(APIKey.tmdbKey)"
+        AF.request(url, method: .get).validate()
+            .responseDecodable(of: Trend.self) { response in
+                switch response.result {
+                case .success(let value): completionHandler(value)
+                case .failure(let error): print(error)
+                }
+            }
+    }
+    
     
     func callVideoRequest(endPoint: Endpoint, parameter: String, completionHandler: @escaping (Videos) -> ()) {
         

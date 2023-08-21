@@ -18,7 +18,7 @@ class TrendCollectionViewCell: UICollectionViewCell {
     @IBOutlet var originalTitleLabel: UILabel!
     @IBOutlet var castLabel: UILabel!
     
-    
+    let genreDic = UserDefaults.standard.dictionary(forKey: "genreList")
     override func awakeFromNib() {
         super.awakeFromNib()
         posterImage.backgroundColor = .black
