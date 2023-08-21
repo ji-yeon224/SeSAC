@@ -26,6 +26,10 @@ class TrendViewController: UIViewController {
     
     var contentsList: [Contents] = []
     var genreDictionary: [Int : String] = [:]
+    var creditList: [Credit] = []
+    var castList: [String] = []
+    
+    let group = DispatchGroup()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +46,10 @@ class TrendViewController: UIViewController {
         setMenuButton()
         getGenreData(type: Type.movie.typeString)
         getGenreData(type: Type.tv.typeString)
+        
+        group.notify(queue: .main) {
+            self.collectionView.reloadData()
+        }
         
     }
     
@@ -84,9 +92,12 @@ class TrendViewController: UIViewController {
 }
 
 extension TrendViewController {
+  
+    
     func getTrendData (type: String, time: Time) {
         contentsList.removeAll()
         let parameter = "\(type)/\(time.rawValue)"
+        group.enter()
         TMDBApi.shared.callRequest(endPoint: .trend, parameter: parameter) { json in
             let data = json["results"].arrayValue
             for item in data {
@@ -95,6 +106,7 @@ extension TrendViewController {
                 let poster = item["poster_path"].stringValue
                 let media_type = item["media_type"].stringValue
                 let backdrop = item["backdrop_path"].stringValue
+                let originalTitle = item["original_title"].stringValue
                 var genre: [Int] = []
                 for g in item["genre_ids"].arrayValue {
                     genre.append(g.intValue)
@@ -113,28 +125,55 @@ extension TrendViewController {
                     release = item["release_date"].stringValue
                 default: return
                 }
-
+                //let castList = self.getCreditData(mediaType: media_type, id: id)
                 
-                self.contentsList.append(Contents(id: id, title: title, overview: overview, poster: poster, backdrop_path: backdrop, release: release, media_type: media_type, genre: genre))
+                self.contentsList.append(Contents(id: id, title: title, originalTitle: originalTitle, overview: overview, poster: poster, backdrop_path: backdrop, release: release, media_type: media_type, genre: genre))
             }
+            
+            
+            
+            
             self.collectionView.reloadData()
             self.collectionView.setContentOffset(.zero, animated: true)
+            self.group.leave()
+            
+            
         }
-
+        
     }
     
     func getGenreData(type: String) {
         
-        
+        group.enter()
         TMDBApi.shared.callRequest(endPoint: .genre, parameter: type) { json in
             let data = json["genres"].arrayValue
             for item in data {
                 self.genreDictionary[item["id"].intValue] = item["name"].stringValue
             }
             self.collectionView.reloadData()
+            self.group.leave()
         }
         
     }
+    
+//    func getCreditData(mediaType: String, id: Int) -> [String]{
+//        var castList: [String] = []
+//        var castString = ""
+//        let parameter = "\(mediaType)/\(id)/credits"
+//        group.enter()
+//        TMDBApi.shared.callRequest(endPoint: .credit, parameter: parameter) { json in
+//            let data = json["cast"].arrayValue
+//            for i in 0...5 {
+//                castString += "\(data[i]["name"].stringValue) / "
+//            }
+//            print(castString)
+//
+//            //self.collectionView.reloadData()
+//            self.group.leave()
+//        }
+//
+//        return castList
+//    }
 }
 
 //collectionView
@@ -148,12 +187,16 @@ extension TrendViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendCollectionViewCell.identifier, for: indexPath) as! TrendCollectionViewCell
         
-        cell.releaseLabel.text = contentsList[indexPath.row].release
-        if contentsList[indexPath.row].poster.count == 0 {
+        let content = contentsList[indexPath.row]
+        
+        cell.releaseLabel.text = content.release
+        
+        //poster image loading
+        if content.poster.count == 0 {
             cell.posterImage.image = UIImage(systemName: "xmark")!
             cell.posterImage.tintColor = .lightGray
         } else {
-            let imageURL = TMDBApi.imgURL + contentsList[indexPath.row].poster
+            let imageURL = TMDBApi.imgURL + content.poster
             let url = URL(string: imageURL)!
             DispatchQueue.global().async {
                 let data = try! Data(contentsOf: url)
@@ -163,14 +206,17 @@ extension TrendViewController: UICollectionViewDelegate, UICollectionViewDataSou
                 }
             }
         }
+
+        
         
         var genreString = ""
-        for i in contentsList[indexPath.row].genre {
+        for i in content.genre {
             genreString += "#\(genreDictionary[i] ?? "") "
 
         }
         cell.genreLabel.text = genreString
-        cell.titleLabel.text = "\(indexPath.row + 1). " + contentsList[indexPath.row].title
+        cell.titleLabel.text = content.title
+        cell.originalTitleLabel.text = content.originalTitle
 
         return cell
     }
@@ -189,7 +235,7 @@ extension TrendViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func setCell() {
         
         let layout = UICollectionViewFlowLayout()
-        let spacing: CGFloat = 20
+        let spacing: CGFloat = 10
         let width = UIScreen.main.bounds.width - (spacing * 2)
 
 

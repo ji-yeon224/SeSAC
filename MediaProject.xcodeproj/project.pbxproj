@@ -14,6 +14,7 @@
 		CE5C9ED72A8F50580011664D /* RelatedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C9ED52A8F50580011664D /* RelatedCollectionViewCell.swift */; };
 		CE5C9ED82A8F50580011664D /* RelatedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5C9ED62A8F50580011664D /* RelatedCollectionViewCell.xib */; };
 		CE5C9EDB2A91A2590011664D /* VideosStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C9EDA2A91A2590011664D /* VideosStruct.swift */; };
+		CE5C9EDE2A925F780011664D /* OptionallyDecodable in Frameworks */ = {isa = PBXBuildFile; productRef = CE5C9EDD2A925F780011664D /* OptionallyDecodable */; };
 		CEBF1A562A8622EB000E099C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF1A552A8622EB000E099C /* AppDelegate.swift */; };
 		CEBF1A582A8622EB000E099C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF1A572A8622EB000E099C /* SceneDelegate.swift */; };
 		CEBF1A5D2A8622EB000E099C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEBF1A5B2A8622EB000E099C /* Main.storyboard */; };
@@ -77,6 +78,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEBF1A752A86A503000E099C /* SwiftyJSON in Frameworks */,
+				CE5C9EDE2A925F780011664D /* OptionallyDecodable in Frameworks */,
 				CEBF1A6F2A86A4E8000E099C /* Kingfisher in Frameworks */,
 				CEBF1A722A86A4F6000E099C /* Alamofire in Frameworks */,
 			);
@@ -188,6 +190,7 @@
 				CEBF1A6E2A86A4E8000E099C /* Kingfisher */,
 				CEBF1A712A86A4F6000E099C /* Alamofire */,
 				CEBF1A742A86A503000E099C /* SwiftyJSON */,
+				CE5C9EDD2A925F780011664D /* OptionallyDecodable */,
 			);
 			productName = MediaProject;
 			productReference = CEBF1A522A8622EB000E099C /* MediaProject.app */;
@@ -221,6 +224,7 @@
 				CEBF1A6D2A86A4E8000E099C /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				CEBF1A702A86A4F6000E099C /* XCRemoteSwiftPackageReference "Alamofire" */,
 				CEBF1A732A86A503000E099C /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				CE5C9EDC2A925F780011664D /* XCRemoteSwiftPackageReference "OptionallyDecodable" */,
 			);
 			productRefGroup = CEBF1A532A8622EB000E099C /* Products */;
 			projectDirPath = "";
@@ -492,6 +496,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CE5C9EDC2A925F780011664D /* XCRemoteSwiftPackageReference "OptionallyDecodable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/idrougge/OptionallyDecodable";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		CEBF1A6D2A86A4E8000E099C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
@@ -519,6 +531,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CE5C9EDD2A925F780011664D /* OptionallyDecodable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE5C9EDC2A925F780011664D /* XCRemoteSwiftPackageReference "OptionallyDecodable" */;
+			productName = OptionallyDecodable;
+		};
 		CEBF1A6E2A86A4E8000E099C /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CEBF1A6D2A86A4E8000E099C /* XCRemoteSwiftPackageReference "Kingfisher" */;

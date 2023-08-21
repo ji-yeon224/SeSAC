@@ -27,7 +27,7 @@ class OverviewTableViewCell: UITableViewCell {
     
 
     @IBAction func buttonClicked(_ sender: UIButton) {
-        print(buttonClicked)
+        
         buttonClicked.toggle()
         if buttonClicked {
             moreButton.setImage(UIImage(systemName: "chevron.up"), for: .normal)

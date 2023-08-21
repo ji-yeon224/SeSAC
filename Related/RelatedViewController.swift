@@ -89,6 +89,7 @@ extension RelatedViewController {
                 let poster = item["poster_path"].stringValue
                 let media_type = item["media_type"].stringValue
                 let backdrop = item["backdrop_path"].stringValue
+                let originalTitle = item["originalTitle"].stringValue
                 var genre: [Int] = []
                 for g in item["genre_ids"].arrayValue {
                     genre.append(g.intValue)
@@ -108,7 +109,7 @@ extension RelatedViewController {
                 default: return
                 }
 
-                self.contentList.append(Contents(id: id, title: title, overview: overview, poster: poster, backdrop_path: backdrop, release: release, media_type: media_type, genre: genre))
+                self.contentList.append(Contents(id: id, title: title, originalTitle: originalTitle, overview: overview, poster: poster, backdrop_path: backdrop, release: release, media_type: media_type, genre: genre))
                 
             }
             self.group.leave()

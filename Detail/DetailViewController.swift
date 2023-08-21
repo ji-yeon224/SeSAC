@@ -142,13 +142,13 @@ extension DetailViewController {
                 self.creditList.append(Credit.init(name: data[i]["name"].stringValue,
                                                    profile: data[i]["profile_path"].stringValue,
                                                    character: data[i]["character"].stringValue))
-                
+
             }
-            
+
             self.tableView.reloadData()
         }
-        
-        
+
+
     }
     
     

@@ -13,11 +13,10 @@ class TrendCollectionViewCell: UICollectionViewCell {
     @IBOutlet var backView: UIView!
     @IBOutlet var posterImage: UIImageView!
     @IBOutlet var titleLabel: UILabel!
-    
     @IBOutlet var releaseLabel: UILabel!
-    
     @IBOutlet var genreLabel: UILabel!
-    
+    @IBOutlet var originalTitleLabel: UILabel!
+    @IBOutlet var castLabel: UILabel!
     
     
     override func awakeFromNib() {
@@ -25,7 +24,7 @@ class TrendCollectionViewCell: UICollectionViewCell {
         posterImage.backgroundColor = .black
         posterImage.contentMode = .scaleAspectFill
         
-        titleLabel.font = .boldSystemFont(ofSize: 22)
+        titleLabel.font = .boldSystemFont(ofSize: 17)
         titleLabel.numberOfLines = 0
         
         releaseLabel.font = .systemFont(ofSize: 15)
@@ -34,6 +33,10 @@ class TrendCollectionViewCell: UICollectionViewCell {
         genreLabel.font = .boldSystemFont(ofSize: 17)
         genreLabel.numberOfLines = 0
         
+        originalTitleLabel.font = .systemFont(ofSize: 17)
+        originalTitleLabel.numberOfLines = 0
+        
+        castLabel.font = .systemFont(ofSize: 15)
         configure()
     }
     
