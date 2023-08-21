@@ -24,7 +24,7 @@ class TrendViewController: UIViewController {
     var type: Type = .all
     var typeList = Type.allCases
     
-    var contentsList: [Contents] = []
+    //var contentsList: [Contents] = []
     var genreDictionary: [Int : String] = [:]
     var creditList: [Credit] = []
     var castList: [String] = []
@@ -192,8 +192,7 @@ extension TrendViewController: UICollectionViewDelegate, UICollectionViewDataSou
         let trendData = trendList[indexPath.row]
         
         //vc.contents = trendData
-        vc.id = trendData.id
-        vc.mediaType = trendData.mediaType.rawValue
+        vc.trendData = trendData
         
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen

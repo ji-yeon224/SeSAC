@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Contents {
+struct cont {
 
     var id: Int
     var title: String
@@ -22,7 +22,7 @@ struct Contents {
 }
 
 // MARK: - Contents
-struct Trend: Codable {
+struct Contents: Codable {
     let page: Int
     let results: [TrendData]
     let totalPages, totalResults: Int

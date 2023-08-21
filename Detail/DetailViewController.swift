@@ -12,8 +12,9 @@ class DetailViewController: UIViewController {
     var contents: Contents?
     var creditList: [Credit] = []
     
-    var id = 0
-    var mediaType = ""
+    
+    var trendData: TrendData?
+    var creditData = Credits(id: 0, cast: [], crew: [])
     
     @IBOutlet var tableView: UITableView!
     
@@ -28,8 +29,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         setHeaderAttribute()
-        getCreditData()
-        
+        callCreditData()
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = 100
@@ -42,18 +42,20 @@ class DetailViewController: UIViewController {
         tableView.register(overviewNib, forCellReuseIdentifier: OverviewTableViewCell.identifier)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "info.circle"), style: .plain, target: self, action: #selector(moveToRelatedView))
+        
+        
     }
     
     @objc func moveToRelatedView() {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: RelatedViewController.identifier) as! RelatedViewController
         
-        guard let contents else {
+        guard let trendData else {
             return
         }
         
-        vc.contentId = contents.id
-        vc.mediaType = contents.media_type
+        vc.contentId = trendData.id
+        vc.mediaType = trendData.mediaType.rawValue
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true)
@@ -62,7 +64,7 @@ class DetailViewController: UIViewController {
     
     
     func setHeaderAttribute() {
-        guard let contents else {
+        guard let trendData else {
             dismiss(animated: true)
             return
         }
@@ -74,7 +76,12 @@ class DetailViewController: UIViewController {
         uiview.backgroundColor = .black
         uiview.layer.opacity = 0.5
         
-        titleLabel.text = contents.title
+        switch trendData.mediaType {
+        case .movie: titleLabel.text = trendData.title
+        case .tv: titleLabel.text = trendData.name
+        }
+        
+        
         titleLabel.numberOfLines = 0
         titleLabel.textColor = .white
         titleLabel.font = .boldSystemFont(ofSize: 15)
@@ -98,7 +105,7 @@ class DetailViewController: UIViewController {
         backDropImageView.alpha = 0.8
         
         //poster
-        let imageURL = TMDBApi.imgURL + contents!.poster
+        let imageURL = TMDBApi.imgURL + trendData!.posterPath
         if let url = URL(string: imageURL){
             DispatchQueue.global().async {
                 let data = try! Data(contentsOf: url)
@@ -112,7 +119,7 @@ class DetailViewController: UIViewController {
         }
         
         //backdrop
-        let backdrop = TMDBApi.imgURL + contents!.backdrop_path
+        let backdrop = TMDBApi.imgURL + trendData!.backdropPath
         if let url = URL(string: backdrop){
             DispatchQueue.global().async {
                 let data = try! Data(contentsOf: url)
@@ -134,11 +141,11 @@ class DetailViewController: UIViewController {
 
 extension DetailViewController {
     func getCreditData() {
-        guard let contents else {
+        guard let trendData else {
             dismiss(animated: true)
             return
         }
-        let parameter = "\(contents.media_type)/\(contents.id)/credits"
+        let parameter = "\(trendData.mediaType.rawValue)/\(trendData.id)/credits"
         TMDBApi.shared.callRequest(endPoint: .credit, parameter: parameter) { json in
             let data = json["cast"].arrayValue
             for i in 0...5 {
@@ -152,6 +159,21 @@ extension DetailViewController {
         }
 
 
+    }
+    
+    func callCreditData() {
+        guard let trendData else {
+            dismiss(animated: true)
+            return
+        }
+        let parameter = "\(trendData.mediaType.rawValue)/\(trendData.id)/credits"
+        TMDBApi.shared.callCreditRequest(endPoint: .credit, parameter: parameter) { credit in
+            self.creditData = credit
+            //print(self.creditData)
+            self.tableView.reloadData()
+        }
+        
+        
     }
     
     
@@ -168,7 +190,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         
         
         
-        return section == 0 ? 1 : creditList.count
+        return section == 0 ? 1 : creditData.cast.count
         
     }
     
@@ -184,30 +206,35 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.identifier) as! OverviewTableViewCell
             cell.setOverviewCell()
-            cell.overviewLabel.text = contents?.overview
-            tableView.rowHeight = UITableView.automaticDimension
+            cell.overviewLabel.text = trendData?.overview
 
             return cell
             
         } else { //cast
             
             let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier) as! DetailTableViewCell
-            cell.characterLabel.text = creditList[indexPath.row].character
-            cell.nameLabel.text = creditList[indexPath.row].name
+            let credits = creditData.cast[indexPath.row]
+            cell.characterLabel.text = credits.character
+            cell.nameLabel.text = credits.name
             
-            let imageURL = TMDBApi.imgURL + creditList[indexPath.row].profile
-            if let url = URL(string: imageURL) {
+            
+            
+            if credits.profilePath == nil {
+                cell.profileImageView.image = UIImage(systemName: "person")
+                cell.profileImageView.tintColor = .lightGray
+            } else {
+                let imageURL = TMDBApi.imgURL + credits.profilePath!
+                let url = URL(string: imageURL)
                 DispatchQueue.global().async {
-                    let data = try! Data(contentsOf: url)
+                    let data = try! Data(contentsOf: url!)
                     DispatchQueue.main.async {
                         cell.profileImageView.image = UIImage(data: data)
                         
                     }
                 }
-            } else {
-                cell.profileImageView.image = UIImage(systemName: "person")
-                cell.profileImageView.tintColor = .lightGray
+                
             }
+            
             
             
             return cell

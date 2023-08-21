@@ -13,7 +13,8 @@ class RelatedViewController: UIViewController {
     @IBOutlet var segmentedControl: UISegmentedControl!
     
     
-    var contentList: [Contents] = []
+    var contentList: [cont] = []
+    var contentsData =
     let group = DispatchGroup()
     var videosList: Videos = Videos(id: 0, results: [])
     var selectedSegmentIdx = 0
@@ -109,7 +110,7 @@ extension RelatedViewController {
                 default: return
                 }
 
-                self.contentList.append(Contents(id: id, title: title, originalTitle: originalTitle, overview: overview, poster: poster, backdrop_path: backdrop, release: release, media_type: media_type, genre: genre))
+                self.contentList.append(cont(id: id, title: title, originalTitle: originalTitle, overview: overview, poster: poster, backdrop_path: backdrop, release: release, media_type: media_type, genre: genre))
                 
             }
             self.group.leave()

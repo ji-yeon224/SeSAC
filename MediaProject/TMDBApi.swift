@@ -32,11 +32,24 @@ class TMDBApi {
             }
             
         }
+ 
     
-    func callTrendingRequest(endPoint: Endpoint, parameter: String, completionHandler: @escaping (Trend) -> ()) {
+    func callCreditRequest(endPoint: Endpoint, parameter: String, completionHandler: @escaping (Credits) -> ()) {
         let url = endPoint.requestURL(type: parameter) + "?api_key=\(APIKey.tmdbKey)"
         AF.request(url, method: .get).validate()
-            .responseDecodable(of: Trend.self) { response in
+            .responseDecodable(of: Credits.self) { response in
+                switch response.result {
+                case .success(let value): completionHandler(value)
+                case .failure(let error): print(error)
+                }
+            }
+        
+    }
+    
+    func callTrendingRequest(endPoint: Endpoint, parameter: String, completionHandler: @escaping (Contents) -> ()) {
+        let url = endPoint.requestURL(type: parameter) + "?api_key=\(APIKey.tmdbKey)"
+        AF.request(url, method: .get).validate()
+            .responseDecodable(of: Contents.self) { response in
                 switch response.result {
                 case .success(let value): completionHandler(value)
                 case .failure(let error): print(error)
