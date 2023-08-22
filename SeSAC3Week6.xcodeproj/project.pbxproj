@@ -17,6 +17,7 @@
 		CE80A63A2A94466F005689A7 /* SnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A6392A94466F005689A7 /* SnapViewController.swift */; };
 		CE80A63D2A945CC0005689A7 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A63C2A945CC0005689A7 /* TextViewController.swift */; };
 		CE80A63F2A94792C005689A7 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A63E2A94792C005689A7 /* LocationViewController.swift */; };
+		CE80A6422A94A7BA005689A7 /* Example1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A6412A94A7BA005689A7 /* Example1ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		CE80A6392A94466F005689A7 /* SnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SnapViewController.swift; path = SeSAC3Week6/Test/SnapViewController.swift; sourceTree = SOURCE_ROOT; };
 		CE80A63C2A945CC0005689A7 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		CE80A63E2A94792C005689A7 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		CE80A6412A94A7BA005689A7 /* Example1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example1ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		CE80A61C2A930A3C005689A7 /* SeSAC3Week6 */ = {
 			isa = PBXGroup;
 			children = (
+				CE80A6402A94A7A4005689A7 /* Assignment */,
 				CE80A63B2A944674005689A7 /* Test */,
 				CE80A61D2A930A3C005689A7 /* AppDelegate.swift */,
 				CE80A61F2A930A3C005689A7 /* SceneDelegate.swift */,
@@ -84,6 +87,14 @@
 				CE80A63C2A945CC0005689A7 /* TextViewController.swift */,
 			);
 			path = Test;
+			sourceTree = "<group>";
+		};
+		CE80A6402A94A7A4005689A7 /* Assignment */ = {
+			isa = PBXGroup;
+			children = (
+				CE80A6412A94A7BA005689A7 /* Example1ViewController.swift */,
+			);
+			path = Assignment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +178,7 @@
 				CE80A63A2A94466F005689A7 /* SnapViewController.swift in Sources */,
 				CE80A6222A930A3C005689A7 /* ViewController.swift in Sources */,
 				CE80A63F2A94792C005689A7 /* LocationViewController.swift in Sources */,
+				CE80A6422A94A7BA005689A7 /* Example1ViewController.swift in Sources */,
 				CE80A61E2A930A3C005689A7 /* AppDelegate.swift in Sources */,
 				CE80A6202A930A3C005689A7 /* SceneDelegate.swift in Sources */,
 			);
