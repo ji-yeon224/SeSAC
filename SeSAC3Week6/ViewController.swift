@@ -16,6 +16,8 @@ import UIKit
 //=> Frame 한계
 //=> AutoResizingMask, AutoLayout => 스토리보드 대응
 //=> NSLayoutConstraints => 코드베이스 대응
+    //1. isActive
+    //2. addConstraints
 
 
 class ViewController: UIViewController {
@@ -23,6 +25,7 @@ class ViewController: UIViewController {
     
     let emailTextField = UITextField()
     let passwordTextField = UITextField()
+    let signButton = UIButton()
     
     
     override func viewDidLoad() {
@@ -40,15 +43,53 @@ class ViewController: UIViewController {
         emailTextField.keyboardType = .numberPad
         emailTextField.placeholder = "닉네임을 입력해주세요."
         
-        NSLayoutConstraint(item: passwordTextField, attribute: .leading, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .leading, multiplier: 1, constant: 50).isActive = true
+//        NSLayoutConstraint(item: passwordTextField, attribute: .leading, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .leading, multiplier: 1, constant: 50).isActive = true
+//
+//        NSLayoutConstraint(item: passwordTextField, attribute: .trailing, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .trailing, multiplier: 1, constant: -50).isActive = true
+//
+//        NSLayoutConstraint(item: passwordTextField, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 60).isActive = true
+//
+//        NSLayoutConstraint(item: passwordTextField, attribute: .top, relatedBy: .equal, toItem: emailTextField, attribute: .bottom, multiplier: 1, constant: 50).isActive = true
         
-        NSLayoutConstraint(item: passwordTextField, attribute: .trailing, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .trailing, multiplier: 1, constant: -50).isActive = true
+        //addConstraints
+        let leading = NSLayoutConstraint(item: passwordTextField, attribute: .leading, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .leading, multiplier: 1, constant: 50)
         
-        NSLayoutConstraint(item: passwordTextField, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 60).isActive = true
+        let trailing = NSLayoutConstraint(item: passwordTextField, attribute: .trailing, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .trailing, multiplier: 1, constant: -50)
         
-        NSLayoutConstraint(item: passwordTextField, attribute: .top, relatedBy: .equal, toItem: emailTextField, attribute: .bottom, multiplier: 1, constant: 50).isActive = true
+        let height = NSLayoutConstraint(item: passwordTextField, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 60)
+        
+        let top = NSLayoutConstraint(item: passwordTextField, attribute: .top, relatedBy: .equal, toItem: emailTextField, attribute: .bottom, multiplier: 1, constant: 50)
+        
+        
+        view.addConstraints([leading, trailing, height, top])
         
         passwordTextField.backgroundColor = .brown
+        
+        setLayoutAnchor()
+    }
+    
+    
+    
+    func setLayoutAnchor() {
+        
+        view.addSubview(signButton)
+        signButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        signButton.backgroundColor = .yellow
+        signButton.addTarget(self, action: #selector(signButtonClicked), for: .touchUpInside)
+        NSLayoutConstraint.activate([
+            signButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            signButton.widthAnchor.constraint(equalToConstant: 300),
+            signButton.heightAnchor.constraint(equalToConstant: 50),
+            signButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        
+        
+        ])
+    }
+    
+    @objc func signButtonClicked() {
+        
+        present(TextViewController(), animated: true)
         
     }
 

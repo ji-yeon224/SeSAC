@@ -15,13 +15,6 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bWd-gk-MD1">
-                                <rect key="frame" x="79" y="578" width="235" height="208"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.58455308110000004" green="0.78722774620000002" blue="0.64617973920000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </view>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -29,6 +22,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="64.885496183206101" y="-34.507042253521128"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hRT-gw-Kqr">
+            <objects>
+                <viewController id="AHI-4n-8W8" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tyP-we-ifD">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Sd-gx-dvS">
+                                <rect key="frame" x="22" y="79" width="349" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CMy-6M-Orf">
+                                <rect key="frame" x="22" y="135" width="349" height="628.33333333333337"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3T9-Gn-KHV">
+                                        <rect key="frame" x="8" y="44" width="132" height="130"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="CMy-6M-Orf" secondAttribute="height" multiplier="1:1.8" id="GgM-Ob-0eP"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="X5L-BQ-hrz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="X5L-BQ-hrz" firstAttribute="trailing" secondItem="3Sd-gx-dvS" secondAttribute="trailing" constant="22" id="4jY-GN-beL"/>
+                            <constraint firstItem="X5L-BQ-hrz" firstAttribute="trailing" secondItem="CMy-6M-Orf" secondAttribute="trailing" constant="22" id="E9w-HF-kES"/>
+                            <constraint firstItem="CMy-6M-Orf" firstAttribute="leading" secondItem="X5L-BQ-hrz" secondAttribute="leading" constant="22" id="M5j-7Q-eeX"/>
+                            <constraint firstItem="CMy-6M-Orf" firstAttribute="centerX" secondItem="tyP-we-ifD" secondAttribute="centerX" id="fal-MD-oAF"/>
+                            <constraint firstItem="CMy-6M-Orf" firstAttribute="top" secondItem="3Sd-gx-dvS" secondAttribute="bottom" constant="22" id="pgU-wI-ndy"/>
+                            <constraint firstItem="3Sd-gx-dvS" firstAttribute="top" secondItem="X5L-BQ-hrz" secondAttribute="top" constant="20" id="rHU-Z0-P1T"/>
+                            <constraint firstItem="3Sd-gx-dvS" firstAttribute="leading" secondItem="X5L-BQ-hrz" secondAttribute="leading" constant="22" id="vqU-Oy-6fW"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OmM-tj-ylw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1171.7557251908397" y="-18.30985915492958"/>
         </scene>
     </scenes>
     <resources>
