@@ -16,6 +16,7 @@
 		CE80A6382A94461D005689A7 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE80A6372A94461D005689A7 /* SnapKit */; };
 		CE80A63A2A94466F005689A7 /* SnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A6392A94466F005689A7 /* SnapViewController.swift */; };
 		CE80A63D2A945CC0005689A7 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A63C2A945CC0005689A7 /* TextViewController.swift */; };
+		CE80A63F2A94792C005689A7 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A63E2A94792C005689A7 /* LocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		CE80A62B2A930A3D005689A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE80A6392A94466F005689A7 /* SnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SnapViewController.swift; path = SeSAC3Week6/Test/SnapViewController.swift; sourceTree = SOURCE_ROOT; };
 		CE80A63C2A945CC0005689A7 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
+		CE80A63E2A94792C005689A7 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				CE80A6262A930A3D005689A7 /* Assets.xcassets */,
 				CE80A6282A930A3D005689A7 /* LaunchScreen.storyboard */,
 				CE80A62B2A930A3D005689A7 /* Info.plist */,
+				CE80A63E2A94792C005689A7 /* LocationViewController.swift */,
 			);
 			path = SeSAC3Week6;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 				CE80A63D2A945CC0005689A7 /* TextViewController.swift in Sources */,
 				CE80A63A2A94466F005689A7 /* SnapViewController.swift in Sources */,
 				CE80A6222A930A3C005689A7 /* ViewController.swift in Sources */,
+				CE80A63F2A94792C005689A7 /* LocationViewController.swift in Sources */,
 				CE80A61E2A930A3C005689A7 /* AppDelegate.swift in Sources */,
 				CE80A6202A930A3C005689A7 /* SceneDelegate.swift in Sources */,
 			);
