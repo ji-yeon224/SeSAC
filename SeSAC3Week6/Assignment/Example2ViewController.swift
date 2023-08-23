@@ -18,14 +18,14 @@ class Example2ViewController: UIViewController {
     
     let backOpacityView = {
         let view = UIView()
-        view.backgroundColor = .black
-        view.layer.opacity = 0.4
+        view.layer.backgroundColor = (UIColor.black.cgColor).copy(alpha: 0.5)
         return view
     }()
     
     let bottomView = {
         let view = UIView()
         view.backgroundColor = .clear
+        
         return view
     }()
     
@@ -77,7 +77,7 @@ class Example2ViewController: UIViewController {
         
         view.addSubview(backImageView)
         backImageView.addSubview(backOpacityView)
-        let views = [bottomView, nameLabel, profileImageView, lineView, xButton, settingButton, qrButton, giftButton,  editButton, chatButton,callButton]
+        let views = [bottomView, nameLabel, profileImageView, lineView, xButton, settingButton, qrButton, giftButton]
         
         backOpacityView.addSubview(stackView)
         for item in views {
