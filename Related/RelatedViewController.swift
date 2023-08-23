@@ -14,12 +14,12 @@ class RelatedViewController: UIViewController {
     
     
     var contentList: [cont] = []
-    var contentsData =
+    var contentsData: [ContentsData] = []
     let group = DispatchGroup()
     var videosList: Videos = Videos(id: 0, results: [])
     var selectedSegmentIdx = 0
-    var contentId = 0
-    var mediaType = "movie"
+    var contentId: Int?
+    var mediaType: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ class RelatedViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        //print(contentId, mediaType)
+        print(contentId, mediaType)
         
         let nib = UINib(nibName: RelatedCollectionViewCell.identifier, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: RelatedCollectionViewCell.identifier)
@@ -40,6 +40,7 @@ class RelatedViewController: UIViewController {
         segmentedControl.setTitle("similiar", forSegmentAt: 0)
         segmentedControl.setTitle("videos", forSegmentAt: 1)
 
+        
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(backButtonClicked))
         navigationItem.leftBarButtonItem?.tintColor = .darkGray
@@ -55,12 +56,13 @@ class RelatedViewController: UIViewController {
         case 0:
             selectedSegmentIdx = 0
             if contentList.isEmpty {
-                callSimilarData(id: contentId, mediaType: mediaType)
+                callSimilarData(id: contentId!, mediaType: mediaType!)
+                callSimilarContent(id: contentId!, mediaType: mediaType!)
             }
         case 1:
             selectedSegmentIdx = 1
             if videosList.results.isEmpty{
-                callVideoData(id: contentId, mediaType: mediaType)
+                callVideoData(id: contentId!, mediaType: mediaType!)
             }
             
             
@@ -78,10 +80,17 @@ class RelatedViewController: UIViewController {
 
 extension RelatedViewController {
     
+    func callSimilarContent(id: Int, mediaType: String) {
+        TMDBApi.shared.callTrendingRequest(endPoint: .similar, parameter: "\(mediaType)/\(id)") { content in
+            self.contentsData.append(contentsOf: content.results)
+            print(self.contentsData)
+        }
+    }
+    
     func callSimilarData(id: Int, mediaType: String) {
         
         group.enter()
-        TMDBApi.shared.callRequest(endPoint: .similar, parameter: "\(mediaType)/\(id)") { json in
+        TMDBApi.shared.callRequest(endPoint: .similar, parameter: "movie/671") { json in
 
             let data = json["results"].arrayValue
             for item in data {
@@ -106,7 +115,7 @@ extension RelatedViewController {
                 case "movie":
                     title = item["title"].stringValue
                     release = item["release_date"].stringValue
-                    print(title)
+                    //print(title)
                 default: return
                 }
 

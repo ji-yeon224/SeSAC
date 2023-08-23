@@ -29,7 +29,7 @@ class TrendViewController: UIViewController {
     var creditList: [Credit] = []
     var castList: [String] = []
     
-    var trendList: [TrendData] = []
+    var trendList: [ContentsData] = []
     
     let group = DispatchGroup()
 

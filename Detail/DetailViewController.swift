@@ -13,7 +13,7 @@ class DetailViewController: UIViewController {
     var creditList: [Credit] = []
     
     
-    var trendData: TrendData?
+    var trendData: ContentsData?
     var creditData = Credits(id: 0, cast: [], crew: [])
     
     @IBOutlet var tableView: UITableView!
@@ -32,8 +32,12 @@ class DetailViewController: UIViewController {
         callCreditData()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.rowHeight = 100
+        //tableView.rowHeight = 100
         tableView.allowsSelection = false
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableView.automaticDimension
+        
+        
         
         let nib = UINib(nibName: DetailTableViewCell.identifier, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: DetailTableViewCell.identifier)
@@ -206,8 +210,9 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.identifier) as! OverviewTableViewCell
             cell.setOverviewCell()
+            
             cell.overviewLabel.text = trendData?.overview
-
+            
             return cell
             
         } else { //cast
@@ -247,16 +252,16 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.identifier) as! OverviewTableViewCell
-            //tableView.rowHeight = UITableView.automaticDimension
-            cell.setChangeOverviewCell()
-            cell.buttonClicked(cell.moreButton)
-            tableView.reloadRows(at: [indexPath], with: .automatic)
-            
-        }
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if indexPath.section == 0 {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.identifier) as! OverviewTableViewCell
+//            //tableView.rowHeight = UITableView.automaticDimension
+//            //cell.setChangeOverviewCell()
+//            cell.buttonClicked(cell.moreButton)
+//            tableView.reloadRows(at: [indexPath], with: .automatic)
+//
+//        }
+//    }
 
 
 }

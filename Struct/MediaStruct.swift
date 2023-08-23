@@ -24,7 +24,7 @@ struct cont {
 // MARK: - Contents
 struct Contents: Codable {
     let page: Int
-    let results: [TrendData]
+    let results: [ContentsData]
     let totalPages, totalResults: Int
 
     enum CodingKeys: String, CodingKey {
@@ -35,7 +35,7 @@ struct Contents: Codable {
 }
 
 // MARK: - Result
-struct TrendData: Codable {
+struct ContentsData: Codable {
     let adult: Bool
         let backdropPath: String
         let id: Int

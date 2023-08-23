@@ -15,7 +15,7 @@ class OverviewTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        moreButton.backgroundColor = .brown
         moreButton.tintColor = .black
     }
     
@@ -40,18 +40,6 @@ class OverviewTableViewCell: UITableViewCell {
 
 
     }
-    
-    func setChangeOverviewCell() {
-        buttonClicked.toggle()
-        if buttonClicked {
-            moreButton.setImage(UIImage(systemName: "chevron.up"), for: .normal)
-            overviewLabel.numberOfLines = 0
-            
-        } else {
-            moreButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
-            overviewLabel.numberOfLines = 2
-        }
-    }
-    
+
     
 }

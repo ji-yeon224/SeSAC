@@ -21,6 +21,7 @@ class DetailTableViewCell: UITableViewCell {
         characterLabel.font = .systemFont(ofSize: 13)
         characterLabel.numberOfLines = 0
         
+        
     }
 
   
