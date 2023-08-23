@@ -91,7 +91,7 @@ class ViewController: UIViewController {
         
         //let vc = LocationViewController()
         //let nav = UINavigationController(rootViewController: vc)
-        present(LocationViewController(), animated: true)
+        present(Example2ViewController(), animated: true)
         
     }
 

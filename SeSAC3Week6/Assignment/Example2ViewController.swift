@@ -16,13 +16,51 @@ class Example2ViewController: UIViewController {
         return view
     }()
     
-    let chatImageView = setImageview(image: "message.fill")
-    let editImageView = setImageview(image: "pencil")
-    let storyImageView = setImageview(image: "quote.closing")
     
-    let chatLabel = setLabel(text: "나와의 채팅")
-    let editLabel = setLabel(text: "프로필 편집")
-    let storyLabel = setLabel(text: "카카오스토리")
+    let chatButton = {
+        let view = UIButton()
+        var config = UIButton.Configuration.plain()
+        config.title = "나와의 채팅"
+        config.baseBackgroundColor = .clear
+        config.baseForegroundColor = .white
+        config.imagePadding = 10
+        config.imagePlacement = .top
+        config.titleAlignment = .center
+        config.image = UIImage(systemName: "message.fill")
+        config.buttonSize = .small
+        view.configuration = config
+        return view
+    }()
+    
+    let editButton = {
+        let view = UIButton()
+        var config = UIButton.Configuration.plain()
+        config.title = "프로필 편집"
+        config.baseBackgroundColor = .clear
+        config.baseForegroundColor = .white
+        config.imagePadding = 10
+        config.imagePlacement = .top
+        config.titleAlignment = .center
+        config.image = UIImage(systemName: "pencil")
+        config.buttonSize = .small
+        view.configuration = config
+        return view
+    }()
+    
+    let callButton = {
+        let view = UIButton()
+        var config = UIButton.Configuration.plain()
+        config.title = "통화하기"
+        config.baseBackgroundColor = .clear
+        config.baseForegroundColor = .white
+        config.imagePadding = 10
+        config.imagePlacement = .top
+        config.titleAlignment = .center
+        config.image = UIImage(systemName: "phone.fill")
+        config.buttonSize = .small
+        view.configuration = config
+        return view
+    }()
     
     let nameLabel = {
         let view = UILabel()
@@ -36,14 +74,15 @@ class Example2ViewController: UIViewController {
         let view = UIImageView()
         view.image = UIImage(named: "damgom")
         view.contentMode = .scaleAspectFill
-        view.layer.cornerRadius = 50
+        view.layer.masksToBounds = true
+        view.layer.cornerRadius = 15
         
         return view
     }()
     
     let lineView = UIView()
     
-    let xButton = setImageview(image: "xmark.circle")
+    let xButton = setImageview(image: "xmark")
     let giftButton = setImageview(image: "gift.circle")
     let qrButton = setImageview(image: "command.circle")
     let settingButton = setImageview(image: "gearshape.circle")
@@ -54,15 +93,12 @@ class Example2ViewController: UIViewController {
         view.backgroundColor = .white
         view.addSubview(backImageView)
         
-        let views = [chatLabel, chatImageView, editLabel, editImageView, storyLabel, storyImageView, nameLabel, profileImageView, lineView, xButton, settingButton, qrButton, giftButton]
+        let views = [nameLabel, profileImageView, lineView, xButton, settingButton, qrButton, giftButton,  editButton, chatButton,callButton]
         
         for item in views {
             backImageView.addSubview(item)
         }
         
-  
-        setImageViewConstraints()
-        setLabelConstraints()
         setConstraints()
     }
     
@@ -73,21 +109,21 @@ class Example2ViewController: UIViewController {
         return view
     }
     
-    static func setLabel(text: String) -> UILabel {
-        let view = UILabel()
-        view.text = text
-        view.textColor = .white
-        view.font = .boldSystemFont(ofSize: 13)
-        return view
-    }
-    
+
     
     
     func setConstraints() {
+        backImageView.snp.makeConstraints { make in
+            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
+            make.verticalEdges.equalTo(view.safeAreaLayoutGuide)
+            make.edges.equalToSuperview()
+        }
+        
+        
         lineView.backgroundColor = .lightGray
         lineView.snp.makeConstraints { make in
             make.centerX.equalTo(backImageView)
-            make.bottomMargin.equalTo(backImageView).inset(200)
+            make.bottomMargin.equalTo(editButton.snp.top).inset(-60)
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
             make.height.equalTo(1)
         }
@@ -115,85 +151,45 @@ class Example2ViewController: UIViewController {
             make.trailing.equalTo(qrButton.snp.leading).offset(-20)
             make.size.equalTo(30)
         }
-    }
-    
-    func setImageViewConstraints() {
         
-        backImageView.snp.makeConstraints { make in
-            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
-            make.verticalEdges.equalTo(view.safeAreaLayoutGuide)
-        }
-        
-        editImageView.snp.makeConstraints { make in
+        editButton.snp.makeConstraints { make in
             make.centerX.equalTo(backImageView)
-            make.bottomMargin.equalTo(backImageView).inset(70)
-            make.size.equalTo(30)
+            make.bottomMargin.equalTo(backImageView).inset(35)
+            make.size.equalTo(90)
         }
         
-        
-        chatImageView.snp.makeConstraints { make in
-            //make.leadingMargin.equalTo(60)
-            make.trailing.equalTo(editImageView.snp.leading).offset(-70)
-            make.bottomMargin.equalTo(backImageView).inset(100)
-            make.size.equalTo(30)
-            
+        chatButton.snp.makeConstraints { make in
+            make.bottomMargin.equalTo(backImageView).inset(35)
+            make.trailing.equalTo(editButton.snp.leading).offset(-20)
+            make.size.equalTo(90)
+            //make.centerX.equalTo(chatImageView)
         }
         
-        storyImageView.snp.makeConstraints { make in
-            //make.trailingMargin.equalTo(-60)
-            make.leading.equalTo(editImageView.snp.trailing).offset(70)
-            make.bottomMargin.equalTo(backImageView).inset(70)
-            make.size.equalTo(30)
+        callButton.snp.makeConstraints { make in
+            make.leading.equalTo(editButton.snp.trailing).offset(20)
+            make.bottomMargin.equalTo(backImageView).inset(35)
+            make.size.equalTo(90)
         }
+        
         
         profileImageView.snp.makeConstraints { make in
             make.centerX.equalTo(backImageView)
-            make.bottomMargin.equalTo(backImageView).inset(290)
+            make.bottomMargin.equalTo(lineView.snp.top).offset(-120)
             make.size.equalTo(80)
             
         }
         
-        
-        
-        
-    }
-    
-    func setLabelConstraints() {
-        
-        editLabel.snp.makeConstraints { make in
-            make.bottomMargin.equalTo(backImageView).inset(50)
-            make.top.equalTo(editImageView.snp.bottom).offset(10)
-            make.width.equalTo(90)
-            make.height.equalTo(30)
-            make.centerX.equalTo(editImageView)
-        }
-        
-        chatLabel.snp.makeConstraints { make in
-            make.bottomMargin.equalTo(backImageView).inset(50)
-            make.top.equalTo(chatImageView.snp.bottom).offset(10)
-            make.width.equalTo(80)
-            make.height.equalTo(30)
-            make.centerX.equalTo(chatImageView)
-        }
-        
-        storyLabel.snp.makeConstraints { make in
-            make.trailingMargin.equalTo(-40)
-            make.bottomMargin.equalTo(backImageView).inset(50)
-            make.top.equalTo(storyImageView.snp.bottom).offset(10)
-            make.width.equalTo(80)
-            make.height.equalTo(30)
-            make.centerX.equalTo(storyImageView)
-        }
-        
-        
-        nameLabel.text = "지연"
         nameLabel.snp.makeConstraints { make in
             make.centerX.equalTo(backImageView)
+            make.topMargin.equalTo(profileImageView.snp.bottom).offset(18)
             make.bottomMargin.equalTo(backImageView).inset(250)
             
         }
         
+        
     }
+
+
     
 
 
