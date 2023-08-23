@@ -21,6 +21,24 @@ class TheaterMapViewController: UIViewController {
     let lotteButton = setButton(title: "롯데시네마")
     let megaBoxButton = setButton(title: "메가박스")
     let cgvButton = setButton(title: "CGV")
+    let locationButton = {
+        let btn = UIButton()
+        
+        var config = UIButton.Configuration.filled()
+        config.buttonSize = .small
+        config.baseBackgroundColor = .white
+        config.baseForegroundColor = .black
+        config.titleAlignment = .center
+        //config.image = UIImage(systemName: "location.circle")
+        btn.configuration = config
+        btn.layer.borderColor = UIColor.black.cgColor
+        btn.layer.cornerRadius = 25
+        btn.layer.borderWidth = 1
+        btn.setImage(UIImage(systemName: "location.circle"), for: .normal)
+        
+        
+        return btn
+    }()
     
     var annoList: [MKPointAnnotation] = []
     var lotteList: [MKPointAnnotation] = []
@@ -42,6 +60,8 @@ class TheaterMapViewController: UIViewController {
         
         
         locationManager.delegate = self
+        mapView.delegate = self
+        checkDeviceLocationAuthorization()
         
         setConstraints()
         setAttribute()
@@ -135,7 +155,7 @@ class TheaterMapViewController: UIViewController {
     
     func setRegionAndAnnotation(center: CLLocationCoordinate2D){
         
-        let region = MKCoordinateRegion(center: center, latitudinalMeters: 100, longitudinalMeters: 100)
+        let region = MKCoordinateRegion(center: center, latitudinalMeters: 20000, longitudinalMeters: 20000)
         mapView.setRegion(region, animated: true)
         
         let annotation = MKPointAnnotation()
@@ -172,6 +192,9 @@ class TheaterMapViewController: UIViewController {
 extension TheaterMapViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        //37.523844, 126.980249
+//        let center = CLLocationCoordinate2D(latitude: 37.523844, longitude: 126.980249)
+//        setRegionAndAnnotation(center: center)
         if let coordinate = locations.last?.coordinate {
             setRegionAndAnnotation(center: coordinate)
         }
@@ -181,6 +204,11 @@ extension TheaterMapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         let center = CLLocationCoordinate2D(latitude: 37.51800, longitude: 126.88641)
         setRegionAndAnnotation(center: center)
+    }
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        
+        checkDeviceLocationAuthorization()
     }
     
     
@@ -196,9 +224,13 @@ extension TheaterMapViewController {
         lotteButton.addTarget(self, action: #selector(clickedLotteButton), for: .touchUpInside)
         megaBoxButton.addTarget(self, action: #selector(clickedMegaButton), for: .touchUpInside)
         cgvButton.addTarget(self, action: #selector(clickedCGVButton), for: .touchUpInside)
-        
+        locationButton.addTarget(self, action: #selector(clickedLocationButton), for: .touchUpInside)
     }
     
+    @objc func clickedLocationButton() {
+        checkDeviceLocationAuthorization()
+        //locationManager.startUpdatingLocation()
+    }
     @objc func clickedTotalButton() {
         setAnnotation(type: "all")
     }
@@ -236,7 +268,14 @@ extension TheaterMapViewController {
         mapView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(20)
             make.bottomMargin.equalToSuperview().inset(10)
-            make.height.equalTo(view).multipliedBy(0.75)
+            make.height.equalTo(view).multipliedBy(0.7)
+        }
+        
+        view.addSubview(locationButton)
+        locationButton.snp.makeConstraints { make in
+            make.size.equalTo(50)
+            make.trailingMargin.equalToSuperview().inset(20)
+            make.bottomMargin.equalTo(mapView.snp.top).offset(-10)
         }
         
         view.addSubview(stackView)
@@ -270,3 +309,14 @@ extension TheaterMapViewController {
     
     
 }
+
+extension TheaterMapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        print(#function)
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect annotation: MKAnnotation) {
+        print(#function)
+    }
+}
+
