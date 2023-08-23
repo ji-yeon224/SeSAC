@@ -89,7 +89,9 @@ class ViewController: UIViewController {
     
     @objc func signButtonClicked() {
         
-        present(Example2ViewController(), animated: true)
+        //let vc = LocationViewController()
+        //let nav = UINavigationController(rootViewController: vc)
+        present(LocationViewController(), animated: true)
         
     }
 
