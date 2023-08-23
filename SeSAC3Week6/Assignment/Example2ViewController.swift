@@ -25,7 +25,7 @@ class Example2ViewController: UIViewController {
     
     let bottomView = {
         let view = UIView()
-        view.backgroundColor = .blue
+        view.backgroundColor = .clear
         return view
     }()
     
@@ -64,7 +64,8 @@ class Example2ViewController: UIViewController {
         stackView.distribution = .fillEqually
         stackView.spacing = 18
         stackView.alignment = .fill
-        stackView.backgroundColor = .yellow
+        //stackView.backgroundColor = .yellow
+        
         
         return stackView
     }()
@@ -119,19 +120,19 @@ class Example2ViewController: UIViewController {
         
         bottomView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview()
+            make.height.equalTo(view).multipliedBy(0.27)
             make.bottom.equalToSuperview()
         }
         stackView.snp.makeConstraints { make in
-            make.centerX.equalTo(backOpacityView)
             make.height.equalTo(90)
+            make.horizontalEdges.equalToSuperview().inset(30)
             make.bottomMargin.equalTo(backOpacityView).inset(30)
             
         }
         
         lineView.backgroundColor = .lightGray
         lineView.snp.makeConstraints { make in
-            make.centerX.equalTo(backOpacityView)
-            make.bottomMargin.equalTo(stackView.snp.top).inset(-60)
+            make.bottomMargin.equalTo(bottomView.snp.top).inset(-5)
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
             make.height.equalTo(1)
         }
@@ -192,23 +193,20 @@ class Example2ViewController: UIViewController {
         }
         
         
-        
-        
         profileImageView.snp.makeConstraints { make in
             make.centerX.equalTo(backOpacityView)
-            make.bottomMargin.equalTo(lineView.snp.top).offset(-110)
+            make.bottomMargin.equalTo(nameLabel.snp.top).offset(-20)
             make.size.equalTo(80)
             
         }
         
         nameLabel.snp.makeConstraints { make in
             make.centerX.equalTo(backOpacityView)
-            make.topMargin.equalTo(profileImageView.snp.bottom).offset(18)
-            make.bottomMargin.equalTo(backOpacityView).inset(250)
+            make.bottomMargin.equalTo(bottomView.snp.top).inset(-80)
+            
             make.height.equalTo(25)
             
         }
-        //stackView.backgroundColor = .yellow
         
         
         

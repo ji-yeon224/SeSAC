@@ -19,6 +19,8 @@
 		CE80A63F2A94792C005689A7 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A63E2A94792C005689A7 /* LocationViewController.swift */; };
 		CE80A6422A94A7BA005689A7 /* Example1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A6412A94A7BA005689A7 /* Example1ViewController.swift */; };
 		CE80A6442A94B006005689A7 /* Example2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A6432A94B006005689A7 /* Example2ViewController.swift */; };
+		CE80A6492A95EA77005689A7 /* TheaterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A6482A95EA77005689A7 /* TheaterData.swift */; };
+		CE80A64B2A95EAAD005689A7 /* TheaterMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A64A2A95EAAD005689A7 /* TheaterMapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		CE80A63E2A94792C005689A7 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		CE80A6412A94A7BA005689A7 /* Example1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example1ViewController.swift; sourceTree = "<group>"; };
 		CE80A6432A94B006005689A7 /* Example2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example2ViewController.swift; sourceTree = "<group>"; };
+		CE80A6482A95EA77005689A7 /* TheaterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterData.swift; sourceTree = "<group>"; };
+		CE80A64A2A95EAAD005689A7 /* TheaterMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 		CE80A61C2A930A3C005689A7 /* SeSAC3Week6 */ = {
 			isa = PBXGroup;
 			children = (
+				CE80A6452A95E99A005689A7 /* MapKitAssignment */,
 				CE80A6402A94A7A4005689A7 /* Assignment */,
 				CE80A63B2A944674005689A7 /* Test */,
 				CE80A61D2A930A3C005689A7 /* AppDelegate.swift */,
@@ -98,6 +103,15 @@
 				CE80A6432A94B006005689A7 /* Example2ViewController.swift */,
 			);
 			path = Assignment;
+			sourceTree = "<group>";
+		};
+		CE80A6452A95E99A005689A7 /* MapKitAssignment */ = {
+			isa = PBXGroup;
+			children = (
+				CE80A6482A95EA77005689A7 /* TheaterData.swift */,
+				CE80A64A2A95EAAD005689A7 /* TheaterMapViewController.swift */,
+			);
+			path = MapKitAssignment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,12 +191,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE80A6492A95EA77005689A7 /* TheaterData.swift in Sources */,
 				CE80A63D2A945CC0005689A7 /* TextViewController.swift in Sources */,
 				CE80A63A2A94466F005689A7 /* SnapViewController.swift in Sources */,
 				CE80A6222A930A3C005689A7 /* ViewController.swift in Sources */,
 				CE80A63F2A94792C005689A7 /* LocationViewController.swift in Sources */,
 				CE80A6442A94B006005689A7 /* Example2ViewController.swift in Sources */,
 				CE80A6422A94A7BA005689A7 /* Example1ViewController.swift in Sources */,
+				CE80A64B2A95EAAD005689A7 /* TheaterMapViewController.swift in Sources */,
 				CE80A61E2A930A3C005689A7 /* AppDelegate.swift in Sources */,
 				CE80A6202A930A3C005689A7 /* SceneDelegate.swift in Sources */,
 			);
