@@ -25,10 +25,21 @@ class CustomViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         
         view.addSubview(idTextField)
         idTextField.snp.makeConstraints { make in
-            <#code#>
+            make.center.equalToSuperview()
+            make.width.equalTo(300)
+            make.height.equalTo(50)
+        }
+        
+        view.addSubview(passwordTextField)
+        passwordTextField.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(idTextField.snp.bottomMargin).offset(100)
+            make.width.equalTo(300)
+            make.height.equalTo(50)
         }
 
     }

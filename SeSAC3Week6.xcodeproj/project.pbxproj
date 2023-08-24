@@ -24,6 +24,7 @@
 		CE80A6502A96F12C005689A7 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A64F2A96F12C005689A7 /* Extension+UIViewController.swift */; };
 		CE80A6532A971CE3005689A7 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A6522A971CE3005689A7 /* CustomViewController.swift */; };
 		CE80A6552A971EA2005689A7 /* BlackRadiusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A6542A971EA2005689A7 /* BlackRadiusTextField.swift */; };
+		CE80A6572A972A1A005689A7 /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A6562A972A1A005689A7 /* CustomTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		CE80A64F2A96F12C005689A7 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		CE80A6522A971CE3005689A7 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		CE80A6542A971EA2005689A7 /* BlackRadiusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackRadiusTextField.swift; sourceTree = "<group>"; };
+		CE80A6562A972A1A005689A7 /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 			children = (
 				CE80A6522A971CE3005689A7 /* CustomViewController.swift */,
 				CE80A6542A971EA2005689A7 /* BlackRadiusTextField.swift */,
+				CE80A6562A972A1A005689A7 /* CustomTableViewController.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				CE80A63D2A945CC0005689A7 /* TextViewController.swift in Sources */,
 				CE80A63A2A94466F005689A7 /* SnapViewController.swift in Sources */,
 				CE80A6222A930A3C005689A7 /* ViewController.swift in Sources */,
+				CE80A6572A972A1A005689A7 /* CustomTableViewController.swift in Sources */,
 				CE80A63F2A94792C005689A7 /* LocationViewController.swift in Sources */,
 				CE80A6442A94B006005689A7 /* Example2ViewController.swift in Sources */,
 				CE80A6532A971CE3005689A7 /* CustomViewController.swift in Sources */,

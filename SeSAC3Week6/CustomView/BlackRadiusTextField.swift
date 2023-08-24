@@ -10,6 +10,7 @@ import UIKit
 class BlackRadiusTextField: UITextField {
     
     override init(frame: CGRect) {
+        
         super.init(frame: frame)
         setUpView()
     }
@@ -29,5 +30,15 @@ class BlackRadiusTextField: UITextField {
     }
     
 }
+
+protocol ExampleProtocol {
+    init(name: String)
+    
+}
+
+
+
+
+
 
 
