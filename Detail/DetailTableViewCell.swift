@@ -19,7 +19,7 @@ class DetailTableViewCell: UITableViewCell {
         
         nameLabel.font = .boldSystemFont(ofSize: 17)
         characterLabel.font = .systemFont(ofSize: 13)
-        characterLabel.numberOfLines = 0
+        characterLabel.numberOfLines = 1
         
         
     }

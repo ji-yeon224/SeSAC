@@ -24,6 +24,8 @@ class DetailViewController: UIViewController {
     
     @IBOutlet var uiview: UIView!
     
+    //var isExpand = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +34,8 @@ class DetailViewController: UIViewController {
         callCreditData()
         tableView.dataSource = self
         tableView.delegate = self
-        //tableView.rowHeight = 100
-        tableView.allowsSelection = false
-        tableView.estimatedRowHeight = 100
+        
+        //tableView.allowsSelection = false
         tableView.rowHeight = UITableView.automaticDimension
         
         
@@ -209,9 +210,13 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         //overview
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.identifier) as! OverviewTableViewCell
-            cell.setOverviewCell()
+            guard let trendData else { return cell }
             
-            cell.overviewLabel.text = trendData?.overview
+            cell.setOverviewCell(isExpand: trendData.isExpand)
+            
+            cell.overviewLabel.text = trendData.overview
+            
+            cell.overviewLabel.numberOfLines = trendData.isExpand ? 0 : 2
             
             return cell
             
@@ -249,19 +254,14 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         
     }
     
-    
-    
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if indexPath.section == 0 {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.identifier) as! OverviewTableViewCell
-//            //tableView.rowHeight = UITableView.automaticDimension
-//            //cell.setChangeOverviewCell()
-//            cell.buttonClicked(cell.moreButton)
-//            tableView.reloadRows(at: [indexPath], with: .automatic)
-//
-//        }
-//    }
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            trendData!.isExpand.toggle()
+            //print(isExpand)
+            tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
+        }
+        
+       
+    }
 
 }

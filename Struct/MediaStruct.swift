@@ -26,6 +26,7 @@ struct Contents: Codable {
     let page: Int
     let results: [ContentsData]
     let totalPages, totalResults: Int
+    
 
     enum CodingKeys: String, CodingKey {
         case page, results
@@ -52,6 +53,7 @@ struct ContentsData: Codable {
         let voteCount: Int
         let name, originalName, firstAirDate: String?
         let originCountry: [String]?
+        var isExpand: Bool = false
 
         enum CodingKeys: String, CodingKey {
             case adult

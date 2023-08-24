@@ -16,35 +16,32 @@
                 <rect key="frame" x="0.0" y="0.0" width="421" height="127"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYM-Bv-3hF">
-                        <rect key="frame" x="0.0" y="95.333333333333329" width="421" height="31.666666666666671"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain"/>
-                        <connections>
-                            <action selector="buttonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="lCv-Oq-pb7"/>
-                        </connections>
-                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hF2-Eg-cyf">
-                        <rect key="frame" x="22" y="12.000000000000004" width="377" height="61.333333333333343"/>
+                        <rect key="frame" x="22" y="12" width="377" height="75"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WgF-GF-Px5">
+                        <rect key="frame" x="193" y="92" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="L7A-N9-n8I"/>
+                            <constraint firstAttribute="width" secondItem="WgF-GF-Px5" secondAttribute="height" multiplier="1:1" id="QlO-id-fWH"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="LYM-Bv-3hF" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.25" id="3hs-h8-7OF"/>
-                    <constraint firstItem="LYM-Bv-3hF" firstAttribute="top" secondItem="hF2-Eg-cyf" secondAttribute="bottom" constant="22" id="Om5-X2-gcD"/>
+                    <constraint firstAttribute="bottom" secondItem="WgF-GF-Px5" secondAttribute="bottom" id="EHK-LS-cJa"/>
+                    <constraint firstItem="WgF-GF-Px5" firstAttribute="top" secondItem="hF2-Eg-cyf" secondAttribute="bottom" constant="5" id="Vea-iS-FQX"/>
                     <constraint firstAttribute="trailing" secondItem="hF2-Eg-cyf" secondAttribute="trailing" constant="22" id="bED-2E-QcZ"/>
-                    <constraint firstAttribute="bottom" secondItem="LYM-Bv-3hF" secondAttribute="bottom" id="f6s-gL-WJm"/>
-                    <constraint firstAttribute="trailing" secondItem="LYM-Bv-3hF" secondAttribute="trailing" id="fl8-NH-Gfo"/>
                     <constraint firstItem="hF2-Eg-cyf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="g5j-hj-f5g"/>
                     <constraint firstItem="hF2-Eg-cyf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="22" id="hO8-PG-CZV"/>
-                    <constraint firstItem="LYM-Bv-3hF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ndk-SH-vHR"/>
+                    <constraint firstItem="WgF-GF-Px5" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="upS-H5-Wzw"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="moreButton" destination="LYM-Bv-3hF" id="WFH-Xl-AVT"/>
+                <outlet property="moreImageView" destination="WgF-GF-Px5" id="KAz-IF-wWJ"/>
                 <outlet property="overviewLabel" destination="hF2-Eg-cyf" id="yqg-Ta-lK7"/>
             </connections>
             <point key="canvasLocation" x="206.87022900763358" y="16.549295774647888"/>

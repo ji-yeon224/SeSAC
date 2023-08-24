@@ -10,36 +10,28 @@ import UIKit
 class OverviewTableViewCell: UITableViewCell {
     
     @IBOutlet var overviewLabel: UILabel!
-    @IBOutlet var moreButton: UIButton!
+    
     var buttonClicked = false
     
+    @IBOutlet var moreImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        moreButton.backgroundColor = .brown
-        moreButton.tintColor = .black
+        moreImageView.tintColor = .black
     }
     
-    func setOverviewCell() {
-        moreButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
-        overviewLabel.numberOfLines = 2
-    }
-    
-    
-
-    @IBAction func buttonClicked(_ sender: UIButton) {
+    func setOverviewCell(isExpand: Bool) {
+        //moreImageView.setImage(UIImage(systemName: "chevron.down"), for: .normal)
         
-        buttonClicked.toggle()
-        if buttonClicked {
-            moreButton.setImage(UIImage(systemName: "chevron.up"), for: .normal)
-            overviewLabel.numberOfLines = 0
-
-        } else {
-            moreButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
-            overviewLabel.numberOfLines = 2
-        }
-
-
+        
+        moreImageView.image = isExpand ? UIImage(systemName: "chevron.up") : UIImage(systemName: "chevron.down")
+        
+        
+        //print(#function)
     }
+    
+    
+
+
 
     
 }
