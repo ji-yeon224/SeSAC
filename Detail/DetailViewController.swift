@@ -211,11 +211,9 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.identifier) as! OverviewTableViewCell
             guard let trendData else { return cell }
-            
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none
             cell.setOverviewCell(isExpand: trendData.isExpand)
-            
             cell.overviewLabel.text = trendData.overview
-            
             cell.overviewLabel.numberOfLines = trendData.isExpand ? 0 : 2
             
             return cell
@@ -224,6 +222,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier) as! DetailTableViewCell
             let credits = creditData.cast[indexPath.row]
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none
             cell.characterLabel.text = credits.character
             cell.nameLabel.text = credits.name
             
