@@ -10,6 +10,9 @@ import SnapKit
 import MapKit
 import CoreLocation
 
+enum ViewType: String {
+    case all, lotte, megabox, cgv
+}
 
 class TheaterMapViewController: UIViewController {
     
@@ -66,7 +69,7 @@ class TheaterMapViewController: UIViewController {
         setConstraints()
         setAttribute()
         setAnnotationList()
-        setAnnotation(type: "all")
+        setAnnotation(type: .all)
         
         
     }
@@ -92,22 +95,30 @@ class TheaterMapViewController: UIViewController {
     
     
     
-    func setAnnotation(type: String) {
+    func setAnnotation(type: ViewType) {
         
         mapView.removeAnnotations(mapView.annotations)
-        if type == "all" {
+        
+        switch type {
+        case .all:
             mapView.addAnnotations(annoList)
-        } else if type == "lotte" {
+            mapView.setCenter(annoList[0].coordinate, animated: true)
+        case .lotte:
             mapView.addAnnotations(lotteList)
-        } else if type == "mega" {
+            mapView.setCenter(lotteList[0].coordinate, animated: true)
+        case .megabox:
             mapView.addAnnotations(megaList)
-        } else if type == "cgv"{
+            mapView.setCenter(megaList[0].coordinate, animated: true)
+        case .cgv:
             mapView.addAnnotations(cgvList)
+            mapView.setCenter(cgvList[0].coordinate, animated: true)
         }
         
+
         
         
     }
+    
     
     func checkDeviceLocationAuthorization() {
         
@@ -133,6 +144,8 @@ class TheaterMapViewController: UIViewController {
         
     }
     
+    
+    
     func checkCurrentLocationAuthorization(status: CLAuthorizationStatus) {
         
         switch status {
@@ -156,14 +169,10 @@ class TheaterMapViewController: UIViewController {
     
     func setRegionAndAnnotation(center: CLLocationCoordinate2D){
         
-        let region = MKCoordinateRegion(center: center, latitudinalMeters: 2000, longitudinalMeters: 2000)
+        let region = MKCoordinateRegion(center: center, latitudinalMeters: 10000, longitudinalMeters: 10000)
         mapView.setRegion(region, animated: true)
         
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = center
-        
-        mapView.addAnnotation(annotation)
-        
+        mapView.showsUserLocation = true
         
     }
     
@@ -195,8 +204,7 @@ extension TheaterMapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 
         if let coordinate = locations.last?.coordinate {
-            let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 2000, longitudinalMeters: 2000)
-            mapView.setRegion(region, animated: true)
+            setRegionAndAnnotation(center: coordinate)
         }
         mapView.showsUserLocation = true
         locationManager.stopUpdatingLocation()
@@ -233,16 +241,16 @@ extension TheaterMapViewController {
         //locationManager.startUpdatingLocation()
     }
     @objc func clickedTotalButton() {
-        setAnnotation(type: "all")
+        setAnnotation(type: .all)
     }
     @objc func clickedLotteButton() {
-        setAnnotation(type: "lotte")
+        setAnnotation(type: .lotte)
     }
     @objc func clickedMegaButton() {
-        setAnnotation(type: "mega")
+        setAnnotation(type: .megabox)
     }
     @objc func clickedCGVButton() {
-        setAnnotation(type: "cgv")
+        setAnnotation(type: .cgv)
     }
     
     
