@@ -26,12 +26,12 @@ class TheaterMapViewController: UIViewController {
         
         var config = UIButton.Configuration.filled()
         config.buttonSize = .small
-        config.baseBackgroundColor = .white
-        config.baseForegroundColor = .black
+        config.baseBackgroundColor = .clear
+        config.baseForegroundColor = .white
         config.titleAlignment = .center
         //config.image = UIImage(systemName: "location.circle")
         btn.configuration = config
-        btn.layer.borderColor = UIColor.black.cgColor
+        btn.layer.borderColor = UIColor.white.cgColor
         btn.layer.cornerRadius = 25
         btn.layer.borderWidth = 1
         btn.setImage(UIImage(systemName: "location.circle"), for: .normal)
@@ -126,6 +126,7 @@ class TheaterMapViewController: UIViewController {
                 }
                 
             } else {
+                self.showRequestLocationServiceAlert()
                 print("위치 서비스가 꺼져 있어서 위치 권한 요청을 못합니다.")
             }
         }
@@ -155,7 +156,7 @@ class TheaterMapViewController: UIViewController {
     
     func setRegionAndAnnotation(center: CLLocationCoordinate2D){
         
-        let region = MKCoordinateRegion(center: center, latitudinalMeters: 20000, longitudinalMeters: 20000)
+        let region = MKCoordinateRegion(center: center, latitudinalMeters: 2000, longitudinalMeters: 2000)
         mapView.setRegion(region, animated: true)
         
         let annotation = MKPointAnnotation()
@@ -192,12 +193,12 @@ class TheaterMapViewController: UIViewController {
 extension TheaterMapViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        //37.523844, 126.980249
-//        let center = CLLocationCoordinate2D(latitude: 37.523844, longitude: 126.980249)
-//        setRegionAndAnnotation(center: center)
+
         if let coordinate = locations.last?.coordinate {
-            setRegionAndAnnotation(center: coordinate)
+            let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 2000, longitudinalMeters: 2000)
+            mapView.setRegion(region, animated: true)
         }
+        mapView.showsUserLocation = true
         locationManager.stopUpdatingLocation()
     }
     
@@ -266,23 +267,21 @@ extension TheaterMapViewController {
         
         view.addSubview(mapView)
         mapView.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview().inset(20)
-            make.bottomMargin.equalToSuperview().inset(10)
-            make.height.equalTo(view).multipliedBy(0.7)
+            make.edges.equalToSuperview()
+        }
+        
+        view.addSubview(stackView)
+        stackView.snp.makeConstraints { make in
+            make.horizontalEdges.equalTo(mapView).inset(20)
+            make.topMargin.equalTo(view.safeAreaLayoutGuide).inset(20)
+            make.height.equalTo(50)
         }
         
         view.addSubview(locationButton)
         locationButton.snp.makeConstraints { make in
             make.size.equalTo(50)
-            make.trailingMargin.equalToSuperview().inset(20)
-            make.bottomMargin.equalTo(mapView.snp.top).offset(-10)
-        }
-        
-        view.addSubview(stackView)
-        stackView.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview().inset(20)
-            make.topMargin.equalToSuperview().inset(20)
-            make.height.equalTo(70)
+            make.trailingMargin.equalTo(mapView.snp.trailing).inset(20)
+            make.bottomMargin.equalTo(view.safeAreaLayoutGuide).inset(10)
         }
         
         totalButton.snp.makeConstraints { make in
