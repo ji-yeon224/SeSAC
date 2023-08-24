@@ -25,6 +25,8 @@
 		CE80A6532A971CE3005689A7 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A6522A971CE3005689A7 /* CustomViewController.swift */; };
 		CE80A6552A971EA2005689A7 /* BlackRadiusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A6542A971EA2005689A7 /* BlackRadiusTextField.swift */; };
 		CE80A6572A972A1A005689A7 /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A6562A972A1A005689A7 /* CustomTableViewController.swift */; };
+		CE80A6602A97BDC3005689A7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A65F2A97BDC3005689A7 /* SignUpViewController.swift */; };
+		CE80A6622A97BEE3005689A7 /* TextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A6612A97BEE3005689A7 /* TextFieldStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		CE80A6522A971CE3005689A7 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		CE80A6542A971EA2005689A7 /* BlackRadiusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackRadiusTextField.swift; sourceTree = "<group>"; };
 		CE80A6562A972A1A005689A7 /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
+		CE80A65F2A97BDC3005689A7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		CE80A6612A97BEE3005689A7 /* TextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 		CE80A61C2A930A3C005689A7 /* SeSAC3Week6 */ = {
 			isa = PBXGroup;
 			children = (
+				CE80A65E2A97B8F8005689A7 /* NetflixView */,
 				CE80A6512A971CAE005689A7 /* CustomView */,
 				CE80A64C2A96F0D5005689A7 /* Generic */,
 				CE80A6452A95E99A005689A7 /* MapKitAssignment */,
@@ -140,6 +145,15 @@
 				CE80A6562A972A1A005689A7 /* CustomTableViewController.swift */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		CE80A65E2A97B8F8005689A7 /* NetflixView */ = {
+			isa = PBXGroup;
+			children = (
+				CE80A65F2A97BDC3005689A7 /* SignUpViewController.swift */,
+				CE80A6612A97BEE3005689A7 /* TextFieldStyle.swift */,
+			);
+			path = NetflixView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE80A6492A95EA77005689A7 /* TheaterData.swift in Sources */,
+				CE80A6622A97BEE3005689A7 /* TextFieldStyle.swift in Sources */,
 				CE80A63D2A945CC0005689A7 /* TextViewController.swift in Sources */,
 				CE80A63A2A94466F005689A7 /* SnapViewController.swift in Sources */,
 				CE80A6222A930A3C005689A7 /* ViewController.swift in Sources */,
@@ -228,6 +243,7 @@
 				CE80A6532A971CE3005689A7 /* CustomViewController.swift in Sources */,
 				CE80A6552A971EA2005689A7 /* BlackRadiusTextField.swift in Sources */,
 				CE80A64E2A96F0E9005689A7 /* GenericViewController.swift in Sources */,
+				CE80A6602A97BDC3005689A7 /* SignUpViewController.swift in Sources */,
 				CE80A6422A94A7BA005689A7 /* Example1ViewController.swift in Sources */,
 				CE80A6502A96F12C005689A7 /* Extension+UIViewController.swift in Sources */,
 				CE80A64B2A95EAAD005689A7 /* TheaterMapViewController.swift in Sources */,
