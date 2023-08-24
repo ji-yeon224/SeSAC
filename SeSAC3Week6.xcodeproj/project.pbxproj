@@ -10,7 +10,6 @@
 		CE80A61E2A930A3C005689A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A61D2A930A3C005689A7 /* AppDelegate.swift */; };
 		CE80A6202A930A3C005689A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A61F2A930A3C005689A7 /* SceneDelegate.swift */; };
 		CE80A6222A930A3C005689A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A6212A930A3C005689A7 /* ViewController.swift */; };
-		CE80A6252A930A3C005689A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE80A6232A930A3C005689A7 /* Main.storyboard */; };
 		CE80A6272A930A3D005689A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE80A6262A930A3D005689A7 /* Assets.xcassets */; };
 		CE80A62A2A930A3D005689A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE80A6282A930A3D005689A7 /* LaunchScreen.storyboard */; };
 		CE80A6382A94461D005689A7 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE80A6372A94461D005689A7 /* SnapKit */; };
@@ -21,6 +20,10 @@
 		CE80A6442A94B006005689A7 /* Example2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A6432A94B006005689A7 /* Example2ViewController.swift */; };
 		CE80A6492A95EA77005689A7 /* TheaterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A6482A95EA77005689A7 /* TheaterData.swift */; };
 		CE80A64B2A95EAAD005689A7 /* TheaterMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A64A2A95EAAD005689A7 /* TheaterMapViewController.swift */; };
+		CE80A64E2A96F0E9005689A7 /* GenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A64D2A96F0E9005689A7 /* GenericViewController.swift */; };
+		CE80A6502A96F12C005689A7 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A64F2A96F12C005689A7 /* Extension+UIViewController.swift */; };
+		CE80A6532A971CE3005689A7 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A6522A971CE3005689A7 /* CustomViewController.swift */; };
+		CE80A6552A971EA2005689A7 /* BlackRadiusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A6542A971EA2005689A7 /* BlackRadiusTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +31,6 @@
 		CE80A61D2A930A3C005689A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE80A61F2A930A3C005689A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CE80A6212A930A3C005689A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CE80A6242A930A3C005689A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE80A6262A930A3D005689A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE80A6292A930A3D005689A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE80A62B2A930A3D005689A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -39,6 +41,10 @@
 		CE80A6432A94B006005689A7 /* Example2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example2ViewController.swift; sourceTree = "<group>"; };
 		CE80A6482A95EA77005689A7 /* TheaterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterData.swift; sourceTree = "<group>"; };
 		CE80A64A2A95EAAD005689A7 /* TheaterMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterMapViewController.swift; sourceTree = "<group>"; };
+		CE80A64D2A96F0E9005689A7 /* GenericViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericViewController.swift; sourceTree = "<group>"; };
+		CE80A64F2A96F12C005689A7 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
+		CE80A6522A971CE3005689A7 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
+		CE80A6542A971EA2005689A7 /* BlackRadiusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackRadiusTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,13 +78,14 @@
 		CE80A61C2A930A3C005689A7 /* SeSAC3Week6 */ = {
 			isa = PBXGroup;
 			children = (
+				CE80A6512A971CAE005689A7 /* CustomView */,
+				CE80A64C2A96F0D5005689A7 /* Generic */,
 				CE80A6452A95E99A005689A7 /* MapKitAssignment */,
 				CE80A6402A94A7A4005689A7 /* Assignment */,
 				CE80A63B2A944674005689A7 /* Test */,
 				CE80A61D2A930A3C005689A7 /* AppDelegate.swift */,
 				CE80A61F2A930A3C005689A7 /* SceneDelegate.swift */,
 				CE80A6212A930A3C005689A7 /* ViewController.swift */,
-				CE80A6232A930A3C005689A7 /* Main.storyboard */,
 				CE80A6262A930A3D005689A7 /* Assets.xcassets */,
 				CE80A6282A930A3D005689A7 /* LaunchScreen.storyboard */,
 				CE80A62B2A930A3D005689A7 /* Info.plist */,
@@ -112,6 +119,24 @@
 				CE80A64A2A95EAAD005689A7 /* TheaterMapViewController.swift */,
 			);
 			path = MapKitAssignment;
+			sourceTree = "<group>";
+		};
+		CE80A64C2A96F0D5005689A7 /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				CE80A64D2A96F0E9005689A7 /* GenericViewController.swift */,
+				CE80A64F2A96F12C005689A7 /* Extension+UIViewController.swift */,
+			);
+			path = Generic;
+			sourceTree = "<group>";
+		};
+		CE80A6512A971CAE005689A7 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				CE80A6522A971CE3005689A7 /* CustomViewController.swift */,
+				CE80A6542A971EA2005689A7 /* BlackRadiusTextField.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,7 +205,6 @@
 			files = (
 				CE80A62A2A930A3D005689A7 /* LaunchScreen.storyboard in Resources */,
 				CE80A6272A930A3D005689A7 /* Assets.xcassets in Resources */,
-				CE80A6252A930A3C005689A7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +221,11 @@
 				CE80A6222A930A3C005689A7 /* ViewController.swift in Sources */,
 				CE80A63F2A94792C005689A7 /* LocationViewController.swift in Sources */,
 				CE80A6442A94B006005689A7 /* Example2ViewController.swift in Sources */,
+				CE80A6532A971CE3005689A7 /* CustomViewController.swift in Sources */,
+				CE80A6552A971EA2005689A7 /* BlackRadiusTextField.swift in Sources */,
+				CE80A64E2A96F0E9005689A7 /* GenericViewController.swift in Sources */,
 				CE80A6422A94A7BA005689A7 /* Example1ViewController.swift in Sources */,
+				CE80A6502A96F12C005689A7 /* Extension+UIViewController.swift in Sources */,
 				CE80A64B2A95EAAD005689A7 /* TheaterMapViewController.swift in Sources */,
 				CE80A61E2A930A3C005689A7 /* AppDelegate.swift in Sources */,
 				CE80A6202A930A3C005689A7 /* SceneDelegate.swift in Sources */,
@@ -207,14 +235,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CE80A6232A930A3C005689A7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CE80A6242A930A3C005689A7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CE80A6282A930A3D005689A7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -353,7 +373,6 @@
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "현재 위치에 대한 정보를 가지고 오기 위해 위치 정보가 필요해요";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -382,7 +401,6 @@
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "현재 위치에 대한 정보를 가지고 오기 위해 위치 정보가 필요해요";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

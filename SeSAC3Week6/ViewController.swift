@@ -91,7 +91,10 @@ class ViewController: UIViewController {
         
         //let vc = LocationViewController()
         //let nav = UINavigationController(rootViewController: vc)
-        present(Example2ViewController(), animated: true)
+        //present(TextViewController(), animated: true)
+        
+        transition(viewController: GenericViewController.self, storyboard: "Main", style: .presentFullNavigation)
+        //클래스의 인스턴스를 넘기는 것이 아니라 클래스 자체를 넘겨주기
         
     }
 

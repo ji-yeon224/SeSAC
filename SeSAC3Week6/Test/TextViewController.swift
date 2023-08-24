@@ -10,6 +10,11 @@ import SnapKit
 
 class TextViewController: UIViewController {
     
+    // 1. 인스턴스 가져오기
+    let picker = UIColorPickerViewController()
+    
+    
+    
     // 익명함수 이용하기
     lazy var photoImageView = {
         let view = UIImageView()
@@ -36,12 +41,7 @@ class TextViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        view.addSubview(photoImageView)
-//        view.addSubview(titleTextField)
         
-//        for item in [photoImageView, titleTextField] {
-//            view.addSubview(item)
-//        }
         
         [photoImageView, titleTextField].forEach {
             view.addSubview($0)
@@ -50,6 +50,22 @@ class TextViewController: UIViewController {
         setupConstraints()
         
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // 2. available - 갤러리에 접근할 수 있는지 권한
+        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
+            print("갤러리 사용 불가, 사용자에게 토스트/얼럿") //-> 권한 허용해달라 설정 페이지 유도
+            return
+        }
+//        picker.delegate = self
+//        picker.sourceType = .camera  //.photoLibrary
+//        picker.allowsEditing = true // 편집 화면
+        
+        // 갤러리 화면 띄우기
+        present(picker, animated: true)
     }
     
     func setupConstraints() {
@@ -76,4 +92,24 @@ class TextViewController: UIViewController {
         return view
     }
 
+}
+
+extension TextViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    // 취소 버튼 클릭 시
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
+        print(#function)
+    }
+    
+    // 사진을 선택하거나 카메라 촬영 직후 호출
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        //미디어에 대한 정보 선택이 끝났을 때 무얼 해줘야 하나
+        
+        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            self.photoImageView.image = image
+            dismiss(animated: true)
+        }
+    }
+    
 }
