@@ -16,13 +16,22 @@ struct Sample {
 
 class CustomTableViewController: UIViewController {
     
-    let tableView = {
+    lazy var tableView = {
         let view = UITableView()
         view.rowHeight = UITableView.automaticDimension
+        
+        view.delegate = self // 자기 자신의 인스턴스
+        view.dataSource = self
+        view.register(CustomTableViewCell.self, forCellReuseIdentifier: "customCell")
         return view
     }()
     
-    //var isExpand = false
+    let imageView = {
+        let view = PosterImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        print("initial")
+        return view
+    }()
+    
     var list = [Sample(text: "테스트 셀 텍스트테스트 셀 텍스트테스트 셀 텍스트테스트 셀 텍스트테스트 셀 텍스트테스트 셀 텍스트테스트 셀 텍스트테스트 셀 텍스트테스트 셀 텍스트테스트 셀 텍스트테스트 셀 텍스트테스트 셀 텍스트테스트 셀 텍스트테스트 셀 텍스트테스트 셀 텍스트테스트 셀 텍스트테스트 셀 텍스트테스트 셀 텍스트테스트 셀 텍스트테스트 셀 텍스트테스트 셀 텍스트테스트 셀 텍스트", isExpand: false), Sample(text: "테스트 셀 텍스트테스트 셀 텍스트테스트 셀 텍스트테스트 셀 텍스트테스트 셀 텍스트테스트 셀 텍스트테스트 셀 텍스트테스트 셀 텍스트테스트 셀 텍스트테스트 셀 텍스트", isExpand: false), Sample(text: "테스트 셀 텍스트", isExpand: false)]
 
     override func viewDidLoad() {
@@ -31,13 +40,16 @@ class CustomTableViewController: UIViewController {
         tableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
             
+            view.addSubview(imageView)
+            imageView.snp.makeConstraints { make in
+                print("constraints")
+                make.size.equalTo(200)
+                make.center.equalTo(view)
+            }
+            
         }
         
-        tableView.delegate = self
-        tableView.dataSource = self
         
-        //uinib -> xib
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "customCell")
 
     }
     
@@ -50,10 +62,10 @@ extension CustomTableViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! CustomTableViewCell
         
-        cell.textLabel?.text = list[indexPath.row].text
-        cell.textLabel?.numberOfLines = list[indexPath.row].isExpand ? 0 : 2
+        cell.label.text = list[indexPath.row].text
+        cell.label.numberOfLines = list[indexPath.row].isExpand ? 0 : 2
         
         return cell
     }
