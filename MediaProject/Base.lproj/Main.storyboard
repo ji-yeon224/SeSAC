@@ -13,7 +13,7 @@
         <!--Trend View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="TrendViewController" customModule="MediaProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TrendViewController" id="BYZ-38-t0r" customClass="TrendViewController" customModule="MediaProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -211,6 +211,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jdS-lz-Fhc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2900" y="-31"/>
+        </scene>
+        <!--First View Controller-->
+        <scene sceneID="vzh-67-rg0">
+            <objects>
+                <viewController storyboardIdentifier="FirstViewController" id="B9c-qL-HVx" customClass="FirstViewController" customModule="MediaProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dL8-vW-4xu">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="4Uv-hd-vYD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vpr-en-3xq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3651" y="350"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="cU3-50-hvg">
+            <objects>
+                <viewController storyboardIdentifier="SecondViewController" id="YTQ-ZJ-46V" customClass="SecondViewController" customModule="MediaProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zBo-YK-wgr">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="WAA-3X-Wgo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b8d-zP-bXP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4577" y="428"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="vWg-i1-win">
