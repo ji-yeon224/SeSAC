@@ -24,7 +24,7 @@ class RelatedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "More Informations"
+        title = "More Videos"
         
         collectionView.delegate = self
         collectionView.dataSource = self

@@ -60,7 +60,15 @@ class TrendViewController: UIViewController {
         var menuItems: [UIAction] = []
         for gen in typeList {
             let action = UIAction(title: gen.rawValue, image: UIImage(systemName: "folder")) { (action) in
-                self.callTrendData(type: Type(rawValue: action.title)!.typeString, time: self.time)}
+                self.callTrendData(type: Type(rawValue: action.title)!.typeString, time: self.time)
+                switch self.time {
+                case .week:
+                    self.title = "TODAY \(action.title.uppercased()) TREND"
+                case .day:
+                    self.title = "THIS WEEK \(action.title.uppercased()) TREND"
+                }
+                
+            }
             menuItems.append(action)
             type = Type(rawValue: action.title)!
         }
