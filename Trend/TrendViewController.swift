@@ -46,8 +46,13 @@ class TrendViewController: UIViewController {
         title = "THIS WEEK ALL TREND"
         timeButton.setTitle("DAY", for: .normal)
         setMenuButton()
-        getGenreData(type: Type.movie.typeString)
-        getGenreData(type: Type.tv.typeString)
+        //getGenreData(type: Type.movie.typeString)
+        //getGenreData(type: Type.tv.typeString)
+        
+        if genreDictionary.isEmpty {
+            callGenreData(type: Type.tv.typeString)
+            callGenreData(type: Type.movie.typeString)
+        }
         
         group.notify(queue: .main) {
             self.collectionView.reloadData()
@@ -118,25 +123,21 @@ extension TrendViewController {
         }
     }
   
-    
-
-    
-    func getGenreData(type: String) {
-        
+    func callGenreData(type: String) {
+        print(#function)
         group.enter()
-        TMDBApi.shared.callRequest(endPoint: .genre, parameter: type) { json in
-            let data = json["genres"].arrayValue
-            for item in data {
-                self.genreDictionary[item["id"].intValue] = item["name"].stringValue
+        TMDBApi.shared.callGenreRequest(endPoint: .genre, parameter: type) { genre in
+            
+            for item in genre.genres {
+                self.genreDictionary[item.id] = item.name
                 
             }
-            
-            self.collectionView.reloadData()
             self.group.leave()
         }
-        
-        
     }
+
+    
+
     
 
 }
