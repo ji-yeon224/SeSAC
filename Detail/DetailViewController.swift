@@ -124,8 +124,12 @@ class DetailViewController: UIViewController {
         }
         
         //backdrop
-        let backdrop = TMDBApi.imgURL + trendData!.backdropPath
-        if let url = URL(string: backdrop){
+        guard let backdrop = trendData?.backdropPath else {
+            self.backDropImageView.image = UIImage(systemName: "photo")
+            return
+        }
+        let backdropURL = TMDBApi.imgURL + backdrop
+        if let url = URL(string: backdropURL){
             DispatchQueue.global().async {
                 let data = try! Data(contentsOf: url)
                 DispatchQueue.main.async {
@@ -145,26 +149,7 @@ class DetailViewController: UIViewController {
 }
 
 extension DetailViewController {
-    func getCreditData() {
-        guard let trendData else {
-            dismiss(animated: true)
-            return
-        }
-        let parameter = "\(trendData.mediaType.rawValue)/\(trendData.id)/credits"
-        TMDBApi.shared.callRequest(endPoint: .credit, parameter: parameter) { json in
-            let data = json["cast"].arrayValue
-            for i in 0...5 {
-                self.creditList.append(Credit.init(name: data[i]["name"].stringValue,
-                                                   profile: data[i]["profile_path"].stringValue,
-                                                   character: data[i]["character"].stringValue))
-
-            }
-
-            self.tableView.reloadData()
-        }
-
-
-    }
+ 
     
     func callCreditData() {
         guard let trendData else {

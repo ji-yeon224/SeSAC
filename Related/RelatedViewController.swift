@@ -14,7 +14,7 @@ class RelatedViewController: UIViewController {
     
     
     var contentList: [cont] = []
-    var contentsData: [ContentsData] = []
+    var contentsData: [SimilarResult] = []
     let group = DispatchGroup()
     var videosList: Videos = Videos(id: 0, results: [])
     var selectedSegmentIdx = 0
@@ -29,7 +29,6 @@ class RelatedViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        print(contentId, mediaType)
         
         let nib = UINib(nibName: RelatedCollectionViewCell.identifier, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: RelatedCollectionViewCell.identifier)
@@ -56,7 +55,6 @@ class RelatedViewController: UIViewController {
         case 0:
             selectedSegmentIdx = 0
             if contentList.isEmpty {
-                callSimilarData(id: contentId!, mediaType: mediaType!)
                 callSimilarContent(id: contentId!, mediaType: mediaType!)
             }
         case 1:
@@ -81,54 +79,15 @@ class RelatedViewController: UIViewController {
 extension RelatedViewController {
     
     func callSimilarContent(id: Int, mediaType: String) {
-        TMDBApi.shared.callTrendingRequest(endPoint: .similar, parameter: "\(mediaType)/\(id)") { content in
+        group.enter()
+        TMDBApi.shared.callSimilarRequest(endPoint: .similar, parameter: "\(mediaType)/\(id)") { content in
+           
             self.contentsData.append(contentsOf: content.results)
-            print(self.contentsData)
+            self.group.leave()
         }
     }
     
-    func callSimilarData(id: Int, mediaType: String) {
-        
-        group.enter()
-        TMDBApi.shared.callRequest(endPoint: .similar, parameter: "movie/671") { json in
-
-            let data = json["results"].arrayValue
-            for item in data {
-                let id = item["id"].intValue
-                let overview = item["overview"].stringValue
-                let poster = item["poster_path"].stringValue
-                let media_type = item["media_type"].stringValue
-                let backdrop = item["backdrop_path"].stringValue
-                let originalTitle = item["originalTitle"].stringValue
-                var genre: [Int] = []
-                for g in item["genre_ids"].arrayValue {
-                    genre.append(g.intValue)
-                }
-
-                var title = ""
-                var release = ""
-
-                switch mediaType {
-                case "tv":
-                    title = item["name"].stringValue
-                    release = ""
-                case "movie":
-                    title = item["title"].stringValue
-                    release = item["release_date"].stringValue
-                    //print(title)
-                default: return
-                }
-
-                self.contentList.append(cont(id: id, title: title, originalTitle: originalTitle, overview: overview, poster: poster, backdrop_path: backdrop, release: release, media_type: media_type, genre: genre))
-                
-            }
-            self.group.leave()
-
-        }
-       
-        
-    }
-        
+      
         func callVideoData(id: Int, mediaType: String) {
             group.enter()
             TMDBApi.shared.callVideoRequest(endPoint: .videos, parameter: "\(mediaType)/\(id)") { data in
@@ -147,7 +106,7 @@ extension RelatedViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if selectedSegmentIdx == 0 {
-            return contentList.count
+            return contentsData.count
         }else {
             return videosList.results.count
         }
@@ -157,15 +116,15 @@ extension RelatedViewController: UICollectionViewDelegate, UICollectionViewDataS
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RelatedCollectionViewCell.identifier, for: indexPath) as! RelatedCollectionViewCell
 
         if selectedSegmentIdx == 0 {
-            let contents = contentList[indexPath.row]
+            let contents = contentsData[indexPath.row]
             cell.titleLabel.text = contents.title
-            cell.releaseLabel.text = contents.release
+            cell.releaseLabel.text = contents.releaseDate
             
-            if contents.poster.count == 0 {
+            if contents.posterPath == nil {
                 cell.imageView.backgroundColor = .lightGray
                 cell.imageView.image = nil
             } else {
-                let imgURL = TMDBApi.imgURL + contents.poster
+                let imgURL = TMDBApi.imgURL + contents.posterPath!
                 
                 if let url = URL(string: imgURL) {
                     DispatchQueue.global().async {

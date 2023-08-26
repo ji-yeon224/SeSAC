@@ -75,4 +75,18 @@ class TMDBApi {
         
     }
     
+    func callSimilarRequest(endPoint: Endpoint, parameter: String, completionHandler: @escaping (Similar) -> ()) {
+        let url = endPoint.requestURL(type: parameter) + "?api_key=\(APIKey.tmdbKey)"
+        AF.request(url).validate()
+            .responseDecodable(of: Similar.self) { response in
+                switch response.result {
+                case .success(let value):
+                    completionHandler(value)
+                case .failure(let error):
+                    print(error)
+                }
+                
+            }
+    }
+    
 }

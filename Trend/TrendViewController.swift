@@ -109,7 +109,7 @@ extension TrendViewController {
         let parameter = "\(type)/\(time.rawValue)"
         group.enter()
         TMDBApi.shared.callTrendingRequest(endPoint: .trend, parameter: parameter) { trend in
-            
+          
             self.trendList.append(contentsOf: trend.results)
             //print(self.trendList)
             
