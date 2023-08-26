@@ -24,7 +24,6 @@ class TrendViewController: UIViewController {
     var type: Type = .all
     var typeList = Type.allCases
     
-    //var contentsList: [Contents] = []
     var genreDictionary: [Int : String] = [:]
     var creditList: [Credit] = []
     var castList: [String] = []
@@ -35,19 +34,26 @@ class TrendViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "THIS WEEK ALL TREND"
+        timeButton.setTitle("DAY", for: .normal)
+        setCell()
+        setMenuButton()
+        configurationData()
+        
+        
+        
+    }
+    
+    func configurationData() {
+        
         collectionView.dataSource = self
         collectionView.delegate = self
         
-
         let nib = UINib(nibName: TrendCollectionViewCell.identifier, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: TrendCollectionViewCell.identifier)
-        setCell()
+        
         callTrendData(type: type.typeString, time: time)
-        title = "THIS WEEK ALL TREND"
-        timeButton.setTitle("DAY", for: .normal)
-        setMenuButton()
-        //getGenreData(type: Type.movie.typeString)
-        //getGenreData(type: Type.tv.typeString)
         
         if genreDictionary.isEmpty {
             callGenreData(type: Type.tv.typeString)
@@ -108,7 +114,7 @@ class TrendViewController: UIViewController {
 }
 
 extension TrendViewController {
-    
+        
     func callTrendData(type: String, time: Time) {
         trendList.removeAll()
         let parameter = "\(type)/\(time.rawValue)"
@@ -124,7 +130,6 @@ extension TrendViewController {
     }
   
     func callGenreData(type: String) {
-        print(#function)
         group.enter()
         TMDBApi.shared.callGenreRequest(endPoint: .genre, parameter: type) { genre in
             
@@ -200,7 +205,6 @@ extension TrendViewController: UICollectionViewDelegate, UICollectionViewDataSou
         
         let trendData = trendList[indexPath.row]
         
-        //vc.contents = trendData
         vc.trendData = trendData
         
         let nav = UINavigationController(rootViewController: vc)

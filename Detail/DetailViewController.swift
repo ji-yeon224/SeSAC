@@ -35,7 +35,6 @@ class DetailViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        //tableView.allowsSelection = false
         tableView.rowHeight = UITableView.automaticDimension
         
         
