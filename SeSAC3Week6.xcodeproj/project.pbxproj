@@ -30,6 +30,9 @@
 		CE80A6642A982B00005689A7 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A6632A982B00005689A7 /* CustomTableViewCell.swift */; };
 		CE80A6662A9840AD005689A7 /* PosterImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A6652A9840AD005689A7 /* PosterImageView.swift */; };
 		CE80A6692A984B54005689A7 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A6682A984B54005689A7 /* OnboardingViewController.swift */; };
+		CEB3325F2A9C8D6C006F86E3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3325E2A9C8D6C006F86E3 /* BaseViewController.swift */; };
+		CEB332612A9C8DA8006F86E3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332602A9C8DA8006F86E3 /* BaseView.swift */; };
+		CEB332632A9C901D006F86E3 /* Example1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332622A9C901D006F86E3 /* Example1View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +60,9 @@
 		CE80A6632A982B00005689A7 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		CE80A6652A9840AD005689A7 /* PosterImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImageView.swift; sourceTree = "<group>"; };
 		CE80A6682A984B54005689A7 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		CEB3325E2A9C8D6C006F86E3 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		CEB332602A9C8DA8006F86E3 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		CEB332622A9C901D006F86E3 /* Example1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example1View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +96,7 @@
 		CE80A61C2A930A3C005689A7 /* SeSAC3Week6 */ = {
 			isa = PBXGroup;
 			children = (
+				CEB3325D2A9C8CC9006F86E3 /* Base */,
 				CE80A6672A984B0D005689A7 /* Onboarding */,
 				CE80A65E2A97B8F8005689A7 /* NetflixView */,
 				CE80A6512A971CAE005689A7 /* CustomView */,
@@ -122,6 +129,7 @@
 			children = (
 				CE80A6412A94A7BA005689A7 /* Example1ViewController.swift */,
 				CE80A6432A94B006005689A7 /* Example2ViewController.swift */,
+				CEB332622A9C901D006F86E3 /* Example1View.swift */,
 			);
 			path = Assignment;
 			sourceTree = "<group>";
@@ -171,6 +179,15 @@
 				CE80A6682A984B54005689A7 /* OnboardingViewController.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		CEB3325D2A9C8CC9006F86E3 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CEB3325E2A9C8D6C006F86E3 /* BaseViewController.swift */,
+				CEB332602A9C8DA8006F86E3 /* BaseView.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,11 +271,14 @@
 				CE80A6662A9840AD005689A7 /* PosterImageView.swift in Sources */,
 				CE80A6622A97BEE3005689A7 /* TextFieldStyle.swift in Sources */,
 				CE80A63D2A945CC0005689A7 /* TextViewController.swift in Sources */,
+				CEB3325F2A9C8D6C006F86E3 /* BaseViewController.swift in Sources */,
 				CE80A63A2A94466F005689A7 /* SnapViewController.swift in Sources */,
 				CE80A6222A930A3C005689A7 /* ViewController.swift in Sources */,
 				CE80A6692A984B54005689A7 /* OnboardingViewController.swift in Sources */,
+				CEB332612A9C8DA8006F86E3 /* BaseView.swift in Sources */,
 				CE80A6572A972A1A005689A7 /* CustomTableViewController.swift in Sources */,
 				CE80A63F2A94792C005689A7 /* LocationViewController.swift in Sources */,
+				CEB332632A9C901D006F86E3 /* Example1View.swift in Sources */,
 				CE80A6442A94B006005689A7 /* Example2ViewController.swift in Sources */,
 				CE80A6532A971CE3005689A7 /* CustomViewController.swift in Sources */,
 				CE80A6552A971EA2005689A7 /* BlackRadiusTextField.swift in Sources */,
