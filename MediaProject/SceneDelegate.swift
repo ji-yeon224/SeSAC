@@ -27,6 +27,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let vc = IntroViewController()
             window?.rootViewController = vc
             window?.makeKeyAndVisible()
+        } else {
+            guard let scene = (scene as? UIWindowScene) else { return }
+            window = UIWindow(windowScene: scene)
+            let vc = ProfileViewController()
+            window?.rootViewController = UINavigationController(rootViewController: vc)
+            window?.makeKeyAndVisible()
         }
        
     }

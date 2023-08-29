@@ -19,6 +19,19 @@
 		CE80A66E2A98F5D3005689A7 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A66D2A98F5D3005689A7 /* FirstViewController.swift */; };
 		CE80A6702A98F5DC005689A7 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80A66F2A98F5DC005689A7 /* SecondViewController.swift */; };
 		CE80A6732A98FC1F005689A7 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE80A6722A98FC1F005689A7 /* SnapKit */; };
+		CEB3326D2A9D86D8006F86E3 /* TrendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3326C2A9D86D8006F86E3 /* TrendView.swift */; };
+		CEB332A62A9DADF3006F86E3 /* TrendCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332A52A9DADF3006F86E3 /* TrendCollectionViewController.swift */; };
+		CEB332A82A9DAE80006F86E3 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332A72A9DAE80006F86E3 /* BaseCollectionViewCell.swift */; };
+		CEB332AA2A9DAEE9006F86E3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332A92A9DAEE9006F86E3 /* BaseView.swift */; };
+		CEB332AC2A9DAF32006F86E3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332AB2A9DAF32006F86E3 /* BaseViewController.swift */; };
+		CEB332B02A9DB008006F86E3 /* TrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332AF2A9DB008006F86E3 /* TrendViewController.swift */; };
+		CEB332B92A9DD7B2006F86E3 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332B82A9DD7B2006F86E3 /* ProfileView.swift */; };
+		CEB332BB2A9DD7BC006F86E3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332BA2A9DD7BC006F86E3 /* ProfileViewController.swift */; };
+		CEB332BD2A9DD89D006F86E3 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332BC2A9DD89D006F86E3 /* BaseTableViewCell.swift */; };
+		CEB332BF2A9DDB9A006F86E3 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332BE2A9DDB9A006F86E3 /* ProfileTableViewCell.swift */; };
+		CEB332C12A9DFD17006F86E3 /* ChangeInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332C02A9DFD17006F86E3 /* ChangeInfoView.swift */; };
+		CEB332C32A9DFE3B006F86E3 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332C22A9DFE3B006F86E3 /* SettingViewController.swift */; };
+		CEB332C52A9DFEF4006F86E3 /* SettingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332C42A9DFEF4006F86E3 /* SettingList.swift */; };
 		CEB5D6A02A999451002C5468 /* SimilarStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5D69F2A999451002C5468 /* SimilarStruct.swift */; };
 		CEBF1A562A8622EB000E099C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF1A552A8622EB000E099C /* AppDelegate.swift */; };
 		CEBF1A582A8622EB000E099C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF1A572A8622EB000E099C /* SceneDelegate.swift */; };
@@ -30,7 +43,6 @@
 		CEBF1A6F2A86A4E8000E099C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CEBF1A6E2A86A4E8000E099C /* Kingfisher */; };
 		CEBF1A722A86A4F6000E099C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CEBF1A712A86A4F6000E099C /* Alamofire */; };
 		CEBF1A752A86A503000E099C /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = CEBF1A742A86A503000E099C /* SwiftyJSON */; };
-		CEBF1A772A87157F000E099C /* TrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF1A762A87157F000E099C /* TrendViewController.swift */; };
 		CEBF1A7A2A8715BD000E099C /* TrendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF1A782A8715BD000E099C /* TrendCollectionViewCell.swift */; };
 		CEBF1A7B2A8715BD000E099C /* TrendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBF1A792A8715BD000E099C /* TrendCollectionViewCell.xib */; };
 		CEBF1A7D2A8716FD000E099C /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF1A7C2A8716FD000E099C /* ReusableViewProtocol.swift */; };
@@ -56,6 +68,19 @@
 		CE80A66B2A98A114005689A7 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		CE80A66D2A98F5D3005689A7 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		CE80A66F2A98F5DC005689A7 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		CEB3326C2A9D86D8006F86E3 /* TrendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendView.swift; sourceTree = "<group>"; };
+		CEB332A52A9DADF3006F86E3 /* TrendCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendCollectionViewController.swift; sourceTree = "<group>"; };
+		CEB332A72A9DAE80006F86E3 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		CEB332A92A9DAEE9006F86E3 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		CEB332AB2A9DAF32006F86E3 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		CEB332AF2A9DB008006F86E3 /* TrendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrendViewController.swift; path = ../../../../../.Trash/TrendViewController.swift; sourceTree = "<group>"; };
+		CEB332B82A9DD7B2006F86E3 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		CEB332BA2A9DD7BC006F86E3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		CEB332BC2A9DD89D006F86E3 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		CEB332BE2A9DDB9A006F86E3 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		CEB332C02A9DFD17006F86E3 /* ChangeInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeInfoView.swift; sourceTree = "<group>"; };
+		CEB332C22A9DFE3B006F86E3 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		CEB332C42A9DFEF4006F86E3 /* SettingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingList.swift; sourceTree = "<group>"; };
 		CEB5D69F2A999451002C5468 /* SimilarStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarStruct.swift; sourceTree = "<group>"; };
 		CEBF1A522A8622EB000E099C /* MediaProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEBF1A552A8622EB000E099C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,7 +91,6 @@
 		CEBF1A632A8622ED000E099C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEBF1A692A86251A000E099C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		CEBF1A6B2A862783000E099C /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
-		CEBF1A762A87157F000E099C /* TrendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendViewController.swift; sourceTree = "<group>"; };
 		CEBF1A782A8715BD000E099C /* TrendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendCollectionViewCell.swift; sourceTree = "<group>"; };
 		CEBF1A792A8715BD000E099C /* TrendCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendCollectionViewCell.xib; sourceTree = "<group>"; };
 		CEBF1A7C2A8716FD000E099C /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
@@ -129,9 +153,43 @@
 			path = IntroView;
 			sourceTree = "<group>";
 		};
+		CEB332642A9D7210006F86E3 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CEB332A72A9DAE80006F86E3 /* BaseCollectionViewCell.swift */,
+				CEB332A92A9DAEE9006F86E3 /* BaseView.swift */,
+				CEB332AB2A9DAF32006F86E3 /* BaseViewController.swift */,
+				CEB332BC2A9DD89D006F86E3 /* BaseTableViewCell.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		CEB332B72A9DD64C006F86E3 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CEB332C62A9E0093006F86E3 /* ChangeInfo */,
+				CEB332B82A9DD7B2006F86E3 /* ProfileView.swift */,
+				CEB332BA2A9DD7BC006F86E3 /* ProfileViewController.swift */,
+				CEB332BE2A9DDB9A006F86E3 /* ProfileTableViewCell.swift */,
+				CEB332C42A9DFEF4006F86E3 /* SettingList.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		CEB332C62A9E0093006F86E3 /* ChangeInfo */ = {
+			isa = PBXGroup;
+			children = (
+				CEB332C22A9DFE3B006F86E3 /* SettingViewController.swift */,
+				CEB332C02A9DFD17006F86E3 /* ChangeInfoView.swift */,
+			);
+			path = ChangeInfo;
+			sourceTree = "<group>";
+		};
 		CEBF1A492A8622EB000E099C = {
 			isa = PBXGroup;
 			children = (
+				CEB332B72A9DD64C006F86E3 /* Profile */,
+				CEB332642A9D7210006F86E3 /* Base */,
 				CEBF1A902A887C34000E099C /* Trend */,
 				CEBF1A912A887C47000E099C /* Detail */,
 				CE5C9ED92A8F506F0011664D /* Struct */,
@@ -173,9 +231,11 @@
 		CEBF1A902A887C34000E099C /* Trend */ = {
 			isa = PBXGroup;
 			children = (
-				CEBF1A762A87157F000E099C /* TrendViewController.swift */,
+				CEB332AF2A9DB008006F86E3 /* TrendViewController.swift */,
 				CEBF1A782A8715BD000E099C /* TrendCollectionViewCell.swift */,
 				CEBF1A792A8715BD000E099C /* TrendCollectionViewCell.xib */,
+				CEB3326C2A9D86D8006F86E3 /* TrendView.swift */,
+				CEB332A52A9DADF3006F86E3 /* TrendCollectionViewController.swift */,
 			);
 			path = Trend;
 			sourceTree = "<group>";
@@ -283,23 +343,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE80A6702A98F5DC005689A7 /* SecondViewController.swift in Sources */,
+				CEB332AA2A9DAEE9006F86E3 /* BaseView.swift in Sources */,
 				CEBF1A7F2A87CBB6000E099C /* TMDBApi.swift in Sources */,
 				CEBF1A562A8622EB000E099C /* AppDelegate.swift in Sources */,
+				CEB332B02A9DB008006F86E3 /* TrendViewController.swift in Sources */,
+				CEB332C32A9DFE3B006F86E3 /* SettingViewController.swift in Sources */,
 				CE5C9EDB2A91A2590011664D /* VideosStruct.swift in Sources */,
+				CEB332AC2A9DAF32006F86E3 /* BaseViewController.swift in Sources */,
 				CEBF1A8E2A887B4E000E099C /* DetailTableViewCell.swift in Sources */,
 				CEBF1A992A88B45F000E099C /* CreditStruct.swift in Sources */,
+				CEB332BF2A9DDB9A006F86E3 /* ProfileTableViewCell.swift in Sources */,
 				CE5C9EB02A8CA5F80011664D /* OverviewTableViewCell.swift in Sources */,
 				CE80A66E2A98F5D3005689A7 /* FirstViewController.swift in Sources */,
+				CEB332B92A9DD7B2006F86E3 /* ProfileView.swift in Sources */,
+				CEB332BB2A9DD7BC006F86E3 /* ProfileViewController.swift in Sources */,
 				CEBF1A872A88759C000E099C /* DetailViewController.swift in Sources */,
 				CEB5D6A02A999451002C5468 /* SimilarStruct.swift in Sources */,
+				CEB332C52A9DFEF4006F86E3 /* SettingList.swift in Sources */,
+				CEB3326D2A9D86D8006F86E3 /* TrendView.swift in Sources */,
 				CEBF1A7A2A8715BD000E099C /* TrendCollectionViewCell.swift in Sources */,
 				CE5C9ECB2A8E380A0011664D /* Genre.swift in Sources */,
 				CEBF1A832A87CCDA000E099C /* Endpoint.swift in Sources */,
-				CEBF1A772A87157F000E099C /* TrendViewController.swift in Sources */,
 				CEBF1A812A87CC15000E099C /* URLExtension.swift in Sources */,
+				CEB332BD2A9DD89D006F86E3 /* BaseTableViewCell.swift in Sources */,
+				CEB332A82A9DAE80006F86E3 /* BaseCollectionViewCell.swift in Sources */,
 				CEBF1A7D2A8716FD000E099C /* ReusableViewProtocol.swift in Sources */,
 				CEBF1A6C2A862783000E099C /* APIKey.swift in Sources */,
+				CEB332C12A9DFD17006F86E3 /* ChangeInfoView.swift in Sources */,
 				CEBF1A852A87DD6F000E099C /* MediaStruct.swift in Sources */,
+				CEB332A62A9DADF3006F86E3 /* TrendCollectionViewController.swift in Sources */,
 				CE80A66C2A98A114005689A7 /* IntroViewController.swift in Sources */,
 				CE5C9ED32A8F4E7F0011664D /* RelatedViewController.swift in Sources */,
 				CEBF1A582A8622EB000E099C /* SceneDelegate.swift in Sources */,
