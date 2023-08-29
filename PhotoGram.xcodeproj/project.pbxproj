@@ -28,6 +28,7 @@
 		CEB332A32A9D9BCA006F86E3 /* SeSACFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEB3329E2A9D9B40006F86E3 /* SeSACFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CEB332B22A9DB54E006F86E3 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332B12A9DB54E006F86E3 /* TitleViewController.swift */; };
 		CEB332B42A9DBAD7006F86E3 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332B32A9DBAD7006F86E3 /* TextViewController.swift */; };
+		CEB332B62A9DC75A006F86E3 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332B52A9DC75A006F86E3 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		CEB332982A9D9B40006F86E3 /* SeSACFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SeSACFramework.xcodeproj; path = ../SeSACFramework/SeSACFramework.xcodeproj; sourceTree = "<group>"; };
 		CEB332B12A9DB54E006F86E3 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		CEB332B32A9DBAD7006F86E3 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
+		CEB332B52A9DC75A006F86E3 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				CEB3323E2A9C1D73006F86E3 /* Assets.xcassets */,
 				CEB332402A9C1D73006F86E3 /* LaunchScreen.storyboard */,
 				CEB332432A9C1D73006F86E3 /* Info.plist */,
+				CEB332B52A9DC75A006F86E3 /* WebViewController.swift */,
 			);
 			path = PhotoGram;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				CEB332692A9D7C7C006F86E3 /* DateView.swift in Sources */,
 				CEB3323A2A9C1D72006F86E3 /* AddViewController.swift in Sources */,
 				CEB332582A9C337A006F86E3 /* SearchView.swift in Sources */,
+				CEB332B62A9DC75A006F86E3 /* WebViewController.swift in Sources */,
 				CEB3324E2A9C2411006F86E3 /* BaseViewController.swift in Sources */,
 				CEB332362A9C1D72006F86E3 /* AppDelegate.swift in Sources */,
 				CEB332382A9C1D72006F86E3 /* SceneDelegate.swift in Sources */,
