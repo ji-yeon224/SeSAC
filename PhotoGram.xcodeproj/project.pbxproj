@@ -24,7 +24,42 @@
 		CEB332692A9D7C7C006F86E3 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332682A9D7C7C006F86E3 /* DateView.swift */; };
 		CEB3326B2A9D7DC2006F86E3 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3326A2A9D7DC2006F86E3 /* DateViewController.swift */; };
 		CEB3326F2A9D8E8B006F86E3 /* DateFormat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3326E2A9D8E8B006F86E3 /* DateFormat+Extension.swift */; };
+		CEB332A22A9D9BCA006F86E3 /* SeSACFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB3329E2A9D9B40006F86E3 /* SeSACFramework.framework */; };
+		CEB332A32A9D9BCA006F86E3 /* SeSACFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEB3329E2A9D9B40006F86E3 /* SeSACFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CEB332B22A9DB54E006F86E3 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332B12A9DB54E006F86E3 /* TitleViewController.swift */; };
+		CEB332B42A9DBAD7006F86E3 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332B32A9DBAD7006F86E3 /* TextViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CEB3329D2A9D9B40006F86E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEB332982A9D9B40006F86E3 /* SeSACFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CEB3327A2A9D92A7006F86E3;
+			remoteInfo = SeSACFramework;
+		};
+		CEB3329F2A9D9B40006F86E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEB332982A9D9B40006F86E3 /* SeSACFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CEB332842A9D92A7006F86E3;
+			remoteInfo = SeSACFrameworkTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CEB332A42A9D9BCA006F86E3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CEB332A32A9D9BCA006F86E3 /* SeSACFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CEB332322A9C1D72006F86E3 /* PhotoGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +80,9 @@
 		CEB332682A9D7C7C006F86E3 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		CEB3326A2A9D7DC2006F86E3 /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
 		CEB3326E2A9D8E8B006F86E3 /* DateFormat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormat+Extension.swift"; sourceTree = "<group>"; };
+		CEB332982A9D9B40006F86E3 /* SeSACFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SeSACFramework.xcodeproj; path = ../SeSACFramework/SeSACFramework.xcodeproj; sourceTree = "<group>"; };
+		CEB332B12A9DB54E006F86E3 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
+		CEB332B32A9DBAD7006F86E3 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +91,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEB3324B2A9C1E22006F86E3 /* SnapKit in Frameworks */,
+				CEB332A22A9D9BCA006F86E3 /* SeSACFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,8 +101,10 @@
 		CEB332292A9C1D72006F86E3 = {
 			isa = PBXGroup;
 			children = (
+				CEB332982A9D9B40006F86E3 /* SeSACFramework.xcodeproj */,
 				CEB332342A9C1D72006F86E3 /* PhotoGram */,
 				CEB332332A9C1D72006F86E3 /* Products */,
+				CEB332A12A9D9BCA006F86E3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,6 +159,8 @@
 				CEB332552A9C2FF8006F86E3 /* AddView.swift */,
 				CEB332682A9D7C7C006F86E3 /* DateView.swift */,
 				CEB3326A2A9D7DC2006F86E3 /* DateViewController.swift */,
+				CEB332B12A9DB54E006F86E3 /* TitleViewController.swift */,
+				CEB332B32A9DBAD7006F86E3 /* TextViewController.swift */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -131,6 +174,22 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		CEB332992A9D9B40006F86E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEB3329E2A9D9B40006F86E3 /* SeSACFramework.framework */,
+				CEB332A02A9D9B40006F86E3 /* SeSACFrameworkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEB332A12A9D9BCA006F86E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,6 +200,7 @@
 				CEB3322E2A9C1D72006F86E3 /* Sources */,
 				CEB3322F2A9C1D72006F86E3 /* Frameworks */,
 				CEB332302A9C1D72006F86E3 /* Resources */,
+				CEB332A42A9D9BCA006F86E3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -183,12 +243,35 @@
 			);
 			productRefGroup = CEB332332A9C1D72006F86E3 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CEB332992A9D9B40006F86E3 /* Products */;
+					ProjectRef = CEB332982A9D9B40006F86E3 /* SeSACFramework.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				CEB332312A9C1D72006F86E3 /* PhotoGram */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CEB3329E2A9D9B40006F86E3 /* SeSACFramework.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SeSACFramework.framework;
+			remoteRef = CEB3329D2A9D9B40006F86E3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CEB332A02A9D9B40006F86E3 /* SeSACFrameworkTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SeSACFrameworkTests.xctest;
+			remoteRef = CEB3329F2A9D9B40006F86E3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CEB332302A9C1D72006F86E3 /* Resources */ = {
@@ -214,6 +297,7 @@
 				CEB3326F2A9D8E8B006F86E3 /* DateFormat+Extension.swift in Sources */,
 				CEB332532A9C2EB8006F86E3 /* BaseView.swift in Sources */,
 				CEB3326B2A9D7DC2006F86E3 /* DateViewController.swift in Sources */,
+				CEB332B42A9DBAD7006F86E3 /* TextViewController.swift in Sources */,
 				CEB3325C2A9C37F2006F86E3 /* SearchCollectionViewCell.swift in Sources */,
 				CEB332692A9D7C7C006F86E3 /* DateView.swift in Sources */,
 				CEB3323A2A9C1D72006F86E3 /* AddViewController.swift in Sources */,
@@ -221,6 +305,7 @@
 				CEB3324E2A9C2411006F86E3 /* BaseViewController.swift in Sources */,
 				CEB332362A9C1D72006F86E3 /* AppDelegate.swift in Sources */,
 				CEB332382A9C1D72006F86E3 /* SceneDelegate.swift in Sources */,
+				CEB332B22A9DB54E006F86E3 /* TitleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

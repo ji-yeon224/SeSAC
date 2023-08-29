@@ -18,6 +18,7 @@ class SearchViewController: BaseViewController {
     
     override func loadView() {
         self.view = mainView
+        
     }
     
 

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SeSACFramework
 
 //protocol 값 전달 1.
 protocol PassDataDelegate {
@@ -29,6 +30,9 @@ class AddViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ClassOpenExample.publicExample()
+        ClassPublicExample.publicExample()
+        //ClassInternalExample.publicExample()
         
     }
     
@@ -37,6 +41,7 @@ class AddViewController: BaseViewController {
         print(#function)
         NotificationCenter.default.addObserver(self, selector: #selector(selectImageNotificationObserver),
                                                name: .selectImage, object: nil)
+        //sesacShowActivityViewController(image: UIImage(systemName: "star")!, url: "hello", text: "hi")
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -69,6 +74,8 @@ class AddViewController: BaseViewController {
         mainView.searchButton.addTarget(self, action: #selector(searchButtonClicked), for: .touchUpInside)
         mainView.dateButton.addTarget(self, action: #selector(dateButtonClicked), for: .touchUpInside)
         mainView.searchProtocolButton.addTarget(self, action: #selector(searchProtocolButtonClicked), for: .touchUpInside)
+        mainView.titleButton.addTarget(self, action: #selector(titleButtonClicked), for: .touchUpInside)
+        mainView.textViewButton.addTarget(self, action: #selector(textViewButtonClicked), for: .touchUpInside)
     }
     
     override func setConstraints() { // 제약조건
@@ -76,6 +83,26 @@ class AddViewController: BaseViewController {
         super.setConstraints()
         
         
+    }
+    
+    @objc func textViewButtonClicked() {
+        let vc = TextViewController()
+        
+        vc.completionHandler = { value in
+            self.mainView.textViewButton.setTitle(value, for: .normal)
+            
+        }
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func titleButtonClicked() {
+        let vc = TitleViewController()
+        // Closure - 3
+        vc.completionHandler = { text, age, push in
+            self.mainView.titleButton.setTitle(text, for: .normal)
+            print("completionHandler", age, push)
+        }
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func searchProtocolButtonClicked() {
