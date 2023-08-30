@@ -30,9 +30,7 @@ class AddViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ClassOpenExample.publicExample()
-        ClassPublicExample.publicExample()
-        //ClassInternalExample.publicExample()
+        APIService.shared.callRequest()
         
     }
     
