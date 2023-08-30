@@ -22,6 +22,7 @@ protocol PassImageDelegate {
 class AddViewController: BaseViewController {
     
     let mainView = AddView()
+    let picker = UIImagePickerController()
     
     override func loadView() {
         self.view = mainView
@@ -30,7 +31,7 @@ class AddViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        APIService.shared.callRequest()
+        //APIService.shared.callRequest()
         
     }
     
@@ -104,9 +105,26 @@ class AddViewController: BaseViewController {
     }
     
     @objc func searchProtocolButtonClicked() {
-        let vc = SearchViewController()
-        vc.delegate = self
-        present(vc, animated: true)
+        
+        let action = UIAlertController(title: "선택하기", message: nil, preferredStyle: .actionSheet)
+        action.addAction(UIAlertAction(title: "갤러리에서 가져오기", style: .default, handler: { action in
+            
+            guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
+                print("사용 불가")
+                return
+            }
+            self.picker.delegate = self
+            self.picker.sourceType = .photoLibrary
+            self.present(self.picker, animated: true)
+            
+        }))
+        
+        action.addAction(UIAlertAction(title: "웹에서 가져오기", style: .default))
+        action.addAction(UIAlertAction(title: "취소", style: .cancel ))
+        self.present(action, animated: true, completion: nil)
+//        let vc = SearchViewController()
+//        vc.delegate = self
+//        present(vc, animated: true)
     }
 
     @objc func dateButtonClicked() {
@@ -135,4 +153,21 @@ extension AddViewController: PassImageDelegate {
         mainView.photoImageView.image = img
         
     }
+}
+
+extension AddViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            self.mainView.photoImageView.image = image
+            dismiss(animated: true)
+        }
+        
+    }
+    
 }
