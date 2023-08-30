@@ -29,6 +29,8 @@
 		CEB332B22A9DB54E006F86E3 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332B12A9DB54E006F86E3 /* TitleViewController.swift */; };
 		CEB332B42A9DBAD7006F86E3 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332B32A9DBAD7006F86E3 /* TextViewController.swift */; };
 		CEB332B62A9DC75A006F86E3 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332B52A9DC75A006F86E3 /* WebViewController.swift */; };
+		CEB332CB2A9EC744006F86E3 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332CA2A9EC744006F86E3 /* APIService.swift */; };
+		CEB332CD2A9EEBD4006F86E3 /* URLSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332CC2A9EEBD4006F86E3 /* URLSessionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		CEB332B12A9DB54E006F86E3 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		CEB332B32A9DBAD7006F86E3 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		CEB332B52A9DC75A006F86E3 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		CEB332CA2A9EC744006F86E3 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		CEB332CC2A9EEBD4006F86E3 /* URLSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,7 @@
 		CEB332342A9C1D72006F86E3 /* PhotoGram */ = {
 			isa = PBXGroup;
 			children = (
+				CEB332C92A9EC723006F86E3 /* Network */,
 				CEB332652A9D7BC1006F86E3 /* Extension */,
 				CEB332542A9C2FD4006F86E3 /* Add */,
 				CEB3324F2A9C2723006F86E3 /* Search */,
@@ -191,6 +196,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CEB332C92A9EC723006F86E3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CEB332CA2A9EC744006F86E3 /* APIService.swift */,
+				CEB332CC2A9EEBD4006F86E3 /* URLSessionViewController.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,12 +317,14 @@
 				CEB332B42A9DBAD7006F86E3 /* TextViewController.swift in Sources */,
 				CEB3325C2A9C37F2006F86E3 /* SearchCollectionViewCell.swift in Sources */,
 				CEB332692A9D7C7C006F86E3 /* DateView.swift in Sources */,
+				CEB332CD2A9EEBD4006F86E3 /* URLSessionViewController.swift in Sources */,
 				CEB3323A2A9C1D72006F86E3 /* AddViewController.swift in Sources */,
 				CEB332582A9C337A006F86E3 /* SearchView.swift in Sources */,
 				CEB332B62A9DC75A006F86E3 /* WebViewController.swift in Sources */,
 				CEB3324E2A9C2411006F86E3 /* BaseViewController.swift in Sources */,
 				CEB332362A9C1D72006F86E3 /* AppDelegate.swift in Sources */,
 				CEB332382A9C1D72006F86E3 /* SceneDelegate.swift in Sources */,
+				CEB332CB2A9EC744006F86E3 /* APIService.swift in Sources */,
 				CEB332B22A9DB54E006F86E3 /* TitleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
