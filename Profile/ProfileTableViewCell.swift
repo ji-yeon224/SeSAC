@@ -40,8 +40,7 @@ class ProfileTableViewCell: BaseTableViewCell {
         textField.snp.makeConstraints { make in
             make.centerY.equalTo(contentView)
             make.trailing.equalTo(contentView).inset(-30)
-            make.leading.equalTo(label.snp.trailing).offset(40)
-            make.width.equalTo(contentView).multipliedBy(0.6)
+            make.width.equalTo(contentView).multipliedBy(0.7)
             make.height.equalTo(contentView)
         }
     }

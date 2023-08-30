@@ -25,6 +25,7 @@ class ProfileViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Profile Setting"
         NotificationCenter.default.addObserver(self, selector: #selector(getChangeGenderObserver), name: .changeGender, object: nil)
     }
     
@@ -104,6 +105,17 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         navigationController?.pushViewController(vc, animated: true)
         
         
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 140
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: ProfileHeaderView.identifier) as? ProfileHeaderView
+        
+        
+        return header
     }
     
 }

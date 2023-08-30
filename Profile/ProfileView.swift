@@ -12,7 +12,7 @@ class ProfileView: BaseView {
     let tableView = {
         let view = UITableView()
         view.register(ProfileTableViewCell.self, forCellReuseIdentifier: ProfileTableViewCell.identifier)
-        
+        view.register(ProfileHeaderView.self, forHeaderFooterViewReuseIdentifier: ProfileHeaderView.identifier)
         return view
     }()
     
