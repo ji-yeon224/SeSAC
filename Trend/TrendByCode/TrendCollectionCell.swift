@@ -11,14 +11,14 @@ class TrendCollectionCell: BaseCollectionViewCell {
     
     let backView = {
         let view = UIView()
-        view.backgroundColor = .lightGray
         view.layer.cornerRadius = 5
+        view.backgroundColor = .white
         return view
     }()
     
     let imageView = {
         let view = UIImageView()
-        view.backgroundColor = .brown
+        view.contentMode = .scaleToFill
         view.layer.cornerRadius = 5
         view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
@@ -27,7 +27,6 @@ class TrendCollectionCell: BaseCollectionViewCell {
     
     let titleLabel = {
         let view = UILabel()
-        view.text = "title"
         view.font = .boldSystemFont(ofSize: 17)
         view.numberOfLines = 0
         return view
@@ -35,7 +34,6 @@ class TrendCollectionCell: BaseCollectionViewCell {
     
     let genreLabel = {
         let view = UILabel()
-        view.text = "genre"
         view.font = .boldSystemFont(ofSize: 17)
         view.numberOfLines = 0
         return view
@@ -43,8 +41,8 @@ class TrendCollectionCell: BaseCollectionViewCell {
     
     let releaseLabel = {
         let view = UILabel()
-        view.text = "genre"
-        view.font = .boldSystemFont(ofSize: 14)
+        view.font = .systemFont(ofSize: 14)
+        view.textColor = .lightGray
         view.numberOfLines = 0
         return view
     }()
@@ -59,6 +57,13 @@ class TrendCollectionCell: BaseCollectionViewCell {
         let view = UILabel()
         view.text = "자세히 보기"
         view.font = .systemFont(ofSize: 15)
+        return view
+    }()
+
+    let chevronImage = {
+        let view = UIImageView()
+        view.image = UIImage(systemName: "chevron.right")
+        view.tintColor = .darkGray
         return view
     }()
     
@@ -80,6 +85,7 @@ class TrendCollectionCell: BaseCollectionViewCell {
         backView.addSubview(titleLabel)
         backView.addSubview(lineView)
         backView.addSubview(detailLabel)
+        backView.addSubview(chevronImage)
         
         setShadow(view: backView)
     }
@@ -108,21 +114,26 @@ class TrendCollectionCell: BaseCollectionViewCell {
         
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(imageView.snp.bottom).offset(10)
-            make.horizontalEdges.equalTo(backView).inset(10)
+            make.horizontalEdges.equalTo(contentView).inset(30)
         }
         
         lineView.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(20)
-            make.horizontalEdges.equalTo(contentView).inset(10)
+            make.horizontalEdges.equalTo(contentView).inset(30)
             make.height.equalTo(1)
         }
         
         detailLabel.snp.makeConstraints { make in
-            make.horizontalEdges.equalTo(contentView).inset(10)
+            make.leading.equalTo(contentView).inset(30)
             make.top.equalTo(lineView.snp.bottom).offset(10)
             make.bottom.equalTo(backView).inset(10)
         }
         
+        chevronImage.snp.makeConstraints { make in
+            make.trailing.equalTo(contentView).inset(30)
+            make.top.equalTo(lineView.snp.bottom).offset(10)
+            make.bottom.equalTo(backView).inset(10)
+        }
         
     }
     
