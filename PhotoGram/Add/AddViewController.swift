@@ -107,7 +107,7 @@ class AddViewController: BaseViewController {
     @objc func searchProtocolButtonClicked() {
         
         let action = UIAlertController(title: "선택하기", message: nil, preferredStyle: .actionSheet)
-        action.addAction(UIAlertAction(title: "갤러리에서 가져오기", style: .default, handler: { action in
+        action.addAction(UIAlertAction(title: "갤러리에서 가져오기", style: .default, handler: { _ in
             
             guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
                 print("사용 불가")
@@ -119,12 +119,14 @@ class AddViewController: BaseViewController {
             
         }))
         
-        action.addAction(UIAlertAction(title: "웹에서 가져오기", style: .default))
+        action.addAction(UIAlertAction(title: "웹에서 검색하기", style: .default, handler: { _ in
+            let vc = SearchViewController()
+            vc.delegate = self
+            self.present(vc, animated: true)
+        }))
         action.addAction(UIAlertAction(title: "취소", style: .cancel ))
         self.present(action, animated: true, completion: nil)
-//        let vc = SearchViewController()
-//        vc.delegate = self
-//        present(vc, animated: true)
+
     }
 
     @objc func dateButtonClicked() {
