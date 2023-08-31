@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE446C1D2AA01A6C0020D753 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE446C1C2AA01A6C0020D753 /* HomeViewController.swift */; };
+		CE446C1F2AA01A730020D753 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE446C1E2AA01A730020D753 /* HomeView.swift */; };
 		CEB332362A9C1D72006F86E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332352A9C1D72006F86E3 /* AppDelegate.swift */; };
 		CEB332382A9C1D72006F86E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332372A9C1D72006F86E3 /* SceneDelegate.swift */; };
 		CEB3323A2A9C1D72006F86E3 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332392A9C1D72006F86E3 /* AddViewController.swift */; };
@@ -65,6 +67,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CE446C1C2AA01A6C0020D753 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CE446C1E2AA01A730020D753 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CEB332322A9C1D72006F86E3 /* PhotoGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB332352A9C1D72006F86E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEB332372A9C1D72006F86E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +108,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE446C1B2AA01A590020D753 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CE446C1C2AA01A6C0020D753 /* HomeViewController.swift */,
+				CE446C1E2AA01A730020D753 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		CEB332292A9C1D72006F86E3 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +138,7 @@
 		CEB332342A9C1D72006F86E3 /* PhotoGram */ = {
 			isa = PBXGroup;
 			children = (
+				CE446C1B2AA01A590020D753 /* Home */,
 				CEB332C92A9EC723006F86E3 /* Network */,
 				CEB332652A9D7BC1006F86E3 /* Extension */,
 				CEB332542A9C2FD4006F86E3 /* Add */,
@@ -322,6 +336,8 @@
 				CEB332582A9C337A006F86E3 /* SearchView.swift in Sources */,
 				CEB332B62A9DC75A006F86E3 /* WebViewController.swift in Sources */,
 				CEB3324E2A9C2411006F86E3 /* BaseViewController.swift in Sources */,
+				CE446C1F2AA01A730020D753 /* HomeView.swift in Sources */,
+				CE446C1D2AA01A6C0020D753 /* HomeViewController.swift in Sources */,
 				CEB332362A9C1D72006F86E3 /* AppDelegate.swift in Sources */,
 				CEB332382A9C1D72006F86E3 /* SceneDelegate.swift in Sources */,
 				CEB332CB2A9EC744006F86E3 /* APIService.swift in Sources */,

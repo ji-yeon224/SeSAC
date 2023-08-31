@@ -35,6 +35,10 @@ class AddViewController: BaseViewController {
         
     }
     
+    deinit {
+        print("deinit", self)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print(#function)
@@ -131,8 +135,11 @@ class AddViewController: BaseViewController {
 
     @objc func dateButtonClicked() {
         // protocol 값 전달 5
-        let vc = DateViewController()
-        vc.delegate = self
+//        let vc = DateViewController()
+//        vc.delegate = self
+//        navigationController?.pushViewController(vc, animated: true)
+        
+        let vc = HomeViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 

@@ -15,7 +15,9 @@ class TitleViewController: BaseViewController {
         return view
     }()
     
-    
+    deinit {
+        print("deinit", self)
+    }
     
     // Closure - 1
     var completionHandler: ((String, Int, Bool) -> Void)?
