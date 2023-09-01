@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class APIService {
     
@@ -54,20 +55,20 @@ class APIService {
         }.resume()
     }
     
+    func callRequestAlmofire(query: String, completionHandler: @escaping (Photo) -> ()) {
+        guard let url = URL(string: "https://api.unsplash.com/search/photos?page=1&query=\(query)&client_id=\(APIKey.unsplashKey)") else { return }
+        
+        
+        AF.request(url, method: .get).validate(statusCode: 200...500).responseDecodable(of: Photo.self) { response in
+            switch response.result {
+            case .success(let value):
+                completionHandler(value)
+            case .failure(let error): print(error)
+            }
+        }
+        
+        
+    }
+    
 }
 
-struct Photo: Codable {
-    let total: Int
-    let total_pages: Int
-    let results: [PhotoResult]
-}
-
-struct PhotoResult: Codable {
-    let id: String
-    let urls: PhotoURL
-}
-
-struct PhotoURL: Codable {
-    let full: String
-    let thumb: String
-}

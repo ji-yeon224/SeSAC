@@ -11,6 +11,8 @@
 		CE446C1F2AA01A730020D753 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE446C1E2AA01A730020D753 /* HomeView.swift */; };
 		CE446C212AA176A30020D753 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CE446C202AA176A30020D753 /* .gitignore */; };
 		CE446C232AA1854A0020D753 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE446C222AA1854A0020D753 /* APIKey.swift */; };
+		CE446C252AA21CFE0020D753 /* PhotoStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE446C242AA21CFE0020D753 /* PhotoStruct.swift */; };
+		CE446C282AA21ECE0020D753 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE446C272AA21ECE0020D753 /* Alamofire */; };
 		CEB332362A9C1D72006F86E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332352A9C1D72006F86E3 /* AppDelegate.swift */; };
 		CEB332382A9C1D72006F86E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332372A9C1D72006F86E3 /* SceneDelegate.swift */; };
 		CEB3323A2A9C1D72006F86E3 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332392A9C1D72006F86E3 /* AddViewController.swift */; };
@@ -73,6 +75,7 @@
 		CE446C1E2AA01A730020D753 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CE446C202AA176A30020D753 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		CE446C222AA1854A0020D753 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		CE446C242AA21CFE0020D753 /* PhotoStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStruct.swift; sourceTree = "<group>"; };
 		CEB332322A9C1D72006F86E3 /* PhotoGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB332352A9C1D72006F86E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEB332372A9C1D72006F86E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE446C282AA21ECE0020D753 /* Alamofire in Frameworks */,
 				CEB3324B2A9C1E22006F86E3 /* SnapKit in Frameworks */,
 				CEB332A22A9D9BCA006F86E3 /* SeSACFramework.framework in Frameworks */,
 			);
@@ -223,6 +227,7 @@
 				CEB332CA2A9EC744006F86E3 /* APIService.swift */,
 				CEB332CC2A9EEBD4006F86E3 /* URLSessionViewController.swift */,
 				CE446C222AA1854A0020D753 /* APIKey.swift */,
+				CE446C242AA21CFE0020D753 /* PhotoStruct.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 			name = PhotoGram;
 			packageProductDependencies = (
 				CEB3324A2A9C1E22006F86E3 /* SnapKit */,
+				CE446C272AA21ECE0020D753 /* Alamofire */,
 			);
 			productName = PhotoGram;
 			productReference = CEB332322A9C1D72006F86E3 /* PhotoGram.app */;
@@ -277,6 +283,7 @@
 			mainGroup = CEB332292A9C1D72006F86E3;
 			packageReferences = (
 				CEB332492A9C1E22006F86E3 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				CE446C262AA21ECE0020D753 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = CEB332332A9C1D72006F86E3 /* Products */;
 			projectDirPath = "";
@@ -336,6 +343,7 @@
 				CEB332532A9C2EB8006F86E3 /* BaseView.swift in Sources */,
 				CE446C232AA1854A0020D753 /* APIKey.swift in Sources */,
 				CEB3326B2A9D7DC2006F86E3 /* DateViewController.swift in Sources */,
+				CE446C252AA21CFE0020D753 /* PhotoStruct.swift in Sources */,
 				CEB332B42A9DBAD7006F86E3 /* TextViewController.swift in Sources */,
 				CEB3325C2A9C37F2006F86E3 /* SearchCollectionViewCell.swift in Sources */,
 				CEB332692A9D7C7C006F86E3 /* DateView.swift in Sources */,
@@ -559,6 +567,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CE446C262AA21ECE0020D753 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		CEB332492A9C1E22006F86E3 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -570,6 +586,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CE446C272AA21ECE0020D753 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE446C262AA21ECE0020D753 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		CEB3324A2A9C1E22006F86E3 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CEB332492A9C1E22006F86E3 /* XCRemoteSwiftPackageReference "SnapKit" */;

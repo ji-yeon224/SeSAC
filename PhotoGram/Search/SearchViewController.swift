@@ -12,6 +12,7 @@ import UIKit
 class SearchViewController: BaseViewController {
     
     let mainView = SearchView()
+    var photo = Photo(total: 0, total_pages: 0, results: [])
     
     let imageList = ["pencil", "star", "person", "star.fill", "xmark","person.circle"]
     var delegate: PassImageDelegate?
@@ -41,6 +42,15 @@ class SearchViewController: BaseViewController {
         mainView.collectionView.dataSource = self
         
     }
+    
+    
+    func callRequest(query: String) {
+        APIService.shared.callRequestAlmofire(query: query) { photo in
+            self.photo = photo
+            self.mainView.collectionView.reloadData()
+        }
+        
+    }
    
 
 }
@@ -49,20 +59,44 @@ extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         mainView.searchBar.resignFirstResponder()
+        if let query = searchBar.text {
+            callRequest(query: query)
+        }
+        
+        
     }
+    
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.count == 0 {
+            searchBar.text = nil
+            photo = Photo(total: 0, total_pages: 0, results: [])
+            mainView.collectionView.reloadData()
+        }
+    }
+    
 }
 
 
 extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageList.count
+        return photo.results.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as? SearchCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.imageView.image = UIImage(systemName: imageList[indexPath.item])
+        //cell.imageView.image = UIImage(systemName: imageList[indexPath.item])
+        
+        DispatchQueue.global().async {
+            let url = URL(string: self.photo.results[indexPath.row].urls.thumb)!
+            let data = try! Data(contentsOf: url)
+            DispatchQueue.main.async {
+                cell.imageView.image = UIImage(data: data)
+            }
+        }
         
         return cell
     }
