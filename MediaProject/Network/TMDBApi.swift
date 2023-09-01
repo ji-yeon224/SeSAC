@@ -53,6 +53,7 @@ class TMDBApi {
     }
     
     
+    
     func callVideoRequest(endPoint: Endpoint, parameter: String, completionHandler: @escaping (Videos) -> ()) {
         
         let url = endPoint.requestURL(type: parameter) + "?api_key=\(APIKey.tmdbKey)"

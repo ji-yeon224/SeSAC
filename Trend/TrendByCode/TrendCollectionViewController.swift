@@ -21,6 +21,7 @@ class TrendCollectionViewController: BaseViewController {
         self.view = mainView
     }
     
+    var session: URLSession!
     
     var time: Time = .week
     var type: Type = .all
@@ -47,8 +48,8 @@ class TrendCollectionViewController: BaseViewController {
         mainView.collectionView.dataSource = self
         mainView.collectionView.delegate = self
         
-        callTrendData(type: type.typeString, time: time)
-        
+        //callTrendData(type: type.typeString, time: time)
+        callURLSessionTrend(type: type.typeString, time: time)
         if genreDictionary.isEmpty {
             callGenreData(type: Type.tv.typeString)
             callGenreData(type: Type.movie.typeString)
@@ -67,7 +68,7 @@ class TrendCollectionViewController: BaseViewController {
         var menuItems: [UIAction] = []
         for gen in typeList {
             let action = UIAction(title: gen.rawValue, image: UIImage(systemName: "folder")) { (action) in
-                self.callTrendData(type: Type(rawValue: action.title)!.typeString, time: self.time)
+                self.callURLSessionTrend(type: Type(rawValue: action.title)!.typeString, time: self.time)
                 switch self.time {
                 case .week:
                     self.title = "TODAY \(action.title.uppercased()) TREND"
@@ -102,13 +103,29 @@ class TrendCollectionViewController: BaseViewController {
             navigationItem.rightBarButtonItem?.title = "WEEK"
         }
         
-        callTrendData(type: type.typeString, time: time)
+        callURLSessionTrend(type: type.typeString, time: time)
     }
     
     
 }
 
 extension TrendCollectionViewController {
+    
+    func callURLSessionTrend(type: String, time: Time) {
+        trendList.removeAll()
+        let parameter = "\(type)/\(time.rawValue)"
+        group.enter()
+        URLSessionAPI.shared.callTrendRequestURLSession(endPoint: .trend, parameter: parameter) { trend in
+            guard let trend = trend else {
+                print("error")
+                return
+            }
+            self.trendList.append(contentsOf: trend.results)
+            self.mainView.collectionView.reloadData()
+            self.group.leave()
+        }
+    }
+    
     func callTrendData(type: String, time: Time) {
         trendList.removeAll()
         let parameter = "\(type)/\(time.rawValue)"
@@ -199,3 +216,15 @@ extension TrendCollectionViewController: UICollectionViewDelegate, UICollectionV
         present(nav, animated: true)
     }
 }
+
+//extension TrendCollectionViewController: URLSessionDelegate{
+//
+//    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge) async -> (URLSession.AuthChallengeDisposition, URLCredential?) {
+//
+//    }
+//
+//    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+//
+//    }
+//
+//}

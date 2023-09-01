@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE446C2B2AA237810020D753 /* URLSessionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE446C2A2AA237810020D753 /* URLSessionAPI.swift */; };
 		CE5C9EB02A8CA5F80011664D /* OverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C9EAE2A8CA5F80011664D /* OverviewTableViewCell.swift */; };
 		CE5C9EB12A8CA5F80011664D /* OverviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE5C9EAF2A8CA5F80011664D /* OverviewTableViewCell.xib */; };
 		CE5C9ECB2A8E380A0011664D /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C9ECA2A8E380A0011664D /* Genre.swift */; };
@@ -61,6 +62,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE446C2A2AA237810020D753 /* URLSessionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionAPI.swift; sourceTree = "<group>"; };
 		CE5C9EAE2A8CA5F80011664D /* OverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewTableViewCell.swift; sourceTree = "<group>"; };
 		CE5C9EAF2A8CA5F80011664D /* OverviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverviewTableViewCell.xib; sourceTree = "<group>"; };
 		CE5C9ECA2A8E380A0011664D /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
@@ -127,6 +129,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE446C292AA2356C0020D753 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF1A6B2A862783000E099C /* APIKey.swift */,
+				CEBF1A822A87CCDA000E099C /* Endpoint.swift */,
+				CEBF1A802A87CC15000E099C /* URLExtension.swift */,
+				CEBF1A7E2A87CBB6000E099C /* TMDBApi.swift */,
+				CE446C2A2AA237810020D753 /* URLSessionAPI.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		CE5C9ED42A8F4EA90011664D /* Related */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,8 +243,8 @@
 		CEBF1A542A8622EB000E099C /* MediaProject */ = {
 			isa = PBXGroup;
 			children = (
+				CE446C292AA2356C0020D753 /* Network */,
 				CEBF1A692A86251A000E099C /* .gitignore */,
-				CEBF1A6B2A862783000E099C /* APIKey.swift */,
 				CEBF1A552A8622EB000E099C /* AppDelegate.swift */,
 				CEBF1A572A8622EB000E099C /* SceneDelegate.swift */,
 				CEBF1A5B2A8622EB000E099C /* Main.storyboard */,
@@ -238,9 +252,6 @@
 				CEBF1A5E2A8622ED000E099C /* Assets.xcassets */,
 				CEBF1A602A8622ED000E099C /* LaunchScreen.storyboard */,
 				CEBF1A632A8622ED000E099C /* Info.plist */,
-				CEBF1A7E2A87CBB6000E099C /* TMDBApi.swift */,
-				CEBF1A802A87CC15000E099C /* URLExtension.swift */,
-				CEBF1A822A87CCDA000E099C /* Endpoint.swift */,
 				CEBF1A922A8881CD000E099C /* Type.swift */,
 			);
 			path = MediaProject;
@@ -370,6 +381,7 @@
 				CEB332AC2A9DAF32006F86E3 /* BaseViewController.swift in Sources */,
 				CEBF1A8E2A887B4E000E099C /* DetailTableViewCell.swift in Sources */,
 				CEBF1A992A88B45F000E099C /* CreditStruct.swift in Sources */,
+				CE446C2B2AA237810020D753 /* URLSessionAPI.swift in Sources */,
 				CEB332BF2A9DDB9A006F86E3 /* ProfileTableViewCell.swift in Sources */,
 				CE5C9EB02A8CA5F80011664D /* OverviewTableViewCell.swift in Sources */,
 				CE80A66E2A98F5D3005689A7 /* FirstViewController.swift in Sources */,

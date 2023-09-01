@@ -14,6 +14,7 @@ class ProfileHeaderView: BaseTableViewHeaderFooterView {
         let config = UIImage.SymbolConfiguration(pointSize: 100, weight: .light)
         let image = UIImage(systemName: "person.circle", withConfiguration: config)
         view.setImage(image, for: .normal)
+        view.backgroundColor = .darkGray
         view.tintColor = .darkGray
         view.layer.cornerRadius = 40
         
