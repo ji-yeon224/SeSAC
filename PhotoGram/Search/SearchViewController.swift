@@ -102,15 +102,16 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(imageList[indexPath.item])
+        //print(imageList[indexPath.item])
         
-        //protocol 값 전달
+        DispatchQueue.global().async {
+            let url = URL(string: self.photo.results[indexPath.row].urls.full)!
+            let data = try! Data(contentsOf: url)
+            DispatchQueue.main.async {
+                self.delegate?.receiveImgData(img: UIImage(data: data)!)
+            }
+        }
         
-        delegate?.receiveImgData(img: UIImage(systemName: imageList[indexPath.item])!)
-        
-        //notification을 통한 값 전달
-//        NotificationCenter.default.post(name: NSNotification.Name("SelectImage"),
-//                                        object: nil, userInfo: ["name": imageList[indexPath.item], "sample": "고래밥"])
         
         dismiss(animated: true)
         //navigationController?.popViewController(animated: true)
