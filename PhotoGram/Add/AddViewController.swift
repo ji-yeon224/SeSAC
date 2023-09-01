@@ -32,7 +32,7 @@ class AddViewController: BaseViewController {
         super.viewDidLoad()
         
         //APIService.shared.callRequest()
-        
+        //APIService.shared.callRequest(query: "sky")
     }
     
     deinit {

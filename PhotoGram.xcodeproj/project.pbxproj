@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CE446C1D2AA01A6C0020D753 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE446C1C2AA01A6C0020D753 /* HomeViewController.swift */; };
 		CE446C1F2AA01A730020D753 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE446C1E2AA01A730020D753 /* HomeView.swift */; };
+		CE446C212AA176A30020D753 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CE446C202AA176A30020D753 /* .gitignore */; };
+		CE446C232AA1854A0020D753 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE446C222AA1854A0020D753 /* APIKey.swift */; };
 		CEB332362A9C1D72006F86E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332352A9C1D72006F86E3 /* AppDelegate.swift */; };
 		CEB332382A9C1D72006F86E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332372A9C1D72006F86E3 /* SceneDelegate.swift */; };
 		CEB3323A2A9C1D72006F86E3 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332392A9C1D72006F86E3 /* AddViewController.swift */; };
@@ -69,6 +71,8 @@
 /* Begin PBXFileReference section */
 		CE446C1C2AA01A6C0020D753 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CE446C1E2AA01A730020D753 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		CE446C202AA176A30020D753 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		CE446C222AA1854A0020D753 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		CEB332322A9C1D72006F86E3 /* PhotoGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB332352A9C1D72006F86E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEB332372A9C1D72006F86E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 				CEB332402A9C1D73006F86E3 /* LaunchScreen.storyboard */,
 				CEB332432A9C1D73006F86E3 /* Info.plist */,
 				CEB332B52A9DC75A006F86E3 /* WebViewController.swift */,
+				CE446C202AA176A30020D753 /* .gitignore */,
 			);
 			path = PhotoGram;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 			children = (
 				CEB332CA2A9EC744006F86E3 /* APIService.swift */,
 				CEB332CC2A9EEBD4006F86E3 /* URLSessionViewController.swift */,
+				CE446C222AA1854A0020D753 /* APIKey.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -310,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEB332422A9C1D73006F86E3 /* LaunchScreen.storyboard in Resources */,
+				CE446C212AA176A30020D753 /* .gitignore in Resources */,
 				CEB3323F2A9C1D73006F86E3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,6 +334,7 @@
 				CEB3325A2A9C365F006F86E3 /* BaseCollectionViewCell.swift in Sources */,
 				CEB3326F2A9D8E8B006F86E3 /* DateFormat+Extension.swift in Sources */,
 				CEB332532A9C2EB8006F86E3 /* BaseView.swift in Sources */,
+				CE446C232AA1854A0020D753 /* APIKey.swift in Sources */,
 				CEB3326B2A9D7DC2006F86E3 /* DateViewController.swift in Sources */,
 				CEB332B42A9DBAD7006F86E3 /* TextViewController.swift in Sources */,
 				CEB3325C2A9C37F2006F86E3 /* SearchCollectionViewCell.swift in Sources */,
