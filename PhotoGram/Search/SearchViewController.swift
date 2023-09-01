@@ -7,19 +7,21 @@
 
 import UIKit
 
+protocol SearchViewProtocol: AnyObject {
+    func didSelectItemAt(indexPath: IndexPath)
+}
 
 
 class SearchViewController: BaseViewController {
     
     let mainView = SearchView()
-    var photo = Photo(total: 0, total_pages: 0, results: [])
     
     let imageList = ["pencil", "star", "person", "star.fill", "xmark","person.circle"]
     var delegate: PassImageDelegate?
     
     override func loadView() {
+        mainView.delegate = self
         self.view = mainView
-        
     }
     
 
@@ -38,21 +40,35 @@ class SearchViewController: BaseViewController {
     
     override func configureView() {
         super.configureView()
-        mainView.collectionView.delegate = self
-        mainView.collectionView.dataSource = self
         
     }
     
     
     func callRequest(query: String) {
         APIService.shared.callRequestAlmofire(query: query) { photo in
-            self.photo = photo
+            self.mainView.photo = photo
             self.mainView.collectionView.reloadData()
         }
         
     }
    
 
+}
+
+extension SearchViewController: SearchViewProtocol {
+    func didSelectItemAt(indexPath: IndexPath) {
+        print(indexPath)
+        DispatchQueue.global().async {
+            let url = URL(string: self.mainView.photo.results[indexPath.row].urls.full)!
+            let data = try! Data(contentsOf: url)
+            DispatchQueue.main.async {
+                self.delegate?.receiveImgData(img: UIImage(data: data)!)
+            }
+        }
+        
+        
+        dismiss(animated: true)
+    }
 }
 
 extension SearchViewController: UISearchBarDelegate {
@@ -71,7 +87,7 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.count == 0 {
             searchBar.text = nil
-            photo = Photo(total: 0, total_pages: 0, results: [])
+            mainView.photo = Photo(total: 0, total_pages: 0, results: [])
             mainView.collectionView.reloadData()
         }
     }
@@ -79,42 +95,4 @@ extension SearchViewController: UISearchBarDelegate {
 }
 
 
-extension SearchViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photo.results.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as? SearchCollectionViewCell else { return UICollectionViewCell() }
-        
-        //cell.imageView.image = UIImage(systemName: imageList[indexPath.item])
-        
-        DispatchQueue.global().async {
-            let url = URL(string: self.photo.results[indexPath.row].urls.thumb)!
-            let data = try! Data(contentsOf: url)
-            DispatchQueue.main.async {
-                cell.imageView.image = UIImage(data: data)
-            }
-        }
-        
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //print(imageList[indexPath.item])
-        
-        DispatchQueue.global().async {
-            let url = URL(string: self.photo.results[indexPath.row].urls.full)!
-            let data = try! Data(contentsOf: url)
-            DispatchQueue.main.async {
-                self.delegate?.receiveImgData(img: UIImage(data: data)!)
-            }
-        }
-        
-        
-        dismiss(animated: true)
-        //navigationController?.popViewController(animated: true)
-    }
-}
 

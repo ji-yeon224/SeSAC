@@ -10,6 +10,9 @@ import UIKit
 
 class SearchView: BaseView {
     
+    weak var delegate: SearchViewProtocol?
+    var photo = Photo(total: 0, total_pages: 0, results: [])
+    
     let searchBar = {
         let view = UISearchBar()
         view.placeholder = "검색어를 입력해주세요."
@@ -21,6 +24,8 @@ class SearchView: BaseView {
         view.register(
             SearchCollectionViewCell.self, forCellWithReuseIdentifier: "SearchCollectionViewCell")
         view.collectionViewLayout = collectionViewLayout()
+        view.delegate = self
+        view.dataSource = self
         return view
     }()
     
@@ -36,6 +41,7 @@ class SearchView: BaseView {
     override func configureView() {
         addSubview(searchBar)
         addSubview(collectionView)
+        
     }
     
     override func setConstraints() {
@@ -52,3 +58,33 @@ class SearchView: BaseView {
     }
     
 }
+
+extension SearchView: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return photo.results.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as? SearchCollectionViewCell else { return UICollectionViewCell() }
+        
+        
+        DispatchQueue.global().async {
+            let url = URL(string: self.photo.results[indexPath.row].urls.thumb)!
+            let data = try! Data(contentsOf: url)
+            DispatchQueue.main.async {
+                cell.imageView.image = UIImage(data: data)
+            }
+        }
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath)
+        delegate?.didSelectItemAt(indexPath: indexPath)
+   
+    }
+}
+
+
