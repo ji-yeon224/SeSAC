@@ -13,12 +13,18 @@ enum Time: String {
     case day
 }
 
+protocol TrendViewProtocol: AnyObject {
+    func didSelectItemAt(indexPath: IndexPath)
+}
+
 class TrendCollectionViewController: BaseViewController {
     
     let mainView = TrendView()
     
     override func loadView() {
+        mainView.delegate = self
         self.view = mainView
+        
     }
     
     var session: URLSession!
@@ -27,11 +33,8 @@ class TrendCollectionViewController: BaseViewController {
     var type: Type = .all
     var typeList = Type.allCases
     
-    var genreDictionary: [Int : String] = [:]
     var creditList: [Credit] = []
     var castList: [String] = []
-    
-    var trendList: [ContentsData] = []
     
     let group = DispatchGroup()
     
@@ -45,12 +48,10 @@ class TrendCollectionViewController: BaseViewController {
     
     override func configureView() {
         super.configureView()
-        mainView.collectionView.dataSource = self
-        mainView.collectionView.delegate = self
         
         //callTrendData(type: type.typeString, time: time)
         callURLSessionTrend(type: type.typeString, time: time)
-        if genreDictionary.isEmpty {
+        if mainView.genreDictionary.isEmpty {
             callGenreData(type: Type.tv.typeString)
             callGenreData(type: Type.movie.typeString)
         }
@@ -112,7 +113,7 @@ class TrendCollectionViewController: BaseViewController {
 extension TrendCollectionViewController {
     
     func callURLSessionTrend(type: String, time: Time) {
-        trendList.removeAll()
+        mainView.trendList.removeAll()
         let parameter = "\(type)/\(time.rawValue)"
         group.enter()
         URLSessionAPI.shared.callTrendRequestURLSession(endPoint: .trend, parameter: parameter) { trend in
@@ -120,19 +121,19 @@ extension TrendCollectionViewController {
                 print("error")
                 return
             }
-            self.trendList.append(contentsOf: trend.results)
+            self.mainView.trendList.append(contentsOf: trend.results)
             self.mainView.collectionView.reloadData()
             self.group.leave()
         }
     }
     
     func callTrendData(type: String, time: Time) {
-        trendList.removeAll()
+        mainView.trendList.removeAll()
         let parameter = "\(type)/\(time.rawValue)"
         group.enter()
         TMDBApi.shared.callTrendingRequest(endPoint: .trend, parameter: parameter) { trend in
           
-            self.trendList.append(contentsOf: trend.results)
+            self.mainView.trendList.append(contentsOf: trend.results)
             self.mainView.collectionView.reloadData()
             self.group.leave()
         }
@@ -143,7 +144,7 @@ extension TrendCollectionViewController {
         TMDBApi.shared.callGenreRequest(endPoint: .genre, parameter: type) { genre in
             
             for item in genre.genres {
-                self.genreDictionary[item.id] = item.name
+                self.mainView.genreDictionary[item.id] = item.name
                 
             }
             self.group.leave()
@@ -151,63 +152,12 @@ extension TrendCollectionViewController {
     }
 }
 
-extension TrendCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return trendList.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendCollectionCell.identifier, for: indexPath) as? TrendCollectionCell else { return UICollectionViewCell() }
-        
-        
-        let trendData = trendList[indexPath.row]
-        
-        
-        if trendData.posterPath.count == 0 {
-            cell.imageView.image = UIImage(systemName: "xmark")!
-            cell.imageView.tintColor = .lightGray
-        } else {
-            let imageURL = TMDBApi.imgURL + trendData.posterPath
-            let url = URL(string: imageURL)!
-            DispatchQueue.global().async {
-                let data = try! Data(contentsOf: url)
-                DispatchQueue.main.async {
-                    cell.imageView.image = UIImage(data: data)
-
-                }
-            }
-        }
-        
-        var genreString = ""
-        for i in trendData.genreIDS {
-            genreString += "#\(genreDictionary[i] ?? "") "
-
-        }
-        cell.genreLabel.text = genreString
-        cell.titleLabel.text = trendData.title
-        //cell.originalTitleLabel.text = trendData.originalTitle
-        
-        switch trendData.mediaType {
-        case .tv:
-            cell.titleLabel.text = trendData.name
-            cell.releaseLabel.text = ""
-        case .movie:
-            cell.titleLabel.text = trendData.title
-            cell.releaseLabel.text = trendData.releaseDate
-        
-        }
-        
-         
-        
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+extension TrendCollectionViewController: TrendViewProtocol {
+    func didSelectItemAt(indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(identifier: DetailViewController.identifier) as! DetailViewController
-        
-        let trendData = trendList[indexPath.row]
+
+        let trendData = mainView.trendList[indexPath.row]
         
         vc.trendData = trendData
         
@@ -217,14 +167,4 @@ extension TrendCollectionViewController: UICollectionViewDelegate, UICollectionV
     }
 }
 
-//extension TrendCollectionViewController: URLSessionDelegate{
-//
-//    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge) async -> (URLSession.AuthChallengeDisposition, URLCredential?) {
-//
-//    }
-//
-//    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-//
-//    }
-//
-//}
+
