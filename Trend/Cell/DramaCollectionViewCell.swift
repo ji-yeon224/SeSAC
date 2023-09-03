@@ -82,12 +82,13 @@ class DramaCollectionViewCell: BaseCollectionViewCell {
         
         genreLabel.snp.makeConstraints { make in
             make.top.horizontalEdges.equalTo(contentView).inset(5)
-            make.height.equalTo(contentView).multipliedBy(0.35)
+            
+            //make.height.equalTo(contentView).multipliedBy(0.35)
         }
         backView.snp.makeConstraints { make in
             make.top.equalTo(genreLabel.snp.bottom)
             make.horizontalEdges.bottom.equalTo(contentView).inset(5)
-            //make.height.equalTo(contentView).multipliedBy(0.7)
+            make.height.equalTo(contentView).multipliedBy(0.7)
         }
         imageView.snp.makeConstraints { make in
             make.top.equalTo(backView).inset(14)

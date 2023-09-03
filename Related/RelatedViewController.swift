@@ -23,6 +23,7 @@ class RelatedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(#function)
         
         title = "More Videos"
         
@@ -92,6 +93,7 @@ extension RelatedViewController {
             group.enter()
             TMDBApi.shared.callVideoRequest(endPoint: .videos, parameter: "\(mediaType)/\(id)") { data in
                 self.videosList = data
+                //print(data)
                 self.group.leave()
             }
            
@@ -177,6 +179,22 @@ extension RelatedViewController: UICollectionViewDelegate, UICollectionViewDataS
         
 
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let video = videosList.results[indexPath.row]
+        if selectedSegmentIdx == 1 {
+            if video.site == "YouTube" {
+                let youtubeURL = "https://www.youtube.com/watch?v=\(video.key)"
+                let url = URL(string: youtubeURL) ?? URL(string: "https://www.youtube.com")
+                let vc = YoutubeViewController()
+                vc.url = url
+                let nav = UINavigationController(rootViewController: vc)
+                nav.modalPresentationStyle = .overFullScreen
+                present(nav, animated: true)
+                
+            }
+        }
     }
    
     

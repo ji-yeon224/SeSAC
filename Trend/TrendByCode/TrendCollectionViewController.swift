@@ -58,7 +58,7 @@ class TrendCollectionViewController: BaseViewController {
         
         group.notify(queue: .main) {
             //self.mainView.collectionView.scrollToItem(at: IndexPath(item: -1, section: 0), at: .top, animated: true)
-            print("noti")
+            //print("noti")
             self.mainView.collectionView.reloadData()
             
         }
