@@ -9,7 +9,7 @@ import UIKit
 
 class PosterCollectionViewCell: UICollectionViewCell {
     
-    static let identifier = "PosterCollectionViewCell"
+    //static let identifier = "PosterCollectionViewCell"
     
     @IBOutlet var posterImageView: UIImageView!
 

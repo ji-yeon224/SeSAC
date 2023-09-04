@@ -9,11 +9,12 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import Kingfisher
+import RealmSwift
 
 
 class SearchViewController: UIViewController {
     
-    static let identifier = "SearchViewController"
+    //static let identifier = "SearchViewController"
     
     
     @IBOutlet var tableView: UITableView!
@@ -76,7 +77,14 @@ class SearchViewController: UIViewController {
                     for aut in book["authors"].arrayValue {
                         authorList += aut.stringValue
                     }
-                    self.bookList.append(Book(title: book["title"].stringValue, author: authorList, poster: book["thumbnail"].stringValue, contents: book["contents"].stringValue))
+                    
+                    let title = book["title"].stringValue
+                    let poster = book["thumbnail"].stringValue
+                    let contents =  book["contents"].stringValue
+                    let datetime = book["datetime"].stringValue
+                    let publisher = book["publisher"].stringValue
+                    let price = book["sale_price"].intValue
+                    self.bookList.append(Book(title: title, author: authorList, poster: poster, contents: contents, datetime: datetime, publisher: publisher, price: price))
                 }
                 self.tableView.reloadData()
             case .failure(let error):
@@ -104,6 +112,28 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource, UITa
         cell.titleLabel.text = bookList[indexPath.row].title
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(identifier: BookDetailViewController.identifier) as! BookDetailViewController
+        
+        let selectedBook = bookList[indexPath.row]
+        
+        let realm = try! Realm()
+        let task = BookTable(title: selectedBook.title, author: selectedBook.author, poster: selectedBook.poster, contents: selectedBook.contents, datetime: selectedBook.datetime, publisher: selectedBook.publisher, price: selectedBook.price)
+        
+        
+        
+        try! realm.write {
+            realm.add(task)
+        }
+        vc.bookId = task._id
+        
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .overFullScreen
+        present(nav, animated: true)
+        
     }
     
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {

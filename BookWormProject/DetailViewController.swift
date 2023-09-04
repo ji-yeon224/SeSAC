@@ -9,7 +9,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    static let identifier = "DetailViewController"
+    //static let identifier = "DetailViewController"
 
     var movieInfo: Movie!
     var transition: Transition = .present

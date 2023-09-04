@@ -9,24 +9,26 @@ import UIKit
 
 class BookCollectionViewCell: UICollectionViewCell {
 
-    static let identifier = "BookCollectionViewCell"
+    //static let identifier = "BookCollectionViewCell"
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var posterImageView: UIImageView!
-    @IBOutlet var rateLabel: UILabel!
     @IBOutlet var likeButton: UIButton!
     
-    func configCell(movie: Movie) {
-        
-        titleLabel.text = movie.title
-        titleLabel.textColor = .white
-        
-        rateLabel.text = "\(movie.rate)"
-        rateLabel.textColor = .white
-        posterImageView.image = UIImage(named: movie.title)
-        changeLikeButtonImage(like: movie.like)
-        
-        
+    func configCell(book: BookTable) {
+        titleLabel.text = book.title
+        titleLabel.textAlignment = .center
+        titleLabel.numberOfLines = 0
+        titleLabel.textColor = .black
+        let url = URL(string: book.poster)!
+        DispatchQueue.global().async {
+            let data = try! Data(contentsOf: url)
+            DispatchQueue.main.async {
+                self.posterImageView.image = UIImage(data: data)
+            }
+            
+        }
+        changeLikeButtonImage(like: book.like)
         
     }
     

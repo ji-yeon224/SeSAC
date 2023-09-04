@@ -12,5 +12,9 @@ struct Book {
     var author: String
     var poster: String
     var contents: String
+    var datetime: String
+    var publisher: String
+    var price: Int
+    var like: Bool = false
     
 }
