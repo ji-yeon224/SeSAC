@@ -26,7 +26,7 @@ class BookCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "최근 검색 목록"
+        title = "My Book"
         
         let nib = UINib(nibName: BookCollectionViewCell.identifier, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: BookCollectionViewCell.identifier)
@@ -72,7 +72,7 @@ class BookCollectionViewController: UICollectionViewController {
         
         
         let layout = UICollectionViewFlowLayout()
-        let spacing: CGFloat = 10
+        let spacing: CGFloat = 5
         let width = UIScreen.main.bounds.width - (spacing * 4)
         
         
@@ -97,23 +97,12 @@ class BookCollectionViewController: UICollectionViewController {
             return BookCollectionViewCell()
         }
         
-//        let movie = movieInfo.movie[indexPath.row]
-//        cell.configCell(movie: movie)
-//        cell.backgroundColor = color[indexPath.row]
-//        cell.layer.cornerRadius = 20
-        cell.likeButton.tag = indexPath.row
-        cell.likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
-        
+       
         cell.configCell(book: tasks[indexPath.row])
         return cell
         
     }
     
-    @objc func likeButtonClicked(_ sender: UIButton) {
-        
-        movieInfo.movie[sender.tag].like.toggle()
-        
-    }
     
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

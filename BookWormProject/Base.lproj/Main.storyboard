@@ -296,25 +296,25 @@
                                 <rect key="frame" x="16" y="99" width="361" height="213"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qla-Zl-1yi">
-                                        <rect key="frame" x="8" y="16" width="135.66666666666666" height="181"/>
+                                        <rect key="frame" x="8" y="0.0" width="147.66666666666666" height="197"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Qla-Zl-1yi" secondAttribute="height" multiplier="3:4" id="oNT-6f-uig"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMz-o1-OCG">
-                                        <rect key="frame" x="159.66666666666663" y="15.999999999999998" width="181.33333333333337" height="20.333333333333329"/>
+                                        <rect key="frame" x="171.66666666666663" y="103.33333333333334" width="169.33333333333337" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="저자 | 출판사" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o29-5Z-DFK">
-                                        <rect key="frame" x="159.66666666666663" y="56.33333333333335" width="181.33333333333337" height="20.333333333333336"/>
+                                        <rect key="frame" x="171.66666666666663" y="143.66666666666666" width="169.33333333333337" height="20.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3B-cl-CgQ">
-                                        <rect key="frame" x="159.66666666666663" y="92.666666666666657" width="181.33333333333337" height="17"/>
+                                        <rect key="frame" x="171.66666666666663" y="180" width="169.33333333333337" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="17" id="cff-iD-Is1"/>
                                         </constraints>
@@ -326,13 +326,13 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="H3B-cl-CgQ" firstAttribute="top" secondItem="o29-5Z-DFK" secondAttribute="bottom" constant="16" id="2Xt-4G-wzL"/>
-                                    <constraint firstItem="Qla-Zl-1yi" firstAttribute="top" secondItem="OhE-Mz-JzG" secondAttribute="top" constant="16" id="3eK-zP-ISo"/>
-                                    <constraint firstItem="bMz-o1-OCG" firstAttribute="top" secondItem="OhE-Mz-JzG" secondAttribute="top" constant="16" id="8oJ-5A-Yhf"/>
+                                    <constraint firstItem="Qla-Zl-1yi" firstAttribute="top" secondItem="OhE-Mz-JzG" secondAttribute="top" id="3eK-zP-ISo"/>
                                     <constraint firstItem="Qla-Zl-1yi" firstAttribute="leading" secondItem="OhE-Mz-JzG" secondAttribute="leading" constant="8" id="JR5-Pc-KMo"/>
                                     <constraint firstAttribute="bottom" secondItem="Qla-Zl-1yi" secondAttribute="bottom" constant="16" id="Nuw-14-ueM"/>
                                     <constraint firstItem="o29-5Z-DFK" firstAttribute="leading" secondItem="Qla-Zl-1yi" secondAttribute="trailing" constant="16" id="SLw-Sd-pPH"/>
-                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="H3B-cl-CgQ" secondAttribute="bottom" constant="16" id="Skf-PZ-dQO"/>
+                                    <constraint firstAttribute="bottom" secondItem="H3B-cl-CgQ" secondAttribute="bottom" constant="16" id="Skf-PZ-dQO"/>
                                     <constraint firstItem="H3B-cl-CgQ" firstAttribute="leading" secondItem="Qla-Zl-1yi" secondAttribute="trailing" constant="16" id="TSC-kN-pt2"/>
+                                    <constraint firstItem="bMz-o1-OCG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="OhE-Mz-JzG" secondAttribute="top" constant="103.33" id="Vsr-0s-Hyd"/>
                                     <constraint firstAttribute="trailing" secondItem="H3B-cl-CgQ" secondAttribute="trailing" constant="20" id="ZSk-xx-sJR"/>
                                     <constraint firstItem="o29-5Z-DFK" firstAttribute="top" secondItem="bMz-o1-OCG" secondAttribute="bottom" constant="20" id="bPA-vx-e1r"/>
                                     <constraint firstItem="bMz-o1-OCG" firstAttribute="leading" secondItem="Qla-Zl-1yi" secondAttribute="trailing" constant="16" id="cYQ-FE-07Y"/>
@@ -347,7 +347,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DMK-PY-IFL">
-                                <rect key="frame" x="20" y="378.33333333333326" width="353" height="340.66666666666674"/>
+                                <rect key="frame" x="20" y="378.33333333333331" width="353" height="212.99999999999994"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -365,7 +365,7 @@
                             <constraint firstItem="DMK-PY-IFL" firstAttribute="top" secondItem="KhO-xP-DoH" secondAttribute="bottom" constant="20" id="TOz-pU-cRt"/>
                             <constraint firstItem="OhE-Mz-JzG" firstAttribute="top" secondItem="9NR-6y-OPc" secondAttribute="top" constant="40" id="XgD-XW-eC2"/>
                             <constraint firstItem="OhE-Mz-JzG" firstAttribute="leading" secondItem="9NR-6y-OPc" secondAttribute="leading" constant="16" id="deG-Gw-HTZ"/>
-                            <constraint firstItem="DMK-PY-IFL" firstAttribute="height" secondItem="Ju3-Oz-RAW" secondAttribute="height" multiplier="0.4" id="iYJ-FO-TEp"/>
+                            <constraint firstItem="DMK-PY-IFL" firstAttribute="height" secondItem="Ju3-Oz-RAW" secondAttribute="height" multiplier="0.25" id="iYJ-FO-TEp"/>
                             <constraint firstItem="KhO-xP-DoH" firstAttribute="leading" secondItem="9NR-6y-OPc" secondAttribute="leading" constant="22" id="ow1-gW-b1A"/>
                             <constraint firstItem="KhO-xP-DoH" firstAttribute="centerX" secondItem="9NR-6y-OPc" secondAttribute="centerX" id="r7B-GR-Hld"/>
                             <constraint firstItem="9NR-6y-OPc" firstAttribute="trailing" secondItem="KhO-xP-DoH" secondAttribute="trailing" constant="22" id="wYA-qB-rdC"/>

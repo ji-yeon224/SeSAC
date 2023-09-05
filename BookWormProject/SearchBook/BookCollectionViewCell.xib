@@ -3,7 +3,6 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,61 +10,31 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BookCollectionViewCell" id="gTV-IL-0wX" customClass="BookCollectionViewCell" customModule="BookWormProject" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="136" height="182"/>
+            <rect key="frame" x="0.0" y="0.0" width="116" height="147"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="136" height="182"/>
+                <rect key="frame" x="0.0" y="0.0" width="116" height="147"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ymz-wp-MAq">
-                        <rect key="frame" x="10" y="147" width="116" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gb5-jx-JAz">
-                        <rect key="frame" x="10" y="10" width="95.333333333333329" height="127"/>
+                        <rect key="frame" x="0.0" y="-4" width="116" height="155"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="Gb5-jx-JAz" secondAttribute="height" multiplier="3:4" id="pvl-Vt-XcH"/>
                         </constraints>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqp-S5-z5Q">
-                        <rect key="frame" x="110.33333333333333" y="10" width="20.666666666666671" height="35.333333333333336"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="pqp-S5-z5Q" secondAttribute="height" multiplier="10:17" id="eav-j5-b9W"/>
-                        </constraints>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain">
-                            <imageReference key="image" image="heart" catalog="system" symbolScale="medium"/>
-                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </buttonConfiguration>
-                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ymz-wp-MAq" secondAttribute="bottom" constant="10" id="Cee-Jd-6Ep"/>
-                <constraint firstAttribute="trailing" secondItem="Ymz-wp-MAq" secondAttribute="trailing" constant="10" id="NkH-uB-lRS"/>
-                <constraint firstItem="Ymz-wp-MAq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="PRm-tI-Fja"/>
-                <constraint firstItem="Gb5-jx-JAz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="V4P-EY-25D"/>
-                <constraint firstItem="Gb5-jx-JAz" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="c8O-Vm-z65"/>
-                <constraint firstItem="Ymz-wp-MAq" firstAttribute="top" secondItem="Gb5-jx-JAz" secondAttribute="bottom" constant="10" id="jrP-xL-yek"/>
-                <constraint firstAttribute="trailing" secondItem="pqp-S5-z5Q" secondAttribute="trailing" constant="5" id="n56-iE-K0g"/>
-                <constraint firstItem="pqp-S5-z5Q" firstAttribute="leading" secondItem="Gb5-jx-JAz" secondAttribute="trailing" constant="5" id="sRZ-tP-KLp"/>
-                <constraint firstItem="pqp-S5-z5Q" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="sbo-VV-QpW"/>
-                <constraint firstItem="Gb5-jx-JAz" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.7" id="xNR-Wn-Cia"/>
-                <constraint firstItem="pqp-S5-z5Q" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="y4o-0K-RSW"/>
+                <constraint firstItem="Gb5-jx-JAz" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="cyd-YN-cg4"/>
+                <constraint firstItem="Gb5-jx-JAz" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="iev-ly-Vke"/>
+                <constraint firstItem="Gb5-jx-JAz" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="xNR-Wn-Cia"/>
             </constraints>
-            <size key="customSize" width="136" height="182"/>
+            <size key="customSize" width="116" height="147"/>
             <connections>
-                <outlet property="likeButton" destination="pqp-S5-z5Q" id="n5W-L3-hNa"/>
                 <outlet property="posterImageView" destination="Gb5-jx-JAz" id="rcC-Xq-TaE"/>
-                <outlet property="titleLabel" destination="Ymz-wp-MAq" id="Zme-0U-FDc"/>
             </connections>
-            <point key="canvasLocation" x="-209.16030534351145" y="7.042253521126761"/>
+            <point key="canvasLocation" x="-224.42748091603053" y="-5.2816901408450709"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="heart" catalog="system" width="128" height="107"/>
-    </resources>
 </document>

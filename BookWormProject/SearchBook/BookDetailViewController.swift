@@ -28,9 +28,9 @@ class BookDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let book = book else { dismiss(animated: true); return }
        
-        //book = realm.object(ofType: BookTable.self, forPrimaryKey: bookId)
-        //print(Realm.Configuration.defaultConfiguration.fileURL!)
+        
         setProperties()
         setValues()
         configBarButtonItem()
@@ -40,67 +40,77 @@ class BookDetailViewController: UIViewController {
     func configBarButtonItem() {
         var buttons: [UIBarButtonItem]?
         
-        switch viewTransition {
-        case .main:
-            let delete = UIBarButtonItem(image: UIImage(systemName: "trash.fill"), style: .plain, target: self, action: #selector(deleteButtonClicked))
+        
+        
+        let likeButtonImage = book!.like ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
+            
+        let like = UIBarButtonItem(image: likeButtonImage, style: .plain, target: self, action: #selector(likeButtonClicked))
+        like.tintColor = .red
+        buttons = [like]
+        
+        if viewTransition == .main {
+            
             let update = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.down.fill"), style: .plain, target: self, action: #selector(updateButtonClicked))
-            delete.tintColor = .black
-            update.tintColor = .black
-            buttons = [delete, update]
-        case .search:
-            let save = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.down.fill"), style: .plain, target: self, action: #selector(saveButtonClicked))
-            save.tintColor = .black
-            buttons = [save]
-        default: print("")
+            update.tintColor = .systemBlue
+            buttons = [like, update]
+        } else {
+            memoTextView.isHidden = true
         }
+        
+       
         navigationItem.rightBarButtonItems = buttons
         
         
     }
     
-    @objc func saveButtonClicked() {
-        guard let book = book else { return }
-        do {
-            try realm.write {
-                realm.add(book)
-            }
-        } catch {
-            print("save error")
-        }
-    }
-    
     @objc func updateButtonClicked() {
         guard let book = book else { return }
-        //let item = BookTable(value: ["_id": book._id, "memo": memoTextView.text ?? nil])
         
         do {
             try realm.write {
                 book.memo = memoTextView.text
-                //realm.add(item, update: .modified)
             }
         } catch {
             print("")
         }
         
         //print(book)
-        dismiss(animated: true)
+        //dismiss(animated: true)
     }
     
-    @objc func deleteButtonClicked() {
-        if let book {
+    @objc func likeButtonClicked() {
+        
+        guard let book = book else { return }
+        print(book.like)
+        if book.like {
             removeImageFromDocument(fileName: "book_\(book._id).jpg")
-
-            try! realm.write {
-                realm.delete(book)
+            do {
+                try realm.write {
+                    realm.delete(book)
+                }
+            } catch {
+                print("delete error")
             }
             
-            dismiss(animated: true)
             
+            
+        } else {
+            book.like = true
+            do {
+                try realm.write {
+                    
+                    realm.add(book)
+                }
+            } catch {
+                print("save error")
+            }
         }
+        
+        dismiss(animated: true)
         
     }
     
-    
+   
    
     
     func setValues() {
@@ -108,7 +118,14 @@ class BookDetailViewController: UIViewController {
             //print(book)
             bookTitleLabel.text = book.title
             bookInfoLabel.text = "\(book.author) | \(book.publisher)"
-            let url = URL(string: book.poster)!
+            contentsLabel.text = book.contents
+            priceLabel.text = "\(book.price)원"
+            memoTextView.text = book.memo
+            
+            guard let url = URL(string: book.poster) else {
+                posterImageView.image = UIImage(systemName: "book.closed.fill")!
+                return
+            }
             DispatchQueue.global().async {
                 let data = try! Data(contentsOf: url)
                 DispatchQueue.main.async {
@@ -118,10 +135,7 @@ class BookDetailViewController: UIViewController {
             }
             saveImageToDocument(fileName: "book_\(book._id).jpg", image: book.poster)
             posterImageView.image = loadImageFromDocument(fileName: "book_\(book._id).jpg")
-            contentsLabel.text = book.contents
-            priceLabel.text = "\(book.price)원"
             
-            memoTextView.text = book.memo
             
             
             
@@ -150,9 +164,11 @@ class BookDetailViewController: UIViewController {
         memoTextView.layer.borderColor = UIColor.darkGray.cgColor
         memoTextView.layer.borderWidth = 1
         
+       
+        
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(dismissButton))
-        title = book.title
+        //title = book.title
     }
     
     @objc func dismissButton() {
