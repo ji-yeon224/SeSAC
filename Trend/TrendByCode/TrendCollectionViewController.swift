@@ -154,12 +154,11 @@ extension TrendCollectionViewController {
 
 extension TrendCollectionViewController: TrendViewProtocol {
     func didSelectItemAt(indexPath: IndexPath) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(identifier: DetailViewController.identifier) as! DetailViewController
-
+        
+        let vc = DetailTableViewController()
         let trendData = mainView.trendList[indexPath.row]
         
-        vc.trendData = trendData
+        vc.mainView.trendData = trendData
         
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen

@@ -13,8 +13,6 @@ protocol DetailViewProtocol: AnyObject {
 
 class DetailTableViewController: BaseViewController {
     
-    
-    
     let mainView = DetailView()
     override func loadView() {
         mainView.delegate = self
@@ -23,11 +21,46 @@ class DetailTableViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        callCreditData()
+        
+    }
+    
+    
+    override func configureView() {
+        title = "Detail Info"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(closeButtonClicked))
+        navigationItem.leftBarButtonItem?.tintColor = .darkGray
+    }
+    
+    @objc func closeButtonClicked() {
+        dismiss(animated: true)
+    }
+}
+
+extension DetailTableViewController {
+    func callCreditData() {
+        guard let trendData = mainView.trendData else {
+            dismiss(animated: true)
+            return
+        }
+        let parameter = "\(trendData.mediaType.rawValue)/\(trendData.id)/credits"
+        TMDBApi.shared.callCreditRequest(endPoint: .credit, parameter: parameter) { credit in
+            self.mainView.creditData = credit
+            
+            print(self.mainView.creditData)
+            self.mainView.tableView.reloadData()
+        }
+        
+        
     }
 }
 
 extension DetailTableViewController: DetailViewProtocol {
     func didSelectRowAt(indexPath: IndexPath) {
         print(indexPath)
+        if indexPath.section == 1 {
+            mainView.trendData!.isExpand.toggle()
+            mainView.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
+        }
     }
 }
