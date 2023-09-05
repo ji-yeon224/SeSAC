@@ -124,10 +124,19 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource, UITa
         let task = BookTable(title: selectedBook.title, author: selectedBook.author, poster: selectedBook.poster, contents: selectedBook.contents, datetime: selectedBook.datetime, publisher: selectedBook.publisher, price: selectedBook.price)
         
         
-        
         try! realm.write {
             realm.add(task)
         }
+//        let url = URL(string: selectedBook.poster)!
+//        DispatchQueue.global().async {
+//            let data = try! Data(contentsOf: url)
+//            DispatchQueue.main.async {
+//                self.saveImageToDocument(fileName: "book_\(task._id).jpg", image: UIImage(data: data) ?? UIImage(systemName: "book.closed.fill")!)
+//            }
+//
+//        }
+        
+        
         vc.bookId = task._id
         
         let nav = UINavigationController(rootViewController: vc)

@@ -64,11 +64,11 @@ class BookCollectionViewController: UICollectionViewController {
         
         
         let layout = UICollectionViewFlowLayout()
-        let spacing: CGFloat = 20
-        let width = UIScreen.main.bounds.width - (spacing * 3)
+        let spacing: CGFloat = 10
+        let width = UIScreen.main.bounds.width - (spacing * 4)
         
         
-        layout.itemSize = CGSize(width: width / 2, height: width / 1.5)
+        layout.itemSize = CGSize(width: width / 3, height: width / 1.5)
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
         layout.minimumLineSpacing = spacing
         layout.minimumInteritemSpacing = spacing

@@ -26,6 +26,7 @@ class BookDetailViewController: UIViewController {
         super.viewDidLoad()
         let realm = try! Realm()
         book = realm.object(ofType: BookTable.self, forPrimaryKey: bookId)
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         setProperties()
         setValues()
         
@@ -45,16 +46,14 @@ class BookDetailViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.posterImageView.image = UIImage(data: data)
                 }
-                
+
             }
+            saveImageToDocument(fileName: "book_\(book._id).jpg", image: book.poster)
+            posterImageView.image = loadImageFromDocument(fileName: "book_\(book._id).jpg")
             contentsLabel.text = book.contents
             priceLabel.text = "\(book.price)원"
             
-//            let dateformatter = DateFormatter()
-//            dateformatter.dateFormat = "YYYY-MM-DD'T'hh:mm:ssZ"
-//            print(dateformatter.date(from: book.datetime))
-//
-            //bookDateLabel.text = DateFormatter.convertDate(date: datefomatter.date(from: book.datetime))
+
             
             
             
