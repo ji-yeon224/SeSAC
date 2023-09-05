@@ -21,6 +21,7 @@ class TrendView: BaseView {
         view.register(DramaCollectionViewCell.self, forCellWithReuseIdentifier: DramaCollectionViewCell.identifier)
         view.dataSource = self
         view.delegate = self
+        view.prefetchDataSource = self
         
         return view
     }()
@@ -30,7 +31,7 @@ class TrendView: BaseView {
         layout.minimumLineSpacing = 8
         layout.minimumInteritemSpacing = 8
         let size = UIScreen.main.bounds.width - 40 //self.frame.width - 40
-        layout.itemSize = CGSize(width: size, height: size)
+        layout.itemSize = CGSize(width: size, height: size * 1.5)
         return layout
     }
     
@@ -50,7 +51,7 @@ class TrendView: BaseView {
 }
 
 
-extension TrendView: UICollectionViewDelegate, UICollectionViewDataSource {
+extension TrendView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDataSourcePrefetching {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return trendList.count
@@ -132,5 +133,34 @@ extension TrendView: UICollectionViewDelegate, UICollectionViewDataSource {
         delegate?.didSelectItemAt(indexPath: indexPath)
 
     }
+    
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            guard let cell = collectionView.cellForItem(at: indexPath) as? TrendCollectionCell else { return }
+            let trendData = trendList[indexPath.row]
+
+            if trendData.posterPath.count == 0 {
+                cell.imageView.image = UIImage(systemName: "xmark")!
+                cell.imageView.tintColor = .lightGray
+            } else {
+                let imageURL = TMDBApi.imgURL + trendData.posterPath
+                let url = URL(string: imageURL)!
+                DispatchQueue.global().async {
+                    let data = try! Data(contentsOf: url)
+                    DispatchQueue.main.async {
+                        cell.imageView.image = UIImage(data: data)
+
+                    }
+                }
+            }
+        }
+        
+
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
+        
+    }
+    
 }
 

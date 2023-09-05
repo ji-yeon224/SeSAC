@@ -75,7 +75,10 @@ class TrendCollectionCell: BaseCollectionViewCell {
         view.layer.shadowRadius = 5
     }
 
-    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.image = nil
+    }
     
     override func configureView() {
         contentView.addSubview(genreLabel)

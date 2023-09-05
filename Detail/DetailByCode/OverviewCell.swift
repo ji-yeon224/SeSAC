@@ -12,7 +12,7 @@ class OverviewCell: BaseTableViewCell {
     let overviewLabel = {
         let view = UILabel()
         view.numberOfLines = 0
-        view.text = "aaaaadfasdfjkfjkdfjkdjfdkfjkdjfdkfjdkfjdkfjdkfjkjfdkjfkdfjkdjfkdfjkdfdkfkdfjfkdfjkdfjkdjfkdjfkdjfkdjfkdjfkdjdkjlsa;dslkjfl;adjfl;adjfkdjfkdjfkdjfkdjfkdjfkjdkfjkdjfk"
+        
         return view
     }()
     
@@ -44,6 +44,7 @@ class OverviewCell: BaseTableViewCell {
     }
     
     func setOverViewCell(isExpand: Bool) {
+        
         moreImageView.image = isExpand ? UIImage(systemName: "chevron.up") : UIImage(systemName: "chevron.down")
     }
     

@@ -13,6 +13,7 @@ class CastCell: BaseTableViewCell {
         let view = UIImageView()
         view.image = UIImage(systemName: "person")
         view.tintColor = .darkGray
+        view.contentMode = .scaleToFill
         return view
     }()
     
@@ -41,11 +42,13 @@ class CastCell: BaseTableViewCell {
         profileImageView.snp.makeConstraints { make in
             make.leading.verticalEdges.equalTo(contentView).inset(10)
             make.width.equalTo(contentView).multipliedBy(0.2)
+            make.height.equalTo(profileImageView.snp.width).multipliedBy(4/3)
         }
         
         nameLabel.snp.makeConstraints { make in
             make.leading.equalTo(profileImageView.snp.trailing).offset(20)
             make.top.equalTo(contentView).offset(12)
+            
             make.trailing.equalTo(contentView).offset(12)
             
             
@@ -54,9 +57,15 @@ class CastCell: BaseTableViewCell {
         characterLabel.snp.makeConstraints { make in
             make.leading.equalTo(profileImageView.snp.trailing).offset(20)
             make.top.equalTo(nameLabel.snp.bottom).offset(12)
-            make.bottom.lessThanOrEqualTo(contentView).offset(5)
+            
+            make.bottom.equalTo(contentView).offset(-10)
             
         }
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        profileImageView.image = nil
     }
     
     

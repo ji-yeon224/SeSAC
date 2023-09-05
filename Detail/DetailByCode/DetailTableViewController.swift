@@ -23,6 +23,7 @@ class DetailTableViewController: BaseViewController {
         super.viewDidLoad()
         callCreditData()
         
+        
     }
     
     
@@ -60,7 +61,8 @@ extension DetailTableViewController: DetailViewProtocol {
         print(indexPath)
         if indexPath.section == 1 {
             mainView.trendData!.isExpand.toggle()
-            mainView.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
+            print(mainView.trendData?.isExpand)
+            mainView.tableView.reloadRows(at: [indexPath], with: .none)
         }
     }
 }

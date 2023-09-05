@@ -20,6 +20,7 @@ class DetailView: BaseView {
         let view = UITableView()
         view.dataSource = self
         view.delegate = self
+        view.prefetchDataSource = self
         view.rowHeight = UITableView.automaticDimension
         view.register(CastCell.self, forCellReuseIdentifier: CastCell.identifier)
         view.register(OverviewCell.self, forCellReuseIdentifier: OverviewCell.identifier)
@@ -38,11 +39,12 @@ class DetailView: BaseView {
     }
     
     
+    
 }
 
 
 
-extension DetailView: UITableViewDelegate, UITableViewDataSource {
+extension DetailView: UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -66,7 +68,7 @@ extension DetailView: UITableViewDelegate, UITableViewDataSource {
         } else if section == 2 {
             return "Cast"
         }
-        return ""
+        return nil
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -127,12 +129,95 @@ extension DetailView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
-            let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: DetailHeaderView.identifier) as? DetailHeaderView
+            guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: DetailHeaderView.identifier) as? DetailHeaderView else {
+                return UITableViewHeaderFooterView()
+            }
+            headerConfig(header: header)
             return header
         }
         
         return nil
         
         
+    }
+    
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+
+
+
+//        if credits.profilePath == nil {
+//            cell.profileImageView.image = UIImage(systemName: "person")
+//            cell.profileImageView.tintColor = .lightGray
+//        } else {
+//            let imageURL = TMDBApi.imgURL + credits.profilePath!
+//            let url = URL(string: imageURL)
+//            DispatchQueue.global().async {
+//                let data = try! Data(contentsOf: url!)
+//                DispatchQueue.main.async {
+//                    cell.profileImageView.image = UIImage(data: data)
+//
+//                }
+//            }
+//
+//        }
+
+
+    }
+
+    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
+        
+    }
+    
+    
+    func headerConfig(header: DetailHeaderView) {
+       
+        guard let trendData else {
+            return
+        }
+        
+        switch trendData.mediaType {
+        case .movie: header.titleLabel.text = trendData.title
+        case .tv: header.titleLabel.text = trendData.name
+        }
+        
+        
+        header.titleLabel.numberOfLines = 0
+        header.titleLabel.textColor = .white
+        header.titleLabel.font = .boldSystemFont(ofSize: 15)
+        
+        //poster
+        let imageURL = TMDBApi.imgURL + trendData.posterPath
+        if let url = URL(string: imageURL){
+            DispatchQueue.global().async {
+                let data = try! Data(contentsOf: url)
+                DispatchQueue.main.async {
+                    header.posterImageView.image = UIImage(data: data)
+                    
+                }
+            }
+        } else {
+            header.posterImageView.backgroundColor = .lightGray
+        }
+        
+        //backdrop
+        header.backdropImageView.contentMode = .scaleAspectFill
+        header.backdropImageView.layer.backgroundColor = UIColor.black.cgColor
+        header.backdropImageView.alpha = 0.8
+
+        
+        
+        let backdropURL = TMDBApi.imgURL + trendData.backdropPath
+        if let url = URL(string: backdropURL){
+            DispatchQueue.global().async {
+                let data = try! Data(contentsOf: url)
+                DispatchQueue.main.async {
+                    header.backdropImageView.image = UIImage(data: data)
+                    
+                    
+                }
+            }
+        } else {
+            header.backdropImageView.backgroundColor = .lightGray
+        }
     }
 }
