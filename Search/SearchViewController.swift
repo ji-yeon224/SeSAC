@@ -124,9 +124,9 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource, UITa
         let task = BookTable(title: selectedBook.title, author: selectedBook.author, poster: selectedBook.poster, contents: selectedBook.contents, datetime: selectedBook.datetime, publisher: selectedBook.publisher, price: selectedBook.price)
         
         
-        try! realm.write {
-            realm.add(task)
-        }
+//        try! realm.write {
+//            realm.add(task)
+//        }
 //        let url = URL(string: selectedBook.poster)!
 //        DispatchQueue.global().async {
 //            let data = try! Data(contentsOf: url)
@@ -137,8 +137,9 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource, UITa
 //        }
         
         
-        vc.bookId = task._id
-        
+        //vc.bookId = task._id
+        vc.book = task
+        vc.viewTransition = .search
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .overFullScreen
         present(nav, animated: true)

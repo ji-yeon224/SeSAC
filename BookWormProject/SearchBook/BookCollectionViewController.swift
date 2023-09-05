@@ -19,6 +19,8 @@ class BookCollectionViewController: UICollectionViewController {
     
     var tasks: Results<BookTable>!
     
+    let realm = try! Realm()
+    
     var color: [UIColor] = [.purple, .systemBrown, .orange, .darkGray, .blue, .systemRed, .systemIndigo, .systemTeal, .systemMint]
 
     override func viewDidLoad() {
@@ -31,18 +33,24 @@ class BookCollectionViewController: UICollectionViewController {
         setCollectionViewLayout()
         color.shuffle()
         
-        let realm = try! Realm()
-        tasks = realm.objects(BookTable.self)
         
+        tasks = realm.objects(BookTable.self)
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        //print(#function)
+       
         
+        print(#function)
         collectionView.reloadData()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print(#function)
+    }
     
     
     
@@ -112,10 +120,11 @@ class BookCollectionViewController: UICollectionViewController {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(identifier: BookDetailViewController.identifier) as! BookDetailViewController
         let selectItem = tasks[indexPath.row]
-       
-        vc.bookId = selectItem._id
+        
+        vc.book = selectItem
+        vc.viewTransition = .main
         let nav = UINavigationController(rootViewController: vc)
-        nav.modalPresentationStyle = .overFullScreen
+        nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true)
         
         

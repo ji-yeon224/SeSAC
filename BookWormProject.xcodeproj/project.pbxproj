@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE02AAC82AA711E60041869D /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02AAC72AA711E60041869D /* FileManager+Extension.swift */; };
+		CE02AACA2AA745870041869D /* ViewTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02AAC92AA745870041869D /* ViewTransition.swift */; };
 		CE446C462AA5A24C0020D753 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CE446C452AA5A24C0020D753 /* Realm */; };
 		CE446C482AA5A24C0020D753 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE446C472AA5A24C0020D753 /* RealmSwift */; };
 		CE446C4B2AA5A32E0020D753 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE446C4A2AA5A32E0020D753 /* BookModel.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		CE02AAC72AA711E60041869D /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
+		CE02AAC92AA745870041869D /* ViewTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTransition.swift; sourceTree = "<group>"; };
 		CE446C4A2AA5A32E0020D753 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
 		CE446C4F2AA5AFDB0020D753 /* ReusableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableProtocol.swift; sourceTree = "<group>"; };
 		CE446C512AA5BECC0020D753 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				CE02AAC72AA711E60041869D /* FileManager+Extension.swift */,
+				CE02AAC92AA745870041869D /* ViewTransition.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				CE446C502AA5AFDB0020D753 /* ReusableProtocol.swift in Sources */,
 				CED30B082A834F5800722229 /* BookDetailViewController.swift in Sources */,
 				CEC5EE932A77D8B000EF23DA /* MovieInfo.swift in Sources */,
+				CE02AACA2AA745870041869D /* ViewTransition.swift in Sources */,
 				CE02AAC82AA711E60041869D /* FileManager+Extension.swift in Sources */,
 				CEC5EE912A77D61800EF23DA /* Movie.swift in Sources */,
 				CEA154A92A7A564B00B847D3 /* TransitionEnum.swift in Sources */,

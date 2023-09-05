@@ -9,13 +9,20 @@
 import UIKit
 
 extension UIViewController {
-    //document 폴더에 이미지를 저장하는 메서드
-    func saveImageToDocument(fileName: String, image: String) {
+    
+    func getFilePath(fileName: String) -> URL? {
         // 1. 도큐먼트 경로 찾기
-        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
         
         // 2. 저장할 경로 설정(세부 경로, 이미지를 저장할 위치)
-        let fileURL = documentDirectory.appendingPathComponent(fileName)
+        return documentDirectory.appendingPathComponent(fileName)
+    }
+    
+    
+    //document 폴더에 이미지를 저장하는 메서드
+    func saveImageToDocument(fileName: String, image: String) {
+       
+        guard let fileURL = getFilePath(fileName: fileName) else { return }
         
         // 3. 이미지 변환
         DispatchQueue.global().async {
@@ -39,11 +46,9 @@ extension UIViewController {
     func loadImageFromDocument(fileName: String) -> UIImage {
         
         
-        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return UIImage(systemName: "photo")! }
+        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return UIImage(systemName: "book.closed.fill")! }
         
         let fileURL = documentDirectory.appendingPathComponent(fileName)
-        print(fileURL)
-        print(fileName)
         
         if FileManager.default.fileExists(atPath: fileURL.path) {
             return UIImage(contentsOfFile: fileURL.path)!
@@ -52,4 +57,17 @@ extension UIViewController {
         }
         
     }
+    
+    func removeImageFromDocument(fileName: String) {
+        
+        guard let fileURL = getFilePath(fileName: fileName) else { return }
+        
+        do {
+            try FileManager.default.removeItem(at: fileURL)
+        } catch {
+            print(error)
+        }
+        
+    }
+    
 }
