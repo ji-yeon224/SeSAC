@@ -14,8 +14,6 @@ import RealmSwift
 
 class SearchViewController: UIViewController {
     
-    //static let identifier = "SearchViewController"
-    
     
     @IBOutlet var tableView: UITableView!
     let searchBar = UISearchBar()
@@ -36,6 +34,7 @@ class SearchViewController: UIViewController {
         searchBar.placeholder = "도서를 검색하세요."
         searchBar.delegate = self
         searchBar.showsCancelButton = true
+        searchBar.resignFirstResponder()
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             image: UIImage(systemName: "xmark"),
             style: .plain,
@@ -120,7 +119,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource, UITa
         
         let selectedBook = bookList[indexPath.row]
         
-        let task = BookTable(title: selectedBook.title, author: selectedBook.author, poster: selectedBook.poster, contents: selectedBook.contents, datetime: selectedBook.datetime, publisher: selectedBook.publisher, price: selectedBook.price)
+        let task = BookTable(title: selectedBook.title, author: selectedBook.author, poster: selectedBook.poster, contents: selectedBook.contents, publisher: selectedBook.publisher, price: selectedBook.price)
         
         
         vc.book = task

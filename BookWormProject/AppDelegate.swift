@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,7 +14,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let config = Realm.Configuration(schemaVersion: 3) { migration, oldSchemaVersion in
+            
+            if oldSchemaVersion < 1 { } // dateColumn delete
+            
+            if oldSchemaVersion < 2 {  // poster -> posterURL column name change
+                migration.renameProperty(onType: BookTable.className(), from: "poster", to: "posterURL")
+            }
+            
+            if oldSchemaVersion < 3 { // author + publisher -> info column add
+                migration.enumerateObjects(ofType: BookTable.className()) { oldObject, newObject in
+                    guard let old = oldObject else { return }
+                    guard let new = newObject else { return }
+                    
+                    new["info"] = "\(old["author"] ?? "")) | \(old["publisher"] ?? "")"
+                }
+            }
+            
+            
+        }
+        
+        Realm.Configuration.defaultConfiguration = config
+        
         return true
     }
 

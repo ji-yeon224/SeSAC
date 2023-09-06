@@ -24,7 +24,7 @@ class BookDetailViewController: UIViewController {
     
     var book: BookTable?
     var bookId: ObjectId?
-    let repository = BookTabelRepository()
+    let repository = BookTableRepository()
     let placeholder = "메모를 입력하세요."
     var viewTransition: ViewTransition?
     
@@ -37,6 +37,7 @@ class BookDetailViewController: UIViewController {
         setValues()
         configBarButtonItem()
         setLikeButtonImage(like: book.like)
+        
         
     }
     
@@ -55,7 +56,7 @@ class BookDetailViewController: UIViewController {
         } else {
             book.like = true
             repository.createItem(book)
-            saveImageToDocument(fileName: "book_\(book._id).jpg", image: book.poster)
+            saveImageToDocument(fileName: "book_\(book._id).jpg", image: book.posterURL)
         }
         
         dismiss(animated: true)
@@ -93,12 +94,12 @@ class BookDetailViewController: UIViewController {
         if let book {
             //print(book)
             bookTitleLabel.text = book.title
-            bookInfoLabel.text = "\(book.author) | \(book.publisher)"
+            bookInfoLabel.text = book.info
             contentsLabel.text = book.contents
             priceLabel.text = "\(book.price)원"
             memoTextView.text = book.memo
             
-            guard let url = URL(string: book.poster) else {
+            guard let url = URL(string: book.posterURL) else {
                 posterImageView.image = UIImage(systemName: "book.closed.fill")!
                 return
             }

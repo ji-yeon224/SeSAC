@@ -10,13 +10,12 @@ import RealmSwift
 
 protocol BookTableRepositoryType: AnyObject {
     func fetch() -> Results<BookTable>
-    //func fetchFilterByMemo() -> Results<BookTable>
     func createItem(_ item: BookTable)
     func deleteItem(_ item: BookTable)
     func updateItem(id: ObjectId, memo: String)
 }
 
-class BookTabelRepository: BookTableRepositoryType {
+final class BookTableRepository: BookTableRepositoryType {
     
     private let realm = try! Realm()
     

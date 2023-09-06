@@ -15,7 +15,7 @@ class BookCollectionViewCell: UICollectionViewCell {
     func configCell(book: BookTable) {
         
         
-        guard let url = URL(string: book.poster) else {
+        guard let url = URL(string: book.posterURL) else {
             posterImageView.image = UIImage(systemName: "book.closed.fill")!
             posterImageView.tintColor = .lightGray
             return

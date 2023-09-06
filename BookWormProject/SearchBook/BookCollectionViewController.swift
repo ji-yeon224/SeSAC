@@ -18,7 +18,7 @@ class BookCollectionViewController: UICollectionViewController {
     
     var tasks: Results<BookTable>!
     
-    let repository = BookTabelRepository()
+    let repository = BookTableRepository()
     
     var color: [UIColor] = [.purple, .systemBrown, .orange, .darkGray, .blue, .systemRed, .systemIndigo, .systemTeal, .systemMint]
 
