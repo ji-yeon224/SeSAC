@@ -32,7 +32,7 @@ class BookTable: Object {
         self.publisher = publisher
         self.price = price
         self.like = false
-        self.memo = ""
+        self.memo = nil
         
         
     }

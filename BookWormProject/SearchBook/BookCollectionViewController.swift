@@ -8,7 +8,6 @@
 import UIKit
 import RealmSwift
 
-
 class BookCollectionViewController: UICollectionViewController {
     
     var movieInfo = MovieInfo() {
@@ -19,7 +18,7 @@ class BookCollectionViewController: UICollectionViewController {
     
     var tasks: Results<BookTable>!
     
-    let realm = try! Realm()
+    let repository = BookTabelRepository()
     
     var color: [UIColor] = [.purple, .systemBrown, .orange, .darkGray, .blue, .systemRed, .systemIndigo, .systemTeal, .systemMint]
 
@@ -28,7 +27,6 @@ class BookCollectionViewController: UICollectionViewController {
         print(#function)
         title = "My Book"
         
-        print(realm.configuration.fileURL)
         
         let nib = UINib(nibName: BookCollectionViewCell.identifier, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: BookCollectionViewCell.identifier)
@@ -36,7 +34,7 @@ class BookCollectionViewController: UICollectionViewController {
         color.shuffle()
         
         
-        tasks = realm.objects(BookTable.self)
+        tasks = repository.fetch()
         
     }
     

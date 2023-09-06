@@ -24,7 +24,7 @@ class BookDetailViewController: UIViewController {
     
     var book: BookTable?
     var bookId: ObjectId?
-    let realm = try! Realm()
+    let repository = BookTabelRepository()
     let placeholder = "메모를 입력하세요."
     var viewTransition: ViewTransition?
     
@@ -48,25 +48,13 @@ class BookDetailViewController: UIViewController {
         
         if book.like {
             removeImageFromDocument(fileName: "book_\(book._id).jpg")
-            do {
-                try realm.write {
-                    realm.delete(book)
-                }
-            } catch {
-                print("delete error")
-            }
+            repository.deleteItem(book)
             
             
             
         } else {
-            do {
-                try realm.write {
-                    book.like = true
-                    realm.add(book)
-                }
-            } catch {
-                print("save error")
-            }
+            book.like = true
+            repository.createItem(book)
             saveImageToDocument(fileName: "book_\(book._id).jpg", image: book.poster)
         }
         
@@ -91,14 +79,10 @@ class BookDetailViewController: UIViewController {
     
     @objc func updateButtonClicked() {
         guard let book = book else { return }
+        let memo = memoTextView.text.trimmingCharacters(in: .whitespaces)
         
-        do {
-            try realm.write {
-                book.memo = memoTextView.text
-            }
-        } catch {
-            print("")
-        }
+        repository.updateItem(id: book._id, memo: memo.count == 0 ? "" : memo)
+        
         
     }
     
