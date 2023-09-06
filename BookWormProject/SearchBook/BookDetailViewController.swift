@@ -20,6 +20,8 @@ class BookDetailViewController: UIViewController {
     @IBOutlet var priceLabel: UILabel!
     @IBOutlet var memoTextView: UITextView!
     
+    @IBOutlet var likeButton: UIButton!
+    
     var book: BookTable?
     var bookId: ObjectId?
     let realm = try! Realm()
@@ -34,31 +36,55 @@ class BookDetailViewController: UIViewController {
         setProperties()
         setValues()
         configBarButtonItem()
+        setLikeButtonImage(like: book.like)
         
     }
     
-    func configBarButtonItem() {
-        var buttons: [UIBarButtonItem]?
+    
+    @IBAction func likeButtonTapped(_ sender: UIButton) {
+        
+        guard let book = book else { return }
         
         
-        
-        let likeButtonImage = book!.like ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
+        if book.like {
+            removeImageFromDocument(fileName: "book_\(book._id).jpg")
+            do {
+                try realm.write {
+                    realm.delete(book)
+                }
+            } catch {
+                print("delete error")
+            }
             
-        let like = UIBarButtonItem(image: likeButtonImage, style: .plain, target: self, action: #selector(likeButtonClicked))
-        like.tintColor = .red
-        buttons = [like]
+            
+            
+        } else {
+            do {
+                try realm.write {
+                    book.like = true
+                    realm.add(book)
+                }
+            } catch {
+                print("save error")
+            }
+            saveImageToDocument(fileName: "book_\(book._id).jpg", image: book.poster)
+        }
+        
+        dismiss(animated: true)
+    }
+    
+    func configBarButtonItem() {
         
         if viewTransition == .main {
-            
             let update = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.down.fill"), style: .plain, target: self, action: #selector(updateButtonClicked))
             update.tintColor = .systemBlue
-            buttons = [like, update]
+            navigationItem.rightBarButtonItem = update
         } else {
             memoTextView.isHidden = true
         }
         
        
-        navigationItem.rightBarButtonItems = buttons
+        
         
         
     }
@@ -74,43 +100,9 @@ class BookDetailViewController: UIViewController {
             print("")
         }
         
-        //print(book)
-        //dismiss(animated: true)
     }
     
-    @objc func likeButtonClicked() {
-        
-        guard let book = book else { return }
-        print(book.like)
-        if book.like {
-            removeImageFromDocument(fileName: "book_\(book._id).jpg")
-            do {
-                try realm.write {
-                    realm.delete(book)
-                }
-            } catch {
-                print("delete error")
-            }
-            
-            
-            
-        } else {
-            book.like = true
-            do {
-                try realm.write {
-                    
-                    realm.add(book)
-                }
-            } catch {
-                print("save error")
-            }
-        }
-        
-        dismiss(animated: true)
-        
-    }
     
-   
    
     
     func setValues() {
@@ -133,7 +125,7 @@ class BookDetailViewController: UIViewController {
                 }
 
             }
-            saveImageToDocument(fileName: "book_\(book._id).jpg", image: book.poster)
+            
             posterImageView.image = loadImageFromDocument(fileName: "book_\(book._id).jpg")
             
             
@@ -143,13 +135,14 @@ class BookDetailViewController: UIViewController {
     }
     
     
-    
+    func setLikeButtonImage(like: Bool) {
+        let img = like ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
+        likeButton.setImage(img, for: .normal)
+        likeButton.tintColor = .red
+    }
     
     func setProperties() {
         
-        guard let book = book else {
-            return
-        }
         
         backView.backgroundColor = .systemGray6
         
@@ -164,11 +157,12 @@ class BookDetailViewController: UIViewController {
         memoTextView.layer.borderColor = UIColor.darkGray.cgColor
         memoTextView.layer.borderWidth = 1
         
-       
+        //let likeImage = UIImage(systemName: "heart")!
+        
+        
         
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(dismissButton))
-        //title = book.title
     }
     
     @objc func dismissButton() {

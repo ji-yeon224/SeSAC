@@ -322,6 +322,17 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8u-sV-Mz4">
+                                        <rect key="frame" x="307.66666666666669" y="10" width="43.333333333333314" height="43.333333333333336"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Y8u-sV-Mz4" secondAttribute="height" multiplier="1:1" id="uPO-jp-cC7"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <action selector="likeButtonTapped:" destination="ncq-et-woy" eventType="touchUpInside" id="j3u-JC-ujX"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -329,13 +340,16 @@
                                     <constraint firstItem="Qla-Zl-1yi" firstAttribute="top" secondItem="OhE-Mz-JzG" secondAttribute="top" id="3eK-zP-ISo"/>
                                     <constraint firstItem="Qla-Zl-1yi" firstAttribute="leading" secondItem="OhE-Mz-JzG" secondAttribute="leading" constant="8" id="JR5-Pc-KMo"/>
                                     <constraint firstAttribute="bottom" secondItem="Qla-Zl-1yi" secondAttribute="bottom" constant="16" id="Nuw-14-ueM"/>
+                                    <constraint firstItem="Y8u-sV-Mz4" firstAttribute="top" secondItem="OhE-Mz-JzG" secondAttribute="top" constant="10" id="OUd-FF-2hI"/>
                                     <constraint firstItem="o29-5Z-DFK" firstAttribute="leading" secondItem="Qla-Zl-1yi" secondAttribute="trailing" constant="16" id="SLw-Sd-pPH"/>
                                     <constraint firstAttribute="bottom" secondItem="H3B-cl-CgQ" secondAttribute="bottom" constant="16" id="Skf-PZ-dQO"/>
                                     <constraint firstItem="H3B-cl-CgQ" firstAttribute="leading" secondItem="Qla-Zl-1yi" secondAttribute="trailing" constant="16" id="TSC-kN-pt2"/>
                                     <constraint firstItem="bMz-o1-OCG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="OhE-Mz-JzG" secondAttribute="top" constant="103.33" id="Vsr-0s-Hyd"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y8u-sV-Mz4" secondAttribute="trailing" constant="10" id="XkS-Fs-gWQ"/>
                                     <constraint firstAttribute="trailing" secondItem="H3B-cl-CgQ" secondAttribute="trailing" constant="20" id="ZSk-xx-sJR"/>
                                     <constraint firstItem="o29-5Z-DFK" firstAttribute="top" secondItem="bMz-o1-OCG" secondAttribute="bottom" constant="20" id="bPA-vx-e1r"/>
                                     <constraint firstItem="bMz-o1-OCG" firstAttribute="leading" secondItem="Qla-Zl-1yi" secondAttribute="trailing" constant="16" id="cYQ-FE-07Y"/>
+                                    <constraint firstItem="bMz-o1-OCG" firstAttribute="top" secondItem="Y8u-sV-Mz4" secondAttribute="bottom" constant="50" id="erI-vM-H7J"/>
                                     <constraint firstAttribute="trailing" secondItem="o29-5Z-DFK" secondAttribute="trailing" constant="20" id="hMF-18-a2f"/>
                                     <constraint firstAttribute="trailing" secondItem="bMz-o1-OCG" secondAttribute="trailing" constant="20" id="nYa-jv-50m"/>
                                 </constraints>
@@ -376,6 +390,7 @@
                         <outlet property="bookInfoLabel" destination="o29-5Z-DFK" id="hSu-rQ-xGn"/>
                         <outlet property="bookTitleLabel" destination="bMz-o1-OCG" id="GBF-KR-vpj"/>
                         <outlet property="contentsLabel" destination="KhO-xP-DoH" id="ckh-2w-5J0"/>
+                        <outlet property="likeButton" destination="Y8u-sV-Mz4" id="gGk-li-jZc"/>
                         <outlet property="memoTextView" destination="DMK-PY-IFL" id="WOX-Xi-D0U"/>
                         <outlet property="posterImageView" destination="Qla-Zl-1yi" id="cK5-Lb-dNO"/>
                         <outlet property="priceLabel" destination="H3B-cl-CgQ" id="Yr4-sG-QqI"/>

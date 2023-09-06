@@ -25,8 +25,10 @@ class BookCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(#function)
         title = "My Book"
+        
+        print(realm.configuration.fileURL)
         
         let nib = UINib(nibName: BookCollectionViewCell.identifier, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: BookCollectionViewCell.identifier)
