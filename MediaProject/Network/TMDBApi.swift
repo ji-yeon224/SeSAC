@@ -15,7 +15,7 @@ class TMDBApi {
     private init() { }
     static let imgURL = "https://image.tmdb.org/t/p/original"
     
-    
+
     
     func callGenreRequest(endPoint: Endpoint, parameter: String, completionHandler: @escaping (Genre) -> ()) {
         let url = endPoint.requestURL(type: parameter) + "?api_key=\(APIKey.tmdbKey)"
@@ -51,6 +51,7 @@ class TMDBApi {
                 }
             }
     }
+    
     
     
     func callVideoRequest(endPoint: Endpoint, parameter: String, completionHandler: @escaping (Videos) -> ()) {

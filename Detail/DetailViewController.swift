@@ -35,7 +35,6 @@ class DetailViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        //tableView.allowsSelection = false
         tableView.rowHeight = UITableView.automaticDimension
         
         
@@ -53,7 +52,7 @@ class DetailViewController: UIViewController {
     
     @objc func moveToRelatedView() {
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: RelatedViewController.identifier) as! RelatedViewController
+        guard let vc = sb.instantiateViewController(withIdentifier: RelatedViewController.identifier) as? RelatedViewController else { return }
         
         guard let trendData else {
             return
