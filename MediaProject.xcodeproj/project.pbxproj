@@ -30,6 +30,7 @@
 		CE8CC7AA2A9F147D0063ADC1 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CC7A92A9F147D0063ADC1 /* ProfileHeaderView.swift */; };
 		CE8CC7AC2A9F15150063ADC1 /* BaseTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CC7AB2A9F15150063ADC1 /* BaseTableViewHeaderFooterView.swift */; };
 		CE8CC7AF2A9F82240063ADC1 /* TrendCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CC7AE2A9F82240063ADC1 /* TrendCollectionCell.swift */; };
+		CEA65CBC2AA94C8400B6CDA4 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA65CBB2AA94C8400B6CDA4 /* TabbarController.swift */; };
 		CEB3326D2A9D86D8006F86E3 /* TrendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3326C2A9D86D8006F86E3 /* TrendView.swift */; };
 		CEB332A62A9DADF3006F86E3 /* TrendCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332A52A9DADF3006F86E3 /* TrendCollectionViewController.swift */; };
 		CEB332A82A9DAE80006F86E3 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB332A72A9DAE80006F86E3 /* BaseCollectionViewCell.swift */; };
@@ -90,6 +91,7 @@
 		CE8CC7A92A9F147D0063ADC1 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		CE8CC7AB2A9F15150063ADC1 /* BaseTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		CE8CC7AE2A9F82240063ADC1 /* TrendCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendCollectionCell.swift; sourceTree = "<group>"; };
+		CEA65CBB2AA94C8400B6CDA4 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		CEB3326C2A9D86D8006F86E3 /* TrendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendView.swift; sourceTree = "<group>"; };
 		CEB332A52A9DADF3006F86E3 /* TrendCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendCollectionViewController.swift; sourceTree = "<group>"; };
 		CEB332A72A9DAE80006F86E3 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				CEBF1A602A8622ED000E099C /* LaunchScreen.storyboard */,
 				CEBF1A632A8622ED000E099C /* Info.plist */,
 				CEBF1A922A8881CD000E099C /* Type.swift */,
+				CEA65CBB2AA94C8400B6CDA4 /* TabbarController.swift */,
 			);
 			path = MediaProject;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				CEBF1A582A8622EB000E099C /* SceneDelegate.swift in Sources */,
 				CE5C9ED72A8F50580011664D /* RelatedCollectionViewCell.swift in Sources */,
 				CEBF1A932A8881CD000E099C /* Type.swift in Sources */,
+				CEA65CBC2AA94C8400B6CDA4 /* TabbarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
