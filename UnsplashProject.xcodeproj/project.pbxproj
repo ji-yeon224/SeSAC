@@ -16,6 +16,15 @@
 		CE72B7242AAEAE4D00CC5F7E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE72B7262AAEAE4D00CC5F7E /* Localizable.strings */; };
 		CE72B72A2AAEBABF00CC5F7E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B7292AAEBABF00CC5F7E /* String+Extension.swift */; };
 		CE72B72D2AAEBDE200CC5F7E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE72B72F2AAEBDE200CC5F7E /* InfoPlist.strings */; };
+		CE72B7352AAFED6900CC5F7E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B7342AAFED6900CC5F7E /* LoginViewController.swift */; };
+		CE72B7372AAFF2F700CC5F7E /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B7362AAFF2F700CC5F7E /* Observable.swift */; };
+		CE72B7392AAFFE0800CC5F7E /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B7382AAFFE0800CC5F7E /* SampleViewController.swift */; };
+		CE72B73B2AB0015F00CC5F7E /* SampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B73A2AB0015F00CC5F7E /* SampleViewModel.swift */; };
+		CE72B73D2AB00E4C00CC5F7E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B73C2AB00E4C00CC5F7E /* LoginViewModel.swift */; };
+		CE72B73F2AB02A6000CC5F7E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B73E2AB02A6000CC5F7E /* APIService.swift */; };
+		CE72B7422AB02A8F00CC5F7E /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B7412AB02A8F00CC5F7E /* Photo.swift */; };
+		CE72B7442AB02B6800CC5F7E /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B7432AB02B6800CC5F7E /* PhotoViewController.swift */; };
+		CE72B7462AB02DA400CC5F7E /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B7452AB02DA400CC5F7E /* PhotoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +47,15 @@
 		CE72B7292AAEBABF00CC5F7E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		CE72B72E2AAEBDE200CC5F7E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CE72B7302AAEBE8200CC5F7E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CE72B7342AAFED6900CC5F7E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CE72B7362AAFF2F700CC5F7E /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		CE72B7382AAFFE0800CC5F7E /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
+		CE72B73A2AB0015F00CC5F7E /* SampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewModel.swift; sourceTree = "<group>"; };
+		CE72B73C2AB00E4C00CC5F7E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		CE72B73E2AB02A6000CC5F7E /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		CE72B7412AB02A8F00CC5F7E /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		CE72B7432AB02B6800CC5F7E /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		CE72B7452AB02DA400CC5F7E /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +88,8 @@
 		CE72B7052AAE992300CC5F7E /* UnsplashProject */ = {
 			isa = PBXGroup;
 			children = (
+				CE72B7402AB02A8400CC5F7E /* Photo */,
+				CE72B7332AAFED5600CC5F7E /* Login */,
 				CE72B7262AAEAE4D00CC5F7E /* Localizable.strings */,
 				CE72B7062AAE992300CC5F7E /* AppDelegate.swift */,
 				CE72B7082AAE992300CC5F7E /* SceneDelegate.swift */,
@@ -82,6 +102,29 @@
 				CE72B72F2AAEBDE200CC5F7E /* InfoPlist.strings */,
 			);
 			path = UnsplashProject;
+			sourceTree = "<group>";
+		};
+		CE72B7332AAFED5600CC5F7E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CE72B7342AAFED6900CC5F7E /* LoginViewController.swift */,
+				CE72B7362AAFF2F700CC5F7E /* Observable.swift */,
+				CE72B7382AAFFE0800CC5F7E /* SampleViewController.swift */,
+				CE72B73A2AB0015F00CC5F7E /* SampleViewModel.swift */,
+				CE72B73C2AB00E4C00CC5F7E /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		CE72B7402AB02A8400CC5F7E /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				CE72B73E2AB02A6000CC5F7E /* APIService.swift */,
+				CE72B7412AB02A8F00CC5F7E /* Photo.swift */,
+				CE72B7432AB02B6800CC5F7E /* PhotoViewController.swift */,
+				CE72B7452AB02DA400CC5F7E /* PhotoViewModel.swift */,
+			);
+			path = Photo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,7 +205,16 @@
 				CE72B72A2AAEBABF00CC5F7E /* String+Extension.swift in Sources */,
 				CE72B70B2AAE992300CC5F7E /* ViewController.swift in Sources */,
 				CE72B7072AAE992300CC5F7E /* AppDelegate.swift in Sources */,
+				CE72B7352AAFED6900CC5F7E /* LoginViewController.swift in Sources */,
+				CE72B7372AAFF2F700CC5F7E /* Observable.swift in Sources */,
+				CE72B7442AB02B6800CC5F7E /* PhotoViewController.swift in Sources */,
 				CE72B7092AAE992300CC5F7E /* SceneDelegate.swift in Sources */,
+				CE72B73F2AB02A6000CC5F7E /* APIService.swift in Sources */,
+				CE72B7422AB02A8F00CC5F7E /* Photo.swift in Sources */,
+				CE72B73B2AB0015F00CC5F7E /* SampleViewModel.swift in Sources */,
+				CE72B7462AB02DA400CC5F7E /* PhotoViewModel.swift in Sources */,
+				CE72B7392AAFFE0800CC5F7E /* SampleViewController.swift in Sources */,
+				CE72B73D2AB00E4C00CC5F7E /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
