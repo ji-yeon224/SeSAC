@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  UnsplashProject
+
+  Created by 김지연 on 2023/09/11.
+  
+*/
+
+"NSLocationWhenInUseUsageDescription" = "Location Please";
+"CFBundleDisplayName" = "SeSAC";

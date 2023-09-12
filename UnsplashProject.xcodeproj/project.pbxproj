@@ -13,6 +13,9 @@
 		CE72B70E2AAE992300CC5F7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE72B70C2AAE992300CC5F7E /* Main.storyboard */; };
 		CE72B7102AAE992400CC5F7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE72B70F2AAE992400CC5F7E /* Assets.xcassets */; };
 		CE72B7132AAE992400CC5F7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE72B7112AAE992400CC5F7E /* LaunchScreen.storyboard */; };
+		CE72B7242AAEAE4D00CC5F7E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE72B7262AAEAE4D00CC5F7E /* Localizable.strings */; };
+		CE72B72A2AAEBABF00CC5F7E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B7292AAEBABF00CC5F7E /* String+Extension.swift */; };
+		CE72B72D2AAEBDE200CC5F7E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE72B72F2AAEBDE200CC5F7E /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,17 @@
 		CE72B70F2AAE992400CC5F7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE72B7122AAE992400CC5F7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE72B7142AAE992400CC5F7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE72B71A2AAE9CB000CC5F7E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		CE72B71B2AAE9CB000CC5F7E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		CE72B71C2AAE9CDF00CC5F7E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		CE72B71D2AAE9CDF00CC5F7E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		CE72B71F2AAE9DBD00CC5F7E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		CE72B7252AAEAE4D00CC5F7E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE72B7272AAEAE5100CC5F7E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE72B7282AAEAE5100CC5F7E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE72B7292AAEBABF00CC5F7E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		CE72B72E2AAEBDE200CC5F7E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CE72B7302AAEBE8200CC5F7E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +70,7 @@
 		CE72B7052AAE992300CC5F7E /* UnsplashProject */ = {
 			isa = PBXGroup;
 			children = (
+				CE72B7262AAEAE4D00CC5F7E /* Localizable.strings */,
 				CE72B7062AAE992300CC5F7E /* AppDelegate.swift */,
 				CE72B7082AAE992300CC5F7E /* SceneDelegate.swift */,
 				CE72B70A2AAE992300CC5F7E /* ViewController.swift */,
@@ -63,6 +78,8 @@
 				CE72B70F2AAE992400CC5F7E /* Assets.xcassets */,
 				CE72B7112AAE992400CC5F7E /* LaunchScreen.storyboard */,
 				CE72B7142AAE992400CC5F7E /* Info.plist */,
+				CE72B7292AAEBABF00CC5F7E /* String+Extension.swift */,
+				CE72B72F2AAEBDE200CC5F7E /* InfoPlist.strings */,
 			);
 			path = UnsplashProject;
 			sourceTree = "<group>";
@@ -109,6 +126,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
+				ja,
 			);
 			mainGroup = CE72B6FA2AAE992300CC5F7E;
 			productRefGroup = CE72B7042AAE992300CC5F7E /* Products */;
@@ -126,8 +145,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE72B7132AAE992400CC5F7E /* LaunchScreen.storyboard in Resources */,
+				CE72B7242AAEAE4D00CC5F7E /* Localizable.strings in Resources */,
 				CE72B7102AAE992400CC5F7E /* Assets.xcassets in Resources */,
 				CE72B70E2AAE992300CC5F7E /* Main.storyboard in Resources */,
+				CE72B72D2AAEBDE200CC5F7E /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE72B72A2AAEBABF00CC5F7E /* String+Extension.swift in Sources */,
 				CE72B70B2AAE992300CC5F7E /* ViewController.swift in Sources */,
 				CE72B7072AAE992300CC5F7E /* AppDelegate.swift in Sources */,
 				CE72B7092AAE992300CC5F7E /* SceneDelegate.swift in Sources */,
@@ -151,6 +173,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				CE72B70D2AAE992300CC5F7E /* Base */,
+				CE72B71A2AAE9CB000CC5F7E /* ko */,
+				CE72B71C2AAE9CDF00CC5F7E /* ja */,
+				CE72B71F2AAE9DBD00CC5F7E /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -159,8 +184,29 @@
 			isa = PBXVariantGroup;
 			children = (
 				CE72B7122AAE992400CC5F7E /* Base */,
+				CE72B71B2AAE9CB000CC5F7E /* ko */,
+				CE72B71D2AAE9CDF00CC5F7E /* ja */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CE72B7262AAEAE4D00CC5F7E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE72B7252AAEAE4D00CC5F7E /* en */,
+				CE72B7272AAEAE5100CC5F7E /* ja */,
+				CE72B7282AAEAE5100CC5F7E /* ko */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		CE72B72F2AAEBDE200CC5F7E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE72B72E2AAEBDE200CC5F7E /* en */,
+				CE72B7302AAEBE8200CC5F7E /* ko */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -170,6 +216,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -230,6 +277,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
