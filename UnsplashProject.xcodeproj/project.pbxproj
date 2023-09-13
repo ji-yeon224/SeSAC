@@ -25,6 +25,9 @@
 		CE72B7422AB02A8F00CC5F7E /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B7412AB02A8F00CC5F7E /* Photo.swift */; };
 		CE72B7442AB02B6800CC5F7E /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B7432AB02B6800CC5F7E /* PhotoViewController.swift */; };
 		CE72B7462AB02DA400CC5F7E /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B7452AB02DA400CC5F7E /* PhotoViewModel.swift */; };
+		CE72B7492AB139E500CC5F7E /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B7482AB139E500CC5F7E /* CalculateViewController.swift */; };
+		CE72B74B2AB13A9C00CC5F7E /* CalculateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B74A2AB13A9C00CC5F7E /* CalculateViewModel.swift */; };
+		CE72B74D2AB13DAF00CC5F7E /* JYObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B74C2AB13DAF00CC5F7E /* JYObservable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,9 @@
 		CE72B7412AB02A8F00CC5F7E /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		CE72B7432AB02B6800CC5F7E /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		CE72B7452AB02DA400CC5F7E /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
+		CE72B7482AB139E500CC5F7E /* CalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
+		CE72B74A2AB13A9C00CC5F7E /* CalculateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewModel.swift; sourceTree = "<group>"; };
+		CE72B74C2AB13DAF00CC5F7E /* JYObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JYObservable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,7 @@
 		CE72B7052AAE992300CC5F7E /* UnsplashProject */ = {
 			isa = PBXGroup;
 			children = (
+				CE72B7472AB139B900CC5F7E /* Calculate */,
 				CE72B7402AB02A8400CC5F7E /* Photo */,
 				CE72B7332AAFED5600CC5F7E /* Login */,
 				CE72B7262AAEAE4D00CC5F7E /* Localizable.strings */,
@@ -125,6 +132,16 @@
 				CE72B7452AB02DA400CC5F7E /* PhotoViewModel.swift */,
 			);
 			path = Photo;
+			sourceTree = "<group>";
+		};
+		CE72B7472AB139B900CC5F7E /* Calculate */ = {
+			isa = PBXGroup;
+			children = (
+				CE72B7482AB139E500CC5F7E /* CalculateViewController.swift */,
+				CE72B74A2AB13A9C00CC5F7E /* CalculateViewModel.swift */,
+				CE72B74C2AB13DAF00CC5F7E /* JYObservable.swift */,
+			);
+			path = Calculate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +226,9 @@
 				CE72B7372AAFF2F700CC5F7E /* Observable.swift in Sources */,
 				CE72B7442AB02B6800CC5F7E /* PhotoViewController.swift in Sources */,
 				CE72B7092AAE992300CC5F7E /* SceneDelegate.swift in Sources */,
+				CE72B74D2AB13DAF00CC5F7E /* JYObservable.swift in Sources */,
+				CE72B74B2AB13A9C00CC5F7E /* CalculateViewModel.swift in Sources */,
+				CE72B7492AB139E500CC5F7E /* CalculateViewController.swift in Sources */,
 				CE72B73F2AB02A6000CC5F7E /* APIService.swift in Sources */,
 				CE72B7422AB02A8F00CC5F7E /* Photo.swift in Sources */,
 				CE72B73B2AB0015F00CC5F7E /* SampleViewModel.swift in Sources */,

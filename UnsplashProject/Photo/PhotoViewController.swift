@@ -46,7 +46,7 @@ extension PhotoViewController: UITableViewDelegate, UITableViewDataSource {
         let data = viewModel.cellForRowAt(at: indexPath)
         
         cell.backgroundColor = .lightGray
-       
+        
         
         return cell
     }
