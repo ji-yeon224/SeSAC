@@ -28,6 +28,12 @@
 		CE72B7492AB139E500CC5F7E /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B7482AB139E500CC5F7E /* CalculateViewController.swift */; };
 		CE72B74B2AB13A9C00CC5F7E /* CalculateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B74A2AB13A9C00CC5F7E /* CalculateViewModel.swift */; };
 		CE72B74D2AB13DAF00CC5F7E /* JYObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B74C2AB13DAF00CC5F7E /* JYObservable.swift */; };
+		CE72B7502AB1768D00CC5F7E /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B74F2AB1768D00CC5F7E /* LottoViewController.swift */; };
+		CE72B7542AB176AD00CC5F7E /* LottoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B7532AB176AD00CC5F7E /* LottoViewModel.swift */; };
+		CE72B7562AB1793F00CC5F7E /* Lotto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B7552AB1793F00CC5F7E /* Lotto.swift */; };
+		CE72B7582AB179A400CC5F7E /* LottoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B7572AB179A400CC5F7E /* LottoAPI.swift */; };
+		CE72B75B2AB179DD00CC5F7E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE72B75A2AB179DD00CC5F7E /* Alamofire */; };
+		CE72B75D2AB17C2000CC5F7E /* LottoObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B75C2AB17C2000CC5F7E /* LottoObservable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +68,11 @@
 		CE72B7482AB139E500CC5F7E /* CalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
 		CE72B74A2AB13A9C00CC5F7E /* CalculateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewModel.swift; sourceTree = "<group>"; };
 		CE72B74C2AB13DAF00CC5F7E /* JYObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JYObservable.swift; sourceTree = "<group>"; };
+		CE72B74F2AB1768D00CC5F7E /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
+		CE72B7532AB176AD00CC5F7E /* LottoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewModel.swift; sourceTree = "<group>"; };
+		CE72B7552AB1793F00CC5F7E /* Lotto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lotto.swift; sourceTree = "<group>"; };
+		CE72B7572AB179A400CC5F7E /* LottoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoAPI.swift; sourceTree = "<group>"; };
+		CE72B75C2AB17C2000CC5F7E /* LottoObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoObservable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE72B75B2AB179DD00CC5F7E /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +106,7 @@
 		CE72B7052AAE992300CC5F7E /* UnsplashProject */ = {
 			isa = PBXGroup;
 			children = (
+				CE72B74E2AB1767400CC5F7E /* Lotto */,
 				CE72B7472AB139B900CC5F7E /* Calculate */,
 				CE72B7402AB02A8400CC5F7E /* Photo */,
 				CE72B7332AAFED5600CC5F7E /* Login */,
@@ -144,6 +157,18 @@
 			path = Calculate;
 			sourceTree = "<group>";
 		};
+		CE72B74E2AB1767400CC5F7E /* Lotto */ = {
+			isa = PBXGroup;
+			children = (
+				CE72B74F2AB1768D00CC5F7E /* LottoViewController.swift */,
+				CE72B7532AB176AD00CC5F7E /* LottoViewModel.swift */,
+				CE72B7552AB1793F00CC5F7E /* Lotto.swift */,
+				CE72B7572AB179A400CC5F7E /* LottoAPI.swift */,
+				CE72B75C2AB17C2000CC5F7E /* LottoObservable.swift */,
+			);
+			path = Lotto;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -160,6 +185,9 @@
 			dependencies = (
 			);
 			name = UnsplashProject;
+			packageProductDependencies = (
+				CE72B75A2AB179DD00CC5F7E /* Alamofire */,
+			);
 			productName = UnsplashProject;
 			productReference = CE72B7032AAE992300CC5F7E /* UnsplashProject.app */;
 			productType = "com.apple.product-type.application";
@@ -190,6 +218,9 @@
 				ja,
 			);
 			mainGroup = CE72B6FA2AAE992300CC5F7E;
+			packageReferences = (
+				CE72B7592AB179DD00CC5F7E /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = CE72B7042AAE992300CC5F7E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -222,19 +253,24 @@
 				CE72B72A2AAEBABF00CC5F7E /* String+Extension.swift in Sources */,
 				CE72B70B2AAE992300CC5F7E /* ViewController.swift in Sources */,
 				CE72B7072AAE992300CC5F7E /* AppDelegate.swift in Sources */,
+				CE72B7502AB1768D00CC5F7E /* LottoViewController.swift in Sources */,
 				CE72B7352AAFED6900CC5F7E /* LoginViewController.swift in Sources */,
 				CE72B7372AAFF2F700CC5F7E /* Observable.swift in Sources */,
 				CE72B7442AB02B6800CC5F7E /* PhotoViewController.swift in Sources */,
 				CE72B7092AAE992300CC5F7E /* SceneDelegate.swift in Sources */,
 				CE72B74D2AB13DAF00CC5F7E /* JYObservable.swift in Sources */,
+				CE72B7582AB179A400CC5F7E /* LottoAPI.swift in Sources */,
 				CE72B74B2AB13A9C00CC5F7E /* CalculateViewModel.swift in Sources */,
+				CE72B75D2AB17C2000CC5F7E /* LottoObservable.swift in Sources */,
 				CE72B7492AB139E500CC5F7E /* CalculateViewController.swift in Sources */,
 				CE72B73F2AB02A6000CC5F7E /* APIService.swift in Sources */,
 				CE72B7422AB02A8F00CC5F7E /* Photo.swift in Sources */,
 				CE72B73B2AB0015F00CC5F7E /* SampleViewModel.swift in Sources */,
 				CE72B7462AB02DA400CC5F7E /* PhotoViewModel.swift in Sources */,
+				CE72B7562AB1793F00CC5F7E /* Lotto.swift in Sources */,
 				CE72B7392AAFFE0800CC5F7E /* SampleViewController.swift in Sources */,
 				CE72B73D2AB00E4C00CC5F7E /* LoginViewModel.swift in Sources */,
+				CE72B7542AB176AD00CC5F7E /* LottoViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +514,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE72B7592AB179DD00CC5F7E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE72B75A2AB179DD00CC5F7E /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE72B7592AB179DD00CC5F7E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE72B6FB2AAE992300CC5F7E /* Project object */;
 }
