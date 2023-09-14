@@ -47,7 +47,7 @@ class HomeViewController: BaseViewController {
         collectionView.reloadData()
         
     }
-    
+     //UIListContentCoinfiguration
     func collectionViewConfig() {
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -94,7 +94,7 @@ class HomeViewController: BaseViewController {
     
 
  
-    
+    //UIListContentCoinfiguration
     static private func layout() -> UICollectionViewLayout {
         var configuration = UICollectionLayoutListConfiguration(appearance: .grouped)
         configuration.backgroundColor = Constants.BaseColor.background
@@ -162,6 +162,7 @@ class HomeViewController: BaseViewController {
     }
 }
 
+//UIListContentCoinfiguration
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
