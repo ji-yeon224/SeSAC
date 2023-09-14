@@ -14,7 +14,7 @@ class LottoObservable<T> {
     
     var value: T {
         didSet {
-            print(value)
+            //print(value)
             listener?(value)
         }
     }

@@ -34,6 +34,9 @@
 		CE72B7582AB179A400CC5F7E /* LottoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B7572AB179A400CC5F7E /* LottoAPI.swift */; };
 		CE72B75B2AB179DD00CC5F7E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE72B75A2AB179DD00CC5F7E /* Alamofire */; };
 		CE72B75D2AB17C2000CC5F7E /* LottoObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B75C2AB17C2000CC5F7E /* LottoObservable.swift */; };
+		CE72B7622AB296F500CC5F7E /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B7612AB296F500CC5F7E /* SimpleTableViewController.swift */; };
+		CE72B7642AB2A00F00CC5F7E /* NewSimpleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B7632AB2A00F00CC5F7E /* NewSimpleCollectionViewController.swift */; };
+		CE72B7672AB2A9D100CC5F7E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE72B7662AB2A9D100CC5F7E /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +76,8 @@
 		CE72B7552AB1793F00CC5F7E /* Lotto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lotto.swift; sourceTree = "<group>"; };
 		CE72B7572AB179A400CC5F7E /* LottoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoAPI.swift; sourceTree = "<group>"; };
 		CE72B75C2AB17C2000CC5F7E /* LottoObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoObservable.swift; sourceTree = "<group>"; };
+		CE72B7612AB296F500CC5F7E /* SimpleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewController.swift; sourceTree = "<group>"; };
+		CE72B7632AB2A00F00CC5F7E /* NewSimpleCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSimpleCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +86,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE72B75B2AB179DD00CC5F7E /* Alamofire in Frameworks */,
+				CE72B7672AB2A9D100CC5F7E /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +112,7 @@
 		CE72B7052AAE992300CC5F7E /* UnsplashProject */ = {
 			isa = PBXGroup;
 			children = (
+				CE72B7602AB296D800CC5F7E /* New */,
 				CE72B74E2AB1767400CC5F7E /* Lotto */,
 				CE72B7472AB139B900CC5F7E /* Calculate */,
 				CE72B7402AB02A8400CC5F7E /* Photo */,
@@ -169,6 +176,15 @@
 			path = Lotto;
 			sourceTree = "<group>";
 		};
+		CE72B7602AB296D800CC5F7E /* New */ = {
+			isa = PBXGroup;
+			children = (
+				CE72B7612AB296F500CC5F7E /* SimpleTableViewController.swift */,
+				CE72B7632AB2A00F00CC5F7E /* NewSimpleCollectionViewController.swift */,
+			);
+			path = New;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -187,6 +203,7 @@
 			name = UnsplashProject;
 			packageProductDependencies = (
 				CE72B75A2AB179DD00CC5F7E /* Alamofire */,
+				CE72B7662AB2A9D100CC5F7E /* SnapKit */,
 			);
 			productName = UnsplashProject;
 			productReference = CE72B7032AAE992300CC5F7E /* UnsplashProject.app */;
@@ -220,6 +237,7 @@
 			mainGroup = CE72B6FA2AAE992300CC5F7E;
 			packageReferences = (
 				CE72B7592AB179DD00CC5F7E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				CE72B7652AB2A9D100CC5F7E /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = CE72B7042AAE992300CC5F7E /* Products */;
 			projectDirPath = "";
@@ -263,7 +281,9 @@
 				CE72B74B2AB13A9C00CC5F7E /* CalculateViewModel.swift in Sources */,
 				CE72B75D2AB17C2000CC5F7E /* LottoObservable.swift in Sources */,
 				CE72B7492AB139E500CC5F7E /* CalculateViewController.swift in Sources */,
+				CE72B7622AB296F500CC5F7E /* SimpleTableViewController.swift in Sources */,
 				CE72B73F2AB02A6000CC5F7E /* APIService.swift in Sources */,
+				CE72B7642AB2A00F00CC5F7E /* NewSimpleCollectionViewController.swift in Sources */,
 				CE72B7422AB02A8F00CC5F7E /* Photo.swift in Sources */,
 				CE72B73B2AB0015F00CC5F7E /* SampleViewModel.swift in Sources */,
 				CE72B7462AB02DA400CC5F7E /* PhotoViewModel.swift in Sources */,
@@ -524,6 +544,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		CE72B7652AB2A9D100CC5F7E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -531,6 +559,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE72B7592AB179DD00CC5F7E /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		CE72B7662AB2A9D100CC5F7E /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE72B7652AB2A9D100CC5F7E /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
