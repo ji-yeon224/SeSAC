@@ -37,6 +37,9 @@
 		CE72B7622AB296F500CC5F7E /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B7612AB296F500CC5F7E /* SimpleTableViewController.swift */; };
 		CE72B7642AB2A00F00CC5F7E /* NewSimpleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B7632AB2A00F00CC5F7E /* NewSimpleCollectionViewController.swift */; };
 		CE72B7672AB2A9D100CC5F7E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE72B7662AB2A9D100CC5F7E /* SnapKit */; };
+		CEC2EA0E2AB54EC900BD9658 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC2EA0D2AB54EC900BD9658 /* SettingViewController.swift */; };
+		CEC2EA102AB56B7A00BD9658 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC2EA0F2AB56B7A00BD9658 /* Setting.swift */; };
+		CEC2EA122AB573FE00BD9658 /* SettingCase2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC2EA112AB573FE00BD9658 /* SettingCase2ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +81,9 @@
 		CE72B75C2AB17C2000CC5F7E /* LottoObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoObservable.swift; sourceTree = "<group>"; };
 		CE72B7612AB296F500CC5F7E /* SimpleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewController.swift; sourceTree = "<group>"; };
 		CE72B7632AB2A00F00CC5F7E /* NewSimpleCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSimpleCollectionViewController.swift; sourceTree = "<group>"; };
+		CEC2EA0D2AB54EC900BD9658 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		CEC2EA0F2AB56B7A00BD9658 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		CEC2EA112AB573FE00BD9658 /* SettingCase2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCase2ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,7 @@
 		CE72B7052AAE992300CC5F7E /* UnsplashProject */ = {
 			isa = PBXGroup;
 			children = (
+				CEC2EA0C2AB549F200BD9658 /* Setting */,
 				CE72B7602AB296D800CC5F7E /* New */,
 				CE72B74E2AB1767400CC5F7E /* Lotto */,
 				CE72B7472AB139B900CC5F7E /* Calculate */,
@@ -183,6 +190,16 @@
 				CE72B7632AB2A00F00CC5F7E /* NewSimpleCollectionViewController.swift */,
 			);
 			path = New;
+			sourceTree = "<group>";
+		};
+		CEC2EA0C2AB549F200BD9658 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				CEC2EA0D2AB54EC900BD9658 /* SettingViewController.swift */,
+				CEC2EA0F2AB56B7A00BD9658 /* Setting.swift */,
+				CEC2EA112AB573FE00BD9658 /* SettingCase2ViewController.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,12 +290,15 @@
 				CE72B7072AAE992300CC5F7E /* AppDelegate.swift in Sources */,
 				CE72B7502AB1768D00CC5F7E /* LottoViewController.swift in Sources */,
 				CE72B7352AAFED6900CC5F7E /* LoginViewController.swift in Sources */,
+				CEC2EA102AB56B7A00BD9658 /* Setting.swift in Sources */,
 				CE72B7372AAFF2F700CC5F7E /* Observable.swift in Sources */,
 				CE72B7442AB02B6800CC5F7E /* PhotoViewController.swift in Sources */,
 				CE72B7092AAE992300CC5F7E /* SceneDelegate.swift in Sources */,
 				CE72B74D2AB13DAF00CC5F7E /* JYObservable.swift in Sources */,
+				CEC2EA122AB573FE00BD9658 /* SettingCase2ViewController.swift in Sources */,
 				CE72B7582AB179A400CC5F7E /* LottoAPI.swift in Sources */,
 				CE72B74B2AB13A9C00CC5F7E /* CalculateViewModel.swift in Sources */,
+				CEC2EA0E2AB54EC900BD9658 /* SettingViewController.swift in Sources */,
 				CE72B75D2AB17C2000CC5F7E /* LottoObservable.swift in Sources */,
 				CE72B7492AB139E500CC5F7E /* CalculateViewController.swift in Sources */,
 				CE72B7622AB296F500CC5F7E /* SimpleTableViewController.swift in Sources */,
