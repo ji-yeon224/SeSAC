@@ -10,6 +10,11 @@
 		CE46CA7B2AB7D34100476149 /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46CA7A2AB7D34100476149 /* NumberViewController.swift */; };
 		CE46CA7D2AB7D92300476149 /* NumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46CA7C2AB7D92300476149 /* NumberViewModel.swift */; };
 		CE46CA7F2AB7E79C00476149 /* NewSimpleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46CA7E2AB7E79C00476149 /* NewSimpleViewModel.swift */; };
+		CE46CA822AB814A400476149 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46CA812AB814A400476149 /* SignUpViewController.swift */; };
+		CE46CA842AB814AE00476149 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46CA832AB814AE00476149 /* SignUpViewModel.swift */; };
+		CE46CA862AB8162A00476149 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46CA852AB8162A00476149 /* SignUpView.swift */; };
+		CE46CA882AB8178900476149 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46CA872AB8178900476149 /* TextField.swift */; };
+		CE46CA8A2AB81AD500476149 /* InvalidLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46CA892AB81AD500476149 /* InvalidLabel.swift */; };
 		CE72B7072AAE992300CC5F7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B7062AAE992300CC5F7E /* AppDelegate.swift */; };
 		CE72B7092AAE992300CC5F7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B7082AAE992300CC5F7E /* SceneDelegate.swift */; };
 		CE72B70B2AAE992300CC5F7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B70A2AAE992300CC5F7E /* ViewController.swift */; };
@@ -49,6 +54,11 @@
 		CE46CA7A2AB7D34100476149 /* NumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewController.swift; sourceTree = "<group>"; };
 		CE46CA7C2AB7D92300476149 /* NumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewModel.swift; sourceTree = "<group>"; };
 		CE46CA7E2AB7E79C00476149 /* NewSimpleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSimpleViewModel.swift; sourceTree = "<group>"; };
+		CE46CA812AB814A400476149 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		CE46CA832AB814AE00476149 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		CE46CA852AB8162A00476149 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		CE46CA872AB8178900476149 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		CE46CA892AB81AD500476149 /* InvalidLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidLabel.swift; sourceTree = "<group>"; };
 		CE72B7032AAE992300CC5F7E /* UnsplashProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnsplashProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE72B7062AAE992300CC5F7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE72B7082AAE992300CC5F7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +115,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE46CA802AB8149600476149 /* Netflix */ = {
+			isa = PBXGroup;
+			children = (
+				CE46CA812AB814A400476149 /* SignUpViewController.swift */,
+				CE46CA832AB814AE00476149 /* SignUpViewModel.swift */,
+				CE46CA852AB8162A00476149 /* SignUpView.swift */,
+				CE46CA872AB8178900476149 /* TextField.swift */,
+				CE46CA892AB81AD500476149 /* InvalidLabel.swift */,
+			);
+			path = Netflix;
+			sourceTree = "<group>";
+		};
 		CE72B6FA2AAE992300CC5F7E = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +146,7 @@
 		CE72B7052AAE992300CC5F7E /* UnsplashProject */ = {
 			isa = PBXGroup;
 			children = (
+				CE46CA802AB8149600476149 /* Netflix */,
 				CEC2EA0C2AB549F200BD9658 /* Setting */,
 				CE72B7602AB296D800CC5F7E /* New */,
 				CE72B74E2AB1767400CC5F7E /* Lotto */,
@@ -294,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE46CA8A2AB81AD500476149 /* InvalidLabel.swift in Sources */,
 				CE46CA7B2AB7D34100476149 /* NumberViewController.swift in Sources */,
 				CE46CA7F2AB7E79C00476149 /* NewSimpleViewModel.swift in Sources */,
 				CE72B72A2AAEBABF00CC5F7E /* String+Extension.swift in Sources */,
@@ -302,9 +326,11 @@
 				CE72B7502AB1768D00CC5F7E /* LottoViewController.swift in Sources */,
 				CE72B7352AAFED6900CC5F7E /* LoginViewController.swift in Sources */,
 				CEC2EA102AB56B7A00BD9658 /* Setting.swift in Sources */,
+				CE46CA842AB814AE00476149 /* SignUpViewModel.swift in Sources */,
 				CE72B7372AAFF2F700CC5F7E /* Observable.swift in Sources */,
 				CE72B7442AB02B6800CC5F7E /* PhotoViewController.swift in Sources */,
 				CE72B7092AAE992300CC5F7E /* SceneDelegate.swift in Sources */,
+				CE46CA882AB8178900476149 /* TextField.swift in Sources */,
 				CE72B74D2AB13DAF00CC5F7E /* JYObservable.swift in Sources */,
 				CEC2EA122AB573FE00BD9658 /* SettingCase2ViewController.swift in Sources */,
 				CE72B7582AB179A400CC5F7E /* LottoAPI.swift in Sources */,
@@ -318,8 +344,10 @@
 				CE72B7642AB2A00F00CC5F7E /* NewSimpleCollectionViewController.swift in Sources */,
 				CE72B7422AB02A8F00CC5F7E /* Photo.swift in Sources */,
 				CE72B73B2AB0015F00CC5F7E /* SampleViewModel.swift in Sources */,
+				CE46CA822AB814A400476149 /* SignUpViewController.swift in Sources */,
 				CE72B7462AB02DA400CC5F7E /* PhotoViewModel.swift in Sources */,
 				CE72B7562AB1793F00CC5F7E /* Lotto.swift in Sources */,
+				CE46CA862AB8162A00476149 /* SignUpView.swift in Sources */,
 				CE72B7392AAFFE0800CC5F7E /* SampleViewController.swift in Sources */,
 				CE72B73D2AB00E4C00CC5F7E /* LoginViewModel.swift in Sources */,
 				CE72B7542AB176AD00CC5F7E /* LottoViewModel.swift in Sources */,
