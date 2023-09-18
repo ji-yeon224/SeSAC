@@ -11,9 +11,9 @@ class RandomPhotoViewModel {
     
     var photo = Observable(Random(id: "", urls: nil, likes: 0))
     
+    
     func fetchRandomPhoto() {
         APIService.shared.getRandomPhoto { result in
-            //print(result)
             
             DispatchQueue.main.async {
                 self.photo.value = result
@@ -22,8 +22,6 @@ class RandomPhotoViewModel {
         }
     }
     
-    func getRandomImage() {
-        
-    }
+   
     
 }
