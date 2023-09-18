@@ -39,7 +39,7 @@ class LottoViewController: UIViewController {
         
         bindData()
         
-        viewModel.fetchLottoNum()
+//        viewModel.fetchLottoNum()
 //        viewModel.presentTitle()
 //        viewModel.presentTotal()
     }

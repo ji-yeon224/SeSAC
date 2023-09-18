@@ -15,9 +15,10 @@ class NewSimpleCollectionViewController: UIViewController {
         case second = 1
     }
     
+    let viewModel = NewSimpleViewModel()
     
-    var list = [ User(name: "Hue", age: 23), User(name: "Hue", age: 23), User(name: "Bran", age: 20), User(name: "kokojong", age: 20) ]
-    var list2 = [ User(name: "Jack", age: 23), User(name: "Jack", age: 23), User(name: "Bran", age: 20), User(name: "kokojong", age: 20) ]
+    
+    
     
     var collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
     
@@ -27,19 +28,36 @@ class NewSimpleCollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(collectionView)
+        let searchBar = UISearchBar()
+        searchBar.delegate = self
+        navigationItem.titleView = searchBar
         
+        view.addSubview(collectionView)
+        collectionView.delegate = self
         
         collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
         
         configureDataSource()
-       
+        
+        viewModel.list.bind { user in
+            self.updateSnapshot()
+        }
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.viewModel.append()
+            self.updateSnapshot()
+        }
+        
+    }
+    
+    private func updateSnapshot() {
         var snapshot = NSDiffableDataSourceSnapshot<String, User>()
         snapshot.appendSections(["고래밥", "jack"])
-        snapshot.appendItems(list, toSection: "고래밥")
-        snapshot.appendItems(list2, toSection: "jack")
+        snapshot.appendItems(viewModel.list.value, toSection: "고래밥")
+        snapshot.appendItems(viewModel.list2, toSection: "jack")
         dataSource.apply(snapshot)
     }
     
@@ -91,8 +109,27 @@ class NewSimpleCollectionViewController: UIViewController {
     
 }
 
+extension NewSimpleCollectionViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //let user = viewModel.list.value[indexPath.item]
+        
+        guard let user = dataSource.itemIdentifier(for: indexPath)
+        else {
+            return
+        }
+        dump(user)
+        
+    }
+}
 
-
+extension NewSimpleCollectionViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.insertUser(name: searchBar.text!)
+    }
+    
+}
 
 
 

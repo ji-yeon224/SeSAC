@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE46CA7B2AB7D34100476149 /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46CA7A2AB7D34100476149 /* NumberViewController.swift */; };
+		CE46CA7D2AB7D92300476149 /* NumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46CA7C2AB7D92300476149 /* NumberViewModel.swift */; };
+		CE46CA7F2AB7E79C00476149 /* NewSimpleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46CA7E2AB7E79C00476149 /* NewSimpleViewModel.swift */; };
 		CE72B7072AAE992300CC5F7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B7062AAE992300CC5F7E /* AppDelegate.swift */; };
 		CE72B7092AAE992300CC5F7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B7082AAE992300CC5F7E /* SceneDelegate.swift */; };
 		CE72B70B2AAE992300CC5F7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B70A2AAE992300CC5F7E /* ViewController.swift */; };
@@ -43,6 +46,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE46CA7A2AB7D34100476149 /* NumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewController.swift; sourceTree = "<group>"; };
+		CE46CA7C2AB7D92300476149 /* NumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewModel.swift; sourceTree = "<group>"; };
+		CE46CA7E2AB7E79C00476149 /* NewSimpleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSimpleViewModel.swift; sourceTree = "<group>"; };
 		CE72B7032AAE992300CC5F7E /* UnsplashProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnsplashProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE72B7062AAE992300CC5F7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE72B7082AAE992300CC5F7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +152,8 @@
 				CE72B7382AAFFE0800CC5F7E /* SampleViewController.swift */,
 				CE72B73A2AB0015F00CC5F7E /* SampleViewModel.swift */,
 				CE72B73C2AB00E4C00CC5F7E /* LoginViewModel.swift */,
+				CE46CA7A2AB7D34100476149 /* NumberViewController.swift */,
+				CE46CA7C2AB7D92300476149 /* NumberViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -188,6 +196,7 @@
 			children = (
 				CE72B7612AB296F500CC5F7E /* SimpleTableViewController.swift */,
 				CE72B7632AB2A00F00CC5F7E /* NewSimpleCollectionViewController.swift */,
+				CE46CA7E2AB7E79C00476149 /* NewSimpleViewModel.swift */,
 			);
 			path = New;
 			sourceTree = "<group>";
@@ -285,6 +294,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE46CA7B2AB7D34100476149 /* NumberViewController.swift in Sources */,
+				CE46CA7F2AB7E79C00476149 /* NewSimpleViewModel.swift in Sources */,
 				CE72B72A2AAEBABF00CC5F7E /* String+Extension.swift in Sources */,
 				CE72B70B2AAE992300CC5F7E /* ViewController.swift in Sources */,
 				CE72B7072AAE992300CC5F7E /* AppDelegate.swift in Sources */,
@@ -297,6 +308,7 @@
 				CE72B74D2AB13DAF00CC5F7E /* JYObservable.swift in Sources */,
 				CEC2EA122AB573FE00BD9658 /* SettingCase2ViewController.swift in Sources */,
 				CE72B7582AB179A400CC5F7E /* LottoAPI.swift in Sources */,
+				CE46CA7D2AB7D92300476149 /* NumberViewModel.swift in Sources */,
 				CE72B74B2AB13A9C00CC5F7E /* CalculateViewModel.swift in Sources */,
 				CEC2EA0E2AB54EC900BD9658 /* SettingViewController.swift in Sources */,
 				CE72B75D2AB17C2000CC5F7E /* LottoObservable.swift in Sources */,
