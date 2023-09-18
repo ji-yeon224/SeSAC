@@ -127,6 +127,13 @@
 			path = Netflix;
 			sourceTree = "<group>";
 		};
+		CE46CA8B2AB8389100476149 /* RandomPhoto */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RandomPhoto;
+			sourceTree = "<group>";
+		};
 		CE72B6FA2AAE992300CC5F7E = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +191,7 @@
 		CE72B7402AB02A8400CC5F7E /* Photo */ = {
 			isa = PBXGroup;
 			children = (
+				CE46CA8B2AB8389100476149 /* RandomPhoto */,
 				CE72B73E2AB02A6000CC5F7E /* APIService.swift */,
 				CE72B7412AB02A8F00CC5F7E /* Photo.swift */,
 				CE72B7432AB02B6800CC5F7E /* PhotoViewController.swift */,

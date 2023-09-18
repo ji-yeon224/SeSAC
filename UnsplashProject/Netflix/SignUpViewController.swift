@@ -19,7 +19,7 @@ class SignUpViewController: UIViewController {
         bindData()
     }
     
-    func configureView() {
+    private func configureView() {
         
         mainView.emailTextField.addTarget(self, action: #selector(emailTextFieldChanged), for: .editingChanged)
         mainView.passwordTextField.addTarget(self, action: #selector(passwordTextFieldChanged), for: .editingChanged)
@@ -30,7 +30,7 @@ class SignUpViewController: UIViewController {
         
     }
     
-    func bindData() {
+    private func bindData() {
         
         viewModel.email.bind { value in
             self.mainView.emailTextField.text = value
@@ -55,7 +55,7 @@ class SignUpViewController: UIViewController {
     
     
     
-    @objc func emailTextFieldChanged() {
+    @objc private func emailTextFieldChanged() {
         viewModel.email.value = mainView.emailTextField.text
         if viewModel.checkEmail() {
             mainView.emailInvalid.isHidden = true
@@ -67,7 +67,7 @@ class SignUpViewController: UIViewController {
         
     }
     
-    @objc func passwordTextFieldChanged() {
+    @objc private func passwordTextFieldChanged() {
         viewModel.password.value = mainView.passwordTextField.text
         if viewModel.checkPassword() {
             mainView.passwordInvalid.isHidden = true
@@ -78,7 +78,7 @@ class SignUpViewController: UIViewController {
         viewModel.checkEnabled()
     }
     
-    @objc func nickNameTextFieldChanged() {
+    @objc private func nickNameTextFieldChanged() {
         viewModel.nickname.value = mainView.nickNameTextField.text
         if viewModel.nickNameCheck() {
             mainView.nicknameInvalid.isHidden = true
@@ -89,7 +89,7 @@ class SignUpViewController: UIViewController {
         viewModel.checkEnabled()
     }
     
-    @objc func locationTextFieldChanged() {
+    @objc private func locationTextFieldChanged() {
         viewModel.location.value = mainView.locationTextField.text
         if viewModel.locationCheck() {
             mainView.locationInvalid.isHidden = true
@@ -100,7 +100,7 @@ class SignUpViewController: UIViewController {
         viewModel.checkEnabled()
     }
     
-    @objc func recommendTextFieldChanged() {
+    @objc private func recommendTextFieldChanged() {
         viewModel.recommend.value = mainView.recommendTextField.text
         if viewModel.recommendCheck() {
             mainView.recommendInvalid.isHidden = true

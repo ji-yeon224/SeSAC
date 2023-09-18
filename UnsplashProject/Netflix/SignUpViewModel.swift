@@ -24,11 +24,11 @@ class SignUpViewModel {
     
     var validCheck = Observable(false)
     
-    var emailBool = false
-    var passwordBool = false
-    var nicknameBool = false
-    var locationBool = false
-    var recommendBool = false
+    private var emailBool = false
+    private var passwordBool = false
+    private var nicknameBool = false
+    private var locationBool = false
+    private var recommendBool = false
     
     
     
