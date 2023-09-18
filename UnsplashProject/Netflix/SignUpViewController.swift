@@ -47,8 +47,13 @@ class SignUpViewController: UIViewController {
         viewModel.recommend.bind { value in
             self.mainView.recommendTextField.text = value
         }
+        viewModel.validCheck.bind { value in
+            self.mainView.signUpButton.isEnabled = value
+        }
         
     }
+    
+    
     
     @objc func emailTextFieldChanged() {
         viewModel.email.value = mainView.emailTextField.text
@@ -58,6 +63,7 @@ class SignUpViewController: UIViewController {
             mainView.emailInvalid.isHidden = false
             mainView.emailInvalid.text = viewModel.emailInvalid.value
         }
+        viewModel.checkEnabled()
         
     }
     
@@ -69,7 +75,7 @@ class SignUpViewController: UIViewController {
             mainView.passwordInvalid.isHidden = false
             mainView.passwordInvalid.text = viewModel.passwordInvalid.value
         }
-        
+        viewModel.checkEnabled()
     }
     
     @objc func nickNameTextFieldChanged() {
@@ -80,6 +86,7 @@ class SignUpViewController: UIViewController {
             mainView.nicknameInvalid.isHidden = false
             mainView.nicknameInvalid.text = viewModel.nicknameInvalid.value
         }
+        viewModel.checkEnabled()
     }
     
     @objc func locationTextFieldChanged() {
@@ -90,7 +97,7 @@ class SignUpViewController: UIViewController {
             mainView.locationInvalid.isHidden = false
             mainView.locationInvalid.text = viewModel.locationInvalid.value
         }
-        
+        viewModel.checkEnabled()
     }
     
     @objc func recommendTextFieldChanged() {
@@ -101,6 +108,7 @@ class SignUpViewController: UIViewController {
             mainView.recommendInvalid.isHidden = false
             mainView.recommendInvalid.text = viewModel.recommendInvalid.value
         }
+        viewModel.checkEnabled()
     }
     
     
