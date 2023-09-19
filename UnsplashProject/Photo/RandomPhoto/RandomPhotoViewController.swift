@@ -26,37 +26,19 @@ class RandomPhotoViewController: UIViewController {
         mainView.randomButton.addTarget(self, action: #selector(randomButtonClicked), for: .touchUpInside)
         
         viewModel.photo.bind { value in
-            self.getUIImage(url: value.urls?.thumb)
+            self.viewModel.getImageData()
         }
         
-    }
-    
-    func getUIImage(url: String?) {
-        
-        DispatchQueue.global().async {
-            guard let imageString = self.viewModel.photo.value.urls?.thumb else {
-                DispatchQueue.main.async {
-                    self.mainView.imageView.image = UIImage(systemName: "photo.fill")
-                }
-                return
-            }
-            guard let url = URL(string: imageString) else {
-                DispatchQueue.main.async {
-                    self.mainView.imageView.image = UIImage(systemName: "photo.fill")
-                }
+        viewModel.photoImageData.bind { value in
+            
+            guard let value = value else {
+                self.mainView.imageView.image = UIImage(systemName: "photo.fill")
                 return
             }
             
-            guard let data = try? Data(contentsOf: url) else {
-                DispatchQueue.main.async {
-                    self.mainView.imageView.image = UIImage(systemName: "photo.fill")
-                }
-                return
-            }
-            DispatchQueue.main.async {
-                self.mainView.imageView.image = UIImage(data: data)
-            }
+            self.mainView.imageView.image = UIImage(data: value)
         }
+        
     }
     
     
