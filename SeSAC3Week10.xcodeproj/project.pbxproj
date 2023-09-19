@@ -19,6 +19,10 @@
 		CEDFB6AC2AB93CCB00DCF5AA /* NetworkBasic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB6AB2AB93CCB00DCF5AA /* NetworkBasic.swift */; };
 		CEDFB6AE2AB9649E00DCF5AA /* UnsplashAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB6AD2AB9649E00DCF5AA /* UnsplashAPI.swift */; };
 		CEDFB6B02AB9743700DCF5AA /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB6AF2AB9743700DCF5AA /* Network.swift */; };
+		CEDFB6D32AB9BEB500DCF5AA /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB6D22AB9BEB500DCF5AA /* Beer.swift */; };
+		CEDFB6D52AB9BF6200DCF5AA /* PunkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB6D42AB9BF6200DCF5AA /* PunkAPI.swift */; };
+		CEDFB6D72AB9C1A800DCF5AA /* BeerNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB6D62AB9C1A800DCF5AA /* BeerNetwork.swift */; };
+		CEDFB6D92AB9C34300DCF5AA /* BeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB6D82AB9C34300DCF5AA /* BeerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,10 @@
 		CEDFB6AB2AB93CCB00DCF5AA /* NetworkBasic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkBasic.swift; sourceTree = "<group>"; };
 		CEDFB6AD2AB9649E00DCF5AA /* UnsplashAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAPI.swift; sourceTree = "<group>"; };
 		CEDFB6AF2AB9743700DCF5AA /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		CEDFB6D22AB9BEB500DCF5AA /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
+		CEDFB6D42AB9BF6200DCF5AA /* PunkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunkAPI.swift; sourceTree = "<group>"; };
+		CEDFB6D62AB9C1A800DCF5AA /* BeerNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerNetwork.swift; sourceTree = "<group>"; };
+		CEDFB6D82AB9C34300DCF5AA /* BeerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +76,7 @@
 		CEDFB68C2AB9294500DCF5AA /* SeSAC3Week10 */ = {
 			isa = PBXGroup;
 			children = (
+				CEDFB6D12AB9BD3A00DCF5AA /* Punk */,
 				CEDFB6AA2AB93CB600DCF5AA /* Network */,
 				CEDFB68D2AB9294500DCF5AA /* AppDelegate.swift */,
 				CEDFB68F2AB9294500DCF5AA /* SceneDelegate.swift */,
@@ -88,6 +97,17 @@
 				CEDFB6AF2AB9743700DCF5AA /* Network.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		CEDFB6D12AB9BD3A00DCF5AA /* Punk */ = {
+			isa = PBXGroup;
+			children = (
+				CEDFB6D22AB9BEB500DCF5AA /* Beer.swift */,
+				CEDFB6D42AB9BF6200DCF5AA /* PunkAPI.swift */,
+				CEDFB6D62AB9C1A800DCF5AA /* BeerNetwork.swift */,
+				CEDFB6D82AB9C34300DCF5AA /* BeerViewController.swift */,
+			);
+			path = Punk;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,12 +191,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEDFB6D92AB9C34300DCF5AA /* BeerViewController.swift in Sources */,
+				CEDFB6D52AB9BF6200DCF5AA /* PunkAPI.swift in Sources */,
 				CEDFB6922AB9294500DCF5AA /* ViewController.swift in Sources */,
 				CEDFB6AE2AB9649E00DCF5AA /* UnsplashAPI.swift in Sources */,
 				CEDFB6B02AB9743700DCF5AA /* Network.swift in Sources */,
 				CEDFB6AC2AB93CCB00DCF5AA /* NetworkBasic.swift in Sources */,
 				CEDFB68E2AB9294500DCF5AA /* AppDelegate.swift in Sources */,
+				CEDFB6D32AB9BEB500DCF5AA /* Beer.swift in Sources */,
 				CEDFB6902AB9294500DCF5AA /* SceneDelegate.swift in Sources */,
+				CEDFB6D72AB9C1A800DCF5AA /* BeerNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
