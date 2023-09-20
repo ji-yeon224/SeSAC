@@ -23,6 +23,10 @@
 		CEDFB6D52AB9BF6200DCF5AA /* PunkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB6D42AB9BF6200DCF5AA /* PunkAPI.swift */; };
 		CEDFB6D72AB9C1A800DCF5AA /* BeerNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB6D62AB9C1A800DCF5AA /* BeerNetwork.swift */; };
 		CEDFB6D92AB9C34300DCF5AA /* BeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB6D82AB9C34300DCF5AA /* BeerViewController.swift */; };
+		CEDFB6DB2AB9E5B100DCF5AA /* PunkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB6DA2AB9E5B100DCF5AA /* PunkViewModel.swift */; };
+		CEDFB6DD2AB9E5CE00DCF5AA /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB6DC2AB9E5CE00DCF5AA /* Observable.swift */; };
+		CEDFB6DF2ABA763E00DCF5AA /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB6DE2ABA763E00DCF5AA /* Router.swift */; };
+		CEDFB6E12ABA9A8500DCF5AA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB6E02ABA9A8500DCF5AA /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +45,10 @@
 		CEDFB6D42AB9BF6200DCF5AA /* PunkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunkAPI.swift; sourceTree = "<group>"; };
 		CEDFB6D62AB9C1A800DCF5AA /* BeerNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerNetwork.swift; sourceTree = "<group>"; };
 		CEDFB6D82AB9C34300DCF5AA /* BeerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewController.swift; sourceTree = "<group>"; };
+		CEDFB6DA2AB9E5B100DCF5AA /* PunkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunkViewModel.swift; sourceTree = "<group>"; };
+		CEDFB6DC2AB9E5CE00DCF5AA /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		CEDFB6DE2ABA763E00DCF5AA /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		CEDFB6E02ABA9A8500DCF5AA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +93,7 @@
 				CEDFB6962AB9294600DCF5AA /* Assets.xcassets */,
 				CEDFB6982AB9294600DCF5AA /* LaunchScreen.storyboard */,
 				CEDFB69B2AB9294600DCF5AA /* Info.plist */,
+				CEDFB6E02ABA9A8500DCF5AA /* ViewModel.swift */,
 			);
 			path = SeSAC3Week10;
 			sourceTree = "<group>";
@@ -95,6 +104,7 @@
 				CEDFB6AB2AB93CCB00DCF5AA /* NetworkBasic.swift */,
 				CEDFB6AD2AB9649E00DCF5AA /* UnsplashAPI.swift */,
 				CEDFB6AF2AB9743700DCF5AA /* Network.swift */,
+				CEDFB6DE2ABA763E00DCF5AA /* Router.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -106,6 +116,8 @@
 				CEDFB6D42AB9BF6200DCF5AA /* PunkAPI.swift */,
 				CEDFB6D62AB9C1A800DCF5AA /* BeerNetwork.swift */,
 				CEDFB6D82AB9C34300DCF5AA /* BeerViewController.swift */,
+				CEDFB6DA2AB9E5B100DCF5AA /* PunkViewModel.swift */,
+				CEDFB6DC2AB9E5CE00DCF5AA /* Observable.swift */,
 			);
 			path = Punk;
 			sourceTree = "<group>";
@@ -195,12 +207,16 @@
 				CEDFB6D52AB9BF6200DCF5AA /* PunkAPI.swift in Sources */,
 				CEDFB6922AB9294500DCF5AA /* ViewController.swift in Sources */,
 				CEDFB6AE2AB9649E00DCF5AA /* UnsplashAPI.swift in Sources */,
+				CEDFB6DD2AB9E5CE00DCF5AA /* Observable.swift in Sources */,
 				CEDFB6B02AB9743700DCF5AA /* Network.swift in Sources */,
+				CEDFB6E12ABA9A8500DCF5AA /* ViewModel.swift in Sources */,
 				CEDFB6AC2AB93CCB00DCF5AA /* NetworkBasic.swift in Sources */,
 				CEDFB68E2AB9294500DCF5AA /* AppDelegate.swift in Sources */,
 				CEDFB6D32AB9BEB500DCF5AA /* Beer.swift in Sources */,
 				CEDFB6902AB9294500DCF5AA /* SceneDelegate.swift in Sources */,
 				CEDFB6D72AB9C1A800DCF5AA /* BeerNetwork.swift in Sources */,
+				CEDFB6DB2AB9E5B100DCF5AA /* PunkViewModel.swift in Sources */,
+				CEDFB6DF2ABA763E00DCF5AA /* Router.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct BeerResult: Decodable {
+struct Beer: Decodable, Hashable {
     let id: Int
     let name: String
     let imageURL: String
@@ -21,6 +21,6 @@ struct BeerResult: Decodable {
     }
 }
 
-typealias Beer = [BeerResult]
+//typealias Beer = [BeerResult]
 
 
