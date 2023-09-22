@@ -25,19 +25,21 @@ class BeerCollectionViewCell: UICollectionViewCell {
     }
     
     private func setConfigure() {
-        //contentView.addSubview(imageView)
+        contentView.addSubview(imageView)
         contentView.addSubview(label)
         
     }
     
     private func setConstraints() {
-//        imageView.backgroundColor = .lightGray
-//        imageView.snp.makeConstraints { make in
-//            make.height.equalTo(contentView)
-//            make.leading.equalTo(contentView)
-//            make.width.equalTo(contentView).multipliedBy(0.3)
-//
-//        }
+        //imageView.backgroundColor = .lightGray
+        imageView.contentMode = .scaleAspectFit
+        imageView.snp.makeConstraints { make in
+            make.verticalEdges.equalTo(contentView).inset(10)
+            //make.height.equalTo(contentView)
+            make.leading.equalTo(contentView)
+            make.width.equalTo(contentView).multipliedBy(0.3)
+
+        }
         
         label.text = "text"
         label.snp.makeConstraints { make in

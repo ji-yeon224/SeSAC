@@ -11,11 +11,10 @@ import SnapKit
 class BeerViewController: UIViewController {
     
     
-    private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
+    lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
     var dataSource: UICollectionViewDiffableDataSource<Int, Beer>!
     var segmentedControl = UISegmentedControl(items: ["BeerList", "Ramdom Beer"])
     
-    //var beerList: BeerList?
     var beerList = BeerList()
     
     
@@ -27,7 +26,7 @@ class BeerViewController: UIViewController {
         segmentedControl.selectedSegmentIndex = 0
         callRequestBeer(router: .beers)
         updateSnapshot()
-//        collectionView.register(BeerCollectionViewCell.self, forCellWithReuseIdentifier: "beerCell")
+        collectionView.register(BeerCollectionViewCell.self, forCellWithReuseIdentifier: "beerCell")
         
         
     }
@@ -65,20 +64,26 @@ class BeerViewController: UIViewController {
         }
     }
     
-    
     private func collectionViewLayout() -> UICollectionViewLayout {
-//        let layout = UICollectionViewFlowLayout()
-//        layout.itemSize = CGSize(width: collectionView.bounds.width, height: 100)
-//        layout.scrollDirection = .vertical
-//        return layout
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(100))
         
-        var configuration = UICollectionLayoutListConfiguration(appearance: .plain)
-        configuration.showsSeparators = false // 셀 경계선
-        let layout = UICollectionViewCompositionalLayout.list(using: configuration)
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(100))
+        
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, repeatingSubitem: item, count: 1)
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        section.interGroupSpacing = 10
+        let layout = UICollectionViewCompositionalLayout(section: section)
         
         return layout
         
     }
+    
+    
+
     
     private func updateSnapshot() {
         var snapshot = NSDiffableDataSourceSnapshot<Int, Beer>()
@@ -89,35 +94,32 @@ class BeerViewController: UIViewController {
 
     private func configurationDataSource() {
         
-        let cellRegistration = UICollectionView.CellRegistration<UICollectionViewCell, Beer> { cell, indexPath, itemIdentifier in
+        let cellRegistration = UICollectionView.CellRegistration<BeerCollectionViewCell, Beer> { cell, indexPath, itemIdentifier in
             
-            var content = UIListContentConfiguration.valueCell()
+            cell.layer.cornerRadius = 10
+            cell.layer.borderWidth = 1
+            cell.layer.borderColor = UIColor.darkGray.cgColor
+            cell.label.text = itemIdentifier.name
             
-            content.text = itemIdentifier.name
-            content.imageProperties.maximumSize = CGSize(width: 100, height: 130)
-            content.imageToTextPadding = 20
             
             DispatchQueue.global().async {
                 guard let url = itemIdentifier.imageURL else {
                     DispatchQueue.main.async {
-                        content.image = UIImage(systemName: "wineglass")
-                        cell.contentConfiguration = content
+                        cell.imageView.image = UIImage(systemName: "wineglass")
                     }
                     return
                 }
                 
                 guard let imgURL = URL(string: url) else {
                     DispatchQueue.main.async {
-                        content.image = UIImage(systemName: "wineglass")
-                        cell.contentConfiguration = content
+                        cell.imageView.image = UIImage(systemName: "wineglass")
                     }
                     return
                 }
                 let data = try? Data(contentsOf: imgURL)
 
                 DispatchQueue.main.async {
-                    content.image = UIImage(data: data!)
-                    cell.contentConfiguration = content
+                    cell.imageView.image = UIImage(data: data!)
                     
                 }
             }

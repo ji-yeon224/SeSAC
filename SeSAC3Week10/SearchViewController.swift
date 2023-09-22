@@ -61,32 +61,32 @@ class SearchViewController: UIViewController, UICollectionViewDelegate {
         
     }
 
-//    func configureCollectionLayout() -> UICollectionViewLayout{
-//
-//        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/3), heightDimension: .fractionalHeight(1.0))
-//
-//        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-//        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(80))
-//
-//        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 3)
-//        group.interItemSpacing = .fixed(10) // 아이템 옆 간격
-//        let section = NSCollectionLayoutSection(group: group)
-//        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
-//        section.interGroupSpacing = 10 // 줄 간격
-//        let layout = UICollectionViewCompositionalLayout(section: section)
-//
-//        return layout
-//
-//    }
-    
     func configureCollectionLayout() -> UICollectionViewLayout{
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 50, height: 50)
-        layout.scrollDirection = .vertical
+
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/3), heightDimension: .fractionalHeight(1.0))
+
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(80))
+
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 3)
+        group.interItemSpacing = .fixed(10) // 아이템 옆 간격
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        section.interGroupSpacing = 10 // 줄 간격
+        let layout = UICollectionViewCompositionalLayout(section: section)
 
         return layout
 
     }
+    
+//    func configureCollectionLayout() -> UICollectionViewLayout{
+//        let layout = UICollectionViewFlowLayout()
+//        layout.itemSize = CGSize(width: 50, height: 50)
+//        layout.scrollDirection = .vertical
+//
+//        return layout
+//
+//    }
     
 }
 
