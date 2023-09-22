@@ -10,6 +10,8 @@
 		CE5F86372ABBCB42004D2FED /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F86362ABBCB42004D2FED /* SearchViewController.swift */; };
 		CE5F86392ABBE10B004D2FED /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F86382ABBE10B004D2FED /* SearchCollectionViewCell.swift */; };
 		CE5F863B2ABD1698004D2FED /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F863A2ABD1698004D2FED /* Constant.swift */; };
+		CE5F863D2ABD761D004D2FED /* BeerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F863C2ABD761D004D2FED /* BeerCollectionViewCell.swift */; };
+		CE5F863F2ABD8706004D2FED /* BeerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F863E2ABD8706004D2FED /* BeerRouter.swift */; };
 		CEDFB68E2AB9294500DCF5AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB68D2AB9294500DCF5AA /* AppDelegate.swift */; };
 		CEDFB6902AB9294500DCF5AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB68F2AB9294500DCF5AA /* SceneDelegate.swift */; };
 		CEDFB6922AB9294500DCF5AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB6912AB9294500DCF5AA /* ViewController.swift */; };
@@ -36,6 +38,8 @@
 		CE5F86362ABBCB42004D2FED /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		CE5F86382ABBE10B004D2FED /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE5F863A2ABD1698004D2FED /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		CE5F863C2ABD761D004D2FED /* BeerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE5F863E2ABD8706004D2FED /* BeerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerRouter.swift; sourceTree = "<group>"; };
 		CEDFB68A2AB9294500DCF5AA /* SeSAC3Week10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC3Week10.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDFB68D2AB9294500DCF5AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEDFB68F2AB9294500DCF5AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 				CEDFB6D82AB9C34300DCF5AA /* BeerViewController.swift */,
 				CEDFB6DA2AB9E5B100DCF5AA /* PunkViewModel.swift */,
 				CEDFB6DC2AB9E5CE00DCF5AA /* Observable.swift */,
+				CE5F863C2ABD761D004D2FED /* BeerCollectionViewCell.swift */,
+				CE5F863E2ABD8706004D2FED /* BeerRouter.swift */,
 			);
 			path = Punk;
 			sourceTree = "<group>";
@@ -214,6 +220,8 @@
 			files = (
 				CE5F86372ABBCB42004D2FED /* SearchViewController.swift in Sources */,
 				CE5F863B2ABD1698004D2FED /* Constant.swift in Sources */,
+				CE5F863D2ABD761D004D2FED /* BeerCollectionViewCell.swift in Sources */,
+				CE5F863F2ABD8706004D2FED /* BeerRouter.swift in Sources */,
 				CEDFB6D92AB9C34300DCF5AA /* BeerViewController.swift in Sources */,
 				CEDFB6D52AB9BF6200DCF5AA /* PunkAPI.swift in Sources */,
 				CEDFB6922AB9294500DCF5AA /* ViewController.swift in Sources */,

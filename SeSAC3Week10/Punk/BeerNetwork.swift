@@ -19,10 +19,10 @@ class BeerNetwork {
         AF.request(api.endPoint, method: .get).responseDecodable(of: T.self) { response in
             switch response.result {
             case .success(let data): completion(.success(data))
-                
             case .failure(let error): completion(.failure(error))
             }
         }
     }
     
+
 }

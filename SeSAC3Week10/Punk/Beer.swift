@@ -11,7 +11,7 @@ import Foundation
 struct Beer: Decodable, Hashable {
     let id: Int
     let name: String
-    let imageURL: String
+    let imageURL: String?
 
 
     enum CodingKeys: String, CodingKey {
@@ -21,6 +21,6 @@ struct Beer: Decodable, Hashable {
     }
 }
 
-//typealias Beer = [BeerResult]
+typealias BeerList = [Beer]
 
 
