@@ -12,6 +12,7 @@
 		CE5F863B2ABD1698004D2FED /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F863A2ABD1698004D2FED /* Constant.swift */; };
 		CE5F863D2ABD761D004D2FED /* BeerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F863C2ABD761D004D2FED /* BeerCollectionViewCell.swift */; };
 		CE5F863F2ABD8706004D2FED /* BeerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F863E2ABD8706004D2FED /* BeerRouter.swift */; };
+		CE5F86412ABDA35A004D2FED /* BeerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F86402ABDA35A004D2FED /* BeerView.swift */; };
 		CEDFB68E2AB9294500DCF5AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB68D2AB9294500DCF5AA /* AppDelegate.swift */; };
 		CEDFB6902AB9294500DCF5AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB68F2AB9294500DCF5AA /* SceneDelegate.swift */; };
 		CEDFB6922AB9294500DCF5AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB6912AB9294500DCF5AA /* ViewController.swift */; };
@@ -28,7 +29,7 @@
 		CEDFB6D52AB9BF6200DCF5AA /* PunkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB6D42AB9BF6200DCF5AA /* PunkAPI.swift */; };
 		CEDFB6D72AB9C1A800DCF5AA /* BeerNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB6D62AB9C1A800DCF5AA /* BeerNetwork.swift */; };
 		CEDFB6D92AB9C34300DCF5AA /* BeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB6D82AB9C34300DCF5AA /* BeerViewController.swift */; };
-		CEDFB6DB2AB9E5B100DCF5AA /* PunkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB6DA2AB9E5B100DCF5AA /* PunkViewModel.swift */; };
+		CEDFB6DB2AB9E5B100DCF5AA /* BeerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB6DA2AB9E5B100DCF5AA /* BeerViewModel.swift */; };
 		CEDFB6DD2AB9E5CE00DCF5AA /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB6DC2AB9E5CE00DCF5AA /* Observable.swift */; };
 		CEDFB6DF2ABA763E00DCF5AA /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB6DE2ABA763E00DCF5AA /* Router.swift */; };
 		CEDFB6E12ABA9A8500DCF5AA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB6E02ABA9A8500DCF5AA /* ViewModel.swift */; };
@@ -40,6 +41,7 @@
 		CE5F863A2ABD1698004D2FED /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		CE5F863C2ABD761D004D2FED /* BeerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE5F863E2ABD8706004D2FED /* BeerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerRouter.swift; sourceTree = "<group>"; };
+		CE5F86402ABDA35A004D2FED /* BeerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerView.swift; sourceTree = "<group>"; };
 		CEDFB68A2AB9294500DCF5AA /* SeSAC3Week10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC3Week10.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDFB68D2AB9294500DCF5AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEDFB68F2AB9294500DCF5AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,7 +57,7 @@
 		CEDFB6D42AB9BF6200DCF5AA /* PunkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunkAPI.swift; sourceTree = "<group>"; };
 		CEDFB6D62AB9C1A800DCF5AA /* BeerNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerNetwork.swift; sourceTree = "<group>"; };
 		CEDFB6D82AB9C34300DCF5AA /* BeerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewController.swift; sourceTree = "<group>"; };
-		CEDFB6DA2AB9E5B100DCF5AA /* PunkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunkViewModel.swift; sourceTree = "<group>"; };
+		CEDFB6DA2AB9E5B100DCF5AA /* BeerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewModel.swift; sourceTree = "<group>"; };
 		CEDFB6DC2AB9E5CE00DCF5AA /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		CEDFB6DE2ABA763E00DCF5AA /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		CEDFB6E02ABA9A8500DCF5AA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -129,10 +131,11 @@
 				CEDFB6D42AB9BF6200DCF5AA /* PunkAPI.swift */,
 				CEDFB6D62AB9C1A800DCF5AA /* BeerNetwork.swift */,
 				CEDFB6D82AB9C34300DCF5AA /* BeerViewController.swift */,
-				CEDFB6DA2AB9E5B100DCF5AA /* PunkViewModel.swift */,
+				CEDFB6DA2AB9E5B100DCF5AA /* BeerViewModel.swift */,
 				CEDFB6DC2AB9E5CE00DCF5AA /* Observable.swift */,
 				CE5F863C2ABD761D004D2FED /* BeerCollectionViewCell.swift */,
 				CE5F863E2ABD8706004D2FED /* BeerRouter.swift */,
+				CE5F86402ABDA35A004D2FED /* BeerView.swift */,
 			);
 			path = Punk;
 			sourceTree = "<group>";
@@ -232,10 +235,11 @@
 				CEDFB6E12ABA9A8500DCF5AA /* ViewModel.swift in Sources */,
 				CEDFB6AC2AB93CCB00DCF5AA /* NetworkBasic.swift in Sources */,
 				CEDFB68E2AB9294500DCF5AA /* AppDelegate.swift in Sources */,
+				CE5F86412ABDA35A004D2FED /* BeerView.swift in Sources */,
 				CEDFB6D32AB9BEB500DCF5AA /* Beer.swift in Sources */,
 				CEDFB6902AB9294500DCF5AA /* SceneDelegate.swift in Sources */,
 				CEDFB6D72AB9C1A800DCF5AA /* BeerNetwork.swift in Sources */,
-				CEDFB6DB2AB9E5B100DCF5AA /* PunkViewModel.swift in Sources */,
+				CEDFB6DB2AB9E5B100DCF5AA /* BeerViewModel.swift in Sources */,
 				CEDFB6DF2ABA763E00DCF5AA /* Router.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
