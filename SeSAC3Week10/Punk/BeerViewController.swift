@@ -25,10 +25,11 @@ class BeerViewController: UIViewController {
         setConstraints()
         configurationDataSource()
         segmentedControl.selectedSegmentIndex = 0
-        
+        callRequestBeer(router: .beers)
+        updateSnapshot()
 //        collectionView.register(BeerCollectionViewCell.self, forCellWithReuseIdentifier: "beerCell")
         
-        getResponseBeerList()
+        
     }
     
     private func configure() {
@@ -40,12 +41,14 @@ class BeerViewController: UIViewController {
     
     @objc private func indexChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
-        case 0: getResponseBeerList()
-        case 1: getResponseRandomBeer()
+        case 0:
+            callRequestBeer(router: .beers)
+        case 1:
+            callRequestBeer(router: .random)
         default:
-            getResponseBeerList()
+            callRequestBeer(router: .beers)
         }
-        //updateSnapshot()
+        
     }
     
     
@@ -135,44 +138,19 @@ class BeerViewController: UIViewController {
 }
 
 extension BeerViewController {
-    func getResponseBeerList() {
-        beerList.removeAll()
-        BeerNetwork.shared.requestBeer(type: BeerList.self, api: PunkAPI.beers) { response in
+
+    func callRequestBeer(router: BeerRouter) {
+        
+        BeerNetwork.shared.requestBeerConvertible(type: BeerList.self, api: router) { response in
             switch response {
             case .success(let success):
                 self.beerList = success
-                //dump(success)
             case .failure(let failure):
                 print(failure)
             }
             self.updateSnapshot()
         }
-    }
-    
-    func getResponseRandomBeer() {
-        beerList.removeAll()
-        BeerNetwork.shared.requestBeer(type: BeerList.self, api: PunkAPI.random) { response in
-            switch response {
-            case .success(let success):
-                self.beerList = success
-                dump(success)
-            case .failure(let failure):
-                print(failure)
-            }
-            self.updateSnapshot()
-        }
-    }
-    
-    func getResponseOneBeer() {
-        beerList.removeAll()
-        BeerNetwork.shared.requestBeer(type: BeerList.self, api: PunkAPI.single(id: 13)) { response in
-            switch response {
-            case .success(let success):
-                self.beerList = success
-                dump(success)
-            case .failure(let failure):
-                print(failure)
-            }
-        }
+        
+       
     }
 }
