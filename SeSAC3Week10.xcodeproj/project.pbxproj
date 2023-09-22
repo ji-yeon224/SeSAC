@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE5F86372ABBCB42004D2FED /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F86362ABBCB42004D2FED /* SearchViewController.swift */; };
+		CE5F86392ABBE10B004D2FED /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F86382ABBE10B004D2FED /* SearchCollectionViewCell.swift */; };
+		CE5F863B2ABD1698004D2FED /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F863A2ABD1698004D2FED /* Constant.swift */; };
 		CEDFB68E2AB9294500DCF5AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB68D2AB9294500DCF5AA /* AppDelegate.swift */; };
 		CEDFB6902AB9294500DCF5AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB68F2AB9294500DCF5AA /* SceneDelegate.swift */; };
 		CEDFB6922AB9294500DCF5AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFB6912AB9294500DCF5AA /* ViewController.swift */; };
@@ -30,6 +33,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE5F86362ABBCB42004D2FED /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		CE5F86382ABBE10B004D2FED /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE5F863A2ABD1698004D2FED /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		CEDFB68A2AB9294500DCF5AA /* SeSAC3Week10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC3Week10.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDFB68D2AB9294500DCF5AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEDFB68F2AB9294500DCF5AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +100,9 @@
 				CEDFB6982AB9294600DCF5AA /* LaunchScreen.storyboard */,
 				CEDFB69B2AB9294600DCF5AA /* Info.plist */,
 				CEDFB6E02ABA9A8500DCF5AA /* ViewModel.swift */,
+				CE5F86362ABBCB42004D2FED /* SearchViewController.swift */,
+				CE5F86382ABBE10B004D2FED /* SearchCollectionViewCell.swift */,
+				CE5F863A2ABD1698004D2FED /* Constant.swift */,
 			);
 			path = SeSAC3Week10;
 			sourceTree = "<group>";
@@ -203,11 +212,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE5F86372ABBCB42004D2FED /* SearchViewController.swift in Sources */,
+				CE5F863B2ABD1698004D2FED /* Constant.swift in Sources */,
 				CEDFB6D92AB9C34300DCF5AA /* BeerViewController.swift in Sources */,
 				CEDFB6D52AB9BF6200DCF5AA /* PunkAPI.swift in Sources */,
 				CEDFB6922AB9294500DCF5AA /* ViewController.swift in Sources */,
 				CEDFB6AE2AB9649E00DCF5AA /* UnsplashAPI.swift in Sources */,
 				CEDFB6DD2AB9E5CE00DCF5AA /* Observable.swift in Sources */,
+				CE5F86392ABBE10B004D2FED /* SearchCollectionViewCell.swift in Sources */,
 				CEDFB6B02AB9743700DCF5AA /* Network.swift in Sources */,
 				CEDFB6E12ABA9A8500DCF5AA /* ViewModel.swift in Sources */,
 				CEDFB6AC2AB93CCB00DCF5AA /* NetworkBasic.swift in Sources */,
