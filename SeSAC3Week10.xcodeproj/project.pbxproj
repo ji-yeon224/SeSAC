@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE3DF7EF2AC2706F00653CE1 /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3DF7EE2AC2706F00653CE1 /* Sample.swift */; };
 		CE5F86372ABBCB42004D2FED /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F86362ABBCB42004D2FED /* SearchViewController.swift */; };
 		CE5F86392ABBE10B004D2FED /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F86382ABBE10B004D2FED /* SearchCollectionViewCell.swift */; };
 		CE5F863B2ABD1698004D2FED /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F863A2ABD1698004D2FED /* Constant.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE3DF7EE2AC2706F00653CE1 /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
 		CE5F86362ABBCB42004D2FED /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		CE5F86382ABBE10B004D2FED /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE5F863A2ABD1698004D2FED /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				CE5F86362ABBCB42004D2FED /* SearchViewController.swift */,
 				CE5F86382ABBE10B004D2FED /* SearchCollectionViewCell.swift */,
 				CE5F863A2ABD1698004D2FED /* Constant.swift */,
+				CE3DF7EE2AC2706F00653CE1 /* Sample.swift */,
 			);
 			path = SeSAC3Week10;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				CEDFB6902AB9294500DCF5AA /* SceneDelegate.swift in Sources */,
 				CEDFB6D72AB9C1A800DCF5AA /* BeerNetwork.swift in Sources */,
 				CEDFB6DB2AB9E5B100DCF5AA /* BeerViewModel.swift in Sources */,
+				CE3DF7EF2AC2706F00653CE1 /* Sample.swift in Sources */,
 				CEDFB6DF2ABA763E00DCF5AA /* Router.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

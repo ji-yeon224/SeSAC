@@ -9,21 +9,27 @@ import UIKit
 import SnapKit
 
 
-class SearchViewController: UIViewController, UICollectionViewDelegate {
+class SearchViewController: UIViewController, UICollectionViewDelegate, UISearchBarDelegate {
     
-    let list = Array(0...100)
+    let list = ["이모티콘", "새싹", "추석", "햄버거", "컬렉션뷰레이아웃", "고래밥"]
     
     
-    lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: configureCollectionLayout())
+    lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: configureTagLayout())
     
-    var dataSource: UICollectionViewDiffableDataSource<Int, Int>!
+    var dataSource: UICollectionViewDiffableDataSource<Int, PhotoResult>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         configureHierachy()
         configureLayout()
         configureDataSource()
-        collectionView.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        
+        let bar = UISearchBar()
+        bar.delegate = self
+        navigationItem.titleView = bar
+        
+        
     }
     
     private func configureHierachy() {
@@ -38,12 +44,30 @@ class SearchViewController: UIViewController, UICollectionViewDelegate {
         }
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        Network.shared.requestConvertible(type: Photo.self, api: .search(query: searchBar.text!)) { response in
+            
+            switch response {
+            case .success(let success):
+                // 데이터 + UI 스냅샷
+                let ratios = success.results.map { Ratio(ratio: $0.width / $0.height) } // 이미지 비율 구하기
+                let layout = PinterestLayout(columnsCount: 2, itemRatios: ratios, spacing: 10, contentWidth: self.view.frame.width)
+                self.collectionView.collectionViewLayout = UICollectionViewCompositionalLayout(section: layout.section)
+                self.configureSnapshot(success)
+                dump(success)
+            case .failure(let failure):
+                print(failure.localizedDescription)
+            }
+        }
+        
+    }
+    
     private func configureDataSource() {
         
-        let cellRegistration = UICollectionView.CellRegistration<SearchCollectionViewCell, Int> { cell, indexPath, itemIdentifier in
-            cell.imageView.image = UIImage(systemName: "star")
-            cell.imageView.tintColor = .yellow
-            cell.label.text = "\(itemIdentifier)번"
+        let cellRegistration = UICollectionView.CellRegistration<SearchCollectionViewCell, PhotoResult> { cell, indexPath, itemIdentifier in
+            cell.imageView.kf.setImage(with: URL(string: itemIdentifier.urls.thumb)!)
+            cell.label.text = "\(itemIdentifier.created_at)"
         }
         
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
@@ -51,33 +75,95 @@ class SearchViewController: UIViewController, UICollectionViewDelegate {
             
             return cell
         })
+       
+    }
+    
+    func configureSnapshot(_ item: Photo){
         
-        
-        var snapshot = NSDiffableDataSourceSnapshot<Int, Int>()
+        var snapshot = NSDiffableDataSourceSnapshot<Int, PhotoResult>()
         snapshot.appendSections([0])
-        snapshot.appendItems(list)
+        snapshot.appendItems(item.results)
         dataSource.apply(snapshot)
         
-        
     }
+    
+   
+    
+    func configurePinterestLayout() -> UICollectionViewLayout{
 
-    func configureCollectionLayout() -> UICollectionViewLayout{
-
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/3), heightDimension: .fractionalHeight(1.0))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/2), heightDimension: .estimated(150))
 
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(80))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(150))
 
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 3)
+        //let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 3)
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 2)
+        
         group.interItemSpacing = .fixed(10) // 아이템 옆 간격
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
         section.interGroupSpacing = 10 // 줄 간격
+        
+        let configuration = UICollectionViewCompositionalLayoutConfiguration()
+        configuration.scrollDirection = .vertical
+        
         let layout = UICollectionViewCompositionalLayout(section: section)
+        layout.configuration = configuration
 
         return layout
 
     }
+    
+    
+    func configureTagLayout() -> UICollectionViewLayout{
+
+        let itemSize = NSCollectionLayoutSize(widthDimension: .estimated(80), heightDimension: .fractionalHeight(1.0))
+
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .estimated(80), heightDimension: .absolute(30))
+
+        //let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 3)
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        
+        group.interItemSpacing = .fixed(10) // 아이템 옆 간격
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        section.interGroupSpacing = 10 // 줄 간격
+        
+        let configuration = UICollectionViewCompositionalLayoutConfiguration()
+        configuration.scrollDirection = .vertical
+        
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        layout.configuration = configuration
+
+        return layout
+
+    }
+
+//    func configureCollectionLayout() -> UICollectionViewLayout{
+//
+//
+//
+//        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/4), heightDimension: .fractionalHeight(1.0))
+//
+//        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+//        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(80))
+//
+//        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 4)
+//        group.interItemSpacing = .fixed(30) // 아이템 옆 간격
+//        let section = NSCollectionLayoutSection(group: group)
+//        section.contentInsets = NSDirectionalEdgeInsets(top: 30, leading: 30, bottom: 30, trailing: 30)
+//        section.interGroupSpacing = 30 // 줄 간격
+//
+//        let configuration = UICollectionViewCompositionalLayoutConfiguration()
+//        configuration.scrollDirection = .horizontal
+//
+//        let layout = UICollectionViewCompositionalLayout(section: section)
+//        layout.configuration = configuration
+//
+//        return layout
+//
+//    }
     
 //    func configureCollectionLayout() -> UICollectionViewLayout{
 //        let layout = UICollectionViewFlowLayout()

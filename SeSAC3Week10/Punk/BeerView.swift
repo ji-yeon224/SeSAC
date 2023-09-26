@@ -33,7 +33,7 @@ class BeerView: UIView {
         addSubview(segmentedControl)
         addSubview(collectionView)
         
-        collectionView.register(BeerCollectionViewCell.self, forCellWithReuseIdentifier: "beerCell")
+        //collectionView.register(BeerCollectionViewCell.self, forCellWithReuseIdentifier: "beerCell")
     }
     
     private func setConstraints() {
