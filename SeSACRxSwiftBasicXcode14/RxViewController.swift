@@ -22,6 +22,8 @@ class RxViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        sample()
+        
         nickname //Observable
             .bind(to: self.nameLabel.rx.text)
             .disposed(by: disposeBag)
@@ -67,4 +69,28 @@ class RxViewController: UIViewController {
             }
             .disposed(by: disposeBag)
     }
+    
+    func sample() {
+        
+        let item = [2, 3, 4, 5, 6, 7, 100]
+        let item2 = [3, 5, 7]
+        Observable.repeatElement("Jack")
+            .take(5)
+            .subscribe { value in
+                print("subscribe - \(value)")
+            } onError: { error in
+                print("error - \(error)")
+            } onCompleted: {
+                print("onCompleted")
+            } onDisposed: {
+                print("onDisposed")
+            }
+            .disposed(by: disposeBag)
+
+        
+    }
+    
+    
+    
+    
 }
