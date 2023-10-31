@@ -17,6 +17,7 @@
 		CED594432AF13A90003CE7C7 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CED594422AF13A90003CE7C7 /* RxSwift */; };
 		CED594452AF13ACF003CE7C7 /* SimplePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED594442AF13ACF003CE7C7 /* SimplePickerViewController.swift */; };
 		CED594472AF144D8003CE7C7 /* RxTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED594462AF144D8003CE7C7 /* RxTableViewController.swift */; };
+		CED594492AF15234003CE7C7 /* ValidationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED594482AF15234003CE7C7 /* ValidationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		CED594392AF139F8003CE7C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CED594442AF13ACF003CE7C7 /* SimplePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePickerViewController.swift; sourceTree = "<group>"; };
 		CED594462AF144D8003CE7C7 /* RxTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxTableViewController.swift; sourceTree = "<group>"; };
+		CED594482AF15234003CE7C7 /* ValidationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				CED594392AF139F8003CE7C7 /* Info.plist */,
 				CED594442AF13ACF003CE7C7 /* SimplePickerViewController.swift */,
 				CED594462AF144D8003CE7C7 /* RxTableViewController.swift */,
+				CED594482AF15234003CE7C7 /* ValidationViewController.swift */,
 			);
 			path = RxSwiftPractice;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CED594452AF13ACF003CE7C7 /* SimplePickerViewController.swift in Sources */,
+				CED594492AF15234003CE7C7 /* ValidationViewController.swift in Sources */,
 				CED594302AF139F7003CE7C7 /* ViewController.swift in Sources */,
 				CED5942C2AF139F7003CE7C7 /* AppDelegate.swift in Sources */,
 				CED594472AF144D8003CE7C7 /* RxTableViewController.swift in Sources */,
