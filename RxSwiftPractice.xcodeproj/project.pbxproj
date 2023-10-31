@@ -13,6 +13,9 @@
 		CED594332AF139F7003CE7C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED594312AF139F7003CE7C7 /* Main.storyboard */; };
 		CED594352AF139F8003CE7C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED594342AF139F8003CE7C7 /* Assets.xcassets */; };
 		CED594382AF139F8003CE7C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED594362AF139F8003CE7C7 /* LaunchScreen.storyboard */; };
+		CED594412AF13A90003CE7C7 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = CED594402AF13A90003CE7C7 /* RxCocoa */; };
+		CED594432AF13A90003CE7C7 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CED594422AF13A90003CE7C7 /* RxSwift */; };
+		CED594452AF13ACF003CE7C7 /* SimplePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED594442AF13ACF003CE7C7 /* SimplePickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,7 @@
 		CED594342AF139F8003CE7C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CED594372AF139F8003CE7C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CED594392AF139F8003CE7C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CED594442AF13ACF003CE7C7 /* SimplePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED594432AF13A90003CE7C7 /* RxSwift in Frameworks */,
+				CED594412AF13A90003CE7C7 /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +69,7 @@
 				CED594342AF139F8003CE7C7 /* Assets.xcassets */,
 				CED594362AF139F8003CE7C7 /* LaunchScreen.storyboard */,
 				CED594392AF139F8003CE7C7 /* Info.plist */,
+				CED594442AF13ACF003CE7C7 /* SimplePickerViewController.swift */,
 			);
 			path = RxSwiftPractice;
 			sourceTree = "<group>";
@@ -83,6 +90,10 @@
 			dependencies = (
 			);
 			name = RxSwiftPractice;
+			packageProductDependencies = (
+				CED594402AF13A90003CE7C7 /* RxCocoa */,
+				CED594422AF13A90003CE7C7 /* RxSwift */,
+			);
 			productName = RxSwiftPractice;
 			productReference = CED594282AF139F7003CE7C7 /* RxSwiftPractice.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +122,9 @@
 				Base,
 			);
 			mainGroup = CED5941F2AF139F7003CE7C7;
+			packageReferences = (
+				CED5943F2AF13A90003CE7C7 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = CED594292AF139F7003CE7C7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED594452AF13ACF003CE7C7 /* SimplePickerViewController.swift in Sources */,
 				CED594302AF139F7003CE7C7 /* ViewController.swift in Sources */,
 				CED5942C2AF139F7003CE7C7 /* AppDelegate.swift in Sources */,
 				CED5942E2AF139F7003CE7C7 /* SceneDelegate.swift in Sources */,
@@ -363,6 +378,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CED5943F2AF13A90003CE7C7 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CED594402AF13A90003CE7C7 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CED5943F2AF13A90003CE7C7 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		CED594422AF13A90003CE7C7 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CED5943F2AF13A90003CE7C7 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CED594202AF139F7003CE7C7 /* Project object */;
 }
