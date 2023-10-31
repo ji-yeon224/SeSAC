@@ -18,6 +18,9 @@ final class SimplePickerViewController: UIViewController {
     @IBOutlet var pickerView1: UIPickerView!
     @IBOutlet var pickerView2: UIPickerView!
     @IBOutlet var pickerView3: UIPickerView!
+    @IBOutlet var pickerView4: UIPickerView!
+    
+    @IBOutlet var label: UILabel!
     
     let disposeBag = DisposeBag()
     
@@ -104,6 +107,24 @@ final class SimplePickerViewController: UIViewController {
             .bind { models in
                 print("models selected 3: \(models)")
             }
+            .disposed(by: disposeBag)
+        setPickerView()
+    }
+    
+    func setPickerView() {
+        
+        let items = Observable.just(["영화", "애니메이션", "드라마", "기타"])
+        
+        items
+            .bind(to: pickerView4.rx.itemTitles) { (row, element) in
+                return element
+            }
+            .disposed(by: disposeBag)
+        
+        
+        pickerView4.rx.modelSelected(String.self)
+            .map{ $0.description }
+            .bind(to: label.rx.text)
             .disposed(by: disposeBag)
         
     }
