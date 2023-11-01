@@ -7,11 +7,19 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class NicknameViewController: UIViewController {
    
     let nicknameTextField = SignTextField(placeholderText: "닉네임을 입력해주세요")
     let nextButton = PointButton(title: "다음")
+    
+    let disposeBag = DisposeBag()
+    
+    let buttonHidden = BehaviorSubject(value: true)
+    let warningLabel = WarningLabel(text: "2글자 이상 6글자 이하로 작성하여 주세요.")
+    let labelHidden = BehaviorSubject(value: false)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +29,33 @@ class NicknameViewController: UIViewController {
         configureLayout()
        
         nextButton.addTarget(self, action: #selector(nextButtonClicked), for: .touchUpInside)
+        
+        bind()
 
+    }
+    
+    func bind() {
+        
+        buttonHidden
+            .bind(to: nextButton.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        labelHidden
+            .bind(to: warningLabel.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        
+       
+        
+        nicknameTextField.rx.text.orEmpty
+            .map{ $0.count >= 2 && $0.count < 6 }
+            .subscribe(with: self) { owner, value in
+                owner.buttonHidden.onNext(!value)
+                owner.labelHidden.onNext(value)
+            }
+            .disposed(by: disposeBag)
+        
+        
     }
     
     @objc func nextButtonClicked() {
@@ -32,6 +66,14 @@ class NicknameViewController: UIViewController {
     func configureLayout() {
         view.addSubview(nicknameTextField)
         view.addSubview(nextButton)
+        view.addSubview(warningLabel)
+        
+        warningLabel.snp.makeConstraints { make in
+            make.height.equalTo(30)
+            make.bottom.equalTo(nicknameTextField.snp.top).offset(-10)
+            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(30)
+            
+        }
          
         nicknameTextField.snp.makeConstraints { make in
             make.height.equalTo(50)

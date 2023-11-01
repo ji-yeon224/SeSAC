@@ -28,6 +28,7 @@
 		041280712AEFAD3D00972552 /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041280702AEFAD3D00972552 /* PhoneViewController.swift */; };
 		041280732AEFAD4B00972552 /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041280722AEFAD4B00972552 /* NicknameViewController.swift */; };
 		041280782AF1D14000972552 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041280772AF1D14000972552 /* Resource.swift */; };
+		CE7BD7D42AF28F530022BE5D /* WarningLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BD7D32AF28F530022BE5D /* WarningLabel.swift */; };
 		CEE3D0B72AF209A800EB5B70 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3D0B62AF209A800EB5B70 /* Extension+String.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		041280702AEFAD3D00972552 /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
 		041280722AEFAD4B00972552 /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
 		041280772AF1D14000972552 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		CE7BD7D32AF28F530022BE5D /* WarningLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningLabel.swift; sourceTree = "<group>"; };
 		CEE3D0B62AF209A800EB5B70 /* Extension+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,6 +183,7 @@
 			children = (
 				041280622AEFA0CE00972552 /* PointButton.swift */,
 				041280642AEFA2F000972552 /* SignTextField.swift */,
+				CE7BD7D32AF28F530022BE5D /* WarningLabel.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				0412806C2AEFABFE00972552 /* PasswordViewController.swift in Sources */,
 				041280562AEFA04800972552 /* SignInViewController.swift in Sources */,
 				041280282AEF9BAB00972552 /* ViewController.swift in Sources */,
+				CE7BD7D42AF28F530022BE5D /* WarningLabel.swift in Sources */,
 				041280632AEFA0CE00972552 /* PointButton.swift in Sources */,
 				041280242AEF9BAB00972552 /* AppDelegate.swift in Sources */,
 				CEE3D0B72AF209A800EB5B70 /* Extension+String.swift in Sources */,
