@@ -7,6 +7,8 @@
  
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class BirthdayViewController: UIViewController {
     
@@ -66,6 +68,13 @@ class BirthdayViewController: UIViewController {
   
     let nextButton = PointButton(title: "가입하기")
     
+    let birthday: BehaviorSubject<Date> = BehaviorSubject(value: .now)
+    let year = BehaviorSubject(value: 2020)
+    let month = BehaviorSubject(value: 12)
+    let day = BehaviorSubject(value: 22)
+    
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -74,6 +83,51 @@ class BirthdayViewController: UIViewController {
         configureLayout()
         
         nextButton.addTarget(self, action: #selector(nextButtonClicked), for: .touchUpInside)
+        bind()
+    }
+    
+    func bind() {
+        
+        birthDayPicker.rx.date
+            .bind(to: birthday)
+            .disposed(by: disposeBag)
+        
+        birthday
+            .subscribe(with: self) { owner, date in
+                let component = Calendar.current.dateComponents([.year, .month, .day], from: date)
+                owner.year.onNext(component.year!)
+                owner.month.onNext(component.month!)
+                owner.day.onNext(component.day!)
+            } onDisposed: { owner in
+                print("birthday dispose")
+            }
+            .dispose() // 즉시 리소스 정리, 구독 해제
+        
+        year
+            .observe(on: MainScheduler.instance) //Schedular
+            .subscribe(with: self) { owner, value in
+                owner.yearLabel.text = "\(value)년"
+            } onDisposed: { owner in
+                print("year dispose")
+            }
+            .disposed(by: disposeBag)
+        
+        month
+            .observe(on: MainScheduler.instance)
+            .subscribe(with: self) { owner, value in
+                owner.monthLabel.text = "\(value)월"
+            } onDisposed: { owner in
+                print("month dispose")
+            }
+            .disposed(by: disposeBag)
+        
+        day
+            .map { "\($0)일" }
+            .bind(to: dayLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        
+        
     }
     
     @objc func nextButtonClicked() {
