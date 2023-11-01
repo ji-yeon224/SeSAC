@@ -7,6 +7,8 @@
  
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class BirthdayViewController: UIViewController {
     
@@ -66,6 +68,15 @@ class BirthdayViewController: UIViewController {
   
     let nextButton = PointButton(title: "가입하기")
     
+    let disposeBag = DisposeBag()
+    let birthday = BehaviorSubject<Date>(value: .now)
+    let year = BehaviorSubject(value: 2023)
+    let month = BehaviorSubject(value: 11)
+    let day = BehaviorSubject(value: 1)
+    
+    let buttonEnabled = BehaviorSubject(value: false)
+    let buttonColor = BehaviorSubject(value: UIColor.lightGray)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -74,6 +85,67 @@ class BirthdayViewController: UIViewController {
         configureLayout()
         
         nextButton.addTarget(self, action: #selector(nextButtonClicked), for: .touchUpInside)
+        
+        bind()
+    }
+    
+    func bind() {
+        
+        buttonColor
+            .bind(to: nextButton.rx.backgroundColor)
+            .disposed(by: disposeBag)
+        
+        buttonEnabled
+            .bind(to: nextButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        birthDayPicker.rx.date
+            .bind(to: birthday)
+            .disposed(by: disposeBag)
+        
+        birthDayPicker.rx.date
+            .subscribe(with: self) { owner, date in
+                let component = Calendar.current.dateComponents([.year, .month, .day], from: date)
+                owner.year.onNext(component.year!)
+                owner.month.onNext(component.month!)
+                owner.day.onNext(component.day!)
+                
+            }
+            .disposed(by: disposeBag)
+        
+        year
+            .map{"\($0)년"}
+            .bind(to: yearLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        month
+            .map{"\($0)월"}
+            .bind(to: monthLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        day
+            .map{"\($0)일"}
+            .bind(to: dayLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        birthday
+            .subscribe(with: self) { owner, date in
+                let ageCheck = owner.getAge(birthday: date)
+                owner.buttonColor.onNext(ageCheck ? UIColor.blue : UIColor.lightGray)
+                owner.buttonEnabled.onNext(ageCheck)
+                
+            }
+            .disposed(by: disposeBag)
+        
+        
+    }
+    
+    func getAge(birthday: Date) -> Bool {
+        
+        let age = Calendar.current.dateComponents([.year], from: birthday, to: Date())
+        
+        return Int(age.year!) >= 17
+        
     }
     
     @objc func nextButtonClicked() {
