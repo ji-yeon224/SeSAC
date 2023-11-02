@@ -29,6 +29,10 @@
 		041280732AEFAD4B00972552 /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041280722AEFAD4B00972552 /* NicknameViewController.swift */; };
 		041280782AF1D14000972552 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041280772AF1D14000972552 /* Resource.swift */; };
 		CE7BD7D42AF28F530022BE5D /* WarningLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BD7D32AF28F530022BE5D /* WarningLabel.swift */; };
+		CE83E7852AF3C70000AA01A4 /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83E7842AF3C70000AA01A4 /* PhoneViewModel.swift */; };
+		CE83E7872AF3C83C00AA01A4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83E7862AF3C83C00AA01A4 /* Constants.swift */; };
+		CE83E7892AF3CA9700AA01A4 /* NicknameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83E7882AF3CA9700AA01A4 /* NicknameViewModel.swift */; };
+		CE83E78B2AF3CB8C00AA01A4 /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83E78A2AF3CB8C00AA01A4 /* BirthdayViewModel.swift */; };
 		CEE3D0B72AF209A800EB5B70 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3D0B62AF209A800EB5B70 /* Extension+String.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +77,10 @@
 		041280722AEFAD4B00972552 /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
 		041280772AF1D14000972552 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		CE7BD7D32AF28F530022BE5D /* WarningLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningLabel.swift; sourceTree = "<group>"; };
+		CE83E7842AF3C70000AA01A4 /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
+		CE83E7862AF3C83C00AA01A4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CE83E7882AF3CA9700AA01A4 /* NicknameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewModel.swift; sourceTree = "<group>"; };
+		CE83E78A2AF3CB8C00AA01A4 /* BirthdayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
 		CEE3D0B62AF209A800EB5B70 /* Extension+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,6 +192,7 @@
 				041280622AEFA0CE00972552 /* PointButton.swift */,
 				041280642AEFA2F000972552 /* SignTextField.swift */,
 				CE7BD7D32AF28F530022BE5D /* WarningLabel.swift */,
+				CE83E7862AF3C83C00AA01A4 /* Constants.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -194,6 +203,9 @@
 				0412806E2AEFAD2D00972552 /* BirthdayViewController.swift */,
 				041280702AEFAD3D00972552 /* PhoneViewController.swift */,
 				041280722AEFAD4B00972552 /* NicknameViewController.swift */,
+				CE83E7842AF3C70000AA01A4 /* PhoneViewModel.swift */,
+				CE83E7882AF3CA9700AA01A4 /* NicknameViewModel.swift */,
+				CE83E78A2AF3CB8C00AA01A4 /* BirthdayViewModel.swift */,
 			);
 			path = SignUpOptional;
 			sourceTree = "<group>";
@@ -338,13 +350,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				041280782AF1D14000972552 /* Resource.swift in Sources */,
+				CE83E7872AF3C83C00AA01A4 /* Constants.swift in Sources */,
+				CE83E7892AF3CA9700AA01A4 /* NicknameViewModel.swift in Sources */,
 				0412806F2AEFAD2D00972552 /* BirthdayViewController.swift in Sources */,
 				041280652AEFA2F000972552 /* SignTextField.swift in Sources */,
 				0412806C2AEFABFE00972552 /* PasswordViewController.swift in Sources */,
 				041280562AEFA04800972552 /* SignInViewController.swift in Sources */,
+				CE83E7852AF3C70000AA01A4 /* PhoneViewModel.swift in Sources */,
 				041280282AEF9BAB00972552 /* ViewController.swift in Sources */,
 				CE7BD7D42AF28F530022BE5D /* WarningLabel.swift in Sources */,
 				041280632AEFA0CE00972552 /* PointButton.swift in Sources */,
+				CE83E78B2AF3CB8C00AA01A4 /* BirthdayViewModel.swift in Sources */,
 				041280242AEF9BAB00972552 /* AppDelegate.swift in Sources */,
 				CEE3D0B72AF209A800EB5B70 /* Extension+String.swift in Sources */,
 				041280732AEFAD4B00972552 /* NicknameViewController.swift in Sources */,
