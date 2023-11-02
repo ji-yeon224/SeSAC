@@ -25,7 +25,7 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        testSwitch()
+        //testSwitch()
 
         view.backgroundColor = Color.white
         
@@ -33,6 +33,58 @@ class SignInViewController: UIViewController {
         configure()
         
         signUpButton.addTarget(self, action: #selector(signUpButtonClicked), for: .touchUpInside)
+        
+        bind()
+        aboutCombineLatest()
+    }
+    
+    func aboutCombineLatest() {
+        let a = PublishSubject<Int>() //BehaviorSubject(value: 3)
+        let b = PublishSubject<String>() //BehaviorSubject(value: "가")
+        
+        Observable.combineLatest(a, b) { first, second in
+            return "결과: \(first) 그리고 \(second)"
+        }
+        .subscribe(with: self) { owner, data in
+            print(data)
+        }
+        .disposed(by: disposeBag)
+        
+        a.onNext(2)
+        a.onNext(8)
+        a.onNext(5)
+        
+//        b.onNext("나")
+//        b.onNext("다")
+        
+        
+    }
+    
+    func bind() {
+        
+        let email = emailTextField.rx.text.orEmpty
+        let password = passwordTextField.rx.text.orEmpty
+        
+        let validation = Observable.combineLatest(email, password) { first, second in
+            return first.count > 8 && second.count >= 6
+        }
+        
+        validation
+            .bind(to: signInButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        validation.subscribe(with: self) { owner, value in
+            owner.signInButton.backgroundColor = value ? UIColor.blue: UIColor.red
+            owner.emailTextField.layer.borderColor = value ? UIColor.blue.cgColor : UIColor.red.cgColor
+            owner.passwordTextField.layer.borderColor = value ? UIColor.blue.cgColor : UIColor.red.cgColor
+        }
+        .disposed(by: disposeBag)
+        
+        signInButton.rx.tap.subscribe(with: self) { owner, value in
+            print("SELECT")
+        }
+        .disposed(by: disposeBag)
+        
     }
     
     func testSwitch() {
