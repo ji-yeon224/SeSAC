@@ -39,21 +39,6 @@ final class SimplePickerViewController: UIViewController {
             .disposed(by: disposeBag)
 
         
-//        Observable.just([1, 2, 3])
-//            .bind(to: pickerView2.rx.itemAttributedTitles) { _, item in
-//                return NSAttributedString(string: "\(item)",
-//                                          attributes: [
-//                                            NSAttributedString.Key.foregroundColor: UIColor.cyan,
-//                                            NSAttributedString.Key.underlineStyle: NSUnderlineStyle.double.rawValue
-//                                        ])
-//            }
-//            .disposed(by: disposeBag)
-//
-//        pickerView2.rx.modelSelected(Int.self)
-//            .subscribe(onNext: { models in
-//                print("models selected 2: \(models)")
-//            })
-//            .disposed(by: disposeBag)
         
         
         
@@ -74,26 +59,6 @@ final class SimplePickerViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-//        pickerView2.rx.modelSelected(Int.self)
-//            .subscribe { models in
-//                print("models selected 2: \(models)")
-//            }
-//            .disposed(by: disposeBag)
-//
-        
-//        Observable.just([UIColor.red, UIColor.green, UIColor.blue])
-//            .bind(to: pickerView3.rx.items) { _, item, _ in
-//                let view = UIView()
-//                view.backgroundColor = item
-//                return view
-//            }
-//            .disposed(by: disposeBag)
-//
-//        pickerView3.rx.modelSelected(UIColor.self)
-//            .subscribe(onNext: { models in
-//                print("models selected 3: \(models)")
-//            })
-//            .disposed(by: disposeBag)
         
         Observable.just([UIColor.red, UIColor.green, UIColor.blue])
             .bind(to: pickerView3.rx.items) { _, item, _ in
