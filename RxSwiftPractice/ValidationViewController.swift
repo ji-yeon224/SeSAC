@@ -22,13 +22,8 @@ class ValidationViewController: UIViewController {
     
     @IBOutlet var checkButton: UIButton!
     
-    let usernameLabelHidden = BehaviorSubject(value: false)
-    let passwordLabelHidden = BehaviorSubject(value: false)
-    let passwordTextFieldEnabled = BehaviorSubject(value: true)
-    let userNameValid = BehaviorSubject(value: false)
-    let passwordValid = BehaviorSubject(value: false)
-    let totalValid = BehaviorSubject(value: false)
-    let checkButtonEnabled = BehaviorSubject(value: true)
+    let viewModel = ValidationViewModel()
+    
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -43,19 +38,19 @@ class ValidationViewController: UIViewController {
     
     func bind() {
         
-        usernameLabelHidden
+        viewModel.usernameLabelHidden
             .bind(to: usernameValidLabel.rx.isHidden)
             .disposed(by: disposeBag)
         
-        passwordLabelHidden
+        viewModel.passwordLabelHidden
             .bind(to: passwordValidLabel.rx.isHidden)
             .disposed(by: disposeBag)
         
-        checkButtonEnabled
+        viewModel.checkButtonEnabled
             .bind(to: checkButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
-        passwordTextFieldEnabled
+        viewModel.passwordTextFieldEnabled
             .bind(to: passwordTextField.rx.isEnabled)
             .disposed(by: disposeBag)
         
@@ -63,7 +58,7 @@ class ValidationViewController: UIViewController {
             .map{ $0.count >= minimalUsernameLength }
             .observe(on: MainScheduler.instance)
             .subscribe(with: self) { owner, value in
-                owner.userNameValid.onNext(value)
+                owner.viewModel.userNameValid.onNext(value)
             }
             .disposed(by: disposeBag)
         
@@ -71,37 +66,13 @@ class ValidationViewController: UIViewController {
             .map{ $0.count >= minimalUsernameLength }
             .observe(on: MainScheduler.instance)
             .subscribe(with: self) { owner, value in
-                owner.passwordValid.onNext(value)
+                owner.viewModel.passwordValid.onNext(value)
             }
             .disposed(by: disposeBag)
-        
-        let totalValidation = Observable.combineLatest(userNameValid, passwordValid) {
-            return $0 && $1
-        }
-        
-        userNameValid
-            .observe(on: MainScheduler.instance)
-            .subscribe(with: self) { owner, value in
-                owner.usernameLabelHidden.onNext(value)
-                owner.passwordTextFieldEnabled.onNext(value)
-            }
-            .disposed(by: disposeBag)
+    
 
-        passwordValid
-            .observe(on: MainScheduler.instance)
-            .subscribe(with: self) { owner, value in
-                owner.passwordLabelHidden.onNext(value)
-            }
-            .disposed(by: disposeBag)
         
-        totalValid
-            .observe(on: MainScheduler.instance)
-            .subscribe(with: self) { owner, value in
-                owner.checkButtonEnabled.onNext(value)
-            }
-            .disposed(by: disposeBag)
-        
-        totalValidation
+        viewModel.totalValidation
             .bind(to: checkButton.rx.isEnabled)
             .disposed(by: disposeBag)
         

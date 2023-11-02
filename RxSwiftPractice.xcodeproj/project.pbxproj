@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE83E78D2AF3F63C00AA01A4 /* ValidationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83E78C2AF3F63C00AA01A4 /* ValidationViewModel.swift */; };
 		CED5942C2AF139F7003CE7C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED5942B2AF139F7003CE7C7 /* AppDelegate.swift */; };
 		CED5942E2AF139F7003CE7C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED5942D2AF139F7003CE7C7 /* SceneDelegate.swift */; };
 		CED594302AF139F7003CE7C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED5942F2AF139F7003CE7C7 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE83E78C2AF3F63C00AA01A4 /* ValidationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationViewModel.swift; sourceTree = "<group>"; };
 		CED594282AF139F7003CE7C7 /* RxSwiftPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED5942B2AF139F7003CE7C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CED5942D2AF139F7003CE7C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				CED594442AF13ACF003CE7C7 /* SimplePickerViewController.swift */,
 				CED594462AF144D8003CE7C7 /* RxTableViewController.swift */,
 				CED594482AF15234003CE7C7 /* ValidationViewController.swift */,
+				CE83E78C2AF3F63C00AA01A4 /* ValidationViewModel.swift */,
 			);
 			path = RxSwiftPractice;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CED594452AF13ACF003CE7C7 /* SimplePickerViewController.swift in Sources */,
+				CE83E78D2AF3F63C00AA01A4 /* ValidationViewModel.swift in Sources */,
 				CED594492AF15234003CE7C7 /* ValidationViewController.swift in Sources */,
 				CED594302AF139F7003CE7C7 /* ViewController.swift in Sources */,
 				CED5942C2AF139F7003CE7C7 /* AppDelegate.swift in Sources */,
