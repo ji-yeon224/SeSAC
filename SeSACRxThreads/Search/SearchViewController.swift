@@ -10,6 +10,16 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
+class SampleViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .brown
+        title = "\(Int.random(in: 1...100))"
+    }
+    
+}
+
 class SearchViewController: UIViewController {
      
     private let tableView: UITableView = {
@@ -23,7 +33,8 @@ class SearchViewController: UIViewController {
     
     let searchBar = UISearchBar()
      
-    var items = BehaviorSubject(value: Array(100...150).map { "안녕하세요 \($0)"})
+    var data = ["A", "B", "C", "D"]
+    lazy var items = BehaviorSubject(value: data)
     
     let disposeBag = DisposeBag()
     
@@ -33,7 +44,7 @@ class SearchViewController: UIViewController {
         view.backgroundColor = .white
         configure()
         bind()
-        
+        setSearchController()
     }
      
     func bind() {
@@ -42,6 +53,40 @@ class SearchViewController: UIViewController {
             .bind(to: tableView.rx.items(cellIdentifier: SearchTableViewCell.identifier, cellType: SearchTableViewCell.self)) { (row, element, cell) in
                 cell.appNameLabel.text = element
                 cell.appIconImageView.backgroundColor = .green
+                
+                cell.downloadButton.rx.tap
+                    .bind(with: self) { owner, _ in
+                        owner.navigationController?.pushViewController(SampleViewController(), animated: true)
+                    }
+                    .disposed(by: cell.disposeBag)
+            }
+            .disposed(by: disposeBag)
+        
+        Observable.zip(tableView.rx.itemSelected, tableView.rx.modelSelected(String.self))
+            .map{ "셀 선택 \($0), \($1)"}
+            .bind(with: self) { owner, value in
+                print(value)
+            }
+            .disposed(by: disposeBag)
+        
+        searchBar.rx.searchButtonClicked
+            .withLatestFrom(searchBar.rx.text.orEmpty, resultSelector: { _, text in
+                return text
+            })
+            .bind(with: self) { owner, value in
+                owner.data.insert(value, at: 0)
+                owner.items.onNext(owner.data)
+            }
+            .disposed(by: disposeBag)
+        
+        // 실시간 검색
+        searchBar.rx.text.orEmpty
+            .debounce(RxTimeInterval.seconds(1), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .bind(with: self) { owner, value in
+                let result = value == "" ? owner.data : owner.data.filter { $0.contains(value) }
+                owner.items.onNext(result)
+                print("==실시간 검색== \(value)")
             }
             .disposed(by: disposeBag)
 
