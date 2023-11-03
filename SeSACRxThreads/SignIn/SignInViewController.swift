@@ -29,20 +29,23 @@ class SignInViewController: UIViewController {
 
         view.backgroundColor = Color.white
         
+        emailTextField.text = "11111111111"
+        passwordTextField.text = "333333333"
+        
         configureLayout()
         configure()
         
         signUpButton.addTarget(self, action: #selector(signUpButtonClicked), for: .touchUpInside)
         
         bind()
-        aboutCombineLatest()
+        //aboutCombineLatest()
     }
     
     func aboutCombineLatest() {
-        let a = PublishSubject<Int>() //BehaviorSubject(value: 3)
-        let b = PublishSubject<String>() //BehaviorSubject(value: "가")
+        let a = BehaviorSubject(value: 3)
+        let b = BehaviorSubject(value: "가")
         
-        Observable.combineLatest(a, b) { first, second in
+        Observable.zip(a, b) { first, second in
             return "결과: \(first) 그리고 \(second)"
         }
         .subscribe(with: self) { owner, data in
@@ -54,8 +57,8 @@ class SignInViewController: UIViewController {
         a.onNext(8)
         a.onNext(5)
         
-//        b.onNext("나")
-//        b.onNext("다")
+        b.onNext("나")
+        b.onNext("다")
         
         
     }
@@ -80,10 +83,13 @@ class SignInViewController: UIViewController {
         }
         .disposed(by: disposeBag)
         
-        signInButton.rx.tap.subscribe(with: self) { owner, value in
-            print("SELECT")
-        }
-        .disposed(by: disposeBag)
+        signInButton.rx.tap
+            .subscribe(with: self) { owner, value in
+                print("SELECT")
+                owner.navigationController?.pushViewController(SearchViewController(), animated: true)
+                
+            }
+            .disposed(by: disposeBag)
         
     }
     
