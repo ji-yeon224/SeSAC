@@ -28,6 +28,8 @@
 		041280712AEFAD3D00972552 /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041280702AEFAD3D00972552 /* PhoneViewController.swift */; };
 		041280732AEFAD4B00972552 /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041280722AEFAD4B00972552 /* NicknameViewController.swift */; };
 		041280782AF1D14000972552 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041280772AF1D14000972552 /* Resource.swift */; };
+		CE0C42962AF4C36D00B6D590 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0C42942AF4C36D00B6D590 /* SearchTableViewCell.swift */; };
+		CE0C42972AF4C36D00B6D590 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0C42952AF4C36D00B6D590 /* SearchViewController.swift */; };
 		CE7BD7D42AF28F530022BE5D /* WarningLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BD7D32AF28F530022BE5D /* WarningLabel.swift */; };
 		CE83E7852AF3C70000AA01A4 /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83E7842AF3C70000AA01A4 /* PhoneViewModel.swift */; };
 		CE83E7872AF3C83C00AA01A4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83E7862AF3C83C00AA01A4 /* Constants.swift */; };
@@ -76,6 +78,8 @@
 		041280702AEFAD3D00972552 /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
 		041280722AEFAD4B00972552 /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
 		041280772AF1D14000972552 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		CE0C42942AF4C36D00B6D590 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		CE0C42952AF4C36D00B6D590 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		CE7BD7D32AF28F530022BE5D /* WarningLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningLabel.swift; sourceTree = "<group>"; };
 		CE83E7842AF3C70000AA01A4 /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
 		CE83E7862AF3C83C00AA01A4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 		041280222AEF9BAB00972552 /* SeSACRxThreads */ = {
 			isa = PBXGroup;
 			children = (
+				CE0C42932AF4C34800B6D590 /* Search */,
 				CEE3D0B62AF209A800EB5B70 /* Extension+String.swift */,
 				041280532AEF9C1F00972552 /* SignUp */,
 				041280542AEF9C2600972552 /* SignIn */,
@@ -208,6 +213,15 @@
 				CE83E78A2AF3CB8C00AA01A4 /* BirthdayViewModel.swift */,
 			);
 			path = SignUpOptional;
+			sourceTree = "<group>";
+		};
+		CE0C42932AF4C34800B6D590 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CE0C42942AF4C36D00B6D590 /* SearchTableViewCell.swift */,
+				CE0C42952AF4C36D00B6D590 /* SearchViewController.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,11 +372,13 @@
 				041280562AEFA04800972552 /* SignInViewController.swift in Sources */,
 				CE83E7852AF3C70000AA01A4 /* PhoneViewModel.swift in Sources */,
 				041280282AEF9BAB00972552 /* ViewController.swift in Sources */,
+				CE0C42962AF4C36D00B6D590 /* SearchTableViewCell.swift in Sources */,
 				CE7BD7D42AF28F530022BE5D /* WarningLabel.swift in Sources */,
 				041280632AEFA0CE00972552 /* PointButton.swift in Sources */,
 				CE83E78B2AF3CB8C00AA01A4 /* BirthdayViewModel.swift in Sources */,
 				041280242AEF9BAB00972552 /* AppDelegate.swift in Sources */,
 				CEE3D0B72AF209A800EB5B70 /* Extension+String.swift in Sources */,
+				CE0C42972AF4C36D00B6D590 /* SearchViewController.swift in Sources */,
 				041280732AEFAD4B00972552 /* NicknameViewController.swift in Sources */,
 				0412806A2AEFA91E00972552 /* SignUpViewController.swift in Sources */,
 				041280712AEFAD3D00972552 /* PhoneViewController.swift in Sources */,

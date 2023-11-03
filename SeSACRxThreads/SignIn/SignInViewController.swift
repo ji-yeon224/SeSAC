@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class SignInViewController: UIViewController {
 
@@ -15,15 +17,77 @@ class SignInViewController: UIViewController {
     let signInButton = PointButton(title: "로그인")
     let signUpButton = UIButton()
     
+    
+    let viewModel = SignInViewModel()
+    
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = Color.white
         
+        emailTextField.text = "111111111"
+        passwordTextField.text = "11111111"
+        
         configureLayout()
         configure()
         
         signUpButton.addTarget(self, action: #selector(signUpButtonClicked), for: .touchUpInside)
+        
+        bind()
+    }
+    
+    
+    
+    func bind() {
+        
+        let email = emailTextField.rx.text.orEmpty
+        let password = passwordTextField.rx.text.orEmpty
+        
+        email
+            .map { $0.count >= 8 }
+            .bind(with: self) { owner, value in
+                owner.viewModel.emailValid.onNext(value)
+            }
+            .disposed(by: disposeBag)
+        password
+            .map { $0.count >= 6 }
+            .bind(with: self) { owner, value in
+                owner.viewModel.passwordValid.onNext(value)
+            }
+            .disposed(by: disposeBag)
+        
+        viewModel.emailColor
+            .bind(with: self) { owner, color in
+                owner.emailTextField.layer.borderColor = color.cgColor
+            }
+            .disposed(by: disposeBag)
+        
+        viewModel.passwordColor
+            .bind(with: self) { owner, color in
+                owner.passwordTextField.layer.borderColor = color.cgColor
+            }
+            .disposed(by: disposeBag)
+        
+        viewModel.buttonEnabled
+            .bind(with: self) { owner, value in
+                owner.signInButton.isEnabled = value
+            }
+            .disposed(by: disposeBag)
+        
+        viewModel.buttonColor
+            .bind(with: self) { owner, color in
+                owner.signInButton.backgroundColor = color
+            }
+            .disposed(by: disposeBag)
+        
+        
+        signInButton.rx.tap.subscribe(with: self) { owner, _ in
+            owner.navigationController?.pushViewController(SearchViewController(), animated: true)
+        }
+        .disposed(by: disposeBag)
+        
     }
     
     @objc func signUpButtonClicked() {
