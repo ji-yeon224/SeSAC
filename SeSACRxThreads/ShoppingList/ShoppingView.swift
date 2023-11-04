@@ -33,8 +33,7 @@ final class ShoppingView: UIView {
     
     let addButton = {
         let view = UIButton()
-        view.setTitle("추가", for: .normal)
-        view.setTitleColor(.black, for: .normal)
+        view.setImage(UIImage(systemName: "plus"), for: .normal)
         view.backgroundColor = Constants.Color.buttonColor
         view.tintColor = .black
         view.layer.cornerRadius = 5
@@ -75,9 +74,9 @@ final class ShoppingView: UIView {
         
         addButton.snp.makeConstraints { make in
             make.centerY.equalTo(backView)
-            make.trailing.equalTo(backView).offset(-20)
-            make.height.equalTo(backView.snp.height).multipliedBy(0.7)
-            make.width.equalTo(addButton.snp.height).multipliedBy(1.4)
+            make.trailing.equalTo(backView).offset(-10)
+            make.height.equalTo(backView.snp.height).multipliedBy(0.6)
+            make.width.equalTo(addButton.snp.height)
         }
         
         addTextField.snp.makeConstraints { make in

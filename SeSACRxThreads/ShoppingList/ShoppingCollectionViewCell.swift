@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import RxSwift
 
 final class ShoppingCollectionViewCell: UICollectionViewCell {
     static let identifier = "ShoppingCollectionViewCell"
@@ -45,6 +46,7 @@ final class ShoppingCollectionViewCell: UICollectionViewCell {
     }()
     
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -54,6 +56,16 @@ final class ShoppingCollectionViewCell: UICollectionViewCell {
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    var checkState = false
+    var starState = false
+    
+    var disposeBag = DisposeBag()
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        disposeBag = DisposeBag()
     }
     
     private func configure() {
