@@ -23,6 +23,7 @@ class Constants {
         static let fillCheck = UIImage(systemName: "checkmark.square.fill")
         static let emptyStar = UIImage(systemName: "star")
         static let fillStar = UIImage(systemName: "star.fill")
+        static let back = UIImage(systemName: "chevron.backward")
         
     }
     

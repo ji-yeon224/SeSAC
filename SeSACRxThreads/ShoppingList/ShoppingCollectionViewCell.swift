@@ -51,6 +51,7 @@ final class ShoppingCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         configure()
         setConstraints()
+        bind()
     }
    
     @available(*, unavailable)
@@ -61,11 +62,40 @@ final class ShoppingCollectionViewCell: UICollectionViewCell {
     var checkState = false
     var starState = false
     
+    lazy var check = BehaviorSubject(value: checkState)
+    var checkImg = BehaviorSubject(value: Constants.Image.emptyCheck)
+    
     var disposeBag = DisposeBag()
     
     override func prepareForReuse() {
         super.prepareForReuse()
         disposeBag = DisposeBag()
+        
+        
+    }
+    
+    func bind() {
+        
+//        check
+//            .bind(with: self) { owner, value in
+//                let img = value ? Constants.Image.fillCheck : Constants.Image.emptyCheck
+//                owner.checkImg.onNext(img)
+//            }
+//            .disposed(by: disposeBag)
+        
+        checkImg
+            .bind(with: self) { owner, image in
+                owner.checkButton.setImage(image, for: .normal)
+            }
+            .disposed(by: disposeBag)
+        
+//        checkButton.rx.tap
+//            .bind(with: self) { owner, _ in
+//                owner.checkState.toggle()
+//                let img = owner.checkState ? Constants.Image.fillCheck : Constants.Image.emptyCheck
+//                owner.checkButton.setImage(img, for: .normal)
+//            }
+//            .disposed(by: disposeBag)
     }
     
     private func configure() {

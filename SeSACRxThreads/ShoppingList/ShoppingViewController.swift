@@ -9,11 +9,12 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+
 final class ShoppingViewController: UIViewController {
     
     let mainView = ShoppingView()
     
-    var data = ["A", "BBBBBBBBBB", "C", "D"]
+    var data = ["신발", "커피", "양말", "자켓", "아아", "아야"]
     lazy var items = BehaviorSubject(value: data)
     
     
@@ -26,22 +27,35 @@ final class ShoppingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "쇼핑"
         view.backgroundColor = .white
-        
+        self.navigationItem.titleView = mainView.searchBar
         bind()
     }
     
+    let check = BehaviorSubject(value: false)
+    
     private func bind() {
+        
+        
         
         items
             .bind(to: mainView.collectionView.rx.items(cellIdentifier: ShoppingCollectionViewCell.identifier , cellType: ShoppingCollectionViewCell.self)) { row, element, cell in
                 cell.listLabel.text = element
+                
+                cell.check
+                    .bind(with: self) { owner, value in
+                        let img = value ? Constants.Image.fillCheck : Constants.Image.emptyCheck
+                        cell.checkImg.onNext(img)
+                    }
+                    .disposed(by: cell.disposeBag)
+                
                 cell.checkButton.rx.tap
                     .bind(with: self) { owner, _ in
                         cell.checkState.toggle()
-                        let img = cell.checkState ? Constants.Image.fillCheck : Constants.Image.emptyCheck
-                        cell.checkButton.setImage(img, for: .normal)
+                        cell.check.onNext(cell.checkState)
+//                        cell.checkState.toggle()
+//                        let img = cell.checkState ? Constants.Image.fillCheck : Constants.Image.emptyCheck
+//                        cell.checkButton.setImage(img, for: .normal)
                     }
                     .disposed(by: cell.disposeBag)
                 
@@ -61,12 +75,39 @@ final class ShoppingViewController: UIViewController {
                 return text
             })
             .bind(with: self, onNext: { owner, value in
-                owner.data.insert(value, at: 0)
-                owner.items.onNext(owner.data)
+                if !value.trimmingCharacters(in: .whitespaces).isEmpty{
+                    owner.data.insert(value, at: 0)
+                    owner.items.onNext(owner.data)
+                }
+                
             })
             .disposed(by: disposeBag)
         
+        // 실시간 검색
+        mainView.searchBar.rx.text.orEmpty
+            .debounce(RxTimeInterval.milliseconds(100), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .bind(with: self) { owner, value in
+                let result = value == "" ? owner.data : owner.data.filter{ $0.contains(value) }
+                owner.items.onNext(result)
+            }
+            .disposed(by: disposeBag)
         
+        Observable.zip(mainView.collectionView.rx.itemSelected, mainView.collectionView.rx.modelSelected(String.self))
+            .bind(with: self) { owner, value in
+                
+                let vc = EditCellViewController()
+                vc.title = value.1
+                vc.data = (value.0[1], value.1)
+                vc.editHandler = { value in
+                   
+                }
+                
+                owner.navigationController?.pushViewController(vc, animated: true)
+                
+               
+            }
+            .disposed(by: disposeBag)
         
         
     }

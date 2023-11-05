@@ -40,6 +40,8 @@ final class ShoppingView: UIView {
         return view
     }()
     
+    let searchBar = UISearchBar()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -54,6 +56,7 @@ final class ShoppingView: UIView {
     private func configure() {
         addSubview(backView)
         addSubview(collectionView)
+        addSubview(searchBar)
         backView.addSubview(addTextField)
         backView.addSubview(addButton)
         
