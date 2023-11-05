@@ -96,7 +96,7 @@ final class ShoppingViewController: UIViewController {
         Observable.zip(mainView.collectionView.rx.itemSelected, mainView.collectionView.rx.modelSelected(String.self))
             .bind(with: self) { owner, value in
                 
-                let vc = EditCellViewController()
+                let vc = EditViewController()
                 vc.title = value.1
                 vc.data = (value.0[1], value.1)
                 vc.editHandler = { editType, value in

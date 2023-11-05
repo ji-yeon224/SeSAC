@@ -1,5 +1,5 @@
 //
-//  EditCellViewController.swift
+//  EditViewController.swift
 //  SeSACRxThreadsAssignment
 //
 //  Created by 김지연 on 11/5/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class EditCellViewController: UIViewController {
+final class EditViewController: UIViewController {
     
     var data: (Int, String)?
     var editHandler: ((EditType, (Int, String)) -> Void)?

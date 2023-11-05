@@ -8,21 +8,25 @@
 import UIKit
 import SnapKit
 
-enum EditType {
-    case update, delete, none
-}
+
 
 final class EditView: UIView {
     
-    let deleteButton = {
-        let view = UIButton()
-        view.setTitle("Delete", for: .normal)
-        view.backgroundColor = Constants.Color.cellColor
-        view.layer.cornerRadius = 5
-        view.setTitleColor(.black, for: .normal)
+    let deleteButton = CustomButton(title: "Delete")
+    let updateButton = CustomButton(title: "Save")
+    
+    let editTextField = {
+        let view = UITextField()
+        view.placeholder = "무엇을 구매하시겠어요?"
         return view
     }()
-
+    
+    let lineView = {
+        let view = UIView()
+        view.backgroundColor = .darkGray
+        return view
+    }()
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,11 +42,36 @@ final class EditView: UIView {
     private func configure() {
         backgroundColor = .white
         addSubview(deleteButton)
+        addSubview(updateButton)
+        addSubview(editTextField)
+        addSubview(lineView)
     }
     
     private func setConstraints() {
-        deleteButton.snp.makeConstraints { make in
+        
+        updateButton.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).offset(10)
+            make.trailing.equalTo(safeAreaLayoutGuide).offset(-10)
+            make.height.equalTo(40)
+            make.width.equalTo(updateButton.snp.height).multipliedBy(1.3)
+        }
+        
+        editTextField.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide).offset(10)
+            make.leading.equalTo(safeAreaLayoutGuide).offset(20)
+            make.trailing.equalTo(updateButton.snp.leading).offset(-20)
+            make.height.equalTo(40)
+        }
+        
+        lineView.snp.makeConstraints { make in
+            make.height.equalTo(2)
+            make.leading.equalTo(safeAreaLayoutGuide).offset(20)
+            make.width.equalTo(editTextField.snp.width)
+            make.top.equalTo(editTextField.snp.bottom)
+        }
+        
+        deleteButton.snp.makeConstraints { make in
+            make.top.equalTo(editTextField.snp.bottom).offset(30)
             make.horizontalEdges.equalTo(safeAreaLayoutGuide).inset(10)
             make.height.equalTo(40)
         }
