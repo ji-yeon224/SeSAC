@@ -15,13 +15,13 @@ final class EditView: UIView {
     let deleteButton = CustomButton(title: "Delete")
     let updateButton = CustomButton(title: "Save")
     
-    let editTextField = {
+    let updateTextField = {
         let view = UITextField()
         view.placeholder = "무엇을 구매하시겠어요?"
         return view
     }()
     
-    let lineView = {
+    private let lineView = {
         let view = UIView()
         view.backgroundColor = .darkGray
         return view
@@ -43,7 +43,7 @@ final class EditView: UIView {
         backgroundColor = .white
         addSubview(deleteButton)
         addSubview(updateButton)
-        addSubview(editTextField)
+        addSubview(updateTextField)
         addSubview(lineView)
     }
     
@@ -56,7 +56,7 @@ final class EditView: UIView {
             make.width.equalTo(updateButton.snp.height).multipliedBy(1.3)
         }
         
-        editTextField.snp.makeConstraints { make in
+        updateTextField.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).offset(10)
             make.leading.equalTo(safeAreaLayoutGuide).offset(20)
             make.trailing.equalTo(updateButton.snp.leading).offset(-20)
@@ -66,12 +66,12 @@ final class EditView: UIView {
         lineView.snp.makeConstraints { make in
             make.height.equalTo(2)
             make.leading.equalTo(safeAreaLayoutGuide).offset(20)
-            make.width.equalTo(editTextField.snp.width)
-            make.top.equalTo(editTextField.snp.bottom)
+            make.width.equalTo(updateTextField.snp.width)
+            make.top.equalTo(updateTextField.snp.bottom)
         }
         
         deleteButton.snp.makeConstraints { make in
-            make.top.equalTo(editTextField.snp.bottom).offset(30)
+            make.top.equalTo(updateTextField.snp.bottom).offset(30)
             make.horizontalEdges.equalTo(safeAreaLayoutGuide).inset(10)
             make.height.equalTo(40)
         }

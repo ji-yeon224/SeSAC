@@ -75,7 +75,7 @@ final class ShoppingViewController: UIViewController {
                 return text
             })
             .bind(with: self, onNext: { owner, value in
-                if !value.trimmingCharacters(in: .whitespaces).isEmpty{
+                if !value.trimmingCharacters(in: .whitespaces).isEmpty {
                     owner.data.insert(value, at: 0)
                     owner.items.onNext(owner.data)
                 }
@@ -107,7 +107,9 @@ final class ShoppingViewController: UIViewController {
                         owner.data.remove(at: value.0)
                         owner.items.onNext(owner.data)
                     case .update:
-                        print("update")
+                        owner.data.remove(at: value.0)
+                        owner.data.insert(value.1, at: value.0)
+                        owner.items.onNext(owner.data)
                     }
                 }
                 
