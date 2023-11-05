@@ -41,6 +41,7 @@
 		CEB1AE502AF662FA0086DEA9 /* ShoppingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB1AE4F2AF662FA0086DEA9 /* ShoppingViewModel.swift */; };
 		CEB1AE522AF667E40086DEA9 /* ShoppingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB1AE512AF667E40086DEA9 /* ShoppingView.swift */; };
 		CEB1AE542AF77A250086DEA9 /* EditCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB1AE532AF77A250086DEA9 /* EditCellViewController.swift */; };
+		CEB1AE562AF7824B0086DEA9 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB1AE552AF7824B0086DEA9 /* EditView.swift */; };
 		CEE3D0B72AF209A800EB5B70 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3D0B62AF209A800EB5B70 /* Extension+String.swift */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +98,7 @@
 		CEB1AE4F2AF662FA0086DEA9 /* ShoppingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewModel.swift; sourceTree = "<group>"; };
 		CEB1AE512AF667E40086DEA9 /* ShoppingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingView.swift; sourceTree = "<group>"; };
 		CEB1AE532AF77A250086DEA9 /* EditCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCellViewController.swift; sourceTree = "<group>"; };
+		CEB1AE552AF7824B0086DEA9 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		CEE3D0B62AF209A800EB5B70 /* Extension+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -246,6 +248,7 @@
 				CEB1AE4F2AF662FA0086DEA9 /* ShoppingViewModel.swift */,
 				CEB1AE512AF667E40086DEA9 /* ShoppingView.swift */,
 				CEB1AE532AF77A250086DEA9 /* EditCellViewController.swift */,
+				CEB1AE552AF7824B0086DEA9 /* EditView.swift */,
 			);
 			path = ShoppingList;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				041280632AEFA0CE00972552 /* PointButton.swift in Sources */,
 				CE83E78B2AF3CB8C00AA01A4 /* BirthdayViewModel.swift in Sources */,
 				041280242AEF9BAB00972552 /* AppDelegate.swift in Sources */,
+				CEB1AE562AF7824B0086DEA9 /* EditView.swift in Sources */,
 				CEE3D0B72AF209A800EB5B70 /* Extension+String.swift in Sources */,
 				CE0C42972AF4C36D00B6D590 /* SearchViewController.swift in Sources */,
 				041280732AEFAD4B00972552 /* NicknameViewController.swift in Sources */,

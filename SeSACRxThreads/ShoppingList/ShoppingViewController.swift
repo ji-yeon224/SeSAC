@@ -99,8 +99,16 @@ final class ShoppingViewController: UIViewController {
                 let vc = EditCellViewController()
                 vc.title = value.1
                 vc.data = (value.0[1], value.1)
-                vc.editHandler = { value in
-                   
+                vc.editHandler = { editType, value in
+                    switch editType {
+                    case .none:
+                        break
+                    case .delete:
+                        owner.data.remove(at: value.0)
+                        owner.items.onNext(owner.data)
+                    case .update:
+                        print("update")
+                    }
                 }
                 
                 owner.navigationController?.pushViewController(vc, animated: true)
