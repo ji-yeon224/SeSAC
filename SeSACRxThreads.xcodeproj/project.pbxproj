@@ -28,6 +28,8 @@
 		041280712AEFAD3D00972552 /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041280702AEFAD3D00972552 /* PhoneViewController.swift */; };
 		041280732AEFAD4B00972552 /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041280722AEFAD4B00972552 /* NicknameViewController.swift */; };
 		041280782AF1D14000972552 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041280772AF1D14000972552 /* Resource.swift */; };
+		CE0B1F292AF875160043A7DC /* BasicAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B1F282AF875160043A7DC /* BasicAPIManager.swift */; };
+		CE0B1F2B2AF87DCB0043A7DC /* APISampleCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B1F2A2AF87DCB0043A7DC /* APISampleCode.swift */; };
 		CE0C42912AF47BA600B6D590 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0C428F2AF47BA600B6D590 /* SearchTableViewCell.swift */; };
 		CE0C42922AF47BA600B6D590 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0C42902AF47BA600B6D590 /* SearchViewController.swift */; };
 		CEA32E3D2AF37720001B5619 /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA32E3C2AF37720001B5619 /* BirthdayViewModel.swift */; };
@@ -74,6 +76,8 @@
 		041280702AEFAD3D00972552 /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
 		041280722AEFAD4B00972552 /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
 		041280772AF1D14000972552 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		CE0B1F282AF875160043A7DC /* BasicAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAPIManager.swift; sourceTree = "<group>"; };
+		CE0B1F2A2AF87DCB0043A7DC /* APISampleCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APISampleCode.swift; sourceTree = "<group>"; };
 		CE0C428F2AF47BA600B6D590 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		CE0C42902AF47BA600B6D590 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		CEA32E3C2AF37720001B5619 /* BirthdayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
@@ -111,7 +115,6 @@
 		041280172AEF9BAB00972552 = {
 			isa = PBXGroup;
 			children = (
-				CE0C428E2AF47B9300B6D590 /* Search */,
 				041280222AEF9BAB00972552 /* SeSACRxThreads */,
 				041280392AEF9BAC00972552 /* SeSACRxThreadsTests */,
 				041280432AEF9BAC00972552 /* SeSACRxThreadsUITests */,
@@ -132,6 +135,7 @@
 		041280222AEF9BAB00972552 /* SeSACRxThreads */ = {
 			isa = PBXGroup;
 			children = (
+				CE0C428E2AF47B9300B6D590 /* Search */,
 				CEE3D0B42AF1E97500EB5B70 /* Extension+String.swift */,
 				041280532AEF9C1F00972552 /* SignUp */,
 				041280542AEF9C2600972552 /* SignIn */,
@@ -203,9 +207,19 @@
 			path = SignUpOptional;
 			sourceTree = "<group>";
 		};
+		CE0B1F272AF874ED0043A7DC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CE0B1F2A2AF87DCB0043A7DC /* APISampleCode.swift */,
+				CE0B1F282AF875160043A7DC /* BasicAPIManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		CE0C428E2AF47B9300B6D590 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				CE0B1F272AF874ED0043A7DC /* Network */,
 				CE0C428F2AF47BA600B6D590 /* SearchTableViewCell.swift */,
 				CE0C42902AF47BA600B6D590 /* SearchViewController.swift */,
 			);
@@ -352,12 +366,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				041280782AF1D14000972552 /* Resource.swift in Sources */,
+				CE0B1F2B2AF87DCB0043A7DC /* APISampleCode.swift in Sources */,
 				0412806F2AEFAD2D00972552 /* BirthdayViewController.swift in Sources */,
 				041280652AEFA2F000972552 /* SignTextField.swift in Sources */,
 				CE0C42922AF47BA600B6D590 /* SearchViewController.swift in Sources */,
 				0412806C2AEFABFE00972552 /* PasswordViewController.swift in Sources */,
 				041280562AEFA04800972552 /* SignInViewController.swift in Sources */,
 				041280282AEF9BAB00972552 /* ViewController.swift in Sources */,
+				CE0B1F292AF875160043A7DC /* BasicAPIManager.swift in Sources */,
 				041280632AEFA0CE00972552 /* PointButton.swift in Sources */,
 				041280242AEF9BAB00972552 /* AppDelegate.swift in Sources */,
 				CEE3D0B52AF1E97500EB5B70 /* Extension+String.swift in Sources */,

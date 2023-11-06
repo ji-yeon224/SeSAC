@@ -39,7 +39,7 @@ class SignUpViewController: UIViewController {
         //aboutPublishSubject()
         //aboutBehaviorSubject()
         //aboutReplaySubject()
-        aboutAsyncSubject()
+        //aboutAsyncSubject()
     }
     
     func aboutAsyncSubject() {
