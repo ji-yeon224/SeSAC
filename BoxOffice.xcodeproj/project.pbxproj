@@ -22,6 +22,8 @@
 		CE0B1F5D2AF91DF50043A7DC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE0B1F5C2AF91DF50043A7DC /* SnapKit */; };
 		CE0B1F602AF91E040043A7DC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE0B1F5F2AF91E040043A7DC /* Alamofire */; };
 		CE0B1F632AF91E2B0043A7DC /* .gitIgnore in Resources */ = {isa = PBXBuildFile; fileRef = CE0B1F622AF91E2B0043A7DC /* .gitIgnore */; };
+		CE0B1F652AF91E850043A7DC /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B1F642AF91E850043A7DC /* APIKey.swift */; };
+		CE0B1F6A2AF91FC00043A7DC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B1F692AF91FC00043A7DC /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		CE0B1F522AF91D9F0043A7DC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CE0B1F542AF91DA30043A7DC /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		CE0B1F622AF91E2B0043A7DC /* .gitIgnore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitIgnore; sourceTree = "<group>"; };
+		CE0B1F642AF91E850043A7DC /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		CE0B1F692AF91FC00043A7DC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 		CE0B1F372AF91D240043A7DC /* BoxOffice */ = {
 			isa = PBXGroup;
 			children = (
+				CE0B1F682AF91FB60043A7DC /* Utility */,
 				CE0B1F612AF91E0F0043A7DC /* Network */,
 				CE0B1F512AF91D960043A7DC /* Base */,
 				CE0B1F4C2AF91D390043A7DC /* Rank */,
@@ -110,8 +115,17 @@
 		CE0B1F612AF91E0F0043A7DC /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				CE0B1F642AF91E850043A7DC /* APIKey.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		CE0B1F682AF91FB60043A7DC /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				CE0B1F692AF91FC00043A7DC /* Constants.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,11 +213,13 @@
 			files = (
 				CE0B1F3D2AF91D240043A7DC /* ViewController.swift in Sources */,
 				CE0B1F502AF91D8E0043A7DC /* RankView.swift in Sources */,
+				CE0B1F652AF91E850043A7DC /* APIKey.swift in Sources */,
 				CE0B1F392AF91D240043A7DC /* AppDelegate.swift in Sources */,
 				CE0B1F4E2AF91D880043A7DC /* RankViewController.swift in Sources */,
 				CE0B1F552AF91DA30043A7DC /* BaseView.swift in Sources */,
 				CE0B1F3B2AF91D240043A7DC /* SceneDelegate.swift in Sources */,
 				CE0B1F532AF91D9F0043A7DC /* BaseViewController.swift in Sources */,
+				CE0B1F6A2AF91FC00043A7DC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
