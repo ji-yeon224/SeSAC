@@ -15,7 +15,10 @@ final class ShoppingViewController: UIViewController {
     let mainView = ShoppingView()
     
     var data = ["신발", "커피", "양말", "자켓", "아아", "아야"]
-    lazy var items = BehaviorSubject(value: data)
+    var todoList: [TodoList] = []
+    lazy var items = BehaviorSubject(value: todoList)
+    
+    
     
     
     let disposeBag = DisposeBag()
@@ -32,7 +35,6 @@ final class ShoppingViewController: UIViewController {
         bind()
     }
     
-    let check = BehaviorSubject(value: false)
     
     private func bind() {
         
@@ -40,35 +42,60 @@ final class ShoppingViewController: UIViewController {
         
         items
             .bind(to: mainView.collectionView.rx.items(cellIdentifier: ShoppingCollectionViewCell.identifier , cellType: ShoppingCollectionViewCell.self)) { row, element, cell in
-                cell.listLabel.text = element
+                cell.listLabel.text = element.title
                 
-                cell.check
-                    .bind(with: self) { owner, value in
-                        let img = value ? Constants.Image.fillCheck : Constants.Image.emptyCheck
-                        cell.checkImg.onNext(img)
-                    }
-                    .disposed(by: cell.disposeBag)
+                cell.checkValue.onNext(element.check)
+                cell.starValue.onNext(element.star)
                 
                 cell.checkButton.rx.tap
                     .bind(with: self) { owner, _ in
-                        cell.checkState.toggle()
-                        cell.check.onNext(cell.checkState)
-//                        cell.checkState.toggle()
-//                        let img = cell.checkState ? Constants.Image.fillCheck : Constants.Image.emptyCheck
-//                        cell.checkButton.setImage(img, for: .normal)
+                        let value = element.check
+                        owner.todoList[row].check.toggle()
+                        owner.items.onNext(owner.todoList)
+                        cell.checkValue.onNext(!value)
                     }
+                    .disposed(by: cell.disposeBag)
+                
+                cell.checkValue
+                    .map {
+                        $0 ? Constants.Image.fillCheck : Constants.Image.emptyCheck
+                    }
+                    .bind(with: self) { owner, image in
+                        cell.checkImg.onNext(image)
+                    }
+                    .disposed(by: cell.disposeBag)
+                
+                cell.checkImg
+                    .bind(to: cell.checkButton.rx.image())
                     .disposed(by: cell.disposeBag)
                 
                 cell.starButton.rx.tap
                     .bind(with: self) { owner, _ in
-                        cell.starState.toggle()
-                        let img = cell.starState ? Constants.Image.fillStar : Constants.Image.emptyStar
-                        cell.starButton.setImage(img, for: .normal)
+                        let value = element.star
+                        owner.todoList[row].star.toggle()
+                        owner.items.onNext(owner.todoList)
+                        cell.checkValue.onNext(!value)
                     }
+                    .disposed(by: cell.disposeBag)
+                
+                cell.starValue
+                    .map {
+                        $0 ? Constants.Image.fillStar : Constants.Image.emptyStar
+                    }
+                    .bind(with: self) { owner, image in
+                        cell.starImg.onNext(image)
+                    }
+                    .disposed(by: cell.disposeBag)
+                
+                cell.starImg
+                    .bind(to: cell.starButton.rx.image())
                     .disposed(by: cell.disposeBag)
                 
             }
             .disposed(by: disposeBag)
+        
+        
+        
         
         mainView.addButton.rx.tap
             .withLatestFrom(mainView.addTextField.rx.text.orEmpty, resultSelector: { _, text in
@@ -76,8 +103,9 @@ final class ShoppingViewController: UIViewController {
             })
             .bind(with: self, onNext: { owner, value in
                 if !value.trimmingCharacters(in: .whitespaces).isEmpty {
-                    owner.data.insert(value, at: 0)
-                    owner.items.onNext(owner.data)
+                    let list = TodoList(title: value)
+                    owner.todoList.insert(list, at: 0)
+                    owner.items.onNext(owner.todoList)
                 }
                 
             })
@@ -88,28 +116,29 @@ final class ShoppingViewController: UIViewController {
             .debounce(RxTimeInterval.milliseconds(100), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .bind(with: self) { owner, value in
-                let result = value == "" ? owner.data : owner.data.filter{ $0.contains(value) }
+                let result = value == "" ? owner.todoList : owner.todoList.filter{ $0.title.contains(value) }
                 owner.items.onNext(result)
             }
             .disposed(by: disposeBag)
         
-        Observable.zip(mainView.collectionView.rx.itemSelected, mainView.collectionView.rx.modelSelected(String.self))
-            .bind(with: self) { owner, value in
+        Observable.zip(mainView.collectionView.rx.itemSelected, mainView.collectionView.rx.modelSelected(TodoList.self))
+            .bind(with: self) { owner, data in
                 
                 let vc = EditViewController()
-                vc.title = value.1
-                vc.data = (value.0[1], value.1)
+                vc.title = data.1.title
+                vc.todo = data.1
                 vc.editHandler = { editType, value in
                     switch editType {
                     case .none:
-                        break
+                        print(data.0.row)
                     case .delete:
-                        owner.data.remove(at: value.0)
-                        owner.items.onNext(owner.data)
+                        owner.todoList.remove(at: data.0.row)
+                        owner.items.onNext(owner.todoList)
                     case .update:
-                        owner.data.remove(at: value.0)
-                        owner.data.insert(value.1, at: value.0)
-                        owner.items.onNext(owner.data)
+                        owner.todoList[data.0.row].title = value ?? ""
+                       
+                        owner.items.onNext(owner.todoList)
+                        
                     }
                 }
                 

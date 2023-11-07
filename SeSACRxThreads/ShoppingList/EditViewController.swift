@@ -12,7 +12,8 @@ import RxCocoa
 final class EditViewController: UIViewController {
     
     var data: (Int, String)?
-    var editHandler: ((EditType, (Int, String)) -> Void)?
+    var todo: TodoList?
+    var editHandler: ((EditType, String?) -> Void)?
     
     let updateButtonEnabled = BehaviorSubject(value: true)
     let updateButtonColor = BehaviorSubject(value: Constants.Color.cellColor)
@@ -34,12 +35,12 @@ final class EditViewController: UIViewController {
     }
     
     func configure() {
-        guard let data = data else {
+        guard let todo = todo else {
             navigationController?.popViewController(animated: true)
             return
         }
         
-        mainView.updateTextField.text = data.1
+        mainView.updateTextField.text = todo.title
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: Constants.Image.back, style: .plain, target: self, action: #selector(backButtonTapped))
         navigationItem.leftBarButtonItem?.tintColor = .black
@@ -76,12 +77,12 @@ final class EditViewController: UIViewController {
             }
             .bind(with: self) { owner, value in
                 if !value.trimmingCharacters(in: .whitespaces).isEmpty {
-                    guard let data = owner.data else {
+                    guard let todo = owner.todo else {
                         owner.navigationController?.popViewController(animated: true)
                         return
                     }
                     
-                    owner.editHandler?(.update, (data.0, value))
+                    owner.editHandler?(.update, value)
                     owner.navigationController?.popViewController(animated: true)
                 }
             }
@@ -92,22 +93,22 @@ final class EditViewController: UIViewController {
     
     @objc private func deleteButtonTapped() {
         
-        guard let data = data else {
+        guard let todo = todo else {
             navigationController?.popViewController(animated: true)
             return
         }
-        editHandler?(.delete, (data.0, data.1))
+        editHandler?(.delete, nil)
         navigationController?.popViewController(animated: true)
         
     }
     
     
     @objc private func backButtonTapped() {
-        guard let data = data else {
+        guard let todo = todo else {
             navigationController?.popViewController(animated: true)
             return
         }
-        editHandler?(.none, (data.0, data.1))
+        editHandler?(.none, nil)
         navigationController?.popViewController(animated: true)
         
     }
