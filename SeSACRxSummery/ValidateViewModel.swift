@@ -11,7 +11,7 @@ import RxCocoa
 
 class ValidateViewModel {
     
-    let validText = BehaviorRelay(value: "닉네임은 8자 이상")
+    
     
     struct Input {
         
@@ -22,10 +22,22 @@ class ValidateViewModel {
     }
     
     struct Output {
-        
         let tap: ControlEvent<Void>
-        let text: Driver<String>
+        let text: Observable<String>
         let validation: Observable<Bool>
+    }
+    
+    func transform(input: Input) -> Output {
+        
+        let validation = input.text.orEmpty.map{ $0.count >= 8 }
+        
+        let validText = Observable.of("닉네임은 8자 이상")
+        //BehaviorRelay(value: "닉네임은 8자 이상").asDriver()
+        
+        return Output(
+            tap: input.tap,
+            text: validText,
+            validation: validation)
         
     }
     

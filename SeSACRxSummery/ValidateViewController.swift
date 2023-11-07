@@ -34,30 +34,32 @@ class ValidateViewController: UIViewController {
         
         
         
-        viewModel.validText
-            .asDriver()
+        let input = ValidateViewModel.Input(text: nameTextField.rx.text, tap: nextButton.rx.tap)
+        
+        let output = viewModel.transform(input: input)
+        
+        output.text
             .drive(validationLabel.rx.text)
             .disposed(by: disposeBag)
         
-        let validation = nameTextField.rx.text.orEmpty
-            .map { $0.count >= 8 }
         
-        validation
+        
+        output.validation
             .bind(to: nextButton.rx.isEnabled, validationLabel.rx.isHidden)
             .disposed(by: disposeBag)
         
-        validation
+        output.validation
             .bind(with: self) { owner, value in
             let color: UIColor = value ? .systemPink : .lightGray
             owner.nextButton.backgroundColor = color
         }
             .disposed(by: disposeBag)
         
-//        nextButton.rx.tap
-//            .bind(with: self) { owner, value in
-//                print("tap")
-//            }
-//            .disposed(by: disposeBag)
+        output.tap
+            .bind(with: self) { owner, value in
+                print("show alert")
+            }
+            .disposed(by: disposeBag)
 //        
 //        labelHidden
 //            .asDriver()
