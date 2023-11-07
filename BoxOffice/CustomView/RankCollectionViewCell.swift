@@ -14,7 +14,7 @@ final class RankCollectionViewCell: BaseCollectionViewCell {
     
     var rankLabel = BasicLabel(fontSize: 15, lines: 1)
     
-    var titleLabel = BasicLabel(fontSize: 15, lines: 1)
+    var titleLabel = BasicLabel(fontSize: 15, lines: 2)
     
     var totalCount = BasicLabel(fontSize: 13, lines: 1)
     var dailyCount = BasicLabel(fontSize: 13, lines: 1)
@@ -30,13 +30,13 @@ final class RankCollectionViewCell: BaseCollectionViewCell {
     
     override func configure() {
         super.configure()
+        contentView.layer.cornerRadius = 5
         contentView.addSubview(rankLabel)
         contentView.addSubview(titleLabel)
         contentView.addSubview(stackView)
-        stackView.addArrangedSubview(totalCount)
         stackView.addArrangedSubview(dailyCount)
-        totalCount.text = "11111111"
-        dailyCount.text = "222222d333322"
+        stackView.addArrangedSubview(totalCount)
+        
     }
     
     override func setConstraints() {
@@ -48,13 +48,12 @@ final class RankCollectionViewCell: BaseCollectionViewCell {
         titleLabel.snp.makeConstraints { make in
             make.centerY.equalTo(contentView)
             make.leading.equalTo(rankLabel.snp.trailing).offset(10)
-            make.trailing.equalTo(contentView).offset(20)
-            make.height.equalTo(contentView).multipliedBy(0.3)
+            //make.trailing.equalTo(contentView).offset(20)
         }
         
         stackView.snp.makeConstraints { make in
             make.trailing.equalTo(contentView).offset(-10)
-            make.leading.lessThanOrEqualTo(titleLabel.snp.trailing).offset(5)
+            make.leading.greaterThanOrEqualTo(titleLabel.snp.trailing).offset(5)
             make.centerY.equalTo(contentView)
         }
         

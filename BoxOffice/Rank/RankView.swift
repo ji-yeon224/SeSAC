@@ -12,7 +12,7 @@ final class RankView: BaseView {
     lazy var dateTextField = {
         let view = UITextField()
         view.inputView = datePickerView
-        view.backgroundColor = .secondarySystemBackground
+        view.backgroundColor = .white
         view.textColor = .darkGray
         view.layer.cornerRadius = 10
         view.text = DateFormatter.convertDate(date: Date())
@@ -36,12 +36,13 @@ final class RankView: BaseView {
     lazy var collectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: self.collectionViewLayout())
         view.register(RankCollectionViewCell.self, forCellWithReuseIdentifier: RankCollectionViewCell.identifier)
-        view.backgroundColor = .white
+        view.backgroundColor = .clear
         return view
     }()
     
     override func configure() {
         super.configure()
+        backgroundColor = .quaternarySystemFill
         [dateTextField, collectionView].forEach {
             addSubview($0)
         }

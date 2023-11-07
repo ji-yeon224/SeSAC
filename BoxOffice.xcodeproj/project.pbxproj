@@ -28,6 +28,10 @@
 		CE0B1F6F2AF921EC0043A7DC /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B1F6E2AF921EC0043A7DC /* BaseCollectionViewCell.swift */; };
 		CE0B1F712AF923FE0043A7DC /* BasicLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B1F702AF923FE0043A7DC /* BasicLabel.swift */; };
 		CE0B1F732AF92CB50043A7DC /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B1F722AF92CB50043A7DC /* DateFormatter+Extension.swift */; };
+		CE0B1F752AF9367C0043A7DC /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B1F742AF9367C0043A7DC /* Router.swift */; };
+		CE0B1F772AF936990043A7DC /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B1F762AF936990043A7DC /* APIManager.swift */; };
+		CE0B1F7E2AF9372C0043A7DC /* RankingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B1F7D2AF9372C0043A7DC /* RankingModel.swift */; };
+		CECB566D2AFA8F0F0069B607 /* NumberFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB566C2AFA8F0F0069B607 /* NumberFormatter+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +54,10 @@
 		CE0B1F6E2AF921EC0043A7DC /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE0B1F702AF923FE0043A7DC /* BasicLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicLabel.swift; sourceTree = "<group>"; };
 		CE0B1F722AF92CB50043A7DC /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
+		CE0B1F742AF9367C0043A7DC /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		CE0B1F762AF936990043A7DC /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		CE0B1F7D2AF9372C0043A7DC /* RankingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingModel.swift; sourceTree = "<group>"; };
+		CECB566C2AFA8F0F0069B607 /* NumberFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +94,7 @@
 		CE0B1F372AF91D240043A7DC /* BoxOffice */ = {
 			isa = PBXGroup;
 			children = (
+				CE0B1F7A2AF9370B0043A7DC /* Model */,
 				CE0B1F6B2AF921650043A7DC /* CustomView */,
 				CE0B1F682AF91FB60043A7DC /* Utility */,
 				CE0B1F612AF91E0F0043A7DC /* Network */,
@@ -126,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				CE0B1F642AF91E850043A7DC /* APIKey.swift */,
+				CE0B1F742AF9367C0043A7DC /* Router.swift */,
+				CE0B1F762AF936990043A7DC /* APIManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -135,6 +146,7 @@
 			children = (
 				CE0B1F692AF91FC00043A7DC /* Constants.swift */,
 				CE0B1F722AF92CB50043A7DC /* DateFormatter+Extension.swift */,
+				CECB566C2AFA8F0F0069B607 /* NumberFormatter+Extension.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -146,6 +158,14 @@
 				CE0B1F702AF923FE0043A7DC /* BasicLabel.swift */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		CE0B1F7A2AF9370B0043A7DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE0B1F7D2AF9372C0043A7DC /* RankingModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +253,7 @@
 			files = (
 				CE0B1F3D2AF91D240043A7DC /* ViewController.swift in Sources */,
 				CE0B1F712AF923FE0043A7DC /* BasicLabel.swift in Sources */,
+				CE0B1F7E2AF9372C0043A7DC /* RankingModel.swift in Sources */,
 				CE0B1F502AF91D8E0043A7DC /* RankView.swift in Sources */,
 				CE0B1F652AF91E850043A7DC /* APIKey.swift in Sources */,
 				CE0B1F732AF92CB50043A7DC /* DateFormatter+Extension.swift in Sources */,
@@ -241,7 +262,10 @@
 				CE0B1F6D2AF921760043A7DC /* RankCollectionViewCell.swift in Sources */,
 				CE0B1F4E2AF91D880043A7DC /* RankViewController.swift in Sources */,
 				CE0B1F552AF91DA30043A7DC /* BaseView.swift in Sources */,
+				CE0B1F752AF9367C0043A7DC /* Router.swift in Sources */,
 				CE0B1F3B2AF91D240043A7DC /* SceneDelegate.swift in Sources */,
+				CE0B1F772AF936990043A7DC /* APIManager.swift in Sources */,
+				CECB566D2AFA8F0F0069B607 /* NumberFormatter+Extension.swift in Sources */,
 				CE0B1F532AF91D9F0043A7DC /* BaseViewController.swift in Sources */,
 				CE0B1F6A2AF91FC00043A7DC /* Constants.swift in Sources */,
 			);
