@@ -45,6 +45,7 @@
 		CEB1AE562AF7824B0086DEA9 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB1AE552AF7824B0086DEA9 /* EditView.swift */; };
 		CEB1AE582AF785290086DEA9 /* EditType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB1AE572AF785290086DEA9 /* EditType.swift */; };
 		CEB1AE5B2AF786180086DEA9 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB1AE5A2AF786180086DEA9 /* CustomButton.swift */; };
+		CECB569B2AFB76970069B607 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = CECB569A2AFB76970069B607 /* RxDataSources */; };
 		CEE3D0B72AF209A800EB5B70 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3D0B62AF209A800EB5B70 /* Extension+String.swift */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +115,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				041280602AEFA0AC00972552 /* SnapKit in Frameworks */,
+				CECB569B2AFB76970069B607 /* RxDataSources in Frameworks */,
 				0412805D2AEFA09E00972552 /* RxSwift in Frameworks */,
 				0412805B2AEFA09E00972552 /* RxCocoa in Frameworks */,
 			);
@@ -290,6 +292,7 @@
 				0412805A2AEFA09E00972552 /* RxCocoa */,
 				0412805C2AEFA09E00972552 /* RxSwift */,
 				0412805F2AEFA0AC00972552 /* SnapKit */,
+				CECB569A2AFB76970069B607 /* RxDataSources */,
 			);
 			productName = SeSACRxThreads;
 			productReference = 041280202AEF9BAB00972552 /* SeSACRxThreadsAssignment.app */;
@@ -366,6 +369,7 @@
 			packageReferences = (
 				041280592AEFA09D00972552 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				0412805E2AEFA0AC00972552 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				CECB56992AFB76970069B607 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 			);
 			productRefGroup = 041280212AEF9BAB00972552 /* Products */;
 			projectDirPath = "";
@@ -798,6 +802,14 @@
 				minimumVersion = 5.6.0;
 			};
 		};
+		CECB56992AFB76970069B607 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -815,6 +827,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0412805E2AEFA0AC00972552 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		CECB569A2AFB76970069B607 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CECB56992AFB76970069B607 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

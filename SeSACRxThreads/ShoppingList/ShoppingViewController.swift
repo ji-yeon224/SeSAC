@@ -14,13 +14,7 @@ final class ShoppingViewController: UIViewController {
     
     let mainView = ShoppingView()
     
-    var data = ["신발", "커피", "양말", "자켓", "아아", "아야"]
-    var todoList: [TodoList] = []
-    lazy var items = BehaviorSubject(value: todoList)
-    
-    
-    
-    
+    let viewModel = ShoppingViewModel()
     let disposeBag = DisposeBag()
     
     override func loadView() {
@@ -38,9 +32,15 @@ final class ShoppingViewController: UIViewController {
     
     private func bind() {
         
+        let input = ShoppingViewModel.Input(
+            addText: mainView.addTextField.rx.text.orEmpty,
+            addButtonTap:  mainView.addButton.rx.tap,
+            searchText: mainView.searchBar.rx.text.orEmpty
+        )
         
+        let output = viewModel.format(input: input)
         
-        items
+        output.items
             .bind(to: mainView.collectionView.rx.items(cellIdentifier: ShoppingCollectionViewCell.identifier , cellType: ShoppingCollectionViewCell.self)) { row, element, cell in
                 cell.listLabel.text = element.title
                 
@@ -50,8 +50,8 @@ final class ShoppingViewController: UIViewController {
                 cell.checkButton.rx.tap
                     .bind(with: self) { owner, _ in
                         let value = element.check
-                        owner.todoList[row].check.toggle()
-                        owner.items.onNext(owner.todoList)
+                        owner.viewModel.todoList[row].check.toggle()
+                        owner.viewModel.updateTodo.accept(owner.viewModel.todoList)
                         cell.checkValue.onNext(!value)
                     }
                     .disposed(by: cell.disposeBag)
@@ -72,8 +72,8 @@ final class ShoppingViewController: UIViewController {
                 cell.starButton.rx.tap
                     .bind(with: self) { owner, _ in
                         let value = element.star
-                        owner.todoList[row].star.toggle()
-                        owner.items.onNext(owner.todoList)
+                        owner.viewModel.todoList[row].star.toggle()
+                        owner.viewModel.updateTodo.accept(owner.viewModel.todoList)
                         cell.checkValue.onNext(!value)
                     }
                     .disposed(by: cell.disposeBag)
@@ -96,31 +96,6 @@ final class ShoppingViewController: UIViewController {
         
         
         
-        
-        mainView.addButton.rx.tap
-            .withLatestFrom(mainView.addTextField.rx.text.orEmpty, resultSelector: { _, text in
-                return text
-            })
-            .bind(with: self, onNext: { owner, value in
-                if !value.trimmingCharacters(in: .whitespaces).isEmpty {
-                    let list = TodoList(title: value)
-                    owner.todoList.insert(list, at: 0)
-                    owner.items.onNext(owner.todoList)
-                }
-                
-            })
-            .disposed(by: disposeBag)
-        
-        // 실시간 검색
-        mainView.searchBar.rx.text.orEmpty
-            .debounce(RxTimeInterval.milliseconds(100), scheduler: MainScheduler.instance)
-            .distinctUntilChanged()
-            .bind(with: self) { owner, value in
-                let result = value == "" ? owner.todoList : owner.todoList.filter{ $0.title.contains(value) }
-                owner.items.onNext(result)
-            }
-            .disposed(by: disposeBag)
-        
         Observable.zip(mainView.collectionView.rx.itemSelected, mainView.collectionView.rx.modelSelected(TodoList.self))
             .bind(with: self) { owner, data in
                 
@@ -132,12 +107,12 @@ final class ShoppingViewController: UIViewController {
                     case .none:
                         print(data.0.row)
                     case .delete:
-                        owner.todoList.remove(at: data.0.row)
-                        owner.items.onNext(owner.todoList)
+                        owner.viewModel.todoList.remove(at: data.0.row)
+                        owner.viewModel.updateTodo.accept(owner.viewModel.todoList)
                     case .update:
-                        owner.todoList[data.0.row].title = value ?? ""
+                        owner.viewModel.todoList[data.0.row].title = value ?? ""
                        
-                        owner.items.onNext(owner.todoList)
+                        owner.viewModel.updateTodo.accept(owner.viewModel.todoList)
                         
                     }
                 }
