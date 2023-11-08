@@ -11,12 +11,10 @@ import RxCocoa
 
 final class RankViewController: BaseViewController {
     
-    let mainView = RankView()
+    private let mainView = RankView()
+    private let disposeBag = DisposeBag()
     
-    
-    let disposeBag = DisposeBag()
-    
-    let viewModel = RankViewModel()
+    private let viewModel = RankViewModel()
     
     override func loadView() {
         self.view = mainView
@@ -35,11 +33,16 @@ final class RankViewController: BaseViewController {
         view.backgroundColor = .secondarySystemBackground
         mainView.datePickerView.addTarget(self, action: #selector(dateChange), for: .valueChanged)
         
+        
+        mainView.dateTextField.text = DateFormatter.convertDateByLine(date: DateFormatter.yesterdayDate())
     }
     
     private func bind() {
         
-        viewModel.items
+        let input = RankViewModel.Input(datepickerValue: mainView.datePickerView.rx.date)
+        let output = viewModel.format(input: input)
+        
+        output.items
             .bind(to: mainView.collectionView.rx.items(cellIdentifier: RankCollectionViewCell.identifier, cellType: RankCollectionViewCell.self)) { row, element, cell in
                 cell.rankLabel.text = element.rank
                 cell.titleLabel.text = element.title
@@ -48,21 +51,11 @@ final class RankViewController: BaseViewController {
             }
             .disposed(by: disposeBag)
         
-        mainView.datePickerView.rx.date
-            .distinctUntilChanged()
-            .throttle(.seconds(1), scheduler: MainScheduler.instance)
-            .map { DateFormatter.convertDate(date: $0) }
-            .bind(with: self, onNext: { owner, value in
-                owner.viewModel.date.accept(value)
-            })
-            .disposed(by: disposeBag)
-        
-        
         
     }
     
-    @objc func dateChange(_ sender: UIDatePicker) {
-        mainView.dateTextField.text = DateFormatter.convertDate(date: sender.date)
+    @objc private func dateChange(_ sender: UIDatePicker) {
+        mainView.dateTextField.text = DateFormatter.convertDateByLine(date: sender.date)
     }
     
     

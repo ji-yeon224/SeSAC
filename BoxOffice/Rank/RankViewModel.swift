@@ -11,22 +11,36 @@ import RxCocoa
 
 final class RankViewModel {
     
-    var data: [DailyBoxOfficeList] = []
-    lazy var items = BehaviorSubject(value: data)
+    private let initialDate = DateFormatter.convertDate(date: DateFormatter.yesterdayDate())
     
-    var date = BehaviorRelay(value: DateFormatter.convertDate(date: Date()))
-    lazy var request = APIManager.shared.requestRank(api: .dailyBoxoffice(date: date.value))
-        .asDriver(onErrorJustReturn: RankingModel(boxOfficeResult: Results( dailyBoxOfficeList: [])))
-   
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
-    init() {
+    struct Input {
         
-        request
-            .drive(with: self) { owner, result in
-                owner.data.append(contentsOf: result.boxOfficeResult.dailyBoxOfficeList)
-                owner.items.onNext(owner.data)
-            }
+        var datepickerValue: ControlProperty<Date>
+        
+    }
+    
+    struct Output {
+        
+        var items: BehaviorSubject<[DailyBoxOfficeList]>
+        
+    }
+    
+    
+    func format(input: Input) -> Output {
+        
+        
+        let date: BehaviorSubject<String> = BehaviorSubject(value: initialDate)
+        let result: BehaviorSubject<[DailyBoxOfficeList]> = BehaviorSubject(value: [])
+        
+        input.datepickerValue
+            .distinctUntilChanged()
+            .throttle(.seconds(1), scheduler: MainScheduler.instance)
+            .map { DateFormatter.convertDate(date: $0) }
+            .bind(with: self, onNext: { owner, value in
+                date.onNext(value)
+            })
             .disposed(by: disposeBag)
         
         date
@@ -34,13 +48,11 @@ final class RankViewModel {
                 APIManager.shared.requestRank(api: .dailyBoxoffice(date: $0))
             }
             .bind(with: self) { owner, ranking in
-                owner.data.removeAll()
-                owner.data.append(contentsOf: ranking.boxOfficeResult.dailyBoxOfficeList)
-                owner.items.onNext(owner.data)
-                
+                result.onNext(ranking.boxOfficeResult.dailyBoxOfficeList)
             }
             .disposed(by: disposeBag)
+        
+        return Output(items: result)
     }
-    
     
 }

@@ -15,7 +15,7 @@ final class RankView: BaseView {
         view.backgroundColor = .white
         view.textColor = .darkGray
         view.layer.cornerRadius = 10
-        view.text = DateFormatter.convertDateByLine(date: yesterdayDate())
+        view.text = DateFormatter.convertDateByLine(date: DateFormatter.yesterdayDate())
         view.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 13.0, height: 0.0))
         view.leftViewMode = .always
         view.tintColor = .clear
@@ -94,10 +94,7 @@ final class RankView: BaseView {
         dateTextField.resignFirstResponder()
     }
     
-    func yesterdayDate() -> Date {
-        return Calendar.current.date(byAdding: .day, value: -1, to: Date())!
-        
-    }
+    
 }
 
 extension RankView: UITextFieldDelegate {

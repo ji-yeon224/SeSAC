@@ -30,7 +30,7 @@ final class RankCollectionViewCell: BaseCollectionViewCell {
     
     override func configure() {
         super.configure()
-        contentView.layer.cornerRadius = 5
+        contentView.layer.cornerRadius = 10
         contentView.addSubview(rankLabel)
         contentView.addSubview(titleLabel)
         contentView.addSubview(stackView)

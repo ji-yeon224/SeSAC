@@ -34,4 +34,9 @@ extension DateFormatter {
     static func convertDate(date: Date) -> String {
         return formatDate.string(from: date)
     }
+    
+    static func yesterdayDate() -> Date {
+        return Calendar.current.date(byAdding: .day, value: -1, to: Date())!
+        
+    }
 }
