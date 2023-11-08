@@ -24,6 +24,8 @@
 		04A4FD532AF9B5ED006055FA /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A4FD522AF9B5ED006055FA /* MovieCollectionViewCell.swift */; };
 		CE0B1F802AFA009E0043A7DC /* ValidateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B1F7F2AFA009E0043A7DC /* ValidateViewController.swift */; };
 		CE0B1F822AFA05790043A7DC /* ValidateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B1F812AFA05790043A7DC /* ValidateViewModel.swift */; };
+		CECB56722AFB12750069B607 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = CECB56712AFB12750069B607 /* RxDataSources */; };
+		CECB56742AFB12BA0069B607 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB56732AFB12BA0069B607 /* ListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,7 @@
 		04A4FD522AF9B5ED006055FA /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE0B1F7F2AFA009E0043A7DC /* ValidateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateViewController.swift; sourceTree = "<group>"; };
 		CE0B1F812AFA05790043A7DC /* ValidateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateViewModel.swift; sourceTree = "<group>"; };
+		CECB56732AFB12BA0069B607 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04A4FD4B2AF8CDEE006055FA /* RxSwift in Frameworks */,
+				CECB56722AFB12750069B607 /* RxDataSources in Frameworks */,
 				04A4FD492AF8CDEE006055FA /* RxCocoa in Frameworks */,
 				04A4FD462AF8CDCF006055FA /* SnapKit in Frameworks */,
 			);
@@ -127,6 +131,7 @@
 				04A4FD522AF9B5ED006055FA /* MovieCollectionViewCell.swift */,
 				CE0B1F7F2AFA009E0043A7DC /* ValidateViewController.swift */,
 				CE0B1F812AFA05790043A7DC /* ValidateViewModel.swift */,
+				CECB56732AFB12BA0069B607 /* ListViewController.swift */,
 			);
 			path = SeSACRxSummery;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 				04A4FD452AF8CDCF006055FA /* SnapKit */,
 				04A4FD482AF8CDEE006055FA /* RxCocoa */,
 				04A4FD4A2AF8CDEE006055FA /* RxSwift */,
+				CECB56712AFB12750069B607 /* RxDataSources */,
 			);
 			productName = SeSACRxSummery;
 			productReference = 04A4FD112AF8CD54006055FA /* SeSACRxSummery.app */;
@@ -244,6 +250,7 @@
 			packageReferences = (
 				04A4FD442AF8CDCF006055FA /* XCRemoteSwiftPackageReference "SnapKit" */,
 				04A4FD472AF8CDEE006055FA /* XCRemoteSwiftPackageReference "RxSwift" */,
+				CECB56702AFB12750069B607 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 			);
 			productRefGroup = 04A4FD122AF8CD54006055FA /* Products */;
 			projectDirPath = "";
@@ -293,6 +300,7 @@
 				04A4FD192AF8CD54006055FA /* ViewController.swift in Sources */,
 				04A4FD152AF8CD54006055FA /* AppDelegate.swift in Sources */,
 				04A4FD512AF9B5C1006055FA /* Model.swift in Sources */,
+				CECB56742AFB12BA0069B607 /* ListViewController.swift in Sources */,
 				04A4FD532AF9B5ED006055FA /* MovieCollectionViewCell.swift in Sources */,
 				CE0B1F802AFA009E0043A7DC /* ValidateViewController.swift in Sources */,
 				04A4FD172AF8CD54006055FA /* SceneDelegate.swift in Sources */,
@@ -654,6 +662,14 @@
 				minimumVersion = 6.6.0;
 			};
 		};
+		CECB56702AFB12750069B607 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -671,6 +687,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 04A4FD472AF8CDEE006055FA /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		CECB56712AFB12750069B607 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CECB56702AFB12750069B607 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

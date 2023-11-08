@@ -39,7 +39,7 @@ class ValidateViewController: UIViewController {
         let output = viewModel.transform(input: input)
         
         output.text
-            .drive(validationLabel.rx.text)
+            .bind(to: validationLabel.rx.text)
             .disposed(by: disposeBag)
         
         
