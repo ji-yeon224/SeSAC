@@ -32,6 +32,7 @@
 		CE0B1F772AF936990043A7DC /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B1F762AF936990043A7DC /* APIManager.swift */; };
 		CE0B1F7E2AF9372C0043A7DC /* RankingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B1F7D2AF9372C0043A7DC /* RankingModel.swift */; };
 		CECB566D2AFA8F0F0069B607 /* NumberFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB566C2AFA8F0F0069B607 /* NumberFormatter+Extension.swift */; };
+		CECB566F2AFA95550069B607 /* RankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB566E2AFA95550069B607 /* RankViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		CE0B1F762AF936990043A7DC /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		CE0B1F7D2AF9372C0043A7DC /* RankingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingModel.swift; sourceTree = "<group>"; };
 		CECB566C2AFA8F0F0069B607 /* NumberFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extension.swift"; sourceTree = "<group>"; };
+		CECB566E2AFA95550069B607 /* RankViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			children = (
 				CE0B1F4D2AF91D880043A7DC /* RankViewController.swift */,
 				CE0B1F4F2AF91D8E0043A7DC /* RankView.swift */,
+				CECB566E2AFA95550069B607 /* RankViewModel.swift */,
 			);
 			path = Rank;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				CE0B1F6F2AF921EC0043A7DC /* BaseCollectionViewCell.swift in Sources */,
 				CE0B1F6D2AF921760043A7DC /* RankCollectionViewCell.swift in Sources */,
 				CE0B1F4E2AF91D880043A7DC /* RankViewController.swift in Sources */,
+				CECB566F2AFA95550069B607 /* RankViewModel.swift in Sources */,
 				CE0B1F552AF91DA30043A7DC /* BaseView.swift in Sources */,
 				CE0B1F752AF9367C0043A7DC /* Router.swift in Sources */,
 				CE0B1F3B2AF91D240043A7DC /* SceneDelegate.swift in Sources */,

@@ -19,7 +19,9 @@ extension DateFormatter {
     }()
     
     static let formatLine = {
-        let format = formatDate
+        let format = DateFormatter()
+        format.locale = Locale(identifier: "ko_KR")
+        format.timeZone = TimeZone(identifier: TimeZone.current.identifier)
         format.dateFormat = "yyyy-MM-dd"
         return format
         

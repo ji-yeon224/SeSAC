@@ -15,7 +15,7 @@ final class RankView: BaseView {
         view.backgroundColor = .white
         view.textColor = .darkGray
         view.layer.cornerRadius = 10
-        view.text = DateFormatter.convertDate(date: Date())
+        view.text = DateFormatter.convertDateByLine(date: yesterdayDate())
         view.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 13.0, height: 0.0))
         view.leftViewMode = .always
         view.tintColor = .clear
@@ -28,7 +28,7 @@ final class RankView: BaseView {
         view.datePickerMode = .date
         view.preferredDatePickerStyle = .wheels
         view.locale = Locale(identifier: "ko-KR")
-        view.maximumDate = Date()
+        view.maximumDate = Calendar.current.date(byAdding: .day, value: -1, to: Date())
         
         return view
     }()
@@ -92,6 +92,11 @@ final class RankView: BaseView {
     @objc func doneButtonHandeler(_ sender: UIBarButtonItem) {
         
         dateTextField.resignFirstResponder()
+    }
+    
+    func yesterdayDate() -> Date {
+        return Calendar.current.date(byAdding: .day, value: -1, to: Date())!
+        
     }
 }
 
