@@ -18,12 +18,13 @@ class BoxOfficeViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     
-    let items = PublishSubject<[DailyBoxOfficeList]>() //Observable.just(["테스트1", "테스트2", "테스트3"])
+    
     let array = Array<String>()
     let array2: [String] = []
-    let recent = BehaviorRelay(value: []) //Observable.just(["테스트4", "테스트5", "테스트6"])
     
     var nickname = BehaviorSubject(value: "고래밥")
+    
+    let viewModel = BoxOfficeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,15 +33,25 @@ class BoxOfficeViewController: UIViewController {
     }
     
     func bind() {
+        let recentText = PublishSubject<String>()
+        
+        let input = BoxOfficeViewModel.Input(
+            searchButtonTap: searchBar.rx.searchButtonClicked,
+            searchText: searchBar.rx.text.orEmpty,
+            recentText: recentText
+        )
+        
+        let output = viewModel.transform(input: input)
+        
        
         
-        items
+        output.items
             .bind(to: tableView.rx.items(cellIdentifier: "MovieCell", cellType: UITableViewCell.self)) { (row, element, cell) in
                 cell.textLabel?.text = "\(element.movieNm) \(element.openDt)"
             }
             .disposed(by: disposeBag)
         
-        recent
+        output.recent
             .asDriver()
             .drive(collectionView.rx.items(cellIdentifier: "MovieCollectionCell", cellType: MovieCollectionViewCell.self)) { (row, element, cell) in
                 cell.label.text = "\(element) @ row \(row)"
@@ -48,30 +59,14 @@ class BoxOfficeViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
-        searchBar.rx.searchButtonClicked
-            .throttle(.seconds(1), scheduler: MainScheduler.instance)
-            .withLatestFrom(searchBar.rx.text.orEmpty, resultSelector: { _, value in
-                return value
-            })
-            .map { text -> String in
-                guard let newText = Int(text) else { return "20231106" }
-                return String(newText)
-            }
-            .flatMap {
-                BoxOfficeNetwork.fetchBoxOfficeData(date: $0)
-            }
-            .subscribe(with: self, onNext: { owner, movie in
-                let data = movie.boxOfficeResult.dailyBoxOfficeList
-                owner.items.onNext(data)
-            })
-            .disposed(by: disposeBag)
+        
         
         Observable.zip(tableView.rx.modelSelected(DailyBoxOfficeList.self), tableView.rx.itemSelected)
             .map { $0.0.movieNm }
-            .debug()
             .subscribe(with: self) { owner, value in
-                let data = owner.recent.value + [value]
-                owner.recent.accept(data)
+                recentText.onNext(value)
+//                let data = owner.recent.value + [value]
+//                owner.recent.accept(data)
                 
             }
             .disposed(by: disposeBag)
