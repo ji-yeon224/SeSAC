@@ -251,13 +251,8 @@
 		CE0C429A2AF4D79800B6D590 /* ShoppingList */ = {
 			isa = PBXGroup;
 			children = (
+				CECB569C2AFB7F930069B607 /* Scene */,
 				CEB1AE592AF7860F0086DEA9 /* CustomView */,
-				CEB1AE4B2AF662980086DEA9 /* ShoppingViewController.swift */,
-				CEB1AE4D2AF662F20086DEA9 /* ShoppingCollectionViewCell.swift */,
-				CEB1AE4F2AF662FA0086DEA9 /* ShoppingViewModel.swift */,
-				CEB1AE512AF667E40086DEA9 /* ShoppingView.swift */,
-				CEB1AE532AF77A250086DEA9 /* EditViewController.swift */,
-				CEB1AE552AF7824B0086DEA9 /* EditView.swift */,
 				CEB1AE572AF785290086DEA9 /* EditType.swift */,
 				CE0B1F832AFA25470043A7DC /* TodoList.swift */,
 			);
@@ -270,6 +265,35 @@
 				CEB1AE5A2AF786180086DEA9 /* CustomButton.swift */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		CECB569C2AFB7F930069B607 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				CECB569F2AFB7FBE0069B607 /* Edit */,
+				CECB569E2AFB7FB50069B607 /* Shopping */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		CECB569E2AFB7FB50069B607 /* Shopping */ = {
+			isa = PBXGroup;
+			children = (
+				CEB1AE512AF667E40086DEA9 /* ShoppingView.swift */,
+				CEB1AE4B2AF662980086DEA9 /* ShoppingViewController.swift */,
+				CEB1AE4D2AF662F20086DEA9 /* ShoppingCollectionViewCell.swift */,
+				CEB1AE4F2AF662FA0086DEA9 /* ShoppingViewModel.swift */,
+			);
+			path = Shopping;
+			sourceTree = "<group>";
+		};
+		CECB569F2AFB7FBE0069B607 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				CEB1AE552AF7824B0086DEA9 /* EditView.swift */,
+				CEB1AE532AF77A250086DEA9 /* EditViewController.swift */,
+			);
+			path = Edit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
