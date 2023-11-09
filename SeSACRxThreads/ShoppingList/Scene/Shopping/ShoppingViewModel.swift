@@ -12,13 +12,13 @@ import RxCocoa
 
 final class ShoppingViewModel {
     
-    var todoList: [TodoList] = []
-    var updateTodo: BehaviorRelay<[TodoList]> = BehaviorRelay(value: [])
+    var todoList: TodoList = TodoList(section: "", items: [])
+    lazy var updateTodo: BehaviorRelay<[TodoList]> = BehaviorRelay(value: [TodoList(section: "", items: [])])
     let disposeBag = DisposeBag()
     
     struct Input {
         
-        let addText:  ControlProperty<String>
+        let addText: ControlProperty<String>
         let addButtonTap: ControlEvent<Void>
         let searchText: ControlProperty<String>
     }
@@ -29,7 +29,7 @@ final class ShoppingViewModel {
         
     }
     
-    func format(input: Input) -> Output {
+    func transform(input: Input) -> Output {
         
         
         
@@ -37,11 +37,12 @@ final class ShoppingViewModel {
             .withLatestFrom(input.addText, resultSelector: { _, text in
                 return text
             })
+            .debug()
             .bind(with: self, onNext: { owner, value in
                 if !value.trimmingCharacters(in: .whitespaces).isEmpty {
-                    let list = TodoList(title: value)
-                    owner.todoList.insert(list, at: 0)
-                    owner.updateTodo.accept(owner.todoList)
+                    let list = Todo(title: value)
+                    owner.todoList.items.insert(list, at: 0)
+                    owner.updateTodo.accept([owner.todoList])
                 }
                 
             })
@@ -51,8 +52,8 @@ final class ShoppingViewModel {
             .debounce(RxTimeInterval.milliseconds(100), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .bind(with: self) { owner, value in
-                let result = value == "" ? owner.todoList : owner.todoList.filter { $0.title.contains(value) }
-                owner.updateTodo.accept(result)
+                let result = value == "" ? owner.todoList.items : owner.todoList.items.filter { $0.title.contains(value) }
+                owner.updateTodo.accept([TodoList(section: "", items: result)])
             }
             .disposed(by: disposeBag)
         

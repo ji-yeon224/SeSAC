@@ -28,7 +28,7 @@
 		041280712AEFAD3D00972552 /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041280702AEFAD3D00972552 /* PhoneViewController.swift */; };
 		041280732AEFAD4B00972552 /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041280722AEFAD4B00972552 /* NicknameViewController.swift */; };
 		041280782AF1D14000972552 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041280772AF1D14000972552 /* Resource.swift */; };
-		CE0B1F842AFA25470043A7DC /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B1F832AFA25470043A7DC /* TodoList.swift */; };
+		CE0B1F842AFA25470043A7DC /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B1F832AFA25470043A7DC /* Todo.swift */; };
 		CE0C42962AF4C36D00B6D590 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0C42942AF4C36D00B6D590 /* SearchTableViewCell.swift */; };
 		CE0C42972AF4C36D00B6D590 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0C42952AF4C36D00B6D590 /* SearchViewController.swift */; };
 		CE0C42992AF4D55A00B6D590 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0C42982AF4D55A00B6D590 /* SearchViewModel.swift */; };
@@ -89,7 +89,7 @@
 		041280702AEFAD3D00972552 /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
 		041280722AEFAD4B00972552 /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
 		041280772AF1D14000972552 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
-		CE0B1F832AFA25470043A7DC /* TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
+		CE0B1F832AFA25470043A7DC /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		CE0C42942AF4C36D00B6D590 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		CE0C42952AF4C36D00B6D590 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		CE0C42982AF4D55A00B6D590 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -254,7 +254,7 @@
 				CECB569C2AFB7F930069B607 /* Scene */,
 				CEB1AE592AF7860F0086DEA9 /* CustomView */,
 				CEB1AE572AF785290086DEA9 /* EditType.swift */,
-				CE0B1F832AFA25470043A7DC /* TodoList.swift */,
+				CE0B1F832AFA25470043A7DC /* Todo.swift */,
 			);
 			path = ShoppingList;
 			sourceTree = "<group>";
@@ -451,7 +451,7 @@
 				041280562AEFA04800972552 /* SignInViewController.swift in Sources */,
 				CE83E7852AF3C70000AA01A4 /* PhoneViewModel.swift in Sources */,
 				041280282AEF9BAB00972552 /* ViewController.swift in Sources */,
-				CE0B1F842AFA25470043A7DC /* TodoList.swift in Sources */,
+				CE0B1F842AFA25470043A7DC /* Todo.swift in Sources */,
 				CEB1AE5B2AF786180086DEA9 /* CustomButton.swift in Sources */,
 				CE0C42962AF4C36D00B6D590 /* SearchTableViewCell.swift in Sources */,
 				CE7BD7D42AF28F530022BE5D /* WarningLabel.swift in Sources */,

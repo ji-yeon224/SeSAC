@@ -12,7 +12,7 @@ import RxCocoa
 final class EditViewController: UIViewController {
     
     var data: (Int, String)?
-    var todo: TodoList?
+    var todo: Todo?
     var editHandler: ((EditType, String?) -> Void)?
     
     let updateButtonEnabled = BehaviorSubject(value: true)
