@@ -10,11 +10,21 @@ import SnapKit
 
 final class ShoppingView: UIView {
     
-    lazy var collectionView = {
-        let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
-        view.register(ShoppingCollectionViewCell.self, forCellWithReuseIdentifier: ShoppingCollectionViewCell.identifier)
+//    lazy var collectionView = {
+//        let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
+//        view.register(ShoppingCollectionViewCell.self, forCellWithReuseIdentifier: ShoppingCollectionViewCell.identifier)
+//        view.backgroundColor = .white
+//        
+//        return view
+//    }()
+    
+    lazy var tableView = {
+        let view = UITableView()
+        view.register(ShoppingTableViewCell.self, forCellReuseIdentifier: ShoppingTableViewCell.identifier)
         view.backgroundColor = .white
-        
+        view.rowHeight = 100
+        view.separatorStyle = .none
+       // view.allowsSelection = false
         return view
     }()
     
@@ -55,7 +65,7 @@ final class ShoppingView: UIView {
     
     private func configure() {
         addSubview(backView)
-        addSubview(collectionView)
+        addSubview(tableView)
         addSubview(searchBar)
         backView.addSubview(addTextField)
         backView.addSubview(addButton)
@@ -69,7 +79,7 @@ final class ShoppingView: UIView {
             make.height.equalTo(60)
         }
         
-        collectionView.snp.makeConstraints { make in
+        tableView.snp.makeConstraints { make in
             make.top.equalTo(backView.snp.bottom).offset(18)
             make.horizontalEdges.equalTo(safeAreaLayoutGuide)
             make.bottom.equalTo(safeAreaLayoutGuide).offset(10)

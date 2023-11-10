@@ -21,6 +21,8 @@ final class ShoppingViewModel {
         let addText: ControlProperty<String>
         let addButtonTap: ControlEvent<Void>
         let searchText: ControlProperty<String>
+        let deleteItem: ControlEvent<IndexPath>
+        
     }
     
     struct Output {
@@ -56,6 +58,14 @@ final class ShoppingViewModel {
                 owner.updateTodo.accept([TodoList(section: "", items: result)])
             }
             .disposed(by: disposeBag)
+        
+        input.deleteItem
+            .bind(with: self) { owner, indexPath in
+                owner.todoList.items.remove(at: indexPath.row)
+                owner.updateTodo.accept([owner.todoList])
+            }
+            .disposed(by: disposeBag)
+        
         
         return Output(items: updateTodo)
     }
