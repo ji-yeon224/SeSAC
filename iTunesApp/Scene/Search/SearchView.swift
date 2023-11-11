@@ -10,7 +10,7 @@ import SnapKit
 
 class SearchView: UIView {
     
-    var dataSource: UICollectionViewDiffableDataSource<Int, String>!
+    var dataSource: UICollectionViewDiffableDataSource<Int, AppInfo>!
     
     let searchBar = UISearchBar()
     
@@ -72,8 +72,8 @@ class SearchView: UIView {
     }
     
     private func configureDataSource() {
-        let cellRegistration = UICollectionView.CellRegistration<SearchCollectionViewCell, String> { cell, indexPath, itemIdentifier in
-            cell.label.text = "test"
+        let cellRegistration = UICollectionView.CellRegistration<SearchCollectionViewCell, AppInfo> { cell, indexPath, itemIdentifier in
+            cell.label.text = itemIdentifier.trackName
             
         }
         

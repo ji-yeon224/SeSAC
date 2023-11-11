@@ -7,28 +7,40 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 class SearchViewController: UIViewController {
     
+    
+    
+    let data: [AppInfo] = []
+    lazy var items = BehaviorRelay(value: data)
+    private let disposeBag = DisposeBag()
+    
+    
     private let mainView = SearchView()
-    let data = ["aa", "dd"]
     override func loadView() {
         self.view = mainView
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         config()
         updateSnapShot()
-        APIManager.shared.search(term: "todo") { result in
-            switch result {
-            case .success(let success):
-                dump(success)
-            case .failure(let failure):
-                print(failure.localizedDescription)
+        bind()
+    }
+    
+    func bind() {
+        
+        let request = APIManager.shared.search(term: "todo")
+            .asDriver(onErrorJustReturn: ITunesSearch(resultCount: 0, results: []))
+        
+        request
+            .drive(with: self) { owner, value in
+                owner.items.accept(value.results)
+                owner.updateSnapShot()
             }
-        }
+            .disposed(by: disposeBag)
     }
     
     func config() {
@@ -36,9 +48,9 @@ class SearchViewController: UIViewController {
     }
     
     private func updateSnapShot() {
-        var snapShot = NSDiffableDataSourceSnapshot<Int, String>()
+        var snapShot = NSDiffableDataSourceSnapshot<Int, AppInfo>()
         snapShot.appendSections([0])
-        snapShot.appendItems(data)
+        snapShot.appendItems(items.value)
         mainView.dataSource.apply(snapShot)
     }
     

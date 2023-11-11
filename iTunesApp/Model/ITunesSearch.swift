@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct ITunesSearch: Codable {
+struct ITunesSearch: Codable, Hashable {
     let resultCount: Int
     let results: [AppInfo]
 }
 
 // MARK: - Result
-struct AppInfo: Codable {
+struct AppInfo: Codable, Hashable {
     let screenshotUrls: [String]
     let trackName: String // 이름
     let genres: [String] // 장르

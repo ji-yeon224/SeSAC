@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 import Moya
 
 struct APIManager {
@@ -14,17 +15,23 @@ struct APIManager {
     
     let provider = MoyaProvider<ITunesAPI>()
     
-    func search(term: String, completion: @escaping(Result<ITunesSearch, Error>) -> Void) {
+    func search(term: String) -> Observable<ITunesSearch> {
         
-        provider.request(.search(term: term)) { result in
-            switch result {
-            case .success(let data):
-                let result = try! JSONDecoder().decode(ITunesSearch.self, from: data.data)
-                completion(.success(result))
-            case .failure(let error):
-                completion(.failure(error))
+        return Observable.create { value in
+            provider.request(.search(term: term)) { response in
+                switch response {
+                case .success(let data):
+                    let result = try! JSONDecoder().decode(ITunesSearch.self, from: data.data)
+                    value.onNext(result)
+                case .failure(let error):
+                    value.onError(error)
+                
+                }
             }
+            
+            return Disposables.create()
         }
+        
         
     }
 }

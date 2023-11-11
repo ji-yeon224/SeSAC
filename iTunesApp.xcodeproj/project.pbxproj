@@ -18,6 +18,7 @@
 		CE3887222AFF769500F5B2D2 /* ITunesSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3887212AFF769500F5B2D2 /* ITunesSearch.swift */; };
 		CE3887242AFF96FE00F5B2D2 /* ITunesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3887232AFF96FE00F5B2D2 /* ITunesAPI.swift */; };
 		CE3887262AFF99B600F5B2D2 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3887252AFF99B600F5B2D2 /* APIManager.swift */; };
+		CE3887282AFF9F4400F5B2D2 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3887272AFF9F4400F5B2D2 /* SearchViewModel.swift */; };
 		CECB56862AFB76630069B607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB56852AFB76630069B607 /* AppDelegate.swift */; };
 		CECB56882AFB76630069B607 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB56872AFB76630069B607 /* SceneDelegate.swift */; };
 		CECB568A2AFB76630069B607 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB56892AFB76630069B607 /* ViewController.swift */; };
@@ -33,6 +34,7 @@
 		CE3887212AFF769500F5B2D2 /* ITunesSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesSearch.swift; sourceTree = "<group>"; };
 		CE3887232AFF96FE00F5B2D2 /* ITunesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesAPI.swift; sourceTree = "<group>"; };
 		CE3887252AFF99B600F5B2D2 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		CE3887272AFF9F4400F5B2D2 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		CECB56822AFB76630069B607 /* iTunesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECB56852AFB76630069B607 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CECB56872AFB76630069B607 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				CE3887192AFF6E2600F5B2D2 /* SearchViewController.swift */,
 				CE38871B2AFF6E5600F5B2D2 /* SearchView.swift */,
 				CE38871D2AFF6EA100F5B2D2 /* SearchCollectionViewCell.swift */,
+				CE3887272AFF9F4400F5B2D2 /* SearchViewModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				CE3887262AFF99B600F5B2D2 /* APIManager.swift in Sources */,
 				CECB56862AFB76630069B607 /* AppDelegate.swift in Sources */,
 				CE3887242AFF96FE00F5B2D2 /* ITunesAPI.swift in Sources */,
+				CE3887282AFF9F4400F5B2D2 /* SearchViewModel.swift in Sources */,
 				CE38871A2AFF6E2600F5B2D2 /* SearchViewController.swift in Sources */,
 				CECB56882AFB76630069B607 /* SceneDelegate.swift in Sources */,
 				CE3887222AFF769500F5B2D2 /* ITunesSearch.swift in Sources */,
