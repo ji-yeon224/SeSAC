@@ -19,6 +19,9 @@
 		CE3887242AFF96FE00F5B2D2 /* ITunesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3887232AFF96FE00F5B2D2 /* ITunesAPI.swift */; };
 		CE3887262AFF99B600F5B2D2 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3887252AFF99B600F5B2D2 /* APIManager.swift */; };
 		CE3887282AFF9F4400F5B2D2 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3887272AFF9F4400F5B2D2 /* SearchViewModel.swift */; };
+		CE38872A2AFFCE4B00F5B2D2 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3887292AFFCE4B00F5B2D2 /* SearchTableViewCell.swift */; };
+		CE38872D2AFFD5AA00F5B2D2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CE38872C2AFFD5AA00F5B2D2 /* Kingfisher */; };
+		CE3887302AFFD92E00F5B2D2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38872F2AFFD92E00F5B2D2 /* Constants.swift */; };
 		CECB56862AFB76630069B607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB56852AFB76630069B607 /* AppDelegate.swift */; };
 		CECB56882AFB76630069B607 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB56872AFB76630069B607 /* SceneDelegate.swift */; };
 		CECB568A2AFB76630069B607 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB56892AFB76630069B607 /* ViewController.swift */; };
@@ -35,6 +38,8 @@
 		CE3887232AFF96FE00F5B2D2 /* ITunesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesAPI.swift; sourceTree = "<group>"; };
 		CE3887252AFF99B600F5B2D2 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		CE3887272AFF9F4400F5B2D2 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		CE3887292AFFCE4B00F5B2D2 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		CE38872F2AFFD92E00F5B2D2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CECB56822AFB76630069B607 /* iTunesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECB56852AFB76630069B607 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CECB56872AFB76630069B607 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE38872D2AFFD5AA00F5B2D2 /* Kingfisher in Frameworks */,
 				CE3887182AFF695900F5B2D2 /* RxMoya in Frameworks */,
 				CE3887132AFF693500F5B2D2 /* RxSwift in Frameworks */,
 				CE3887112AFF693500F5B2D2 /* RxCocoa in Frameworks */,
@@ -68,6 +74,7 @@
 				CE38871B2AFF6E5600F5B2D2 /* SearchView.swift */,
 				CE38871D2AFF6EA100F5B2D2 /* SearchCollectionViewCell.swift */,
 				CE3887272AFF9F4400F5B2D2 /* SearchViewModel.swift */,
+				CE3887292AFFCE4B00F5B2D2 /* SearchTableViewCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -97,6 +104,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		CE38872E2AFFD92100F5B2D2 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				CE38872F2AFFD92E00F5B2D2 /* Constants.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		CECB56792AFB76630069B607 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +131,7 @@
 		CECB56842AFB76630069B607 /* iTunesApp */ = {
 			isa = PBXGroup;
 			children = (
+				CE38872E2AFFD92100F5B2D2 /* Utility */,
 				CE3887202AFF768500F5B2D2 /* Model */,
 				CE38871F2AFF752B00F5B2D2 /* Network */,
 				CE38870A2AFF68E100F5B2D2 /* Scene */,
@@ -152,6 +168,7 @@
 				CE3887122AFF693500F5B2D2 /* RxSwift */,
 				CE3887152AFF695900F5B2D2 /* Moya */,
 				CE3887172AFF695900F5B2D2 /* RxMoya */,
+				CE38872C2AFFD5AA00F5B2D2 /* Kingfisher */,
 			);
 			productName = iTunesApp;
 			productReference = CECB56822AFB76630069B607 /* iTunesApp.app */;
@@ -185,6 +202,7 @@
 				CE38870C2AFF691800F5B2D2 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				CE38870F2AFF693500F5B2D2 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				CE3887142AFF695900F5B2D2 /* XCRemoteSwiftPackageReference "Moya" */,
+				CE38872B2AFFD5AA00F5B2D2 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = CECB56832AFB76630069B607 /* Products */;
 			projectDirPath = "";
@@ -217,12 +235,14 @@
 				CECB568A2AFB76630069B607 /* ViewController.swift in Sources */,
 				CE38871E2AFF6EA100F5B2D2 /* SearchCollectionViewCell.swift in Sources */,
 				CE3887262AFF99B600F5B2D2 /* APIManager.swift in Sources */,
+				CE38872A2AFFCE4B00F5B2D2 /* SearchTableViewCell.swift in Sources */,
 				CECB56862AFB76630069B607 /* AppDelegate.swift in Sources */,
 				CE3887242AFF96FE00F5B2D2 /* ITunesAPI.swift in Sources */,
 				CE3887282AFF9F4400F5B2D2 /* SearchViewModel.swift in Sources */,
 				CE38871A2AFF6E2600F5B2D2 /* SearchViewController.swift in Sources */,
 				CECB56882AFB76630069B607 /* SceneDelegate.swift in Sources */,
 				CE3887222AFF769500F5B2D2 /* ITunesSearch.swift in Sources */,
+				CE3887302AFFD92E00F5B2D2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +491,14 @@
 				minimumVersion = 15.0.3;
 			};
 		};
+		CE38872B2AFFD5AA00F5B2D2 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -498,6 +526,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE3887142AFF695900F5B2D2 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = RxMoya;
+		};
+		CE38872C2AFFD5AA00F5B2D2 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE38872B2AFFD5AA00F5B2D2 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

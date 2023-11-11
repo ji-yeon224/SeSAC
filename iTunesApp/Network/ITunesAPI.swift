@@ -39,7 +39,7 @@ extension ITunesAPI: TargetType {
     var task: Moya.Task {
         switch self {
         case .search(let term):
-            return .requestParameters(parameters: ["term": "\(term)", "country":"KR", "media":"software", "lang": "ko", "limit":"10"], encoding: URLEncoding.queryString)
+            return .requestParameters(parameters: ["term": "\(term)", "country":"KR", "media":"software", "lang": "ko", "limit":"200"], encoding: URLEncoding.queryString)
         }
     }
     

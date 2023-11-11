@@ -30,3 +30,5 @@ struct AppInfo: Codable, Hashable {
     let version: String
     let releaseNotes: String?
 }
+
+
