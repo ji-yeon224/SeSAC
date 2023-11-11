@@ -12,13 +12,11 @@ import RxCocoa
 class SearchViewController: UIViewController {
     
     
+    private let viewModel = SearchViewModel()
+    private let mainView = SearchView()
     
-    let data: [AppInfo] = []
-    lazy var items = BehaviorRelay(value: data)
     private let disposeBag = DisposeBag()
     
-    
-    private let mainView = SearchView()
     override func loadView() {
         self.view = mainView
     }
@@ -26,31 +24,38 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         config()
-        updateSnapShot()
         bind()
     }
     
     func bind() {
         
-        let request = APIManager.shared.search(term: "todo")
-            .asDriver(onErrorJustReturn: ITunesSearch(resultCount: 0, results: []))
+        let input = SearchViewModel.Input(searchButton: mainView.searchBar.rx.searchButtonClicked, searchText: mainView.searchBar.rx.text.orEmpty)
         
-        request
-            .drive(with: self) { owner, value in
-                owner.items.accept(value.results)
-                owner.updateSnapShot()
+        let output = viewModel.transform(input: input)
+        
+        output.items
+            .bind(with: self) { owner, data in
+                owner.updateSnapShot(items: data)
             }
             .disposed(by: disposeBag)
+        
+        mainView.searchBar.rx.cancelButtonClicked
+            .subscribe(with: self) { owner, _ in
+                owner.updateSnapShot(items: [])
+            }
+            .disposed(by: disposeBag)
+        
     }
     
     func config() {
         view.backgroundColor = .white
+        navigationItem.titleView = mainView.searchBar
     }
     
-    private func updateSnapShot() {
+    private func updateSnapShot(items: [AppInfo]) {
         var snapShot = NSDiffableDataSourceSnapshot<Int, AppInfo>()
         snapShot.appendSections([0])
-        snapShot.appendItems(items.value)
+        snapShot.appendItems(items)
         mainView.dataSource.apply(snapShot)
     }
     

@@ -28,5 +28,5 @@ struct AppInfo: Codable, Hashable {
     let languageCodesISO2A: [String] // 언어 지원
     let trackId: Int
     let version: String
-    let releaseNotes: String
+    let releaseNotes: String?
 }
