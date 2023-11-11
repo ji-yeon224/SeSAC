@@ -21,7 +21,14 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         config()
         updateSnapShot()
-        
+        APIManager.shared.search(term: "todo") { result in
+            switch result {
+            case .success(let success):
+                dump(success)
+            case .failure(let failure):
+                print(failure.localizedDescription)
+            }
+        }
     }
     
     func config() {
