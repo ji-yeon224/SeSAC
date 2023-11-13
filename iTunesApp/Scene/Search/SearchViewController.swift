@@ -42,11 +42,13 @@ class SearchViewController: UIViewController {
             .disposed(by: disposeBag)
         
         
-//        Observable.zip(mainView.tableView.rx.itemSelected, mainView.tableView.rx.modelSelected(AppInfo.self))
-//            .bind(with: self) { owner, value in
-//                print(value.1)
-//            }
-//            .disposed(by: disposeBag)
+        Observable.zip(mainView.tableView.rx.itemSelected, mainView.tableView.rx.modelSelected(AppInfo.self))
+            .bind(with: self) { owner, value in
+                let vc = DetailViewController()
+                vc.appInfo = value.1
+                owner.navigationController?.pushViewController(vc, animated: true)
+            }
+            .disposed(by: disposeBag)
         
     }
     
