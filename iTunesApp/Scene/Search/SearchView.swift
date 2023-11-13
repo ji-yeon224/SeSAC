@@ -8,11 +8,10 @@
 import UIKit
 import SnapKit
 import Kingfisher
+import RxDataSources
 
 class SearchView: UIView {
     
-    //var dataSource: UICollectionViewDiffableDataSource<Int, AppInfo>!
-    var dataSource: UITableViewDiffableDataSource<Int, AppInfo>!
     
     let searchBar = UISearchBar()
     
@@ -21,12 +20,30 @@ class SearchView: UIView {
         view.backgroundColor = Constants.Color.background
         view.rowHeight = 90
         view.register(SearchTableViewCell.self, forCellReuseIdentifier: SearchTableViewCell.identifier)
-        view.dataSource = dataSource
+        
         
         return view
     }()
     
-    
+    let dataSource = RxTableViewSectionedReloadDataSource<AppInfoModel> { dataSource, tableView, indexPath, item in
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier, for: indexPath) as? SearchTableViewCell else { return UITableViewCell() }
+        cell.selectionStyle = .none
+        
+        cell.appNameLabel.text = item.trackName
+        cell.appNameLabel.text = item.trackName
+
+        if let url = URL(string: item.artworkUrl512) {
+            cell.appIconImage.kf.setImage(with: url)
+        } else {
+            DispatchQueue.main.async {
+                cell.appIconImage.image = Constants.Image.noAppImage
+            }
+        }
+
+        cell.installButton.setTitle("\(item.formattedPrice)", for: .normal)
+
+        return cell
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -46,7 +63,6 @@ class SearchView: UIView {
     private func config() {
         backgroundColor = Constants.Color.background
         addSubview(tableView)
-        configureDataSource()
     }
     
     private func setConstraints() {
@@ -57,36 +73,6 @@ class SearchView: UIView {
     }
    
     
-    private func configureDataSource() {
-        
-        
-        
-        dataSource = UITableViewDiffableDataSource(tableView: tableView, cellProvider: { tableView, indexPath, itemIdentifier in
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier, for: indexPath) as? SearchTableViewCell else { return UITableViewCell() }
-            cell.selectionStyle = .none
-            cell.appNameLabel.text = itemIdentifier.trackName
-            
-            if let url = URL(string: itemIdentifier.artworkUrl512) {
-                cell.appIconImage.kf.setImage(with: url)
-            } else {
-                DispatchQueue.main.async {
-                    cell.appIconImage.image = Constants.Image.noAppImage
-                }
-            }
-            
-            cell.installButton.setTitle("\(itemIdentifier.formattedPrice)", for: .normal)
-            
-            
-            return cell
-        })
-        
-        
-//        dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
-//            let cell = collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
-//            //collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
-//            return cell
-//        })
-    }
 }
 
 

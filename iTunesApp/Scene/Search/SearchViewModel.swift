@@ -14,6 +14,8 @@ class SearchViewModel {
     var data: [AppInfo] = []
     let disposeBag = DisposeBag()
     
+    
+    
     struct Input {
         let searchButton: ControlEvent<Void>
         let searchText: ControlProperty<String>
@@ -21,12 +23,12 @@ class SearchViewModel {
     }
     
     struct Output {
-        let items: BehaviorRelay<[AppInfo]>
+        let items: BehaviorRelay<[AppInfoModel]>
     }
     
     func transform(input: Input) -> Output {
         
-        let result: BehaviorRelay<[AppInfo]> = BehaviorRelay(value: [])
+        let result: BehaviorRelay<[AppInfoModel]> = BehaviorRelay(value: [])
         
         input.searchButton
             .throttle(.seconds(1), scheduler: MainScheduler.instance)
@@ -42,8 +44,7 @@ class SearchViewModel {
             .subscribe(with: self) { owner, value in
                 owner.data.removeAll()
                 owner.data.append(contentsOf: value.results)
-                result.accept(owner.data)
-                //owner.updateSnapShot()
+                result.accept([AppInfoModel(section: "", items: owner.data)])
             }
             .disposed(by: disposeBag)
         

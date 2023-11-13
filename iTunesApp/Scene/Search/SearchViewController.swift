@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 class SearchViewController: UIViewController {
     
@@ -33,17 +34,19 @@ class SearchViewController: UIViewController {
         
         let output = viewModel.transform(input: input)
         
+
+        
+        
         output.items
-            .bind(with: self) { owner, data in
-                owner.updateSnapShot(items: data)
-            }
+            .bind(to: mainView.tableView.rx.items(dataSource: mainView.dataSource))
             .disposed(by: disposeBag)
         
-        mainView.searchBar.rx.cancelButtonClicked
-            .subscribe(with: self) { owner, _ in
-                owner.updateSnapShot(items: [])
-            }
-            .disposed(by: disposeBag)
+        
+//        Observable.zip(mainView.tableView.rx.itemSelected, mainView.tableView.rx.modelSelected(AppInfo.self))
+//            .bind(with: self) { owner, value in
+//                print(value.1)
+//            }
+//            .disposed(by: disposeBag)
         
     }
     
@@ -51,14 +54,7 @@ class SearchViewController: UIViewController {
         view.backgroundColor = .white
         navigationItem.titleView = mainView.searchBar
     }
-    
-    private func updateSnapShot(items: [AppInfo]) {
-        var snapShot = NSDiffableDataSourceSnapshot<Int, AppInfo>()
-        snapShot.appendSections([0])
-        snapShot.appendItems(items)
-        mainView.dataSource.apply(snapShot)
-    }
-    
+
     
 }
 

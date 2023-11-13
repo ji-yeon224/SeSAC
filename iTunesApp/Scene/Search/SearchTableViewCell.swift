@@ -7,10 +7,12 @@
 
 import UIKit
 import SnapKit
+import RxSwift
 
 final class SearchTableViewCell: UITableViewCell {
     
     static let identifier = "SearchCollectionViewCell"
+    var disposeBag = DisposeBag()
     
     let appIconImage = {
         let view = UIImageView()
@@ -23,14 +25,22 @@ final class SearchTableViewCell: UITableViewCell {
     let appNameLabel = {
         let view = UILabel()
         view.backgroundColor = .white
-        view.textColor = .black
+        view.textColor = Constants.Color.text
         view.font = .systemFont(ofSize: 15)
         view.numberOfLines = 2
         view.textAlignment = .left
         return view
     }()
     
-    
+//    let descriptionLabel = {
+//        let view = UILabel()
+//        view.backgroundColor = .white
+//        view.textColor = Constants.Color.subText
+//        view.font = .systemFont(ofSize: 13)
+//        view.numberOfLines = 2
+//        view.textAlignment = .left
+//        return view
+//    }()
     
     let installButton = {
         let view = UIButton()
@@ -42,6 +52,8 @@ final class SearchTableViewCell: UITableViewCell {
         
         return view
     }()
+    
+    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -59,6 +71,7 @@ final class SearchTableViewCell: UITableViewCell {
         appIconImage.image = nil
         appNameLabel.text = nil
         installButton.titleLabel?.text = nil
+        disposeBag = DisposeBag()
     }
     
     private func config() {
