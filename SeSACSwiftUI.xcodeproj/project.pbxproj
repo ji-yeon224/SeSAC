@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE048CBD2B0307C800FAC038 /* TamagotchiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE048CBC2B0307C800FAC038 /* TamagotchiView.swift */; };
+		CE048CBF2B03379300FAC038 /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE048CBE2B03379300FAC038 /* MovieView.swift */; };
 		CEEA87372B01A8C000AC375F /* SeSACSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA87362B01A8C000AC375F /* SeSACSwiftUIApp.swift */; };
 		CEEA87392B01A8C000AC375F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA87382B01A8C000AC375F /* ContentView.swift */; };
 		CEEA873B2B01A8C100AC375F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEA873A2B01A8C100AC375F /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE048CBC2B0307C800FAC038 /* TamagotchiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiView.swift; sourceTree = "<group>"; };
+		CE048CBE2B03379300FAC038 /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
 		CEEA87332B01A8C000AC375F /* SeSACSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEA87362B01A8C000AC375F /* SeSACSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACSwiftUIApp.swift; sourceTree = "<group>"; };
 		CEEA87382B01A8C000AC375F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 			isa = PBXGroup;
 			children = (
 				CEEA87362B01A8C000AC375F /* SeSACSwiftUIApp.swift */,
+				CE048CBC2B0307C800FAC038 /* TamagotchiView.swift */,
+				CE048CBE2B03379300FAC038 /* MovieView.swift */,
 				CEEA87382B01A8C000AC375F /* ContentView.swift */,
 				CEEA87442B01B96800AC375F /* MenuView.swift */,
 				CEEA87462B01C89800AC375F /* RenderView.swift */,
@@ -144,6 +150,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEEA87392B01A8C000AC375F /* ContentView.swift in Sources */,
+				CE048CBF2B03379300FAC038 /* MovieView.swift in Sources */,
+				CE048CBD2B0307C800FAC038 /* TamagotchiView.swift in Sources */,
 				CEEA87452B01B96800AC375F /* MenuView.swift in Sources */,
 				CEEA87472B01C89800AC375F /* RenderView.swift in Sources */,
 				CEEA87372B01A8C000AC375F /* SeSACSwiftUIApp.swift in Sources */,
