@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		CE048CBD2B0307C800FAC038 /* TamagotchiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE048CBC2B0307C800FAC038 /* TamagotchiView.swift */; };
 		CE048CBF2B03379300FAC038 /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE048CBE2B03379300FAC038 /* MovieView.swift */; };
+		CE32C15C2B044C3F00331CAD /* TransitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32C15B2B044C3F00331CAD /* TransitionView.swift */; };
+		CE32C15E2B044FEF00331CAD /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32C15D2B044FEF00331CAD /* CategoryView.swift */; };
+		CE32C1602B045BBE00331CAD /* PosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32C15F2B045BBE00331CAD /* PosterView.swift */; };
+		CE32C1622B046F4D00331CAD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32C1612B046F4D00331CAD /* HomeView.swift */; };
+		CE32C1642B0471C000331CAD /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32C1632B0471C000331CAD /* StartView.swift */; };
 		CEEA87372B01A8C000AC375F /* SeSACSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA87362B01A8C000AC375F /* SeSACSwiftUIApp.swift */; };
 		CEEA87392B01A8C000AC375F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA87382B01A8C000AC375F /* ContentView.swift */; };
 		CEEA873B2B01A8C100AC375F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEA873A2B01A8C100AC375F /* Assets.xcassets */; };
@@ -20,6 +25,11 @@
 /* Begin PBXFileReference section */
 		CE048CBC2B0307C800FAC038 /* TamagotchiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiView.swift; sourceTree = "<group>"; };
 		CE048CBE2B03379300FAC038 /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
+		CE32C15B2B044C3F00331CAD /* TransitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionView.swift; sourceTree = "<group>"; };
+		CE32C15D2B044FEF00331CAD /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		CE32C15F2B045BBE00331CAD /* PosterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterView.swift; sourceTree = "<group>"; };
+		CE32C1612B046F4D00331CAD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		CE32C1632B0471C000331CAD /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		CEEA87332B01A8C000AC375F /* SeSACSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEA87362B01A8C000AC375F /* SeSACSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACSwiftUIApp.swift; sourceTree = "<group>"; };
 		CEEA87382B01A8C000AC375F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,6 +75,11 @@
 				CEEA87382B01A8C000AC375F /* ContentView.swift */,
 				CEEA87442B01B96800AC375F /* MenuView.swift */,
 				CEEA87462B01C89800AC375F /* RenderView.swift */,
+				CE32C15B2B044C3F00331CAD /* TransitionView.swift */,
+				CE32C15D2B044FEF00331CAD /* CategoryView.swift */,
+				CE32C15F2B045BBE00331CAD /* PosterView.swift */,
+				CE32C1612B046F4D00331CAD /* HomeView.swift */,
+				CE32C1632B0471C000331CAD /* StartView.swift */,
 				CEEA873A2B01A8C100AC375F /* Assets.xcassets */,
 				CEEA873C2B01A8C100AC375F /* Preview Content */,
 			);
@@ -150,11 +165,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEEA87392B01A8C000AC375F /* ContentView.swift in Sources */,
+				CE32C1642B0471C000331CAD /* StartView.swift in Sources */,
 				CE048CBF2B03379300FAC038 /* MovieView.swift in Sources */,
 				CE048CBD2B0307C800FAC038 /* TamagotchiView.swift in Sources */,
+				CE32C1622B046F4D00331CAD /* HomeView.swift in Sources */,
+				CE32C15C2B044C3F00331CAD /* TransitionView.swift in Sources */,
 				CEEA87452B01B96800AC375F /* MenuView.swift in Sources */,
 				CEEA87472B01C89800AC375F /* RenderView.swift in Sources */,
+				CE32C15E2B044FEF00331CAD /* CategoryView.swift in Sources */,
 				CEEA87372B01A8C000AC375F /* SeSACSwiftUIApp.swift in Sources */,
+				CE32C1602B045BBE00331CAD /* PosterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
