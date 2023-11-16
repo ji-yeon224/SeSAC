@@ -35,7 +35,10 @@ struct TransitionView: View {
                     isSheet = true
                 }
                 NavigationLink("Push") {
-                    RenderView()
+                    NavigationLazyView( RenderView() )
+                }
+                NavigationLink("Push") {
+                    NavigationLazyView ( PosterView() )
                 }
             }
             .fullScreenCover(isPresented: $isFull, content: {
