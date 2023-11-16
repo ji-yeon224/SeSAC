@@ -11,6 +11,11 @@ struct RenderView: View {
     
     @State var age = 10
     
+    init(age: Int = 10) {
+        self.age = age
+        print("RenderView Init")
+    }
+    
     var body: some View {
        
         NavigationView { // navigation controller

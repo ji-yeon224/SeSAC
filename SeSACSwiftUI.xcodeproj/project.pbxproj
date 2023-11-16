@@ -14,6 +14,7 @@
 		CE32C1602B045BBE00331CAD /* PosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32C15F2B045BBE00331CAD /* PosterView.swift */; };
 		CE32C1622B046F4D00331CAD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32C1612B046F4D00331CAD /* HomeView.swift */; };
 		CE32C1642B0471C000331CAD /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32C1632B0471C000331CAD /* StartView.swift */; };
+		CE3A15122B05A82C009B913F /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3A15112B05A82C009B913F /* SearchView.swift */; };
 		CEEA87372B01A8C000AC375F /* SeSACSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA87362B01A8C000AC375F /* SeSACSwiftUIApp.swift */; };
 		CEEA87392B01A8C000AC375F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA87382B01A8C000AC375F /* ContentView.swift */; };
 		CEEA873B2B01A8C100AC375F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEA873A2B01A8C100AC375F /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		CE32C15F2B045BBE00331CAD /* PosterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterView.swift; sourceTree = "<group>"; };
 		CE32C1612B046F4D00331CAD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CE32C1632B0471C000331CAD /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		CE3A15112B05A82C009B913F /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		CEEA87332B01A8C000AC375F /* SeSACSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEA87362B01A8C000AC375F /* SeSACSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACSwiftUIApp.swift; sourceTree = "<group>"; };
 		CEEA87382B01A8C000AC375F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				CE32C15B2B044C3F00331CAD /* TransitionView.swift */,
 				CE32C15D2B044FEF00331CAD /* CategoryView.swift */,
 				CE32C15F2B045BBE00331CAD /* PosterView.swift */,
+				CE3A15112B05A82C009B913F /* SearchView.swift */,
 				CE32C1612B046F4D00331CAD /* HomeView.swift */,
 				CE32C1632B0471C000331CAD /* StartView.swift */,
 				CEEA873A2B01A8C100AC375F /* Assets.xcassets */,
@@ -168,6 +171,7 @@
 				CE32C1642B0471C000331CAD /* StartView.swift in Sources */,
 				CE048CBF2B03379300FAC038 /* MovieView.swift in Sources */,
 				CE048CBD2B0307C800FAC038 /* TamagotchiView.swift in Sources */,
+				CE3A15122B05A82C009B913F /* SearchView.swift in Sources */,
 				CE32C1622B046F4D00331CAD /* HomeView.swift in Sources */,
 				CE32C15C2B044C3F00331CAD /* TransitionView.swift in Sources */,
 				CEEA87452B01B96800AC375F /* MenuView.swift in Sources */,

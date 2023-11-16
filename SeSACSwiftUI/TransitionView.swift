@@ -18,6 +18,11 @@ struct TransitionView: View {
     @State private var isFull = false
     @State private var isSheet = false
     
+    init(isFull: Bool = false, isSheet: Bool = false) {
+        self.isFull = isFull
+        self.isSheet = isSheet
+        print("TransitionView init")
+    }
     
     var body: some View {
         NavigationView {
