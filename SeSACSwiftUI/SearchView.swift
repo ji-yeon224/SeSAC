@@ -45,13 +45,14 @@ import SwiftUI
 struct Movie: Hashable {
     let name: String
     let color = Color.random()
-    
+    let count = Int.random(in: 1...100)
 }
 
 
 struct SearchView: View {
     
     @State private var searchQuery = ""
+    @State private var showChart = false
     
     let movie = [
         Movie(name: "어벤져스"), Movie(name: "어벤져스2"),
@@ -69,22 +70,55 @@ struct SearchView: View {
     //let movie = ["ABC", "AB", "아이언맨", "엑스맨", "해리포터"]
     
     var body: some View {
-//        NavigationView {
+        NavigationView {
+            List {
+                ForEach(filterMovie, id: \.self) { item in
+
+                    NavigationLink(destination: {
+                        SearchDetailView(movie: item)
+                    }, label: {
+                        HStack {
+                            Circle()
+                                .foregroundStyle(item.color)
+                            Text(item.name)
+                            
+                        }
+                        
+                    .frame(height: 60)
+                    })
+                }
+            }
+            .navigationTitle("검색")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItemGroup(placement: .topBarLeading) {
+                    Button(action: {
+                        showChart.toggle()
+                    }, label: {
+                        Image(systemName: "star.fill")
+                    })
+                }
+            }
+            .navigationDestination(for: Movie.self) { item in
+                SearchDetailView(movie: item)
+            }
+        }
+        
+//        NavigationStack {
 //            List {
 //                ForEach(filterMovie, id: \.self) { item in
-//
-//                    NavigationLink(destination: {
-//                        SearchDetailView(movie: item)
-//                    }, label: {
+//                    
+//                    NavigationLink(value: item) {
 //                        HStack {
 //                            Circle()
 //                                .foregroundStyle(item.color)
 //                            Text(item.name)
-//                            
+//
 //                        }
-//                        
+//
 //                    .frame(height: 60)
-//                    })
+//                    }
+//                    
 //                }
 //            }
 //            .navigationTitle("검색")
@@ -93,34 +127,14 @@ struct SearchView: View {
 //            }
 //        }
         
-        NavigationStack {
-            List {
-                ForEach(filterMovie, id: \.self) { item in
-                    
-                    NavigationLink(value: item) {
-                        HStack {
-                            Circle()
-                                .foregroundStyle(item.color)
-                            Text(item.name)
-
-                        }
-
-                    .frame(height: 60)
-                    }
-                    
-                }
-            }
-            .navigationTitle("검색")
-            .navigationDestination(for: Movie.self) { item in
-                SearchDetailView(movie: item)
-            }
-        }
-        
         
         .searchable(text: $searchQuery, placement: .navigationBarDrawer, prompt: "검색플레이스 홀더임")
         .onSubmit(of: .search) { // search button clicked
             print("검색 결과~")
         }
+        .sheet(isPresented: $showChart, content: {
+            ChartView(movie: movie)
+        })
     }
     
 }
@@ -131,7 +145,7 @@ struct SearchDetailView: View {
     
     init(movie: Movie) {
         self.movie = movie
-        print("cell init")
+//        print("cell init")
     }
     
     

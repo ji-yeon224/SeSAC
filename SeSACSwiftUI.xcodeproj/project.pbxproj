@@ -22,6 +22,8 @@
 		CEEA873E2B01A8C100AC375F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEA873D2B01A8C100AC375F /* Preview Assets.xcassets */; };
 		CEEA87452B01B96800AC375F /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA87442B01B96800AC375F /* MenuView.swift */; };
 		CEEA87472B01C89800AC375F /* RenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA87462B01C89800AC375F /* RenderView.swift */; };
+		CEECBF202B06F3A20031947E /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECBF1F2B06F3A20031947E /* ChartView.swift */; };
+		CEECBF222B0701AF0031947E /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECBF212B0701AF0031947E /* GridView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		CEEA873D2B01A8C100AC375F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CEEA87442B01B96800AC375F /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		CEEA87462B01C89800AC375F /* RenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderView.swift; sourceTree = "<group>"; };
+		CEECBF1F2B06F3A20031947E /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		CEECBF212B0701AF0031947E /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 				CE32C15D2B044FEF00331CAD /* CategoryView.swift */,
 				CE32C15F2B045BBE00331CAD /* PosterView.swift */,
 				CE3A15112B05A82C009B913F /* SearchView.swift */,
+				CEECBF1F2B06F3A20031947E /* ChartView.swift */,
+				CEECBF212B0701AF0031947E /* GridView.swift */,
 				CE3A15172B05B44E009B913F /* NavigationLazyView.swift */,
 				CE32C1612B046F4D00331CAD /* HomeView.swift */,
 				CE32C1632B0471C000331CAD /* StartView.swift */,
@@ -173,6 +179,7 @@
 				CEEA87392B01A8C000AC375F /* ContentView.swift in Sources */,
 				CE32C1642B0471C000331CAD /* StartView.swift in Sources */,
 				CE048CBF2B03379300FAC038 /* MovieView.swift in Sources */,
+				CEECBF202B06F3A20031947E /* ChartView.swift in Sources */,
 				CE3A15182B05B44E009B913F /* NavigationLazyView.swift in Sources */,
 				CE048CBD2B0307C800FAC038 /* TamagotchiView.swift in Sources */,
 				CE3A15122B05A82C009B913F /* SearchView.swift in Sources */,
@@ -182,6 +189,7 @@
 				CEEA87472B01C89800AC375F /* RenderView.swift in Sources */,
 				CE32C15E2B044FEF00331CAD /* CategoryView.swift in Sources */,
 				CEEA87372B01A8C000AC375F /* SeSACSwiftUIApp.swift in Sources */,
+				CEECBF222B0701AF0031947E /* GridView.swift in Sources */,
 				CE32C1602B045BBE00331CAD /* PosterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
