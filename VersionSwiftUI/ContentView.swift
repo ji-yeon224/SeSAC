@@ -9,15 +9,41 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        
+        ZStack {
+            Color.brown.ignoresSafeArea()
+            VStack {
+                
+                Image(systemName: "globe")
+                    .imageScale(.large)
+                    .foreground(.red) // 버전 대응은 내부에서 처리 됨
+               
+                Text("iOS")
+                    .asPointBackgroundText()
+                Text("SwiftUI")
+                    .asPointBackgroundText()
+                Text("UIKit")
+                    .asPointBackgroundText()
+                
+                Button(action: {
+                    
+                }, label: {
+                    Text("Button")
+                        .font(.largeTitle)
+                        .bold()
+                        .foregroundStyle(.black)
+                })
+                
+                
+            }
+            .padding()
         }
-        .padding()
+        
     }
+
+        
 }
+
 
 #Preview {
     ContentView()
