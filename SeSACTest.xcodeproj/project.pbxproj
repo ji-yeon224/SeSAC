@@ -18,6 +18,7 @@
 		CE5BD10E2B269B7700FF03FD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BD10D2B269B7700FF03FD /* LoginViewController.swift */; };
 		CE5BD1102B26A8B300FF03FD /* LoginTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BD10F2B26A8B300FF03FD /* LoginTestCase.swift */; };
 		CE5BD1122B26AE6400FF03FD /* LoginUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BD1112B26AE6400FF03FD /* LoginUpdateViewController.swift */; };
+		CE5CA5452B27EC1B00534A08 /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CA5442B27EC1B00534A08 /* DI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		CE5BD10D2B269B7700FF03FD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE5BD10F2B26A8B300FF03FD /* LoginTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTestCase.swift; sourceTree = "<group>"; };
 		CE5BD1112B26AE6400FF03FD /* LoginUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUpdateViewController.swift; sourceTree = "<group>"; };
+		CE5CA5442B27EC1B00534A08 /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		CE25D0D82B22A5FE004DFB66 /* SeSACTest */ = {
 			isa = PBXGroup;
 			children = (
+				CE5CA5432B27EC0D00534A08 /* DI */,
 				CE25D0D92B22A5FE004DFB66 /* SeSACTestApp.swift */,
 				CE25D0DB2B22A5FE004DFB66 /* ContentView.swift */,
 				CE25D0DD2B22A5FF004DFB66 /* Assets.xcassets */,
@@ -137,6 +140,14 @@
 				CE25D0F62B22A5FF004DFB66 /* SeSACTestUITestsLaunchTests.swift */,
 			);
 			path = SeSACTestUITests;
+			sourceTree = "<group>";
+		};
+		CE5CA5432B27EC0D00534A08 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				CE5CA5442B27EC1B00534A08 /* DI.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +284,7 @@
 				CE5BD10E2B269B7700FF03FD /* LoginViewController.swift in Sources */,
 				CE5BD1122B26AE6400FF03FD /* LoginUpdateViewController.swift in Sources */,
 				CE25D0DC2B22A5FE004DFB66 /* ContentView.swift in Sources */,
+				CE5CA5452B27EC1B00534A08 /* DI.swift in Sources */,
 				CE25D0DA2B22A5FE004DFB66 /* SeSACTestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
