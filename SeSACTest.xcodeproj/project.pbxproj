@@ -14,6 +14,10 @@
 		CE25D0EB2B22A5FF004DFB66 /* SeSACTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25D0EA2B22A5FF004DFB66 /* SeSACTestTests.swift */; };
 		CE25D0F52B22A5FF004DFB66 /* SeSACTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25D0F42B22A5FF004DFB66 /* SeSACTestUITests.swift */; };
 		CE25D0F72B22A5FF004DFB66 /* SeSACTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25D0F62B22A5FF004DFB66 /* SeSACTestUITestsLaunchTests.swift */; };
+		CE5BD10C2B269ADF00FF03FD /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5BD10B2B269ADF00FF03FD /* Login.storyboard */; };
+		CE5BD10E2B269B7700FF03FD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BD10D2B269B7700FF03FD /* LoginViewController.swift */; };
+		CE5BD1102B26A8B300FF03FD /* LoginTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BD10F2B26A8B300FF03FD /* LoginTestCase.swift */; };
+		CE5BD1122B26AE6400FF03FD /* LoginUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BD1112B26AE6400FF03FD /* LoginUpdateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		CE25D0F02B22A5FF004DFB66 /* SeSACTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeSACTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE25D0F42B22A5FF004DFB66 /* SeSACTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACTestUITests.swift; sourceTree = "<group>"; };
 		CE25D0F62B22A5FF004DFB66 /* SeSACTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CE5BD10B2B269ADF00FF03FD /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		CE5BD10D2B269B7700FF03FD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CE5BD10F2B26A8B300FF03FD /* LoginTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTestCase.swift; sourceTree = "<group>"; };
+		CE5BD1112B26AE6400FF03FD /* LoginUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUpdateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +106,9 @@
 				CE25D0DB2B22A5FE004DFB66 /* ContentView.swift */,
 				CE25D0DD2B22A5FF004DFB66 /* Assets.xcassets */,
 				CE25D0DF2B22A5FF004DFB66 /* Preview Content */,
+				CE5BD10B2B269ADF00FF03FD /* Login.storyboard */,
+				CE5BD10D2B269B7700FF03FD /* LoginViewController.swift */,
+				CE5BD1112B26AE6400FF03FD /* LoginUpdateViewController.swift */,
 			);
 			path = SeSACTest;
 			sourceTree = "<group>";
@@ -114,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				CE25D0EA2B22A5FF004DFB66 /* SeSACTestTests.swift */,
+				CE5BD10F2B26A8B300FF03FD /* LoginTestCase.swift */,
 			);
 			path = SeSACTestTests;
 			sourceTree = "<group>";
@@ -233,6 +245,7 @@
 			files = (
 				CE25D0E12B22A5FF004DFB66 /* Preview Assets.xcassets in Resources */,
 				CE25D0DE2B22A5FF004DFB66 /* Assets.xcassets in Resources */,
+				CE5BD10C2B269ADF00FF03FD /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +270,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE5BD10E2B269B7700FF03FD /* LoginViewController.swift in Sources */,
+				CE5BD1122B26AE6400FF03FD /* LoginUpdateViewController.swift in Sources */,
 				CE25D0DC2B22A5FE004DFB66 /* ContentView.swift in Sources */,
 				CE25D0DA2B22A5FE004DFB66 /* SeSACTestApp.swift in Sources */,
 			);
@@ -267,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE25D0EB2B22A5FF004DFB66 /* SeSACTestTests.swift in Sources */,
+				CE5BD1102B26A8B300FF03FD /* LoginTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
