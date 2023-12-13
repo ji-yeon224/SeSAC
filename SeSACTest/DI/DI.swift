@@ -80,19 +80,4 @@ class 휴님 { // 상위 모듈
 
 // 구현체가 아닌 인터페이스 추상화에 의존한다.
 
-protocol NetworkProvider { // 프로토콜을 사용하여 테스트 수행
-    func fetchLotto()
-}
-
-
-// 네트워크 테스트를 할 때는, Mock 데이터를 통해 실제 네트워크 통신을 하지 않고 테스트를 진행하는 것이 적합
-
-class NetworkManager: NetworkProvider {
-    func fetchLotto() { // 실제 네트워크 통신을 진행하는 부분
-        // 네트워크 통신, 디코딩, 상태코드 처리, 인터넷 연결 상태 확인 등등
-    }
-    
-    // 테스트는 인터넷이 연결되어 있어야만 테스트 성공
-}
-
 
