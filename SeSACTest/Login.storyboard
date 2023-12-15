@@ -55,7 +55,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="358" y="360"/>
         </scene>
         <!--Login Update View Controller-->
         <scene sceneID="ODs-Aw-Uy1">
@@ -91,6 +91,7 @@
                                 <connections>
                                     <action selector="clicked:" destination="vHn-uS-xwP" eventType="touchUpInside" id="50V-WJ-eV8"/>
                                     <action selector="clicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="bpH-fm-cBV"/>
+                                    <segue destination="VHA-8X-Q05" kind="show" id="geZ-KH-QVv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -105,7 +106,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KOx-WD-OgL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="920" y="-11"/>
+            <point key="canvasLocation" x="778" y="-136"/>
+        </scene>
+        <!--In App Purchase Controller-->
+        <scene sceneID="Mhc-Fe-AyO">
+            <objects>
+                <viewController id="VHA-8X-Q05" customClass="InAppPurchaseController" customModule="SeSACTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gGN-E4-eY2">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMS-2E-vV2">
+                                <rect key="frame" x="42" y="149" width="211" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBs-eA-YDs">
+                                <rect key="frame" x="42" y="250" width="83" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="구매하기"/>
+                                <connections>
+                                    <action selector="buyButtonClicked:" destination="VHA-8X-Q05" eventType="touchUpInside" id="r05-lS-eSg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1a4-9l-1R3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="52y-32-XnK"/>
+                    <connections>
+                        <outlet property="productLabel" destination="vMS-2E-vV2" id="fLc-es-hJu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dgX-Zi-TTI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1729" y="-11"/>
         </scene>
     </scenes>
     <resources>

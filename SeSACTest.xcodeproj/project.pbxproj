@@ -19,6 +19,7 @@
 		CE5BD1102B26A8B300FF03FD /* LoginTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BD10F2B26A8B300FF03FD /* LoginTestCase.swift */; };
 		CE5BD1122B26AE6400FF03FD /* LoginUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BD1112B26AE6400FF03FD /* LoginUpdateViewController.swift */; };
 		CE5CA5452B27EC1B00534A08 /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CA5442B27EC1B00534A08 /* DI.swift */; };
+		CE96ADF42B2BE30200509644 /* InAppPurchaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96ADF32B2BE30200509644 /* InAppPurchaseController.swift */; };
 		CEC086BC2B293DA300501364 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC086BB2B293DA300501364 /* NetworkManager.swift */; };
 		CEC086BF2B293E1A00501364 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CEC086BE2B293E1A00501364 /* Alamofire */; };
 		CEC086C12B29418E00501364 /* NetworkTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC086C02B29418E00501364 /* NetworkTestCase.swift */; };
@@ -58,6 +59,7 @@
 		CE5BD10F2B26A8B300FF03FD /* LoginTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTestCase.swift; sourceTree = "<group>"; };
 		CE5BD1112B26AE6400FF03FD /* LoginUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUpdateViewController.swift; sourceTree = "<group>"; };
 		CE5CA5442B27EC1B00534A08 /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
+		CE96ADF32B2BE30200509644 /* InAppPurchaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseController.swift; sourceTree = "<group>"; };
 		CEC086BB2B293DA300501364 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CEC086C02B29418E00501364 /* NetworkTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTestCase.swift; sourceTree = "<group>"; };
 		CEC086C22B294DB800501364 /* NetworkMockTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMockTestCase.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				CE5BD10D2B269B7700FF03FD /* LoginViewController.swift */,
 				CE5BD1112B26AE6400FF03FD /* LoginUpdateViewController.swift */,
 				CEC086BB2B293DA300501364 /* NetworkManager.swift */,
+				CE96ADF32B2BE30200509644 /* InAppPurchaseController.swift */,
 			);
 			path = SeSACTest;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			files = (
 				CEC086BC2B293DA300501364 /* NetworkManager.swift in Sources */,
 				CE5BD10E2B269B7700FF03FD /* LoginViewController.swift in Sources */,
+				CE96ADF42B2BE30200509644 /* InAppPurchaseController.swift in Sources */,
 				CE5BD1122B26AE6400FF03FD /* LoginUpdateViewController.swift in Sources */,
 				CE25D0DC2B22A5FE004DFB66 /* ContentView.swift in Sources */,
 				CE5CA5452B27EC1B00534A08 /* DI.swift in Sources */,
@@ -483,7 +487,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jiyeon.SeSACTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiyeon.FirebaseProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -512,7 +516,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jiyeon.SeSACTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiyeon.FirebaseProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
