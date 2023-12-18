@@ -1,0 +1,107 @@
+{
+  "identifier" : "7DC4730F",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "999.99",
+      "familyShareable" : false,
+      "internalID" : "6474275898",
+      "localizations" : [
+        {
+          "description" : "광고제거 입니다.",
+          "displayName" : "광고 제거",
+          "locale" : "ko"
+        },
+        {
+          "description" : "Remove",
+          "displayName" : "Remove Ads",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.jiyeon.test.RemoveAd",
+      "referenceName" : "Remove Ad",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "67FFF96C",
+      "localizations" : [
+        {
+          "description" : "Buy Please",
+          "displayName" : "Premium Products",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "나를 결제해주세요",
+          "displayName" : "프리미엄 결제",
+          "locale" : "ko"
+        }
+      ],
+      "productID" : "com.jiyeon.test.premium",
+      "referenceName" : "Premium",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+    "_failTransactionsEnabled" : false,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}
