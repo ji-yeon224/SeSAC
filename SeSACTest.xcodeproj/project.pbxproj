@@ -14,6 +14,9 @@
 		CE25D0EB2B22A5FF004DFB66 /* SeSACTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25D0EA2B22A5FF004DFB66 /* SeSACTestTests.swift */; };
 		CE25D0F52B22A5FF004DFB66 /* SeSACTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25D0F42B22A5FF004DFB66 /* SeSACTestUITests.swift */; };
 		CE25D0F72B22A5FF004DFB66 /* SeSACTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25D0F62B22A5FF004DFB66 /* SeSACTestUITestsLaunchTests.swift */; };
+		CE34A88F2B2FE75A00E830AB /* SeSACShop.storekit in Resources */ = {isa = PBXBuildFile; fileRef = CE34A88E2B2FE75A00E830AB /* SeSACShop.storekit */; };
+		CE34A8912B2FE9F400E830AB /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE34A8902B2FE9F400E830AB /* StoreView.swift */; };
+		CE34A8932B2FEAB900E830AB /* SeSACShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE34A8922B2FEAB900E830AB /* SeSACShop.swift */; };
 		CE5BD10C2B269ADF00FF03FD /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5BD10B2B269ADF00FF03FD /* Login.storyboard */; };
 		CE5BD10E2B269B7700FF03FD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BD10D2B269B7700FF03FD /* LoginViewController.swift */; };
 		CE5BD1102B26A8B300FF03FD /* LoginTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BD10F2B26A8B300FF03FD /* LoginTestCase.swift */; };
@@ -54,6 +57,9 @@
 		CE25D0F02B22A5FF004DFB66 /* SeSACTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeSACTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE25D0F42B22A5FF004DFB66 /* SeSACTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACTestUITests.swift; sourceTree = "<group>"; };
 		CE25D0F62B22A5FF004DFB66 /* SeSACTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CE34A88E2B2FE75A00E830AB /* SeSACShop.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = SeSACShop.storekit; sourceTree = "<group>"; };
+		CE34A8902B2FE9F400E830AB /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
+		CE34A8922B2FEAB900E830AB /* SeSACShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACShop.swift; sourceTree = "<group>"; };
 		CE5BD10B2B269ADF00FF03FD /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		CE5BD10D2B269B7700FF03FD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE5BD10F2B26A8B300FF03FD /* LoginTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTestCase.swift; sourceTree = "<group>"; };
@@ -124,6 +130,9 @@
 				CE5BD1112B26AE6400FF03FD /* LoginUpdateViewController.swift */,
 				CEC086BB2B293DA300501364 /* NetworkManager.swift */,
 				CE96ADF32B2BE30200509644 /* InAppPurchaseController.swift */,
+				CE34A88E2B2FE75A00E830AB /* SeSACShop.storekit */,
+				CE34A8902B2FE9F400E830AB /* StoreView.swift */,
+				CE34A8922B2FEAB900E830AB /* SeSACShop.swift */,
 			);
 			path = SeSACTest;
 			sourceTree = "<group>";
@@ -276,6 +285,7 @@
 			files = (
 				CE25D0E12B22A5FF004DFB66 /* Preview Assets.xcassets in Resources */,
 				CE25D0DE2B22A5FF004DFB66 /* Assets.xcassets in Resources */,
+				CE34A88F2B2FE75A00E830AB /* SeSACShop.storekit in Resources */,
 				CE5BD10C2B269ADF00FF03FD /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,7 +313,9 @@
 			files = (
 				CEC086BC2B293DA300501364 /* NetworkManager.swift in Sources */,
 				CE5BD10E2B269B7700FF03FD /* LoginViewController.swift in Sources */,
+				CE34A8912B2FE9F400E830AB /* StoreView.swift in Sources */,
 				CE96ADF42B2BE30200509644 /* InAppPurchaseController.swift in Sources */,
+				CE34A8932B2FEAB900E830AB /* SeSACShop.swift in Sources */,
 				CE5BD1122B26AE6400FF03FD /* LoginUpdateViewController.swift in Sources */,
 				CE25D0DC2B22A5FE004DFB66 /* ContentView.swift in Sources */,
 				CE5CA5452B27EC1B00534A08 /* DI.swift in Sources */,

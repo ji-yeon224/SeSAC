@@ -31,7 +31,7 @@ class InAppPurchaseController: UIViewController {
             
             // 3. 인앱 상품 조회
             let request = SKProductsRequest(productIdentifiers: productIdentifier)
-            request.delegate = self
+            request.delegate = self // SKProductsRequestDelegate
             request.start()
             
         } else {
@@ -72,7 +72,7 @@ extension InAppPurchaseController: SKProductsRequestDelegate {
     
 }
 
-// SKPaymentTransactionObserver: 구매 승인, 취소에 대한 프로토콜
+// SKPaymentTransactionObserver: 구매 승인, 취소에 대한 프로토콜, 사용자 결제 상태 확인 -> 예외처리
 extension InAppPurchaseController: SKPaymentTransactionObserver {
     
     func receiptValidation(transaction: SKPaymentTransaction, productIdentifier: String) {
@@ -82,7 +82,7 @@ extension InAppPurchaseController: SKPaymentTransactionObserver {
         let receiptData = try? Data(contentsOf: receiptFileURL!)
         let receiptString = receiptData?.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
         
-        print(receiptString)
+//        print(receiptString)
         
     }
     
