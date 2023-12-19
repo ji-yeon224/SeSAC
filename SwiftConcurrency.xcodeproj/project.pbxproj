@@ -16,6 +16,7 @@
 		CE5C4ECE2B31256F00C13147 /* SwiftConcurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C4ECD2B31256F00C13147 /* SwiftConcurrencyTests.swift */; };
 		CE5C4ED82B31256F00C13147 /* SwiftConcurrencyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C4ED72B31256F00C13147 /* SwiftConcurrencyUITests.swift */; };
 		CE5C4EDA2B31256F00C13147 /* SwiftConcurrencyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C4ED92B31256F00C13147 /* SwiftConcurrencyUITestsLaunchTests.swift */; };
+		CE5C4EE72B31258700C13147 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C4EE62B31258700C13147 /* Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		CE5C4ED32B31256F00C13147 /* SwiftConcurrencyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftConcurrencyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5C4ED72B31256F00C13147 /* SwiftConcurrencyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftConcurrencyUITests.swift; sourceTree = "<group>"; };
 		CE5C4ED92B31256F00C13147 /* SwiftConcurrencyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftConcurrencyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CE5C4EE62B31258700C13147 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				CE5C4EBF2B31256E00C13147 /* Assets.xcassets */,
 				CE5C4EC12B31256E00C13147 /* LaunchScreen.storyboard */,
 				CE5C4EC42B31256E00C13147 /* Info.plist */,
+				CE5C4EE62B31258700C13147 /* Network.swift */,
 			);
 			path = SwiftConcurrency;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			files = (
 				CE5C4EBB2B31256D00C13147 /* ViewController.swift in Sources */,
 				CE5C4EB72B31256D00C13147 /* AppDelegate.swift in Sources */,
+				CE5C4EE72B31258700C13147 /* Network.swift in Sources */,
 				CE5C4EB92B31256D00C13147 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
