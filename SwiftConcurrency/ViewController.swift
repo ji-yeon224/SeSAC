@@ -29,20 +29,24 @@ class ViewController: UIViewController {
 //        }
         
         
-//        Task {
-//            let result = try await Network.shared.fetchThumbnailAsyncLet()
-//            posterImageView.image = result[0]
-//            posterImageView2.image = result[1]
-//            posterImageView3.image = result[2]
-//        }
-        
         Task {
-            let value = try await Network.shared.fetchThumbnailTaskGroup()
-            posterImageView.image = value[0]
-            posterImageView2.image = value[1]
-            posterImageView3.image = value[2]
-
+            print(#function, "1", Thread.isMainThread)
+            let result = try await Network.shared.fetchThumbnailAsyncLet()
+            
+            print(#function, "4", Thread.isMainThread)
+            posterImageView.image = result[0]
+            posterImageView2.image = result[1]
+            posterImageView3.image = result[2]
+            print(#function, "5", Thread.isMainThread)
         }
+        
+//        Task {
+//            let value = try await Network.shared.fetchThumbnailTaskGroup()
+//            posterImageView.image = value[0]
+//            posterImageView2.image = value[1]
+//            posterImageView3.image = value[2]
+//
+//        }
         
     }
 
