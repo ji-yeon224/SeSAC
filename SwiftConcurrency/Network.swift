@@ -73,14 +73,14 @@ class Network {
     
     // 비동기로 동작
     func fetchThumbnailAsyncAwait(value: String) async throws -> UIImage {
-        print(#function, "3-1", Thread.isMainThread)
+//        print(#function, "3-1", Thread.isMainThread)
         let url = URL(string: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/\(value).jpg")!
         
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 5)
         
         // await: 비동기를 동기처럼 작업할 것이니까, 응답 올 때 까지 기다려라
         let (data, response) = try await URLSession.shared.data(for: request)
-        print(#function, "3-2", Thread.isMainThread)
+//        print(#function, "3-2", Thread.isMainThread)
         guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
             throw JackError.invalidResponse
         }
@@ -94,11 +94,11 @@ class Network {
     }
     @MainActor
     func fetchThumbnailAsyncLet() async throws -> [UIImage] {
-        print(#function, "2-1", Thread.isMainThread)
+//        print(#function, "2-1", Thread.isMainThread)
         async let image1 = try await Network.shared.fetchThumbnailAsyncAwait(value: "aZuBfbR0PnCb2up7lqHDsgJlLjs")
         async let image2 = try await Network.shared.fetchThumbnailAsyncAwait(value: "lMWTlGr9jVUC18T515hPRKym5QQ")
         async let image3 = try await Network.shared.fetchThumbnailAsyncAwait(value: "7M2pc9OboapgtoBbkU49Aim7O5B")
-        print(#function, "2-2", Thread.isMainThread)
+//        print(#function, "2-2", Thread.isMainThread)
         return try await [image1, image2, image3]
         
     }
