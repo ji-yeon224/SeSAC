@@ -14,6 +14,10 @@
 		CEF77F862B3A617C00FEE0CC /* SeSACWebSocketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF77F852B3A617C00FEE0CC /* SeSACWebSocketTests.swift */; };
 		CEF77F902B3A617C00FEE0CC /* SeSACWebSocketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF77F8F2B3A617C00FEE0CC /* SeSACWebSocketUITests.swift */; };
 		CEF77F922B3A617C00FEE0CC /* SeSACWebSocketUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF77F912B3A617C00FEE0CC /* SeSACWebSocketUITestsLaunchTests.swift */; };
+		CEF77F9F2B3A627A00FEE0CC /* WebSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF77F9E2B3A627A00FEE0CC /* WebSocketManager.swift */; };
+		CEF77FA12B3A6AFC00FEE0CC /* SocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF77FA02B3A6AFC00FEE0CC /* SocketViewModel.swift */; };
+		CEF77FA52B3A6C0800FEE0CC /* SocketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF77FA42B3A6C0800FEE0CC /* SocketView.swift */; };
+		CEF77FA72B3A7CFC00FEE0CC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF77FA62B3A7CFC00FEE0CC /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		CEF77F8B2B3A617C00FEE0CC /* SeSACWebSocketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeSACWebSocketUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF77F8F2B3A617C00FEE0CC /* SeSACWebSocketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACWebSocketUITests.swift; sourceTree = "<group>"; };
 		CEF77F912B3A617C00FEE0CC /* SeSACWebSocketUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACWebSocketUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CEF77F9E2B3A627A00FEE0CC /* WebSocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketManager.swift; sourceTree = "<group>"; };
+		CEF77FA02B3A6AFC00FEE0CC /* SocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketViewModel.swift; sourceTree = "<group>"; };
+		CEF77FA42B3A6C0800FEE0CC /* SocketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketView.swift; sourceTree = "<group>"; };
+		CEF77FA62B3A7CFC00FEE0CC /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +104,12 @@
 			children = (
 				CEF77F742B3A617B00FEE0CC /* SeSACWebSocketApp.swift */,
 				CEF77F762B3A617B00FEE0CC /* ContentView.swift */,
+				CEF77FA42B3A6C0800FEE0CC /* SocketView.swift */,
+				CEF77F9E2B3A627A00FEE0CC /* WebSocketManager.swift */,
 				CEF77F782B3A617C00FEE0CC /* Assets.xcassets */,
 				CEF77F7A2B3A617C00FEE0CC /* Preview Content */,
+				CEF77FA02B3A6AFC00FEE0CC /* SocketViewModel.swift */,
+				CEF77FA62B3A7CFC00FEE0CC /* Model.swift */,
 			);
 			path = SeSACWebSocket;
 			sourceTree = "<group>";
@@ -258,7 +270,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEF77F772B3A617B00FEE0CC /* ContentView.swift in Sources */,
+				CEF77FA52B3A6C0800FEE0CC /* SocketView.swift in Sources */,
+				CEF77FA12B3A6AFC00FEE0CC /* SocketViewModel.swift in Sources */,
+				CEF77FA72B3A7CFC00FEE0CC /* Model.swift in Sources */,
 				CEF77F752B3A617B00FEE0CC /* SeSACWebSocketApp.swift in Sources */,
+				CEF77F9F2B3A627A00FEE0CC /* WebSocketManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
